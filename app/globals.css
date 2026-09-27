@@ -61,7 +61,7 @@ nav {
 .logo img {
   display: block;
   width: auto;
-  height: 45px;
+  height: 35px;
 }
 @media (max-width: 600px) {
   .site-header {
@@ -69,6 +69,6 @@ nav {
   }
 
   .logo img {
-    height: 38px;
+    height: 10px;
   }
 }
