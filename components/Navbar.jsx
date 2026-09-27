@@ -18,7 +18,14 @@ export default function Navbar() {
         </a>
 
         <details className="menu">
-  <summary className="menu-button">⋯</summary>
+<summary className="menu-button">
+  <Image
+    src="/menubar.png"
+    alt="Menu bar"
+    width={30}
+    height={30}
+  />
+</summary>
 
   <div className="menu-links">
     <a href="/">Home</a>
