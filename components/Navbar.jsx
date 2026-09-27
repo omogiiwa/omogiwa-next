@@ -1,9 +1,16 @@
+import Image from "next/image";
+
 export default function Navbar() {
   return (
-    <header>
-      <nav>
+    <header className="site-header">
+      <nav className="navbar">
         <a href="/" className="logo">
-          Omogbolahan Giwa
+          <Image
+            src="/logo.png"
+            alt="OmoGiwa logo"
+            
+            priority
+          />
         </a>
 
         <div className="nav-links">
@@ -11,7 +18,7 @@ export default function Navbar() {
           <a href="/about">About</a>
           <a href="/work">Work</a>
           <a href="/contact">Contact</a>
-        
+          <a href="/admtools">Tools</a>
         </div>
       </nav>
     </header>
