@@ -8,8 +8,16 @@ export default function Navbar() {
           <Image
             src="/logo1.png"
             alt="OmoGiwa logo"
-            
+            width={180}
+            height={60}
             priority
+            style={{
+
+    width: "auto",
+
+    height: "55px",
+
+  }}
           />
         </a>
 
