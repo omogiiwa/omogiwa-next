@@ -106,12 +106,12 @@ nav {
 
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap:22px;
 
   min-width: 150px;
   padding: 20px;
 
-  background: white;
+  background: #C8F7FF;
   border: 1px solid #e5e5e5;
   border-radius: 14px;
 
