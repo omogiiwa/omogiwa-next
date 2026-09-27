@@ -17,13 +17,17 @@ export default function Navbar() {
           />
         </a>
 
-        <div className="nav-links">
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/work">Work</a>
-          <a href="/contact">Contact</a>
-          <a href="/admtools">Tools</a>
-        </div>
+        <details className="menu">
+  <summary className="menu-button">⋯</summary>
+
+  <div className="menu-links">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/work">Work</a>
+    <a href="/contact">Contact</a>
+    <a href="/tools">Tools</a>
+  </div>
+</details>
       </nav>
     </header>
   );
