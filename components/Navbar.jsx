@@ -15,7 +15,7 @@ export default function Navbar() {
 
     width: "auto",
 
-    height: "55px",
+    height: "200px",
 
   }}
           />
