@@ -10,11 +10,7 @@ export const metadata = {
   title: "Omogbolahan Giwa",
   description:
     "Omogbolahan Giwa — multidisciplinary designer and developer.",
-    icons: {
-
     icon: "/icon2.png",
-
-  },
 
 };
 
