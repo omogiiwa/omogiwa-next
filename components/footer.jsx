@@ -19,13 +19,16 @@ export default function Footer() {
           </a>
 
           <a
-            href="https://instagram.com/decliint"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-          >
-             <img src="/igicon.png" alt="Instagram icon" />
-          </a>
+  href="https://instagram.com/decliint"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <img
+    src="/igicon.png"
+    alt=""
+    style={{ width: "24px", height: "24px" }}
+  />
+</a>
 
           <a
             href="https://wa.me/2347041189806"
