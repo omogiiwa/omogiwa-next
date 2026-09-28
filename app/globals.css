@@ -528,6 +528,17 @@ section {
   margin-top: 35px;
 }
 
+#about {
+background-image:
+  linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
+  url("/IMG_0288.jpg");
+  min-height: 100vh; /* fills the scree
+  background-size: cover;       /* scales to fill, crops overflow */
+  background-position: center;  /* keeps the middle visible */
+  background-repeat: no-repeat; /* no tiling */
+}
+
+
 
 /* ========================================
    PROCESS
