@@ -527,7 +527,10 @@ section {
 .about-content .button {
   margin-top: 35px;
 }
-
+.about p {
+  color: white;
+  }
+  
 #about {
 background-image: url("/IMG_0288.jpeg");
   min-height: 100vh; /* fills the scree
