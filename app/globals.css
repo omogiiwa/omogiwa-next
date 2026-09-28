@@ -529,7 +529,6 @@ section {
 }
   
 #about {
-  color: white;
   background-image: url("/IMG_0288.jpeg");
   min-height: 100vh; /* fills the scree
   background-size: cover;       /* scales to fill, crops overflow */
@@ -537,6 +536,9 @@ section {
   background-repeat: no-repeat; /* no tiling */
 }
 
+.about {
+  color: white;
+  }
 
 
 /* ========================================
