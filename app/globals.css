@@ -491,6 +491,7 @@ section {
 ======================================== */
 
 .about-section {
+  color: white;
   padding: 150px 8%;
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
@@ -530,10 +531,10 @@ section {
   
 #about {
   background-image: url("/IMG_0288.jpeg");
-  min-height: 100vh; /* fills the scree
+  min-height: 200vh; /* fills the scree
   background-size: cover;       /* scales to fill, crops overflow */
   background-position: center;  /* keeps the middle visible */
-  background-repeat: no-repeat; /* no tiling */
+  background-repeat: repeat; /* no tiling */
 }
 
 .about {
