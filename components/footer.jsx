@@ -9,14 +9,13 @@ export default function Footer() {
         </div>
 
         <div className="footer-socials">
-          <a
-            href="https://twitter.com/omo_giiwa"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Twitter"
-          >
-             <img src="xicon.png" alt="x icon" />
-          </a>
+         <a
+  href="x.com/omo_giiwa"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <img src="/xicon.png" alt="" />
+</a>
 
           <a
   href="https://instagram.com/decliint"
@@ -30,14 +29,13 @@ export default function Footer() {
   />
 </a>
 
-          <a
-            href="https://wa.me/2347041189806"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="WhatsApp"
-          >
-             <img src="waicon.png" alt="whatsapp icon" />
-          </a>
+         <a
+  href="wa.me/2347041189806"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <img src="/waicon.png" alt="" />
+</a>
         </div>
 
         <a
