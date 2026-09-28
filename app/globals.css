@@ -527,12 +527,10 @@ section {
 .about-content .button {
   margin-top: 35px;
 }
-.about p {
-  color: white;
-  }
   
 #about {
-background-image: url("/IMG_0288.jpeg");
+  color: white;
+  background-image: url("/IMG_0288.jpeg");
   min-height: 100vh; /* fills the scree
   background-size: cover;       /* scales to fill, crops overflow */
   background-position: center;  /* keeps the middle visible */
