@@ -24,7 +24,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             aria-label="Instagram"
           >
-             <img src="/igicon.png" alt=Instagram icon" />
+             <img src="/igicon.png" alt="Instagram icon" />
           </a>
 
           <a
