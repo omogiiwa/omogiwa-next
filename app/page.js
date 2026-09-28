@@ -527,9 +527,6 @@ export default function Home() {
           <a href="#contact">Contact</a>
         </div>
 
-        <p className="copyright">
-          © {new Date().getFullYear()} Omogbolahan Giwa. All rights reserved.
-        </p>
 
       </footer>
 
