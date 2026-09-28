@@ -270,7 +270,7 @@ export default function Home() {
       <section className="about-section" id="about">
 
         <div className="about-image">
-          <img src="/profile1.png" alt="Omogbolahan Giwa" />
+          <img src="/profile2.png" alt="Omogbolahan Giwa" />
         </div>
 
         <div className="about-content">
