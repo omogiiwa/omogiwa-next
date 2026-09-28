@@ -746,7 +746,7 @@ section {
 }
 
 .site-footer img {
-  width:30px;
+  width:220px;
   filter: grayscale(1) brightness(0) invert(1);
   margin-bottom: 15px;
   gap: 20px;
@@ -765,6 +765,8 @@ section {
 }
 
 .footer-links a:hover {
+  gap: 20px;
+  align-items: center;
   color: #b89cff;
 }
 
