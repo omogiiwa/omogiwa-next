@@ -15,7 +15,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             aria-label="Twitter"
           >
-            Twitter
+             <img src="xicon.png" alt="x icon" />
           </a>
 
           <a
@@ -24,7 +24,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             aria-label="Instagram"
           >
-            Instagram
+             <img src="/igicon.png" alt=Instagram icon" />
           </a>
 
           <a
@@ -33,7 +33,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             aria-label="WhatsApp"
           >
-            WhatsApp
+             <img src="waicon.png" alt="whatsapp icon" />
           </a>
         </div>
 
