@@ -25,7 +25,6 @@ export default function Footer() {
   <img
     src="/igicon.png"
     alt=""
-    style={{ width: "24px", height: "24px" }}
   />
 </a>
 
