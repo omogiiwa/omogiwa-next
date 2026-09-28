@@ -18,14 +18,11 @@ export default function Footer() {
 </a>
 
           <a
-  href="https://instagram.com/decliint"
+  href="instagram.com/decliint"
   target="_blank"
   rel="noopener noreferrer"
 >
-  <img
-    src="/igicon.png"
-    alt=""
-  />
+  <img src="/igicon.png" alt=" "/>
 </a>
 
          <a
