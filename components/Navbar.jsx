@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import "./navbar.module.css";
 export default function Navbar() {
   return (
     <header className="site-header">
@@ -8,7 +8,6 @@ export default function Navbar() {
           <Image
             src="/logo1.png"
             alt="OmoGiwa logo"
-            
             priority
             style={{
 
