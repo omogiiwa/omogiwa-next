@@ -15,8 +15,7 @@ export default function Footer() {
           </a>
 
           <p className="footer-description">
-            Multidisciplinary designer and software engineer creating
-            thoughtful digital experiences, visual identities and products.
+            Omnidesigner and software engineer. I stand at the center of bringing creative ideas to visual concepts
           </p>
 
           <a href="/contact" className="footer-cta">
@@ -137,7 +136,8 @@ export default function Footer() {
         </p>
 
         <p className="footer-location">
-          Designed & built by OmoGiwa
+          Designed & built by Omogbolahan Giwa
+          Thank you Omolola
         </p>
 
         <a href="#top" className="back-to-top">
