@@ -23,7 +23,7 @@ export default function Home() {
 
           <p className="eyebrow">HELLO, I'M</p>
 
-          <h1>
+          <h1 id="top">
             Omogbolahan <br />
             <span>Giwa.</span>
           </h1>
