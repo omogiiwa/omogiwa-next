@@ -1,6 +1,9 @@
 /* =========================
    NAVBAR
    ========================= */
+.site-header {
+  background: red !important;
+}
 
 .site-header {
   width: 100%;
