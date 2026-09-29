@@ -11,30 +11,7 @@ export default function Home() {
       {/* =========================
           NAVIGATION
       ========================== */}
-      <header className="site-header">
-        <a href="#" className="logo">
-          <img src="/logo1.png" alt="OmoGiwa.com" />
-        </a>
-
-        <nav className={`desktop-nav ${menuOpen ? "open" : ""}`}>
-          <a href="#work">Work</a>
-          <a href="#about">About</a>
-          <a href="#services">What I Do</a>
-          <a href="#blog">Blog</a>
-          <a href="#contact">Contact</a>
-        </nav>
-
-        <button
-          className="menu-button"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle navigation menu"
-          aria-expanded={menuOpen}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </header>
+    
 
 
       {/* =========================
