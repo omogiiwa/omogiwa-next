@@ -137,9 +137,10 @@ export default function Footer() {
 
         <p className="footer-location">
           Designed & built by Omogbolahan Giwa
-          Thank you Omolola
         </p>
-
+        <p className="footer-location" id="tyy">
+          CR7
+          </p>
         <a href="#top" className="back-to-top">
           Back to top
           <span>↑</span>
