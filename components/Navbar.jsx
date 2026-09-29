@@ -1,5 +1,5 @@
 import Image from "next/image";
-import "./navbar.module.css";
+import "./navbar.css";
 export default function Navbar() {
   return (
     <header className="site-header">
