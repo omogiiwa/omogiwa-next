@@ -489,24 +489,4 @@ export default function Home() {
       {/* =========================
           FOOTER
       ========================== */}
-      <footer className="site-footer">
-
-        <div>
-          <img src="/logo1.png" alt="OmoGiwa.com" />
-          <p>Design × Development × Ideas</p>
-        </div>
-
-        <div className="footer-links">
-          <a href="#work">Work</a>
-          <a href="/about">About</a>
-          <a href="#services">Services</a>
-          <a href="#blog">Blog</a>
-          <a href="#contact">Contact</a>
-        </div>
-
-
-      </footer>
-
-    </main>
-  );
-}
+     
