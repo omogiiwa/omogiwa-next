@@ -29,10 +29,10 @@ export const metadata = {
     type: "profile",
     images: [
       {
-        url: "https://omogiwa.com/profile.png",
+        url: "https://omogiwa.com/icon2.png",
         width: 400,
         height: 400,
-        alt: "Omogbolahan Giwa",
+        alt: "Omogbolahan Giwa logo",
       },
     ],
   },
