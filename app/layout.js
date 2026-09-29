@@ -41,7 +41,7 @@ export const metadata = {
   ],
 
   icons: {
-    icon: "/icon2.png",
+    icon: "/favicon.png",
   },
 
   openGraph: {
