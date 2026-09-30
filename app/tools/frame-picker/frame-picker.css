@@ -992,3 +992,32 @@
     transition: none !important;
   }
 }
+/* Keep the whole tool inside the screen width */
+.omogiwa-frame-picker-page,
+.omogiwa-frame-picker-app {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.omogiwa-frame-picker-workspace,
+.omogiwa-frame-picker-workspace > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.omogiwa-frame-picker-video-container {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  background: #000;
+}
+
+.omogiwa-frame-picker-video {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: 60vh !important;
+  object-fit: contain;
+}
+
