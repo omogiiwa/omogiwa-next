@@ -50,10 +50,10 @@ export default function AboutPage() {
           <div className="omg-about-hero-text">
             <p className="omg-about-eyebrow">About</p>
             <h1 className="omg-about-title" id="omg-about-title">
-              Hello, I am Omogbolahan Giwa.
+          Omogbolahan Giwa
             </h1>
             <p className="omg-about-intro">
-              A multidisciplinary designer and software engineer.
+              A multidisciplinary designer, human anatomist and software engineer.
             </p>
           </div>
           <div className="omg-about-profile-wrap">
