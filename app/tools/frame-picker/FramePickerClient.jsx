@@ -852,6 +852,7 @@ export default function FramePickerClient() {
         ref={canvasRef}
         id="omogiwa-frame-picker-processing-canvas"
         className="omogiwa-frame-picker-processing-canvas"
+        style={{ display: "none" }}
         aria-hidden="true"
       />
 
