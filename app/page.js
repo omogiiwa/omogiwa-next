@@ -424,7 +424,7 @@ export default function Home() {
           <p className="section-label">07 / NEWSLETTER</p>
 
           <h2>
-            Be the fist to know.
+            Be the first to know.
             <br />
             <span>Get quick updates</span>
           </h2>
