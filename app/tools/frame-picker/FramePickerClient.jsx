@@ -3,9 +3,15 @@ import { useEffect, useState } from "react";
 export default function FramePickerClient() {
   const [videoFile, setVideoFile] = useState(null);
   const [videoUrl, setVideoUrl] = useState("");
+  const [videoDuration, setVideoDuration] = useState(null);
+  const [videoWidth, setVideoWidth] = useState(null);
+  const [videoHeight, setVideoHeight] = useState(null);
   useEffect(() => {
     if (!videoFile) {
       setVideoUrl("");
+      setVideoDuration(null);
+      setVideoWidth(null);
+      setVideoHeight(null);
       return;
     }
     const temporaryUrl = URL.createObjectURL(videoFile);
@@ -18,6 +24,29 @@ export default function FramePickerClient() {
     const file = event.target.files?.[0];
     if (!file) return;
     setVideoFile(file);
+    // Reset old video information.
+    setVideoDuration(null);
+    setVideoWidth(null);
+    setVideoHeight(null);
+  }
+  function handleVideoMetadata(event) {
+    const video = event.currentTarget;
+    setVideoDuration(video.duration);
+    setVideoWidth(video.videoWidth);
+    setVideoHeight(video.videoHeight);
+  }
+  function formatDuration(seconds) {
+    if (!Number.isFinite(seconds)) return "--:--";
+    const totalSeconds = Math.floor(seconds);
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const remainingSeconds = totalSeconds % 60;
+    if (hours > 0) {
+      return `${hours}:${String(minutes).padStart(2, "0")}:${String(
+        remainingSeconds
+      ).padStart(2, "0")}`;
+    }
+    return `${minutes}:${String(remainingSeconds).padStart(2, "0")}`;
   }
   return (
     <>
@@ -88,7 +117,39 @@ export default function FramePickerClient() {
             controls
             playsInline
             preload="metadata"
+            onLoadedMetadata={handleVideoMetadata}
           />
+          {videoDuration !== null &&
+            videoWidth !== null &&
+            videoHeight !== null && (
+              <div
+                id="omogiwa-frame-picker-metadata"
+                className="omogiwa-frame-picker-metadata"
+              >
+                <div
+                  id="omogiwa-frame-picker-duration"
+                  className="omogiwa-frame-picker-metadata-item"
+                >
+                  <span className="omogiwa-frame-picker-metadata-label">
+                    Duration
+                  </span>
+                  <strong className="omogiwa-frame-picker-metadata-value">
+                    {formatDuration(videoDuration)}
+                  </strong>
+                </div>
+                <div
+                  id="omogiwa-frame-picker-resolution"
+                  className="omogiwa-frame-picker-metadata-item"
+                >
+                  <span className="omogiwa-frame-picker-metadata-label">
+                    Resolution
+                  </span>
+                  <strong className="omogiwa-frame-picker-metadata-value">
+                    {videoWidth} × {videoHeight}
+                  </strong>
+                </div>
+              </div>
+            )}
         </div>
       )}
       <p
@@ -96,7 +157,7 @@ export default function FramePickerClient() {
         className="omogiwa-frame-picker-privacy"
       >
         Your video is processed locally in your browser. It is not uploaded
-        to Omogiwa.
+        to Omogiwa.com
       </p>
     </>
   );
