@@ -115,7 +115,7 @@ export default function AboutPage() {
             <p>
               For a start, I am fascinated by how the human body works, so I
               studied Human Anatomy at Gregory University Uturu, where I earned
-              my bachelor’s degree, so I am a scientist.
+              my bachelor’s degree.
             </p>
             <p>
               I am also a self-taught software engineer. This website is the
@@ -126,8 +126,8 @@ export default function AboutPage() {
               maybe my AI company can rival OpenAI and Anthropic in the future.
               I know you laughed, or at least chuckled, a bit, but people also
               laughed when the Wright brothers claimed they were going to
-              build a technology that allowed flight transport over hundreds
-              of miles, and yet here we are.
+              build a technology that allowed flight transport over
+              several miles, and yet here we are.
             </p>
             <p>
               Everybody who knows me personally knows I am a creative and
