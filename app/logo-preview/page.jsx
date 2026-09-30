@@ -9,7 +9,7 @@ export default function LogoPreview() {
       }}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/omogiwa-animated-v2.svg" alt="OmoGiwa.com" width={700} />
+      <img src="/omogiwaanimated" alt="OmoGiwa.com animated logo" width={700} />
     </main>
   );
 }
