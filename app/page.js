@@ -183,7 +183,7 @@ export default function Home() {
             <span className="service-number">01</span>
             <h3>Web Design</h3>
             <p>
-              Do you tink this website is amazing? Wait till i do yours.
+              Do you think this website is amazing? I can make yours even better.
             </p>
           </article>
 
@@ -261,24 +261,21 @@ export default function Home() {
           </h2>
 
           <p>
-            Hello, I&apos;m Omogbolahan Giwa, a multidisciplinary designer and
-            software engineer.
+            Hello, I&apos;m Omogbolahan Giwa, a designer and scientist.
           </p>
 
           <p>
-            I enjoy working at the intersection of creativity, technology and
-            problem solving. Rather than limiting myself to a single discipline,
-            I explore different fields and bring what I learn from each into
-            the things I create. I like to call myself master of many trades
+            I studied Human Anatomy, taught myself software engineering, and I’m currently teaching myself a bunchof other things.  
+            I’m deeply into graphic design, illustration, branding, and turning ideas into things people can actually see and understand.
           </p>
 
           <p>
-            My goal is simple: to make ideas tangible, useful and visually
-            distinctive.
+            My goal is simple: to make ideas tangible, useful and visually distinctive.
+            Whether you're a brand owner, business person or a media personell, this makes your identity stand out for itself and easier to reach.
           </p>
 
           <a href="/about" className="button button-dark">
-            Read my full story →
+            Read more about me →
           </a>
 
         </div>
@@ -427,13 +424,13 @@ export default function Home() {
           <p className="section-label">07 / NEWSLETTER</p>
 
           <h2>
-            Occasionally,
+            Be the fist to know.
             <br />
-            <span>send me something worth reading.</span>
+            <span>Get quick updates</span>
           </h2>
 
           <p>
-            Join the newsletter to get updated abou new projects,
+            Join the newsletter to getupdates about new projects,
             experiments and useful things I discover.
           </p>
 
@@ -469,7 +466,7 @@ export default function Home() {
         <p className="section-label">08 / CONTACT</p>
 
         <h2>
-          Have an idea?
+          Do you have an idea?
           <br />
           <span>Let&apos;s make it real.</span>
         </h2>
