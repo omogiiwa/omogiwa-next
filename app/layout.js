@@ -11,6 +11,12 @@ const outfit = Outfit({
 export const metadata = {
   metadataBase: new URL("https://omogiwa.com"),
 
+  alternates: {
+
+    canonical: "/",
+
+  },
+
   title: {
     default: "Omogbolahan Giwa | Multidisciplinary Designer & Software Engineer",
     template: "%s | Omogbolahan Giwa",
