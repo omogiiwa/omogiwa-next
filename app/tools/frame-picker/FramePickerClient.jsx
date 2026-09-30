@@ -593,21 +593,31 @@ export default function FramePickerClient() {
               </button>
             </div>
 
-            <div className="omogiwa-frame-picker-video-container">
-              <video
-                ref={videoRef}
-                id="omogiwa-frame-picker-video"
-                className="omogiwa-frame-picker-video"
-                src={videoUrl}
-                controls
-                playsInline
-                preload="metadata"
-                onLoadedMetadata={handleLoadedMetadata}
-                onTimeUpdate={handleTimeUpdate}
-                onSeeked={handleTimeUpdate}
-                onError={handleVideoError}
-              />
-            </div>
+<div className="omogiwa-frame-picker-video-container"
+  style={{ width: "100%", maxWidth: "100%", overflow: "hidden" }}
+>
+  <video
+    ref={videoRef}
+    id="omogiwa-frame-picker-video"
+    className="omogiwa-frame-picker-video"
+    style={{
+      display: "block",
+      width: "100%",
+      maxWidth: "100%",
+      height: "auto",
+      maxHeight: "60vh",
+    }}
+    src={videoUrl}
+    controls
+    playsInline
+    preload="metadata"
+    onLoadedMetadata={handleLoadedMetadata}
+    onTimeUpdate={handleTimeUpdate}
+    onSeeked={handleTimeUpdate}
+    onError={handleVideoError}
+  />
+</div>
+
 
             {isReady && (
               <div className="omogiwa-frame-picker-timeline">
