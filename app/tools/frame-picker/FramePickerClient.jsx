@@ -874,7 +874,7 @@ export default function FramePickerClient() {
           <strong>Your video stays on your device.</strong>
           <span>
             Frames are extracted in your browser. Nothing is uploaded to
-            Omogiwa.
+            Omogiwa.com
           </span>
         </div>
       )}
