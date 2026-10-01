@@ -1,6 +1,6 @@
 "use client";
 
-import OmoGiwaExperience from "@/app/components/experiences/omogiwa/OmoGiwaExperience";
+import OmoGiwaExperience from "@/components/experiences/omogiwa/OmoGiwaExperience";
 import { useEffect, useMemo, useRef, useState } from "react";
 import JSZip from "jszip";
 import "./frame-picker.css";
