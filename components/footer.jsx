@@ -13,6 +13,9 @@ export default function Footer() {
           <a href="/" className="footer-logo">
             OmoGiwa<span>.</span>
           </a>
+        <div id="footerlogo">
+          <img src="/omogiwaanimated1.svg">
+          </div>
 
           <p className="footer-description">
             Omnidesigner and software engineer. I stand at the center of bringing creative ideas to visual concepts
