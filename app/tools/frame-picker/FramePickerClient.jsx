@@ -1,5 +1,6 @@
 "use client";
 
+import OmoGiwaExperience from "@/app/components/experiences/omogiwa/OmoGiwaExperience";
 import { useEffect, useMemo, useRef, useState } from "react";
 import JSZip from "jszip";
 import "./frame-picker.css";
@@ -298,6 +299,7 @@ export default function FramePickerClient() {
   function handleTimeUpdate(event) {
     if (isGenerating) return; // the video seeks on its own while extracting
     setPlayhead(event.currentTarget.currentTime);
+    <OmoGiwaExperience />
   }
 
   /* ---------- Choosing a section ---------- */
