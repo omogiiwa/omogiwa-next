@@ -1021,3 +1021,338 @@
   object-fit: contain;
 }
 
+/* ============================================================
+   FRAME PICKER — LIVING INTERFACE
+   Decorative motion layer
+   ============================================================ */
+
+.omogiwa-frame-picker-page {
+  --fp-glow: rgba(64, 30, 151, 0.16);
+}
+
+/* ---------- Animated upload environment ---------- */
+
+.omogiwa-frame-picker-dropzone {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  border-style: solid;
+  border-width: 1px;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(64, 30, 151, 0.055),
+      transparent 42%
+    ),
+    var(--fp-surface-alt);
+
+  transition:
+    border-color 300ms ease,
+    background 500ms ease,
+    transform 300ms ease,
+    box-shadow 500ms ease;
+}
+
+/* Moving atmospheric glow */
+
+.omogiwa-frame-picker-dropzone::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  left: 50%;
+  top: 50%;
+  z-index: -2;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(64, 30, 151, 0.12),
+    transparent 68%
+  );
+
+  filter: blur(18px);
+  transform: translate(-50%, -50%);
+
+  animation: fpAmbientGlow 7s ease-in-out infinite;
+}
+
+/* Animated frame outlines */
+
+.omogiwa-frame-picker-dropzone::after {
+  content: "";
+  position: absolute;
+  width: 170px;
+  height: 105px;
+  top: 16%;
+  right: 11%;
+  z-index: -1;
+
+  border: 1px solid rgba(64, 30, 151, 0.12);
+  border-radius: 10px;
+
+  box-shadow:
+    -95px 70px 0 -1px rgba(64, 30, 151, 0.07),
+    100px 105px 0 -1px rgba(64, 30, 151, 0.05),
+    -120px -55px 0 -1px rgba(64, 30, 151, 0.045);
+
+  transform: rotate(7deg);
+
+  animation: fpFloatingFrames 9s ease-in-out infinite;
+}
+
+/* Dropzone hover */
+
+.omogiwa-frame-picker-dropzone:hover,
+.omogiwa-frame-picker-dropzone.is-dragging {
+  border-color: var(--fp-accent);
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(64, 30, 151, 0.10),
+      transparent 48%
+    ),
+    var(--fp-accent-soft);
+
+  box-shadow:
+    0 20px 60px rgba(64, 30, 151, 0.08),
+    inset 0 0 80px rgba(64, 30, 151, 0.025);
+}
+
+/* ---------- Upload icon ---------- */
+
+.omogiwa-frame-picker-dropzone-icon {
+  position: relative;
+  z-index: 2;
+
+  animation: fpIconFloat 4s ease-in-out infinite;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.omogiwa-frame-picker-dropzone:hover
+.omogiwa-frame-picker-dropzone-icon {
+  animation:
+    fpIconFloat 4s ease-in-out infinite,
+    fpIconPulse 1.2s ease-in-out infinite;
+}
+
+/* ---------- Dropzone text ---------- */
+
+.omogiwa-frame-picker-dropzone-title,
+.omogiwa-frame-picker-dropzone-hint {
+  position: relative;
+  z-index: 2;
+}
+
+.omogiwa-frame-picker-dropzone-title {
+  animation: fpTextReveal 700ms cubic-bezier(.2,.8,.2,1) both;
+}
+
+.omogiwa-frame-picker-dropzone-hint {
+  animation: fpTextReveal 900ms cubic-bezier(.2,.8,.2,1) both;
+}
+
+/* ---------- Header entrance ---------- */
+
+.omogiwa-frame-picker-title {
+  animation: fpTextReveal 700ms cubic-bezier(.2,.8,.2,1) both;
+}
+
+.omogiwa-frame-picker-description {
+  animation: fpTextReveal 850ms cubic-bezier(.2,.8,.2,1) 80ms both;
+}
+
+.omogiwa-frame-picker-steps {
+  animation: fpTextReveal 900ms cubic-bezier(.2,.8,.2,1) 160ms both;
+}
+
+/* ---------- Step pills ---------- */
+
+.omogiwa-frame-picker-step {
+  transition:
+    transform 250ms ease,
+    border-color 250ms ease,
+    background 250ms ease;
+}
+
+.omogiwa-frame-picker-step:hover {
+  transform: translateY(-2px);
+}
+
+/* ---------- Buttons feel less static ---------- */
+
+.omogiwa-frame-picker-primary-button,
+.omogiwa-frame-picker-secondary-button,
+.omogiwa-frame-picker-dark-button {
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.omogiwa-frame-picker-primary-button:hover:not(:disabled),
+.omogiwa-frame-picker-secondary-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.omogiwa-frame-picker-primary-button:active:not(:disabled),
+.omogiwa-frame-picker-secondary-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* ---------- Extracted frame cards ---------- */
+
+.omogiwa-frame-picker-card {
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+.omogiwa-frame-picker-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.omogiwa-frame-picker-frame-button img {
+  transition:
+    transform 350ms cubic-bezier(.2,.8,.2,1),
+    filter 350ms ease;
+}
+
+.omogiwa-frame-picker-card:hover
+.omogiwa-frame-picker-frame-button img {
+  transform: scale(1.035);
+}
+
+/* ---------- Selection animation ---------- */
+
+.omogiwa-frame-picker-card.is-selected {
+  animation: fpSelected 300ms ease both;
+}
+
+/* ---------- Timeline thumb ---------- */
+
+.omogiwa-frame-picker-timeline-input::-webkit-slider-thumb {
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.omogiwa-frame-picker-timeline-input:hover::-webkit-slider-thumb {
+  transform: scale(1.15);
+  box-shadow:
+    0 0 0 6px rgba(64, 30, 151, 0.10),
+    0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- Keyframes ---------- */
+
+@keyframes fpAmbientGlow {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.55;
+  }
+
+  50% {
+    transform: translate(-47%, -53%) scale(1.12);
+    opacity: 0.9;
+  }
+}
+
+@keyframes fpFloatingFrames {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(7deg);
+  }
+
+  50% {
+    transform:
+      translate3d(-24px, 16px, 0)
+      rotate(2deg);
+  }
+}
+
+@keyframes fpIconFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes fpIconPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 12px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  50% {
+    box-shadow:
+      0 14px 35px rgba(64, 30, 151, 0.22);
+  }
+}
+
+@keyframes fpTextReveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fpSelected {
+  0% {
+    transform: scale(0.97);
+  }
+
+  60% {
+    transform: scale(1.015);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ---------- Accessibility ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .omogiwa-frame-picker-dropzone::before,
+  .omogiwa-frame-picker-dropzone::after,
+  .omogiwa-frame-picker-dropzone-icon,
+  .omogiwa-frame-picker-dropzone-title,
+  .omogiwa-frame-picker-dropzone-hint,
+  .omogiwa-frame-picker-title,
+  .omogiwa-frame-picker-description,
+  .omogiwa-frame-picker-steps,
+  .omogiwa-frame-picker-card.is-selected {
+    animation: none !important;
+  }
+
+  .omogiwa-frame-picker-card,
+  .omogiwa-frame-picker-frame-button img,
+  .omogiwa-frame-picker-step,
+  .omogiwa-frame-picker-primary-button,
+  .omogiwa-frame-picker-secondary-button {
+    transition: none !important;
+  }
+}
