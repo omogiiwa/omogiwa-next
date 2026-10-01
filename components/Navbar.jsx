@@ -6,7 +6,7 @@ export default function Navbar() {
       <nav className="navbar">
         <a href="/" className="logo">
           <Image
-            src="/logo1.png"
+            src="/omogiwalogo.svg"
             alt="OmoGiwa logo"
             priority
             style={{
