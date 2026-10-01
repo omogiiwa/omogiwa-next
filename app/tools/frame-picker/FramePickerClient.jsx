@@ -124,7 +124,7 @@ function triggerDownload(url, filename) {
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
-}
+  }
 
 export default function FramePickerClient() {
   const videoRef = useRef(null);
@@ -299,7 +299,7 @@ export default function FramePickerClient() {
   function handleTimeUpdate(event) {
     if (isGenerating) return; // the video seeks on its own while extracting
     setPlayhead(event.currentTarget.currentTime);
-    <OmoGiwaExperience />
+   
   }
 
   /* ---------- Choosing a section ---------- */
@@ -1013,6 +1013,7 @@ export default function FramePickerClient() {
           </div>
         </div>
       )}
+      <OmoGiwaExperience />
     </div>
   );
 }
