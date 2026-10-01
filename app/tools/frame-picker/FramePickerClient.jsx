@@ -1013,7 +1013,7 @@ export default function FramePickerClient() {
           </div>
         </div>
       )}
-      <OmoGiwaExperience />
+    
     </div>
   );
 }
