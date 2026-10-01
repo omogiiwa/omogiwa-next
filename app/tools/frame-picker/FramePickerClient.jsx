@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import JSZip from "jszip";
-
+import "./frame-picker.css";
 const FRAMES_PER_SECOND = 10;
 const JPEG_QUALITY = 0.95;
 const STEPS = ["Upload video", "Choose a moment", "Pick and download"];
