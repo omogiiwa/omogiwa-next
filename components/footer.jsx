@@ -14,7 +14,7 @@ export default function Footer() {
             OmoGiwa<span>.</span>
           </a>
         <div id="footerlogo">
-          <img src="/omogiwaanimated1.svg">
+          <img src="/omogiwaanimated1.svg" alt="OmoGiwa.com logo" />
           </div>
 
           <p className="footer-description">
