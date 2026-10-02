@@ -4,7 +4,41 @@ import { useState } from "react";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-
+const [activeArticle, setActiveArticle] = useState(0);
+ const journalArticles = [
+   {
+     number: "01",
+     category: "DESIGN",
+     readTime: "5 MIN READ",
+     title: "Why good design is more than making things look good.",
+     description:
+       "Good design isn't decoration. It's about making ideas clearer, more useful and easier to experience.",
+   },
+   {
+     number: "02",
+     category: "TECHNOLOGY",
+     readTime: "7 MIN READ",
+     title: "What I am learning while becoming a software engineer.",
+     description:
+       "A look at the things I'm learning, breaking, rebuilding and discovering while teaching myself software engineering.",
+   },
+   {
+     number: "03",
+     category: "CREATIVITY",
+     readTime: "4 MIN READ",
+     title: "Building things across different disciplines.",
+     description:
+       "Why I don't think creativity needs to stay inside one discipline, and how different interests can influence each other.",
+   },
+   {
+     number: "04",
+     category: "EXPERIMENTS",
+     readTime: "6 MIN READ",
+     title: "Making ideas tangible.",
+     description:
+       "An ongoing collection of experiments, strange ideas and things I'm building just to see what happens.",
+   },
+ ];
   return (
     <main>
 
@@ -375,42 +409,65 @@ export default function Home() {
         </div>
 
 
-        <div className="blog-grid">
+        <div className="journal-feature">
 
-          <article className="blog-card">
-            <div className="blog-image">
-              <img src="/project-1.jpg" alt="" />
-            </div>
+  <div className="journal-feature-main">
+    <div className="journal-feature-visual">
+      <span className="journal-feature-number">
+        {journalArticles[activeArticle].number}
+      </span>
 
-            <p>DESIGN · 5 MIN READ</p>
-            <h3>Why good design is more than making things look good.</h3>
-            <a href="#">Read article →</a>
-          </article>
+      <span className="journal-feature-category">
+        {journalArticles[activeArticle].category}
+      </span>
 
+      <div className="journal-feature-shape"></div>
+    </div>
 
-          <article className="blog-card">
-            <div className="blog-image">
-              <img src="/project-2.jpg" alt="" />
-            </div>
+    <div className="journal-feature-content">
+      <p>
+        {journalArticles[activeArticle].category} · {journalArticles[activeArticle].readTime}
+      </p>
 
-            <p>TECHNOLOGY · 7 MIN READ</p>
-            <h3>What I am learning while becoming a software engineer.</h3>
-            <a href="#">Read article →</a>
-          </article>
+      <h3>{journalArticles[activeArticle].title}</h3>
 
+      <span>{journalArticles[activeArticle].description}</span>
 
-          <article className="blog-card">
-            <div className="blog-image">
-              <img src="/project-3.jpg" alt="" />
-            </div>
+      <a href="#">
+        Read article →
+      </a>
+    </div>
+  </div>
 
-            <p>CREATIVITY · 4 MIN READ</p>
-            <h3>Building things across different disciplines.</h3>
-            <a href="#">Read article →</a>
-          </article>
+  <div className="journal-feature-list">
+    {journalArticles.map((article, index) => (
+      <button
+        key={article.number}
+        type="button"
+        className={`journal-feature-item ${
+          index === 0 ? "active" : ""
+        }`}
+        onMouseEnter={() => setActiveArticle(index)}
 
+  onFocus={() => setActiveArticle(index)}
+
+  onClick={() => setActiveArticle(index)}
+      >
+        <span>{article.number}</span>
+
+        <div>
+          <small>{article.category}</small>
+          <strong>{article.title}</strong>
         </div>
 
+        <span className="journal-feature-arrow">↗</span>
+      </button>
+    ))}
+  </div>
+
+</div>
+
+         
       </section>
 
 
