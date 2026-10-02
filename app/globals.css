@@ -175,17 +175,110 @@ section {
 .hero h1 span {
   color: #ffffff;
 }
-
-.hero-title {
-  font-size: clamp(18px, 2vw, 28px);
-  font-weight: 650;
-  line-height: 1.4;
-  max-width: 950px;
+.hero-identities {
+  position: relative;
+  width: 100%;
+  max-width: 1050px;
+  height: 150px;
+  margin: 10px auto 0;
+  display: block;
 }
 
-.hero-title span {
+.identity {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  border: 1.5px solid rgba(64, 30, 151, 0.35);
+  border-radius: 999px;
   color: var(--purple);
-  margin: 0 5px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-size: clamp(14px, 1.5vw, 20px);
+  font-weight: 650;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: default;
+  transition:
+    transform 0.45s cubic-bezier(.2,.8,.2,1),
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  animation: identityFloat 5s ease-in-out infinite;
+}
+
+.identity::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-right: 9px;
+  border-radius: 50%;
+  background: var(--purple);
+  transition: transform 0.3s ease;
+}
+
+.identity:hover {
+  transform: translateY(-8px) scale(1.08) rotate(-2deg);
+  background: var(--purple);
+  color: white;
+  border-color: var(--purple);
+  box-shadow: 0 15px 35px rgba(64, 30, 151, 0.2);
+  z-index: 10;
+}
+
+.identity:hover::before {
+  background: white;
+  transform: scale(1.5);
+}
+
+/* Individual positions */
+
+.identity-one {
+  left: 2%;
+  top: 10px;
+  animation-delay: 0s;
+  transform: rotate(-3deg);
+}
+
+.identity-two {
+  left: 34%;
+  top: 0;
+  animation-delay: -1s;
+  transform: rotate(2deg);
+}
+
+.identity-three {
+  right: 3%;
+  top: 25px;
+  animation-delay: -2s;
+  transform: rotate(-2deg);
+}
+
+.identity-four {
+  left: 17%;
+  bottom: 15px;
+  animation-delay: -3s;
+  transform: rotate(3deg);
+}
+
+.identity-five {
+  right: 25%;
+  bottom: 0;
+  animation-delay: -4s;
+  transform: rotate(-3deg);
+}
+
+@keyframes identityFloat {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -7px;
+  }
 }
 
 .hero-image-wrapper {
@@ -996,10 +1089,6 @@ section {
   .hero h1 {
     font-size: clamp(52px, 16vw, 90px);
     letter-spacing: -3px;
-  }
-
-  .hero-title {
-    font-size: 18px;
   }
 
   .hero-image-wrapper {
