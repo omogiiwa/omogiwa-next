@@ -1109,7 +1109,44 @@ section {
   .button {
     text-align: center;
   }
+.hero-identities {
+  height: 210px;
+  margin-top: 5px;
+}
 
+.identity {
+  font-size: 13px;
+  padding: 9px 12px;
+}
+
+.identity-one {
+  left: 0;
+  top: 5px;
+}
+
+.identity-two {
+  right: 0;
+  left: auto;
+  top: 0;
+}
+
+.identity-three {
+  left: 8%;
+  right: auto;
+  top: 70px;
+}
+
+.identity-four {
+  right: 2%;
+  left: auto;
+  bottom: 60px;
+}
+
+.identity-five {
+  left: 25%;
+  right: auto;
+  bottom: 5px;
+}
 
   /* INTRO */
 
