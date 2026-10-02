@@ -85,7 +85,12 @@ const [activeArticle, setActiveArticle] = useState(0);
 </div>
 
           <div className="hero-image-wrapper">
-            <div className="hero-image-shape"></div>
+            <div className="hero-orbit" aria-hidden="true">
+      <span className="orbit-ring orbit-ring-one"></span>
+  <span className="orbit-ring orbit-ring-two"></span>
+  <span className="orbit-dot orbit-dot-one"></span>
+  <span className="orbit-dot orbit-dot-two"></span>
+</div>
 
             <img
               src="/profile.png"
