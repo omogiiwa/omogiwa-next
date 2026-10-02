@@ -62,10 +62,27 @@ const [activeArticle, setActiveArticle] = useState(0);
             <span>Giwa.</span>
           </h1>
 
-          <p className="hero-title">
-            Multidisciplinary designer <span>|</span> Software Engineer{" "}
-            <span>|</span> Human Anatomist <span>|</span> Sports enthusiast
-          </p>
+         <div className="hero-identities">
+  <span className="identity identity-one">
+    multidisciplinary designer
+  </span>
+
+  <span className="identity identity-two">
+    software engineer
+  </span>
+
+  <span className="identity identity-three">
+    human anatomist
+  </span>
+
+  <span className="identity identity-four">
+    sports enthusiast
+  </span>
+
+  <span className="identity identity-five">
+    creative
+  </span>
+</div>
 
           <div className="hero-image-wrapper">
             <div className="hero-image-shape"></div>
