@@ -296,74 +296,62 @@ Multidisciplinary designer
         />
       </article>
      {(() => {
+      
+  {projects.map((project, index) => {
   const previousIndex =
     (activeProject - 1 + projects.length) % projects.length;
 
   const nextIndex =
     (activeProject + 1) % projects.length;
 
-  const previousProject = projects[previousIndex];
-  const currentProject = projects[activeProject];
-  const nextProject = projects[nextIndex];
+  let position = "carousel-card-hidden";
+
+  if (index === activeProject) {
+    position = "carousel-card-active";
+  } else if (index === previousIndex) {
+    position = "carousel-card-prev";
+  } else if (index === nextIndex) {
+    position = "carousel-card-next";
+  }
 
   return (
-    <>
-      <article
-        className="carousel-card carousel-card-prev"
-        onClick={() => setActiveProject(previousIndex)}
-      >
-        <div
-          className="carousel-card-image"
-          style={{
-            backgroundImage: `url('${previousProject.image}')`,
-          }}
-        />
-      </article>
+    <article
+      key={project.title}
+      className={`carousel-card ${position}`}
+      onClick={() => setActiveProject(index)}
+    >
+      <div
+        className="carousel-card-image"
+        style={{
+          backgroundImage: `url('${project.image}')`,
+        }}
+      />
 
-      <article
-        className="carousel-card carousel-card-active"
-      >
-        <div
-          className="carousel-card-image"
-          style={{
-            backgroundImage: `url('${currentProject.image}')`,
-          }}
-        />
-
-        <div className="carousel-card-title">
-          {currentProject.title}
-        </div>
-
-        <div className="carousel-card-overlay">
-          <div className="carousel-card-details">
-
-            <p className="carousel-card-description">
-              {currentProject.description}
-            </p>
-
-            <div className="carousel-card-meta">
-              <span>{currentProject.category}</span>
-              <span>{currentProject.readTime}</span>
-            </div>
-
+      {index === activeProject && (
+        <>
+          <div className="carousel-card-title">
+            {project.title}
           </div>
-        </div>
-      </article>
 
-      <article
-        className="carousel-card carousel-card-next"
-        onClick={() => setActiveProject(nextIndex)}
-      >
-        <div
-          className="carousel-card-image"
-          style={{
-            backgroundImage: `url('${nextProject.image}')`,
-          }}
-        />
-      </article>
-    </>
+          <div className="carousel-card-overlay">
+            <div className="carousel-card-details">
+
+              <p className="carousel-card-description">
+                {project.description}
+              </p>
+
+              <div className="carousel-card-meta">
+                <span>{project.category}</span>
+                <span>{project.readTime}</span>
+              </div>
+
+            </div>
+          </div>
+        </>
+      )}
+    </article>
   );
-})()}
+})}
     </div>
     <button
       type="button"
