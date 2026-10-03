@@ -295,15 +295,105 @@ section {
   border-radius: 50%;
   position: relative;
   z-index: 2;
+  transition: transform 0.5s cubic-bezier(.2,.8,.2,1);
+}
+.hero-image-wrapper:hover .hero-image {
+  transform: scale(1.025);
+}
+.hero-orbit {
+  position: absolute;
+  inset: -28px;
+  z-index: 1;
+  pointer-events: none;
+  transition: transform 0.25s ease-out;
 }
 
-.hero-image-shape {
+.orbit-ring {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(64, 30, 151, 0.25);
-  border-radius: 48% 52% 58% 42%;
-  transform: rotate(15deg) scale(1.08);
+  inset: 0;
+  border: 2px solid var(--purple);
+  border-radius: 48% 52% 47% 53%;
+}
+
+.orbit-ring-one {
+  transform: rotate(18deg) scaleX(1.08);
+  animation: orbitSpinOne 12s linear infinite;
+}
+
+.orbit-ring-two {
+  inset: 9px -10px -7px 8px;
+  border-width: 1px;
+  border-color: rgba(64, 30, 151, 0.4);
+  border-radius: 53% 47% 56% 44%;
+  transform: rotate(-22deg);
+  animation: orbitSpinTwo 17s linear infinite;
+}
+
+.orbit-dot {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--purple);
+  box-shadow: 0 0 0 5px rgba(64, 30, 151, 0.12);
+}
+
+.orbit-dot-one {
+  top: 7%;
+  right: 12%;
+  animation: orbitDotOne 5s ease-in-out infinite;
+}
+
+.orbit-dot-two {
+  bottom: 10%;
+  left: 8%;
+  width: 9px;
+  height: 9px;
+  background: #ff0800;
+  box-shadow: 0 0 0 5px rgba(255, 8, 0, 0.1);
+  animation: orbitDotTwo 6s ease-in-out infinite;
+}
+
+@keyframes orbitSpinOne {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes orbitSpinTwo {
+  from {
+    rotate: 360deg;
+  }
+
+  to {
+    rotate: 0deg;
+  }
+}
+
+@keyframes orbitDotOne {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-10px, 13px) scale(1.25);
+  }
+}
+
+@keyframes orbitDotTwo {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(12px, -10px) scale(1.2);
+  }
 }
 
 .hero-description {
@@ -1096,7 +1186,9 @@ section {
     height: 250px;
     margin-top: 55px;
   }
-
+.hero-orbit {
+  inset: -22px;
+}
   .hero-description p {
     font-size: 21px;
   }
