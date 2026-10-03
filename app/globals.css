@@ -678,11 +678,31 @@ section {
 .work-section .section-heading,
 .work-section .project-card,
 .work-section .text-link {
-  opacity: 0;
-  transform: translateY(70px);
+  transform: translateY(35px);
   transition:
-    opacity 0.9s ease,
-    transform 1s cubic-bezier(.2,.8,.2,1);
+    transform 0.8s cubic-bezier(.2,.8,.2,1);
+}
+
+.work-section.work-visible .section-heading,
+.work-section.work-visible .project-card,
+.work-section.work-visible .text-link {
+  transform: translateY(0);
+}
+
+.work-section .project-card:nth-child(1) {
+  transition-delay: 0.05s;
+}
+
+.work-section .project-card:nth-child(2) {
+  transition-delay: 0.18s;
+}
+
+.work-section .project-card:nth-child(3) {
+  transition-delay: 0.31s;
+}
+
+.work-section .text-link {
+  transition-delay: 0.45s;
 }
 
 .work-section .section-heading {
