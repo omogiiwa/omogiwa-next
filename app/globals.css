@@ -639,7 +639,28 @@ section {
   line-height: 1.45;
   color: #444;
 }
+.intro-section h2,
+.intro-section .large-text {
+  opacity: 0;
+  transform: translateY(70px);
+  transition:
+    opacity 0.9s ease,
+    transform 1s cubic-bezier(.2,.8,.2,1);
+}
 
+.intro-section h2 {
+  transition-delay: 0.05s;
+}
+
+.intro-section .large-text {
+  transition-delay: 0.2s;
+}
+
+.intro-section.intro-visible h2,
+.intro-section.intro-visible .large-text {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* ========================================
    WORK
