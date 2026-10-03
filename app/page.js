@@ -231,71 +231,74 @@ Multidisciplinary designer
       {/* =========================
           SELECTED WORK
       ========================== */}
-    <section
-  className={`work-section ${workVisible ? "work-visible" : ""}`}
-  id="work"
->
-
-        <div className="section-heading">
-          <div>
-            <p className="section-label purple">02 / SELECTED WORK</p>
-
-            <h2>
-              Things I&apos;ve <span>created.</span>
-            </h2>
+  <section className="work-section" id="work">
+  <div className="section-heading">
+    <div>
+      <p className="section-label purple">02 / SELECTED WORK</p>
+      <h2>
+        Things I&apos;ve <span>created.</span>
+      </h2>
+    </div>
+    <p>
+      A selection of projects across design, branding, development and
+      visual communication.
+    </p>
+  </div>
+  <div className="work-carousel">
+    <button
+      type="button"
+      className="carousel-arrow carousel-arrow-left"
+      aria-label="Previous project"
+    >
+      ←
+    </button>
+    <div className="carousel-stage">
+      <article className="carousel-card carousel-card-prev">
+        <div
+          className="carousel-card-image"
+          style={{ backgroundImage: "url('/project-3.jpg')" }}
+        />
+      </article>
+      <article className="carousel-card carousel-card-active">
+        <div
+          className="carousel-card-image"
+          style={{ backgroundImage: "url('/project-1.jpg')" }}
+        />
+        <div className="carousel-card-title">
+          Project One
+        </div>
+        <div className="carousel-card-overlay">
+          <div className="carousel-card-details">
+            <p className="carousel-card-description">
+              A creative digital project combining design,
+              technology and visual communication.
+            </p>
+            <div className="carousel-card-meta">
+              <span>Web Design / Development</span>
+              <span>5 min read</span>
+            </div>
           </div>
-
-          <p>
-            A selection of projects across design, branding, development and
-            visual communication.
-          </p>
         </div>
-
-
-        <div className="projects-grid">
-
-          <article className="project-card project-large">
-            <div className="project-image">
-              <img src="/IMG_0298.jpg" alt="Project one" />
-            </div>
-
-            <div className="project-info">
-              <p>Web Design / Development</p>
-              <h3>Project One</h3>
-            </div>
-          </article>
-
-
-          <article className="project-card">
-            <div className="project-image">
-              <img src="/IMG_0300.jpg" alt="Project two" />
-            </div>
-
-            <div className="project-info">
-              <p>Brand Identity</p>
-              <h3>Project Two</h3>
-            </div>
-          </article>
-
-
-          <article className="project-card">
-            <div className="project-image">
-              <img src="/IMG_0298.jpg" alt="Project three" />
-            </div>
-
-            <div className="project-info">
-              <p>Graphic Design</p>
-              <h3>Project Three</h3>
-            </div>
-          </article>
-
-        </div>
-
-        <a href="#contact" className="text-link">
-          View all projects →
-        </a>
-
-      </section>
+      </article>
+      <article className="carousel-card carousel-card-next">
+        <div
+          className="carousel-card-image"
+          style={{ backgroundImage: "url('/project-2.jpg')" }}
+        />
+      </article>
+    </div>
+    <button
+      type="button"
+      className="carousel-arrow carousel-arrow-right"
+      aria-label="Next project"
+    >
+      →
+    </button>
+  </div>
+  <a href="#contact" className="text-link">
+    View all projects →
+  </a>
+</section>
 
 
       {/* =========================
