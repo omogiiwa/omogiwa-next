@@ -833,31 +833,61 @@ section {
 
 /* ---------- SIDE CARDS ---------- */
 
+.carousel-card-active {
+  width: min(430px, 42vw);
+  aspect-ratio: 3 / 4;
+
+  left: 50%;
+  top: 50%;
+
+  z-index: 10;
+
+  transform:
+    translate(-50%, -50%)
+    scale(1);
+
+  opacity: 1;
+  filter: brightness(1);
+
+  box-shadow:
+    0 35px 80px rgba(0, 0, 0, 0.22);
+}
+
+
 .carousel-card-prev,
 .carousel-card-next {
   width: min(340px, 32vw);
   aspect-ratio: 3 / 4;
+
+  top: 50%;
+
   z-index: 2;
 
-  opacity: 0.58;
-  filter: brightness(0.72);
-  cursor: pointer;
+  opacity: 0.55;
+  filter: brightness(0.7);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.14);
 }
+
 
 .carousel-card-prev {
   left: 50%;
+
   transform:
-    translate(calc(-50% - 270px), -50%)
-    rotateY(12deg)
-    scale(0.86);
+    translate(calc(-50% - 250px), -50%)
+    rotateY(14deg)
+    scale(0.82);
 }
+
 
 .carousel-card-next {
   left: 50%;
+
   transform:
-    translate(calc(-50% + 270px), -50%)
-    rotateY(-12deg)
-    scale(0.86);
+    translate(calc(-50% + 250px), -50%)
+    rotateY(-14deg)
+    scale(0.82);
 }
 
 /* ---------- ACTIVE CARD CONTENT ---------- */
