@@ -7,6 +7,7 @@ export default function Home() {
   const [orbitTilt, setOrbitTilt] = useState({ x: 0, y: 0 });
   const [scrollY, setScrollY] = useState(0);
   const [introVisible, setIntroVisible] = useState(false);
+  const [workVisible, setWorkVisible] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
   const y = window.scrollY;
@@ -20,7 +21,12 @@ export default function Home() {
     setIntroVisible(rect.top < window.innerHeight * 0.8);
   }
 };
+const work = document.querySelector(".work-section");
 
+if (work) {
+  const rect = work.getBoundingClientRect();
+  setWorkVisible(rect.top < window.innerHeight * 0.8);
+}
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
@@ -207,7 +213,10 @@ Multidisciplinary designer
       {/* =========================
           SELECTED WORK
       ========================== */}
-      <section className="work-section" id="work">
+    <section
+  className={`work-section ${workVisible ? "work-visible" : ""}`}
+  id="work"
+>
 
         <div className="section-heading">
           <div>
