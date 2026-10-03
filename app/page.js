@@ -1,10 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [orbitTilt, setOrbitTilt] = useState({ x: 0, y: 0 });
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 const [activeArticle, setActiveArticle] = useState(0);
  const journalArticles = [
    {
@@ -54,7 +67,16 @@ const [activeArticle, setActiveArticle] = useState(0);
       ========================== */}
       <section className="hero">
 
-        <div className="hero-content">
+      <div
+  className="hero-content"
+  style={{
+    transform: `translateY(${scrollY * -0.08}px) scale(${Math.max(
+      0.94,
+      1 - scrollY * 0.00008
+    )})`,
+    opacity: Math.max(0, 1 - scrollY * 0.0012),
+  }}
+>
 
           <p className="eyebrow">HELLO, I'M</p>
 
