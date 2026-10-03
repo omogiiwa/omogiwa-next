@@ -20,14 +20,6 @@ export default function Home() {
     setIntroVisible(rect.top < window.innerHeight * 0.8);
   }
 };
-useEffect(() => {
-  const intro = document.querySelector(".intro-section");
-
-  if (intro) {
-    const rect = intro.getBoundingClientRect();
-    setIntroVisible(rect.top < window.innerHeight * 0.8);
-  }
-}, []);
 
     window.addEventListener("scroll", handleScroll, { passive: true });
 
