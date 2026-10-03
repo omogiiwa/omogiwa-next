@@ -256,7 +256,7 @@ Multidisciplinary designer
 
           <article className="project-card project-large">
             <div className="project-image">
-              <img src="/project-1.jpg" alt="Project one" />
+              <img src="/IMG_0298.jpg" alt="Project one" />
             </div>
 
             <div className="project-info">
@@ -268,7 +268,7 @@ Multidisciplinary designer
 
           <article className="project-card">
             <div className="project-image">
-              <img src="/project-2.jpg" alt="Project two" />
+              <img src="/IMG_0300.jpg" alt="Project two" />
             </div>
 
             <div className="project-info">
@@ -280,7 +280,7 @@ Multidisciplinary designer
 
           <article className="project-card">
             <div className="project-image">
-              <img src="/project-3.jpg" alt="Project three" />
+              <img src="/IMG_0298.jpg" alt="Project three" />
             </div>
 
             <div className="project-info">
