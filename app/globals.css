@@ -305,7 +305,7 @@ section {
   inset: -28px;
   z-index: 1;
   pointer-events: none;
-  transition: transform 0.25s ease-out;
+  transition: transform 0.35s cubic-bezier(.2,.8,.2,1);
 }
 
 .orbit-ring {
