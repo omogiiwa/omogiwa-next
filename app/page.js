@@ -8,6 +8,41 @@ export default function Home() {
   const [scrollY, setScrollY] = useState(0);
   const [introVisible, setIntroVisible] = useState(false);
   const [workVisible, setWorkVisible] = useState(false);
+  const [activeProject, setActiveProject] = useState(0);
+  const projects = [
+  {
+    title: "Project One",
+    image: "/IMG_0298.jpg",
+    description:
+      "A creative digital project combining design, technology and visual communication.",
+    category: "Web Design / Development",
+    readTime: "5 min read",
+  },
+  {
+    title: "Project Two",
+    image: "/IMG_0288.jpg",
+    description:
+      "A visual identity project focused on creating a distinctive and memorable brand.",
+    category: "Brand Identity",
+    readTime: "4 min read",
+  },
+  {
+    title: "Project Three",
+    image: "/IMG_0295.jpg",
+    description:
+      "A graphic design project exploring visual storytelling, composition and communication.",
+    category: "Graphic Design",
+    readTime: "3 min read",
+  },
+];
+const changeProject = (direction) => {
+  setActiveProject((current) => {
+    return (
+      (current + direction + projects.length) %
+      projects.length
+    );
+  });
+};
   useEffect(() => {
     const handleScroll = () => {
   const y = window.scrollY;
@@ -249,6 +284,7 @@ Multidisciplinary designer
       type="button"
       className="carousel-arrow carousel-arrow-left"
       aria-label="Previous project"
+      onClick={() => changeProject(-1)}
     >
       ←
     </button>
@@ -291,6 +327,7 @@ Multidisciplinary designer
       type="button"
       className="carousel-arrow carousel-arrow-right"
       aria-label="Next project"
+      onClick={() => changeProject(1)}
     >
       →
     </button>
