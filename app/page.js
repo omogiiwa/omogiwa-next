@@ -6,11 +6,28 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [orbitTilt, setOrbitTilt] = useState({ x: 0, y: 0 });
   const [scrollY, setScrollY] = useState(0);
-
+  const [introVisible, setIntroVisible] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
+  const y = window.scrollY;
+
+  setScrollY(y);
+
+  const intro = document.querySelector(".intro-section");
+
+  if (intro) {
+    const rect = intro.getBoundingClientRect();
+    setIntroVisible(rect.top < window.innerHeight * 0.8);
+  }
+};
+useEffect(() => {
+  const intro = document.querySelector(".intro-section");
+
+  if (intro) {
+    const rect = intro.getBoundingClientRect();
+    setIntroVisible(rect.top < window.innerHeight * 0.8);
+  }
+}, []);
 
     window.addEventListener("scroll", handleScroll, { passive: true });
 
@@ -178,7 +195,7 @@ Multidisciplinary designer
       {/* =========================
           INTRO / STATEMENT
       ========================== */}
-      <section className="intro-section">
+      <section className={`intro-section ${introVisible ? "intro-visible" : ""}`}>
 
         <p className="section-label">01 / INTRODUCTION</p>
 
