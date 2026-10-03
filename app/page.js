@@ -21,7 +21,14 @@ export default function Home() {
     setIntroVisible(rect.top < window.innerHeight * 0.8);
   }
 };
-useEffect(() => {
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  useEffect(() => {
   const work = document.querySelector(".work-section");
 
   if (!work) return;
@@ -44,12 +51,6 @@ useEffect(() => {
     observer.disconnect();
   };
 }, []);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 const [activeArticle, setActiveArticle] = useState(0);
  const journalArticles = [
    {
