@@ -176,10 +176,11 @@ section {
   color: #ffffff;
 }
 .hero-identities {
+  color: black;
   position: relative;
   width: 100%;
   max-width: 1050px;
-  height: 150px;
+  height: 200px;
   margin: 10px auto 0;
   display: block;
 }
