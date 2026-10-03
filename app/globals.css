@@ -1419,6 +1419,7 @@ section {
     text-align: center;
   }
 .hero-identities {
+  color: black;
   height: 210px;
   margin-top: 5px;
 }
