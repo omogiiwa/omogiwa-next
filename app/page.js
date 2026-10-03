@@ -295,33 +295,75 @@ Multidisciplinary designer
           style={{ backgroundImage: "url('/project-3.jpg')" }}
         />
       </article>
-      <article className="carousel-card carousel-card-active">
+     {(() => {
+  const previousIndex =
+    (activeProject - 1 + projects.length) % projects.length;
+
+  const nextIndex =
+    (activeProject + 1) % projects.length;
+
+  const previousProject = projects[previousIndex];
+  const currentProject = projects[activeProject];
+  const nextProject = projects[nextIndex];
+
+  return (
+    <>
+      <article
+        className="carousel-card carousel-card-prev"
+        onClick={() => setActiveProject(previousIndex)}
+      >
         <div
           className="carousel-card-image"
-          style={{ backgroundImage: "url('/project-1.jpg')" }}
+          style={{
+            backgroundImage: `url('${previousProject.image}')`,
+          }}
         />
+      </article>
+
+      <article
+        className="carousel-card carousel-card-active"
+      >
+        <div
+          className="carousel-card-image"
+          style={{
+            backgroundImage: `url('${currentProject.image}')`,
+          }}
+        />
+
         <div className="carousel-card-title">
-          Project One
+          {currentProject.title}
         </div>
+
         <div className="carousel-card-overlay">
           <div className="carousel-card-details">
+
             <p className="carousel-card-description">
-              A creative digital project combining design,
-              technology and visual communication.
+              {currentProject.description}
             </p>
+
             <div className="carousel-card-meta">
-              <span>Web Design / Development</span>
-              <span>5 min read</span>
+              <span>{currentProject.category}</span>
+              <span>{currentProject.readTime}</span>
             </div>
+
           </div>
         </div>
       </article>
-      <article className="carousel-card carousel-card-next">
+
+      <article
+        className="carousel-card carousel-card-next"
+        onClick={() => setActiveProject(nextIndex)}
+      >
         <div
           className="carousel-card-image"
-          style={{ backgroundImage: "url('/project-2.jpg')" }}
+          style={{
+            backgroundImage: `url('${nextProject.image}')`,
+          }}
         />
       </article>
+    </>
+  );
+})()}
     </div>
     <button
       type="button"
