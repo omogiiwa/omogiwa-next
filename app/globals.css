@@ -1580,3 +1580,81 @@ section {
   }
 
 }
+
+/* Interactive floaters */
+.identity-designer:hover {
+  border-radius: 42% 58% 55% 45%;
+  transform: translateY(-8px) scale(1.08) rotate(-4deg);
+}
+.identity-engineer:hover {
+  letter-spacing: 0.4px;
+}
+
+.identity-engineer:hover::before {
+  animation: engineerPulse 0.8s ease-in-out infinite;
+}
+
+@keyframes engineerPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.8);
+  }
+}
+
+.identity-anatomist {
+  position: absolute;
+}
+
+.identity-anatomist::after {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border: 1px solid rgba(64, 30, 151, 0.25);
+  border-radius: 50%;
+  left: -9px;
+  top: -9px;
+  opacity: 0;
+  transform: scale(0.5);
+  transition:
+    opacity 0.3s ease,
+    transform 0.45s ease;
+}
+
+.identity-anatomist:hover::after {
+  opacity: 1;
+  transform: scale(1.35);
+}
+
+.identity-sports:hover {
+  transform: translateY(-10px) scale(1.08) rotate(3deg);
+}
+
+.identity-sports:hover::before {
+  animation: sportsBounce 0.55s ease-in-out infinite alternate;
+}
+
+@keyframes sportsBounce {
+  from {
+    transform: translateY(0) scale(1);
+  }
+
+  to {
+    transform: translateY(-5px) scale(1.35);
+  }
+}
+
+.identity-creative:hover {
+  transform: translateY(-9px) scale(1.1) rotate(-6deg);
+  border-radius: 48% 52% 40% 60%;
+}
+
+.identity-creative:hover::before {
+  transform: rotate(180deg) scale(1.5);
+}
+
+
