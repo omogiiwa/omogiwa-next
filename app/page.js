@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [orbitTilt, setOrbitTilt] = useState({ x: 0, y: 0 });
 const [activeArticle, setActiveArticle] = useState(0);
  const journalArticles = [
    {
@@ -84,13 +85,35 @@ const [activeArticle, setActiveArticle] = useState(0);
   </span>
 </div>
 
-          <div className="hero-image-wrapper">
-            <div className="hero-orbit" aria-hidden="true">
-      <span className="orbit-ring orbit-ring-one"></span>
-  <span className="orbit-ring orbit-ring-two"></span>
-  <span className="orbit-dot orbit-dot-one"></span>
-  <span className="orbit-dot orbit-dot-two"></span>
-</div>
+         <div
+  className="hero-image-wrapper"
+  onMouseMove={(event) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+    setOrbitTilt({
+      x: x * 14,
+      y: y * 14,
+    });
+  }}
+  onMouseLeave={() => {
+    setOrbitTilt({ x: 0, y: 0 });
+  }}
+>
+  <div
+    className="hero-orbit"
+    aria-hidden="true"
+    style={{
+      transform: `translate(${orbitTilt.x}px, ${orbitTilt.y}px) rotate(${orbitTilt.x * 0.35}deg)`,
+    }}
+  >
+    <span className="orbit-ring orbit-ring-one"></span>
+    <span className="orbit-ring orbit-ring-two"></span>
+    <span className="orbit-dot orbit-dot-one"></span>
+    <span className="orbit-dot orbit-dot-two"></span>
+  </div>
 
             <img
               src="/profile.png"
