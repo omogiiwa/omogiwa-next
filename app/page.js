@@ -289,70 +289,65 @@ Multidisciplinary designer
       ←
     </button>
     <div className="carousel-stage">
-      <article className="carousel-card carousel-card-prev">
+
+  {projects.map((project, index) => {
+    const previousIndex =
+      (activeProject - 1 + projects.length) % projects.length;
+
+    const nextIndex =
+      (activeProject + 1) % projects.length;
+
+    let position = "carousel-card-hidden";
+
+    if (index === activeProject) {
+      position = "carousel-card-active";
+    } else if (index === previousIndex) {
+      position = "carousel-card-prev";
+    } else if (index === nextIndex) {
+      position = "carousel-card-next";
+    }
+
+    return (
+      <article
+        key={project.title}
+        className={`carousel-card ${position}`}
+        onClick={() => setActiveProject(index)}
+      >
         <div
           className="carousel-card-image"
-          style={{ backgroundImage: "url('/project-3.jpg')" }}
+          style={{
+            backgroundImage: `url('${project.image}')`,
+          }}
         />
-      </article>
-     {(() => {
-      
-  {projects.map((project, index) => {
-  const previousIndex =
-    (activeProject - 1 + projects.length) % projects.length;
 
-  const nextIndex =
-    (activeProject + 1) % projects.length;
-
-  let position = "carousel-card-hidden";
-
-  if (index === activeProject) {
-    position = "carousel-card-active";
-  } else if (index === previousIndex) {
-    position = "carousel-card-prev";
-  } else if (index === nextIndex) {
-    position = "carousel-card-next";
-  }
-
-  return (
-    <article
-      key={project.title}
-      className={`carousel-card ${position}`}
-      onClick={() => setActiveProject(index)}
-    >
-      <div
-        className="carousel-card-image"
-        style={{
-          backgroundImage: `url('${project.image}')`,
-        }}
-      />
-
-      {index === activeProject && (
-        <>
-          <div className="carousel-card-title">
-            {project.title}
-          </div>
-
-          <div className="carousel-card-overlay">
-            <div className="carousel-card-details">
-
-              <p className="carousel-card-description">
-                {project.description}
-              </p>
-
-              <div className="carousel-card-meta">
-                <span>{project.category}</span>
-                <span>{project.readTime}</span>
-              </div>
-
+        {index === activeProject && (
+          <>
+            <div className="carousel-card-title">
+              {project.title}
             </div>
-          </div>
-        </>
-      )}
-    </article>
-  );
-})}
-    </div>
+
+            <div className="carousel-card-overlay">
+              <div className="carousel-card-details">
+
+                <p className="carousel-card-description">
+                  {project.description}
+                </p>
+
+                <div className="carousel-card-meta">
+                  <span>{project.category}</span>
+                  <span>{project.readTime}</span>
+                </div>
+
+              </div>
+            </div>
+          </>
+        )}
+      </article>
+    );
+  })}
+
+</div>
+
     <button
       type="button"
       className="carousel-arrow carousel-arrow-right"
