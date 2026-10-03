@@ -64,25 +64,25 @@ const [activeArticle, setActiveArticle] = useState(0);
           </h1>
 
          <div className="hero-identities">
-  <span className="identity identity-one">
-    multidisciplinary designer
-  </span>
+  <span className="identity identity-one identity-designer">
+Multidisciplinary designer
+</span>
 
-  <span className="identity identity-two">
-    software engineer
-  </span>
+<span className="identity identity-two identity-engineer">
+  Software engineer
+</span>
 
-  <span className="identity identity-three">
-    human anatomist
-  </span>
+<span className="identity identity-three identity-anatomist">
+  Human anatomist
+</span>
 
-  <span className="identity identity-four">
-    sports enthusiast
-  </span>
+<span className="identity identity-four identity-sports">
+  Sports enthusiast
+</span>
 
-  <span className="identity identity-five">
-    creative
-  </span>
+<span className="identity identity-five identity-creative">
+  Creative
+</span>
 </div>
 
          <div
