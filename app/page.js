@@ -21,12 +21,29 @@ export default function Home() {
     setIntroVisible(rect.top < window.innerHeight * 0.8);
   }
 };
-const work = document.querySelector(".work-section");
+useEffect(() => {
+  const work = document.querySelector(".work-section");
 
-if (work) {
-  const rect = work.getBoundingClientRect();
-  setWorkVisible(rect.top < window.innerHeight * 0.8);
-}
+  if (!work) return;
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setWorkVisible(true);
+        observer.disconnect();
+      }
+    },
+    {
+      threshold: 0.05,
+    }
+  );
+
+  observer.observe(work);
+
+  return () => {
+    observer.disconnect();
+  };
+}, []);
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
