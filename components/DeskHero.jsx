@@ -1052,73 +1052,7 @@ export default function DeskHero() {
 
         </g>
 
-        {/* KEYBOARD */}
-
-        <g
-          transform="translate(430 430)"
-          filter="url(#s)"
-          className="desk-item"
-        >
-
-          <rect
-            width="340"
-            height="84"
-            rx="9"
-            fill="#d9dae0"
-          />
-
-          <rect
-            x="8"
-            y="8"
-            width="324"
-            height="68"
-            fill="url(#k)"
-          />
-
-        </g>
-
-        {/* MOUSE */}
-
-        <rect
-          x="790"
-          y="415"
-          width="110"
-          height="115"
-          rx="12"
-          fill="#23222b"
-          filter="url(#s)"
-        />
-
-        <g
-          filter="url(#s)"
-          className="desk-item"
-        >
-
-          <rect
-            x="822"
-            y="440"
-            width="46"
-            height="72"
-            rx="22"
-            fill="#e8e8ee"
-          />
-
-          <path
-            d="M845 440V470M822 470H868"
-            stroke="#a9aab4"
-            fill="none"
-          />
-
-          <rect
-            x="842"
-            y="450"
-            width="6"
-            height="14"
-            rx="3"
-            fill="#401e97"
-          />
-
-        </g>
+      
 
         {/* PENCIL */}
 
