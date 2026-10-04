@@ -800,6 +800,7 @@ export default function DeskHero() {
     width="170"
     height="120"
     preserveAspectRatio="xMidYMid meet"
+    className="desk-logo-white"
   />
 </g>
         {/* LAPTOP */}
@@ -1220,11 +1221,11 @@ export default function DeskHero() {
     filter="url(#s)"
   >
     <rect
-      x="525"
-      y="475"
-      width="150"
-      height="44"
-      rx="22"
+  x="500"
+  y="470"
+  width="200"
+  height="52"
+  rx="26"
       fill="#401e97"
       stroke="#d9b36a"
       strokeWidth="2"
@@ -1235,7 +1236,7 @@ export default function DeskHero() {
       x="600"
       y="503"
       textAnchor="middle"
-      fontSize="15"
+      fontSize="16"
       fontWeight="600"
       fill="#fff"
     >
@@ -1255,11 +1256,11 @@ export default function DeskHero() {
     filter="url(#s)"
   >
     <rect
-      x="525"
-      y="530"
-      width="150"
-      height="44"
-      rx="22"
+  x="500"
+  y="535"
+  width="200"
+  height="52"
+  rx="26"
       fill="#0d0d0f"
       stroke="#d9b36a"
       strokeWidth="2"
@@ -1268,9 +1269,9 @@ export default function DeskHero() {
     <text
       className="desk-ui"
       x="600"
-      y="558"
+      y="568"
       textAnchor="middle"
-      fontSize="15"
+      fontSize="16"
       fontWeight="600"
       fill="#fff"
     >
