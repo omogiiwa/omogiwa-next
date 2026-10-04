@@ -176,11 +176,13 @@ export default function DeskHero() {
 
         {/* FLOOR / BACKGROUND */}
 
-        <rect
-          width="1200"
-          height="800"
-          fill="url(#fl)"
-        />
+      {/* FLOOR / BACKGROUND */}
+
+<rect
+  width="1200"
+  height="800"
+  fill="#ffffff"
+/>
 
         {/* DESK SHADOW */}
 
