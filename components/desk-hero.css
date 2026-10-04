@@ -70,6 +70,6 @@
   }
 }
 
-.desk-logo-white {
-  filter: brightness(0) invert(1);
+.desk-logo-white img {
+  filter: grayscale(1) brightness(0) invert(1);
 }
