@@ -6,6 +6,7 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [orbitTilt, setOrbitTilt] = useState({ x: 0, y: 0 });
   const [scrollY, setScrollY] = useState(0);
+  const [activeService, setActiveService] = useState(0);
   const [introVisible, setIntroVisible] = useState(false);
   const [workVisible, setWorkVisible] = useState(false);
   const [activeProject, setActiveProject] = useState(0);
@@ -381,7 +382,13 @@ Multidisciplinary designer
 
      <div className="services-grid">
 
-  <article className="service-card">
+  <article
+  className={`service-card ${
+    activeService === 0 ? "service-card-active" : ""
+  }`}
+  onMouseEnter={() => setActiveService(0)}
+  onClick={() => setActiveService(0)}
+>
     <span className="service-number">01</span>
 
     <h3>Brand &amp; Visual Design</h3>
@@ -469,7 +476,13 @@ Multidisciplinary designer
   </article>
 
 
-  <article className="service-card">
+  <article
+  className={`service-card ${
+    activeService === 1 ? "service-card-active" : ""
+  }`}
+  onMouseEnter={() => setActiveService(1)}
+  onClick={() => setActiveService(1)}
+>
     <span className="service-number">02</span>
 
     <h3>Web &amp; Digital Design</h3>
@@ -557,7 +570,13 @@ Multidisciplinary designer
   </article>
 
 
-  <article className="service-card">
+  <article
+  className={`service-card ${
+    activeService === 2 ? "service-card-active" : ""
+  }`}
+  onMouseEnter={() => setActiveService(2)}
+  onClick={() => setActiveService(2)}
+>
     <span className="service-number">03</span>
 
     <h3>Digital Strategy</h3>
