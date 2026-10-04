@@ -1,0 +1,71 @@
+.desk-hero-canvas {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.desk-hero-canvas svg {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  display: block;
+}
+
+.desk-hand {
+  font-family: Caveat, "Segoe Print", "Bradley Hand", cursive;
+  font-weight: 600;
+}
+
+.desk-ui {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.desk-hero-canvas a {
+  outline: none;
+  cursor: pointer;
+}
+
+.desk-hero-canvas .lift {
+  transform-origin: center;
+  transition:
+    transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.22s ease;
+}
+
+.desk-hero-canvas a:hover .lift,
+.desk-hero-canvas a:focus-visible .lift {
+  transform: translateY(-5px);
+  filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.18));
+}
+
+.desk-hero-canvas a:active .lift {
+  transform: translateY(-1px) scale(0.985);
+}
+
+.desk-hero-canvas .desk-item {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.35s ease;
+}
+
+.desk-hero-canvas .desk-item:hover {
+  filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.18));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .desk-hero-canvas .lift,
+  .desk-hero-canvas .desk-item {
+    transition: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .desk-hero-canvas {
+    width: 115%;
+    margin-left: -7.5%;
+  }
+}
