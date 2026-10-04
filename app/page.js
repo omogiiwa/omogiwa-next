@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
+import DeskHero from "../components/DeskHero";
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
@@ -130,34 +130,23 @@ const [activeArticle, setActiveArticle] = useState(0);
     
 
 
-      {/* =========================
-          HERO the desk
-      ========================== */}
-     
+      
+
 {/* =========================
- HERO / THE DESK
- ========================== */}
+THE DESK HERO
+========================== */}
 
 <section className="desk-hero">
-
   <div className="desk-hero-intro">
     <span>WELCOME TO MY DESK</span>
+
     <p>
       A little look at the things I design,
       build, experiment with and obsess over.
     </p>
   </div>
 
-  <div className="desk-stage">
-
-    <iframe
-      src="/desk.html"
-      title="OmoGiwa's creative desk"
-      className="desk-frame"
-    />
-
-  </div>
-
+  <DeskHero />
 </section>
 
       {/* =========================
