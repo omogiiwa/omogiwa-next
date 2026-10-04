@@ -131,10 +131,34 @@ const [activeArticle, setActiveArticle] = useState(0);
 
 
       {/* =========================
-          HERO
+          HERO the desk
       ========================== */}
      
+{/* =========================
+ HERO / THE DESK
+ ========================== */}
 
+<section className="desk-hero">
+
+  <div className="desk-hero-intro">
+    <span>WELCOME TO MY DESK</span>
+    <p>
+      A little look at the things I design,
+      build, experiment with and obsess over.
+    </p>
+  </div>
+
+  <div className="desk-stage">
+
+    <iframe
+      src="/desk.html"
+      title="OmoGiwa's creative desk"
+      className="desk-frame"
+    />
+
+  </div>
+
+</section>
 
       {/* =========================
           INTRO / STATEMENT
