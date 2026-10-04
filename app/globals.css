@@ -2160,3 +2160,76 @@ section {
     transform: translateY(0);
   }
 }
+
+/* =========================================
+   SERVICE VISUAL PREVIEW
+   ========================================= */
+
+.services-preview {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  width: 360px;
+  height: 360px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0.08;
+}
+
+.services-preview-orbit {
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--purple);
+  border-radius: 48% 52% 45% 55%;
+  animation: serviceOrbit 14s linear infinite;
+}
+
+.services-preview-orbit::before,
+.services-preview-orbit::after {
+  content: "";
+  position: absolute;
+  border: 1px solid var(--purple);
+  border-radius: 50%;
+}
+
+.services-preview-orbit::before {
+  inset: 35px;
+}
+
+.services-preview-orbit::after {
+  inset: 75px;
+  border-style: dashed;
+}
+
+.services-preview-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 145px;
+  height: 145px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--purple);
+  color: white;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 20px 60px rgba(64, 30, 151, 0.25);
+}
+
+.services-preview-core span {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+@keyframes serviceOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
