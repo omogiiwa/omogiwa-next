@@ -403,8 +403,7 @@ Multidisciplinary designer
     <h3>Brand &amp; Visual Design</h3>
 
     <p className="service-card-intro">
-      Build a distinctive visual presence that makes your business
-      recognizable, credible and memorable.
+      Build a distinctive visual presence that makes your business recognizable, credible and memorable.
     </p>
 
     <div className="service-list">
@@ -412,8 +411,7 @@ Multidisciplinary designer
       <div className="service-item">
         <h4>Brand Identity</h4>
         <p>
-          Create a consistent identity that helps people recognize and
-          trust your brand.
+          Create a consistent identity that helps people recognize and trust your brand.
         </p>
         <a href="#work">See examples →</a>
       </div>
@@ -421,8 +419,7 @@ Multidisciplinary designer
       <div className="service-item">
         <h4>Art Direction</h4>
         <p>
-          Give your brand a clear visual direction across campaigns,
-          platforms and experiences.
+          Give your brand a clear visual direction across campaigns, platforms and experiences.
         </p>
         <a href="#work">See examples →</a>
       </div>
@@ -430,8 +427,7 @@ Multidisciplinary designer
       <div className="service-item">
         <h4>Graphic Design</h4>
         <p>
-          Communicate ideas clearly through visuals designed to capture
-          attention and drive engagement.
+          Communicate ideas clearly through visuals designed to capture attention and drive engagement.
         </p>
         <a href="#work">See examples →</a>
       </div>
@@ -439,8 +435,7 @@ Multidisciplinary designer
       <div className="service-item">
         <h4>Illustration</h4>
         <p>
-          Add distinctive visual storytelling that helps your brand stand
-          apart.
+          Add distinctive visual storytelling that helps your brand stand apart.
         </p>
         <a href="#work">See examples →</a>
       </div>
@@ -448,8 +443,7 @@ Multidisciplinary designer
       <div className="service-item">
         <h4>Visual Systems</h4>
         <p>
-          Create reusable visual rules that keep your brand consistent
-          wherever it appears.
+          Create reusable visual rules that keep your brand consistent wherever it appears.
         </p>
         <a href="#work">See examples →</a>
       </div>
@@ -457,8 +451,7 @@ Multidisciplinary designer
       <div className="service-item">
         <h4>Campaign &amp; Marketing Design</h4>
         <p>
-          Turn campaigns into attention-grabbing visuals that support
-          your marketing goals.
+          Turn campaigns into attention-grabbing visuals that support your marketing goals.
         </p>
         <a href="#work">See examples →</a>
       </div>
@@ -466,8 +459,7 @@ Multidisciplinary designer
       <div className="service-item">
         <h4>Presentation Design</h4>
         <p>
-          Turn information into polished presentations that communicate
-          ideas and opportunities effectively.
+          Turn information into polished presentations that communicate ideas and opportunities effectively.
         </p>
         <a href="#work">See examples →</a>
       </div>
@@ -475,8 +467,7 @@ Multidisciplinary designer
       <div className="service-item">
         <h4>Social Media Design</h4>
         <p>
-          Create scroll-stopping visuals that make your online presence
-          more consistent and recognizable.
+          Create scroll-stopping visuals that make your online presence more consistent and recognizable.
         </p>
         <a href="#work">See examples →</a>
       </div>
@@ -497,8 +488,7 @@ Multidisciplinary designer
     <h3>Web &amp; Digital Design</h3>
 
     <p className="service-card-intro">
-      Design digital experiences that look great, feel intuitive and
-      help businesses turn attention into action.
+      Design digital experiences that look great, feel intuitive and help businesses turn attention into action.
     </p>
 
     <div className="service-list">
@@ -506,8 +496,7 @@ Multidisciplinary designer
       <div className="service-item">
         <h4>Web Design</h4>
         <p>
-          Create websites that communicate your value clearly and make
-          a strong first impression.
+          Create websites that communicate your value clearly and make a strong first impression.
         </p>
         <a href="#work">See examples →</a>
       </div>
@@ -515,8 +504,7 @@ Multidisciplinary designer
       <div className="service-item">
         <h4>UI/UX Design</h4>
         <p>
-          Make digital products easier and more enjoyable for people
-          to understand and use.
+          Make digital products easier and more enjoyable for people to understand and use.
         </p>
         <a href="#work">See examples →</a>
       </div>
@@ -524,8 +512,7 @@ Multidisciplinary designer
       <div className="service-item">
         <h4>Interaction Design</h4>
         <p>
-          Add purposeful interactions that make digital experiences
-          feel engaging and intuitive.
+          Add purposeful interactions that make digital experiences feel engaging and intuitive.
         </p>
         <a href="#work">See examples →</a>
       </div>
@@ -533,8 +520,7 @@ Multidisciplinary designer
       <div className="service-item">
         <h4>Design Systems</h4>
         <p>
-          Build scalable visual systems that keep digital products
-          consistent as they grow.
+          Build scalable visual systems that keep digital products consistent as they grow.
         </p>
         <a href="#work">See examples →</a>
       </div>
@@ -542,8 +528,7 @@ Multidisciplinary designer
       <div className="service-item">
         <h4>Creative Development</h4>
         <p>
-          Turn creative concepts into functional digital experiences
-          that actually work.
+          Turn creative concepts into functional digital experiences that actually work.
         </p>
         <a href="#work">See examples →</a>
       </div>
@@ -551,8 +536,7 @@ Multidisciplinary designer
       <div className="service-item">
         <h4>Interactive Experiences</h4>
         <p>
-          Create memorable digital experiences that encourage people
-          to explore and engage.
+          Create memorable digital experiences that encourage people to explore and engage.
         </p>
         <a href="#work">See examples →</a>
       </div>
@@ -560,8 +544,7 @@ Multidisciplinary designer
       <div className="service-item">
         <h4>Landing Pages</h4>
         <p>
-          Design focused pages that communicate an offer quickly and
-          guide visitors toward action.
+          Design focused pages that communicate an offer quickly and guide visitors toward action.
         </p>
         <a href="#work">See examples →</a>
       </div>
@@ -569,8 +552,7 @@ Multidisciplinary designer
       <div className="service-item">
         <h4>Digital Products &amp; Tools</h4>
         <p>
-          Design useful digital tools that solve problems and create
-          practical value for users.
+          Design useful digital tools that solve problems and create practical value for users.
         </p>
         <a href="#work">See examples →</a>
       </div>
@@ -591,8 +573,7 @@ Multidisciplinary designer
     <h3>Digital Strategy</h3>
 
     <p className="service-card-intro">
-      Connect your brand, content and digital presence with a clearer
-      strategy built around your goals and audience.
+      Connect your brand, content and digital presence with a clearer strategy built around your goals and audience.
     </p>
 
     <div className="service-list">
@@ -600,8 +581,7 @@ Multidisciplinary designer
       <div className="service-item">
         <h4>Digital Presence Strategy</h4>
         <p>
-          Build a clearer digital presence so your business knows what
-          to communicate and where.
+          Build a clearer digital presence so your business knows what to communicate and where.
         </p>
         <a href="#work">See examples →</a>
       </div>
@@ -609,8 +589,7 @@ Multidisciplinary designer
       <div className="service-item">
         <h4>Brand &amp; Digital Positioning</h4>
         <p>
-          Clarify how your brand should be perceived and differentiated
-          in the digital space.
+          Clarify how your brand should be perceived and differentiated in the digital space.
         </p>
         <a href="#work">See examples →</a>
       </div>
@@ -618,8 +597,7 @@ Multidisciplinary designer
       <div className="service-item">
         <h4>Content Strategy</h4>
         <p>
-          Create a clearer content direction that keeps your audience
-          interested and your communication purposeful.
+          Create a clearer content direction that keeps your audience interested and your communication purposeful.
         </p>
         <a href="#work">See examples →</a>
       </div>
@@ -627,8 +605,7 @@ Multidisciplinary designer
       <div className="service-item">
         <h4>SEO</h4>
         <p>
-          Improve how your digital presence is discovered by people
-          actively searching for what you offer.
+          Improve how your digital presence is discovered by people actively searching for what you offer.
         </p>
         <a href="#work">See examples →</a>
       </div>
@@ -636,8 +613,7 @@ Multidisciplinary designer
       <div className="service-item">
         <h4>User Experience Strategy</h4>
         <p>
-          Identify how people interact with your digital experience
-          and remove unnecessary friction.
+          Identify how people interact with your digital experience and remove unnecessary friction.
         </p>
         <a href="#work">See examples →</a>
       </div>
@@ -645,8 +621,7 @@ Multidisciplinary designer
       <div className="service-item">
         <h4>Digital Product Strategy</h4>
         <p>
-          Connect business goals and user needs before investing time
-          into building a digital product.
+          Connect business goals and user needs before investing time into building a digital product.
         </p>
         <a href="#work">See examples →</a>
       </div>
@@ -654,8 +629,7 @@ Multidisciplinary designer
       <div className="service-item">
         <h4>Creative Direction</h4>
         <p>
-          Keep different creative outputs aligned around one clear
-          idea, message and visual direction.
+          Keep different creative outputs aligned around one clear idea, message and visual direction.
         </p>
         <a href="#work">See examples →</a>
       </div>
@@ -663,8 +637,7 @@ Multidisciplinary designer
       <div className="service-item">
         <h4>Audience &amp; Communication Strategy</h4>
         <p>
-          Understand who you are speaking to and shape your message
-          around what matters to them.
+          Understand who you are speaking to and shape your message around what matters to them.
         </p>
         <a href="#work">See examples →</a>
       </div>
