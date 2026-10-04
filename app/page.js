@@ -380,7 +380,7 @@ Multidisciplinary designer
         </div>
 
 
-     <div className="services-grid">
+     <div className={`services-grid services-active-${activeService}`>
 
   <article
   className={`service-card ${
