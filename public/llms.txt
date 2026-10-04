@@ -1,0 +1,81 @@
+# OmoGiwa
+
+> OmoGiwa is the personal portfolio and creative technology website of Omogbolahan Giwa, a multidisciplinary designer and software engineer.
+
+## About Omogbolahan Giwa
+
+Omogbolahan Giwa is a multidisciplinary designer and software engineer with a background in Human Anatomy.
+
+He studied Human Anatomy at Gregory University Uturu and earned a bachelor's degree (BSc).
+
+OmoGiwa represents his approach to combining design, software, experimentation, science, and creative problem-solving rather than being confined to a single discipline.
+
+The website serves as both a personal portfolio and an evolving collection of digital experiments, software tools, creative work, and ideas.
+
+[About OmoGiwa](https://omogiwa.com/about)
+
+## Website
+
+The OmoGiwa website contains information about Omogbolahan Giwa, his work, creative projects, software experiments, and tools.
+
+[Home](https://omogiwa.com/)
+
+[About](https://omogiwa.com/about)
+
+[Work](https://omogiwa.com/work)
+
+[Tools](https://omogiwa.com/tools)
+
+[Contact](https://omogiwa.com/contact)
+
+## Tools
+
+OmoGiwa creates interactive browser-based tools and experiments as part of the OG Tools collection.
+
+### Frame Picker
+
+Frame Picker is a browser-based tool that allows users to upload a video, inspect its frames, select frames, and export selected frames. It is designed as an accessible web-based alternative to requiring dedicated video-editing software for simple frame extraction tasks.
+
+[Frame Picker](https://omogiwa.com/tools/frame-picker)
+
+## Design & Creative Work
+
+OmoGiwa's work spans digital design, interface design, visual experimentation, creative technology, and software development.
+
+The website itself is an ongoing demonstration of this multidisciplinary approach, combining custom visual design, interactive interfaces, motion, typography, and software.
+
+[Work](https://omogiwa.com/work)
+
+## Technology
+
+The OmoGiwa website is built with Next.js and React using JavaScript/JSX.
+
+The site uses the Next.js App Router and CSS for styling. It is deployed using Vercel.
+
+The project also includes browser-based JavaScript functionality and uses JSZip for ZIP-file generation in tools such as Frame Picker.
+
+## Design Language
+
+The OmoGiwa visual identity combines a predominantly clean, white interface with dark typography, purple accents, subtle red accents, gradients, motion, and interactive visual elements.
+
+The site uses the Outfit typeface.
+
+The design philosophy favors expressive interaction and personality while maintaining a clean and functional interface.
+
+## Contact
+
+For professional, creative, software, design, or collaboration inquiries:
+
+[Contact OmoGiwa](https://omogiwa.com/contact)
+
+## Social
+
+X / Twitter: https://x.com/omo_giiwa
+
+LinkedIn: https://www.linkedin.com/in/omogbolahan-giwa-a9b25a345?trk=contact-info
+
+## Source of Truth
+
+The OmoGiwa website and its individual pages are the primary sources for current information about Omogbolahan Giwa, his work, projects, tools, and contact information.
+
+Information in this file should be treated as a concise orientation to the website rather than a replacement for the content of the linked pages.
