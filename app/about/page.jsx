@@ -29,7 +29,7 @@ export const metadata = {
     type: "profile",
     images: [
       {
-        url: "https://omogiwa.com/favicon.png",
+        url: "https://omogiwa.com/logo.svg",
         width: 400,
         height: 400,
         alt: "Omogbolahan Giwa logo",
