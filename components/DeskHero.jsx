@@ -787,7 +787,21 @@ export default function DeskHero() {
           </text>
 
         </g>
+{/* CENTRE BRAND MARK */}
 
+<g
+  transform="translate(515 350)"
+  className="desk-item"
+>
+  <image
+    href="/omogiwaanimated1.svg"
+    x="0"
+    y="0"
+    width="170"
+    height="120"
+    preserveAspectRatio="xMidYMid meet"
+  />
+</g>
         {/* LAPTOP */}
 
         <g
@@ -1197,81 +1211,73 @@ export default function DeskHero() {
 
         {/* MAIN WORK BUTTON */}
 
-        <a
-          href="/work"
-          aria-label="View OmoGiwa's work"
-        >
+<a
+  href="/work"
+  aria-label="View OmoGiwa's work"
+>
+  <g
+    className="lift"
+    filter="url(#s)"
+  >
+    <rect
+      x="525"
+      y="475"
+      width="150"
+      height="44"
+      rx="22"
+      fill="#401e97"
+      stroke="#d9b36a"
+      strokeWidth="2"
+    />
 
-          <g
-            className="lift"
-            filter="url(#s)"
-          >
-
-            <rect
-              x="110"
-              y="655"
-              width="200"
-              height="54"
-              rx="27"
-              fill="#401e97"
-              stroke="#d9b36a"
-              strokeWidth="2"
-            />
-
-            <text
-              className="desk-ui"
-              x="210"
-              y="688"
-              textAnchor="middle"
-              fontSize="18"
-              fontWeight="600"
-              fill="#fff"
-            >
-              View my work
-            </text>
-
-          </g>
-
-        </a>
+    <text
+      className="desk-ui"
+      x="600"
+      y="503"
+      textAnchor="middle"
+      fontSize="15"
+      fontWeight="600"
+      fill="#fff"
+    >
+      View my work
+    </text>
+  </g>
+</a>
 
         {/* CONTACT BUTTON */}
 
-        <a
-          href="/contact"
-          aria-label="Work with OmoGiwa"
-        >
+<a
+  href="/contact"
+  aria-label="Work with OmoGiwa"
+>
+  <g
+    className="lift"
+    filter="url(#s)"
+  >
+    <rect
+      x="525"
+      y="530"
+      width="150"
+      height="44"
+      rx="22"
+      fill="#0d0d0f"
+      stroke="#d9b36a"
+      strokeWidth="2"
+    />
 
-          <g
-            className="lift"
-            filter="url(#s)"
-          >
-
-            <rect
-              x="890"
-              y="655"
-              width="200"
-              height="54"
-              rx="27"
-              fill="#0d0d0f"
-              stroke="#d9b36a"
-              strokeWidth="2"
-            />
-
-            <text
-              className="desk-ui"
-              x="990"
-              y="688"
-              textAnchor="middle"
-              fontSize="18"
-              fontWeight="600"
-              fill="#fff"
-            >
-              Let's work together
-            </text>
-
-          </g>
-
-        </a>
+    <text
+      className="desk-ui"
+      x="600"
+      y="558"
+      textAnchor="middle"
+      fontSize="15"
+      fontWeight="600"
+      fill="#fff"
+    >
+      Let's work together
+    </text>
+  </g>
+</a>
 
       </svg>
     </div>
