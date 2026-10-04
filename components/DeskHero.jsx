@@ -121,7 +121,21 @@ export default function DeskHero() {
               floodOpacity=".4"
             />
           </filter>
-
+          <filter
+  id="chairShadow"
+  x="-20%"
+  y="-20%"
+  width="140%"
+  height="150%"
+>
+  <feDropShadow
+    dx="3"
+    dy="6"
+    stdDeviation="5"
+    floodColor="#000"
+    floodOpacity=".28"
+  />
+</filter>
           <filter id="b">
             <feGaussianBlur stdDeviation="10" />
           </filter>
@@ -193,7 +207,18 @@ export default function DeskHero() {
           opacity=".5"
           filter="url(#b)"
         />
+{/* CHAIR */}
 
+<g filter="url(#chairShadow)">
+  <image
+    href="/chair.svg"
+    x="455"
+    y="620"
+    width="290"
+    height="230"
+    preserveAspectRatio="xMidYMid meet"
+  />
+</g>
         {/* WOODEN DESK */}
 
         <use
@@ -224,16 +249,7 @@ export default function DeskHero() {
           strokeWidth="1.5"
           transform="translate(600 390) scale(.965) translate(-600 -390)"
         />
-{/* CHAIR */}
 
-<image
-  href="/chair.svg"
-  x="455"
-  y="620"
-  width="290"
-  height="230"
-  preserveAspectRatio="xMidYMid meet"
-/>
         {/* COFFEE RING */}
 
         <circle
