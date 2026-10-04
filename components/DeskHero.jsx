@@ -228,9 +228,9 @@ export default function DeskHero() {
 
 <image
   href="/chair.svg"
-  x="850"
-  y="510"
-  width="260"
+  x="455"
+  y="620"
+  width="290"
   height="230"
   preserveAspectRatio="xMidYMid meet"
 />
