@@ -2145,3 +2145,18 @@ section {
 .service-item a:hover {
   text-decoration: underline;
 }
+.service-card-active .service-list {
+  animation: serviceListReveal 0.55s cubic-bezier(.2,.8,.2,1) both;
+}
+
+@keyframes serviceListReveal {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
