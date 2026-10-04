@@ -993,24 +993,23 @@ export default function DeskHero() {
             fill="#fff"
           />
 
-          <circle
-            cx="157"
-            cy="64"
-            r="22"
-            fill="#111"
-          />
+          <rect
+  x="135"
+  y="42"
+  width="44"
+  height="44"
+  rx="4"
+  fill="#fff"
+/>
 
-          <text
-            className="desk-ui"
-            x="157"
-            y="73"
-            textAnchor="middle"
-            fontSize="26"
-            fontWeight="800"
-            fill="#401e97"
-          >
-            O
-          </text>
+<image
+  href="/logo.svg"
+  x="140"
+  y="47"
+  width="34"
+  height="34"
+  preserveAspectRatio="xMidYMid meet"
+/>
 
           <text
             className="desk-hand"
