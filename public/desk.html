@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Desk</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ece8f3;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121016}}
+:root[data-theme="dark"]{--bg:#121016}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+html,body{margin:0;height:100%}
+body{background:var(--bg);display:flex;align-items:center;justify-content:center}
+svg{width:100%;max-width:1200px;height:auto;display:block}
+.h{font-family:Caveat,'Segoe Print','Bradley Hand',cursive;font-weight:600}
+.u{font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+a{outline:none;cursor:pointer}
+.lift{transition:transform .2s ease}
+a:hover .lift,a:focus-visible .lift{transform:translateY(-5px)}
+a:focus-visible .lift{outline:2px solid #fff}
+@media(prefers-reduced-motion:reduce){.lift{transition:none}}
+</style></head><body>
+<svg viewBox="0 0 1200 800" role="img" aria-label="Top-down view of a designer's wooden desk">
+<defs>
+<path id="dp" d="M100 40H1100Q1140 40 1140 80V700Q1140 740 1100 740H870C800 740 800 590 600 590C400 590 400 740 330 740H100Q60 740 60 700V80Q60 40 100 40Z"/>
+<clipPath id="dc"><use href="#dp"/></clipPath>
+<linearGradient id="w" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a06f3d"/><stop offset="1" stop-color="#6e4624"/></linearGradient>
+<linearGradient id="fl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#25212f"/><stop offset="1" stop-color="#15121b"/></linearGradient>
+<filter id="g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".006 .2" numOctaves="3" seed="7"/><feColorMatrix values="0 0 0 0 .22 0 0 0 0 .11 0 0 0 0 .04 0 0 0 1.6 -.6"/></filter>
+<filter id="s" x="-20%" y="-20%" width="150%" height="150%"><feDropShadow dx="3" dy="5" stdDeviation="3.5" flood-color="#000" flood-opacity=".4"/></filter>
+<filter id="b"><feGaussianBlur stdDeviation="10"/></filter>
+<pattern id="k" width="22" height="18" patternUnits="userSpaceOnUse"><rect x="1.5" y="1.5" width="19" height="15" rx="3" fill="#2d2d35"/></pattern>
+<g id="pad"><rect width="150" height="172" rx="5" fill="#f8f4e9"/><rect width="150" height="24" rx="5" fill="#2b2b36"/><g fill="#f8f4e9"><circle cx="25" cy="12" r="4"/><circle cx="55" cy="12" r="4"/><circle cx="85" cy="12" r="4"/><circle cx="115" cy="12" r="4"/></g><path d="M12 64H138M12 88H138M12 112H138M12 136H138M12 160H138" stroke="#aebfe0"/></g>
+</defs>
+
+<rect width="1200" height="800" fill="url(#fl)"/>
+<use href="#dp" transform="translate(8 14)" fill="#000" opacity=".5" filter="url(#b)"/>
+<use href="#dp" fill="url(#w)"/>
+<rect width="1200" height="800" filter="url(#g)" opacity=".55" clip-path="url(#dc)"/>
+<use href="#dp" fill="none" stroke="#3f2711" stroke-width="5"/>
+<use href="#dp" fill="none" stroke="#d9b36a" stroke-opacity=".55" stroke-width="1.5" transform="translate(600 390) scale(.965) translate(-600 -390)"/>
+
+<!-- coffee ring + mug -->
+<circle cx="975" cy="520" r="27" fill="none" stroke="#4a2a12" stroke-opacity=".35" stroke-width="3"/>
+<g transform="translate(1010 590)" filter="url(#s)"><circle r="31" fill="#f4f1ea"/><rect x="26" y="-9" width="20" height="18" rx="8" fill="none" stroke="#f4f1ea" stroke-width="6"/><circle r="23" fill="#3b2314"/><path d="M-14-10A18 18 0 0 1 8-17" stroke="#6b4428" stroke-width="3" fill="none" stroke-linecap="round"/></g>
+
+<!-- books -->
+<g transform="translate(88 92) rotate(-6)" filter="url(#s)"><rect width="160" height="210" rx="3" fill="#2f5d62"/><rect width="12" height="210" fill="#1f4247"/><rect x="30" y="26" width="100" height="6" fill="#cfe3e0" opacity=".6"/></g>
+<g transform="translate(98 104) rotate(2)" filter="url(#s)"><rect width="150" height="200" rx="3" fill="#b5483a"/><rect width="12" height="200" fill="#8a3329"/><rect x="30" y="170" width="90" height="5" fill="#f3d5cf" opacity=".6"/></g>
+<g transform="translate(110 120) rotate(-3)" filter="url(#s)"><rect width="135" height="185" rx="3" fill="#f0e6d2"/><rect width="12" height="185" fill="#d6c8a8"/><rect x="12" y="62" width="123" height="34" fill="#401e97"/><text x="76" y="86" text-anchor="middle" font-family="Georgia,serif" font-size="20" font-weight="700" fill="#fff">GRIDS</text><text x="76" y="130" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#6a5d44">&amp; layout</text></g>
+
+<!-- notepads (edit the href on each link) -->
+<a href="#projects" aria-label="Projects notepad"><g transform="translate(105 335) rotate(-5)"><g class="lift" filter="url(#s)"><use href="#pad"/><text class="h" x="14" y="56" font-size="28" fill="#2a3a8a">Projects</text><path d="M14 62q40 6 80 0" stroke="#2a3a8a" fill="none"/><text class="h" x="14" y="84" font-size="19" fill="#3a4a9a">case studies</text><text class="h" x="14" y="108" font-size="19" fill="#3a4a9a">UI kits</text><text class="h" x="14" y="132" font-size="19" fill="#3a4a9a">open source</text></g></g></a>
+<a href="#about" aria-label="About notepad"><g transform="translate(890 80) rotate(4)"><g class="lift" filter="url(#s)"><use href="#pad"/><text class="h" x="14" y="56" font-size="28" fill="#8a2a4a">About me</text><path d="M14 62q40 6 80 0" stroke="#8a2a4a" fill="none"/><text class="h" x="14" y="84" font-size="19" fill="#9a3a5a">my story</text><text class="h" x="14" y="108" font-size="19" fill="#9a3a5a">skills</text></g></g></a>
+<a href="#contact" aria-label="Contact notepad"><g transform="translate(280 78) rotate(3)"><g class="lift" filter="url(#s)"><use href="#pad"/><text class="h" x="14" y="56" font-size="28" fill="#1f6b4a">Contact</text><path d="M14 62q40 6 80 0" stroke="#1f6b4a" fill="none"/><text class="h" x="14" y="84" font-size="19" fill="#2f7b5a">say hi</text><text class="h" x="14" y="108" font-size="19" fill="#2f7b5a">email</text></g></g></a>
+
+<!-- sticky notes: design trail -->
+<g transform="translate(348 262) rotate(6)" filter="url(#s)"><rect width="68" height="68" fill="#ffe66d"/><circle cx="18" cy="20" r="8" fill="#401e97"/><text class="h" x="8" y="48" font-size="17" fill="#333">#401e97</text><text class="h" x="8" y="62" font-size="13" fill="#555">accent?</text></g>
+<g transform="translate(354 342) rotate(-4)" filter="url(#s)"><rect width="64" height="64" fill="#ff9ecb"/><text class="h" x="7" y="26" font-size="18" fill="#333">kerning??</text><text class="h" x="7" y="50" font-size="22" fill="#333">Aa</text><path d="M26 46h28" stroke="#c0307a" stroke-width="2"/></g>
+<g transform="translate(792 268) rotate(-5)" filter="url(#s)"><rect width="68" height="68" fill="#9be7c4"/><text class="h" x="8" y="28" font-size="18" fill="#234">ship Fri</text><path d="M10 48l8 8 18-20" stroke="#1f6b4a" stroke-width="3" fill="none"/></g>
+<g transform="translate(812 346) rotate(5)" filter="url(#s)"><rect width="66" height="62" fill="#ffb86b"/><g fill="none" stroke="#6a3a10"><rect x="8" y="8" width="22" height="28"/><rect x="36" y="8" width="22" height="12"/><rect x="36" y="24" width="22" height="12"/></g><text class="h" x="8" y="54" font-size="15" fill="#4a2a08">wireframe v3</text></g>
+
+<!-- laptop -->
+<g transform="translate(440 60)" filter="url(#s)">
+<rect y="168" width="320" height="110" rx="10" fill="#c9cad1"/><rect x="14" y="178" width="292" height="62" fill="url(#k)"/><rect x="120" y="248" width="80" height="22" rx="5" fill="#b4b5bd"/>
+<rect width="320" height="172" rx="10" fill="#1b1b22"/><rect x="8" y="8" width="304" height="156" rx="3" fill="#2a2a33"/>
+<rect x="12" y="12" width="56" height="148" fill="#1f1f27"/><g fill="#6c6c7a"><circle cx="26" cy="28" r="5"/><rect x="38" y="24" width="20" height="8"/><rect x="20" y="46" width="38" height="5"/><rect x="20" y="58" width="30" height="5"/><rect x="20" y="70" width="34" height="5"/></g>
+<rect x="250" y="12" width="58" height="148" fill="#1f1f27"/><g><rect x="258" y="22" width="12" height="12" fill="#401e97"/><rect x="274" y="22" width="12" height="12" fill="#fff"/><rect x="290" y="22" width="12" height="12" fill="#111"/><rect x="258" y="44" width="42" height="5" fill="#6c6c7a"/><rect x="258" y="56" width="32" height="5" fill="#6c6c7a"/></g>
+<rect x="82" y="24" width="150" height="124" fill="#fff"/><circle cx="157" cy="64" r="22" fill="#111"/><text class="u" x="157" y="73" text-anchor="middle" font-size="26" font-weight="800" fill="#6a3fd0">G</text>
+<rect x="102" y="100" width="110" height="6" fill="#ddd"/><rect x="112" y="112" width="90" height="5" fill="#e6e6e6"/><rect x="125" y="124" width="64" height="14" rx="7" fill="#401e97"/>
+<rect x="78" y="20" width="158" height="132" fill="none" stroke="#4da3ff" stroke-dasharray="3 3"/><g fill="#4da3ff"><rect x="75" y="17" width="6" height="6"/><rect x="233" y="17" width="6" height="6"/><rect x="75" y="149" width="6" height="6"/><rect x="233" y="149" width="6" height="6"/></g>
+</g>
+
+<!-- keyboard, mouse -->
+<g transform="translate(430 430)" filter="url(#s)"><rect width="340" height="84" rx="9" fill="#d9dae0"/><rect x="8" y="8" width="324" height="68" fill="url(#k)"/></g>
+<rect x="790" y="415" width="110" height="115" rx="12" fill="#23222b" filter="url(#s)"/>
+<g filter="url(#s)"><rect x="822" y="440" width="46" height="72" rx="22" fill="#e8e8ee"/><path d="M845 440V470M822 470H868" stroke="#a9aab4" fill="none"/><rect x="842" y="450" width="6" height="14" rx="3" fill="#401e97"/></g>
+
+<!-- pencil, pen -->
+<g transform="translate(284 566) rotate(-12)" filter="url(#s)"><rect width="18" height="10" rx="3" fill="#e98a9a"/><rect x="18" y="0" width="8" height="10" fill="#b9b9c2"/><rect x="26" width="110" height="10" fill="#f2c230"/><path d="M136 0L160 5L136 10Z" fill="#e8c9a0"/><path d="M152 3.2L160 5L152 6.8Z" fill="#222"/></g>
+<g transform="translate(905 548) rotate(8)" filter="url(#s)"><rect width="130" height="9" rx="4.5" fill="#1a1a22"/><rect x="40" y="2" width="30" height="2.5" fill="#401e97"/><rect x="128" y="2" width="12" height="5" fill="#999"/></g>
+
+<!-- business card -->
+<g transform="translate(135 548) rotate(-8)" filter="url(#s)"><rect width="124" height="70" rx="3" fill="#fff"/><circle cx="24" cy="33" r="15" fill="#111"/><text class="u" x="24" y="40" text-anchor="middle" font-size="19" font-weight="800" fill="#6a3fd0">G</text><text class="u" x="48" y="30" font-size="9.5" font-weight="700" fill="#111">Your Name</text><text class="u" x="48" y="42" font-size="6.5" fill="#666">Web developer</text><rect y="64" width="124" height="6" fill="#401e97"/></g>
+
+<!-- front buttons -->
+<a href="#works" aria-label="View my works"><g class="lift" filter="url(#s)"><rect x="110" y="655" width="200" height="54" rx="27" fill="#401e97" stroke="#d9b36a" stroke-width="2"/><text class="u" x="210" y="688" text-anchor="middle" font-size="18" font-weight="600" fill="#fff">View my works</text></g></a>
+<a href="#hire" aria-label="Let's work together"><g class="lift" filter="url(#s)"><rect x="890" y="655" width="200" height="54" rx="27" fill="#0d0d0f" stroke="#d9b36a" stroke-width="2"/><text class="u" x="990" y="688" text-anchor="middle" font-size="18" font-weight="600" fill="#fff">Let's work together</text></g></a>
+</svg>
+</body></html>
