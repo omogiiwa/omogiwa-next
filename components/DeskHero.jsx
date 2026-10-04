@@ -552,7 +552,7 @@ export default function DeskHero() {
                 fontSize="19"
                 fill="#5633a9"
               >
-                anatomy → design
+                anatomy
               </text>
 
               <text
@@ -562,7 +562,7 @@ export default function DeskHero() {
                 fontSize="19"
                 fill="#5633a9"
               >
-                code + curiosity
+                volleyball 🏐
               </text>
 
               <text
@@ -572,7 +572,7 @@ export default function DeskHero() {
                 fontSize="19"
                 fill="#5633a9"
               >
-                still figuring it out
+                .
               </text>
 
             </g>
@@ -1213,7 +1213,7 @@ export default function DeskHero() {
             fontWeight="700"
             fill="#111"
           >
-            Omogbolahan Giwa
+            Giwa
           </text>
 
           <text
