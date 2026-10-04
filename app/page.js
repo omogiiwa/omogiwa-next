@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [orbitTilt, setOrbitTilt] = useState({ x: 0, y: 0 });
   const [scrollY, setScrollY] = useState(0);
   const [activeService, setActiveService] = useState(0);
   const [introVisible, setIntroVisible] = useState(false);
@@ -134,114 +133,7 @@ const [activeArticle, setActiveArticle] = useState(0);
       {/* =========================
           HERO
       ========================== */}
-      <section className="hero">
-
-      <div
-  className="hero-content"
-  style={{
-    transform: `translateY(${scrollY * -0.08}px) scale(${Math.max(
-      0.94,
-      1 - scrollY * 0.00008
-    )})`,
-    opacity: Math.max(0, 1 - scrollY * 0.0012),
-  }}
->
-
-          <p className="eyebrow">HELLO, I'M</p>
-
-          <h1 id="top">
-            Omogbolahan <br />
-            <span>Giwa.</span>
-          </h1>
-
-         <div className="hero-identities">
-  <span className="identity identity-one identity-designer">
-Multidisciplinary designer
-</span>
-
-<span className="identity identity-two identity-engineer">
-  Software engineer
-</span>
-
-<span className="identity identity-three identity-anatomist">
-  Human anatomist
-</span>
-
-<span className="identity identity-four identity-sports">
-  Sports enthusiast
-</span>
-
-<span className="identity identity-five identity-creative">
-  Creative
-</span>
-</div>
-
-         <div
-  className="hero-image-wrapper"
-  onMouseMove={(event) => {
-    const rect = event.currentTarget.getBoundingClientRect();
-
-    const x = (event.clientX - rect.left) / rect.width - 0.5;
-    const y = (event.clientY - rect.top) / rect.height - 0.5;
-
-    setOrbitTilt({
-      x: x * 14,
-      y: y * 14,
-    });
-  }}
-  onMouseLeave={() => {
-    setOrbitTilt({ x: 0, y: 0 });
-  }}
->
-  <div
-    className="hero-orbit"
-    aria-hidden="true"
-    style={{
-      transform: `translate(${orbitTilt.x}px, ${orbitTilt.y}px) rotate(${orbitTilt.x * 0.35}deg)`,
-    }}
-  >
-    <span className="orbit-ring orbit-ring-one"></span>
-    <span className="orbit-ring orbit-ring-two"></span>
-    <span className="orbit-dot orbit-dot-one"></span>
-    <span className="orbit-dot orbit-dot-two"></span>
-  </div>
-
-            <img
-              src="/profile.png"
-              alt="Omogbolahan Giwa"
-              className="hero-image"
-            />
-          </div>
-
-          <div className="hero-description">
-            <p>
-              I am a multidisciplinary designer and software engineer focused
-              on turning ideas into functional and visually distinctive digital
-              experiences.
-            </p>
-          </div>
-
-          <div className="hero-buttons">
-            <a href="/about" className="button button-light">
-              See more about me
-            </a>
-
-            <a href="#work" className="button button-dark">
-              View my works
-            </a>
-
-            <a href="#contact" className="button button-purple">
-              Let&apos;s work together
-            </a>
-          </div>
-
-        </div>
-
-        <div className="hero-decoration hero-decoration-one"></div>
-        <div className="hero-decoration hero-decoration-two"></div>
-        <div className="hero-decoration hero-decoration-three"></div>
-
-      </section>
+     
 
 
       {/* =========================
