@@ -224,7 +224,16 @@ export default function DeskHero() {
           strokeWidth="1.5"
           transform="translate(600 390) scale(.965) translate(-600 -390)"
         />
+{/* CHAIR */}
 
+<image
+  href="/chair.svg"
+  x="850"
+  y="510"
+  width="260"
+  height="230"
+  preserveAspectRatio="xMidYMid meet"
+/>
         {/* COFFEE RING */}
 
         <circle
