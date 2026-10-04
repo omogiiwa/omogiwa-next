@@ -267,7 +267,7 @@ export default function DeskHero() {
         <g
           transform="translate(1010 590)"
           filter="url(#s)"
-          className="desk-item"
+         className="desk-item desk-appear desk-appear-5"
         >
 
           <circle
@@ -306,7 +306,7 @@ export default function DeskHero() {
         <g
           transform="translate(88 92) rotate(-6)"
           filter="url(#s)"
-          className="desk-item"
+         className="desk-item desk-appear desk-appear-2"
         >
 
           <rect
@@ -731,7 +731,7 @@ export default function DeskHero() {
         <g
           transform="translate(792 268) rotate(-5)"
           filter="url(#s)"
-          className="desk-item"
+          className="lift desk-appear desk-appear-4"
         >
 
           <rect
@@ -831,10 +831,10 @@ export default function DeskHero() {
         {/* LAPTOP */}
 
         <g
-          transform="translate(440 60)"
-          filter="url(#s)"
-          className="desk-item"
-        >
+  transform="translate(440 60)"
+  filter="url(#s)"
+  className="desk-item desk-appear desk-appear-3"
+>
 
           {/* BASE */}
 
@@ -1101,7 +1101,7 @@ export default function DeskHero() {
         <g
           transform="translate(284 566) rotate(-12)"
           filter="url(#s)"
-          className="desk-item"
+          className="desk-item desk-appear desk-appear-6"
         >
 
           <rect
@@ -1143,7 +1143,7 @@ export default function DeskHero() {
         <g
           transform="translate(905 548) rotate(8)"
           filter="url(#s)"
-          className="desk-item"
+          className="desk-item desk-appear desk-appear-6"
         >
 
           <rect
