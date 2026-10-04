@@ -2159,7 +2159,8 @@ section {
     opacity: 1;
     transform: translateY(0);
   }
-  .service-card-active .service-item {
+}
+.service-card-active .service-item {
   opacity: 0;
   transform: translateY(18px);
   animation: serviceItemReveal 0.5s cubic-bezier(.2,.8,.2,1) forwards;
@@ -2208,8 +2209,6 @@ section {
     transform: translateY(0);
   }
 }
-}
-
 /* =========================================
    SERVICE VISUAL PREVIEW
    ========================================= */
