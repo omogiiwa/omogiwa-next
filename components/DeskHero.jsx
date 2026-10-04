@@ -819,7 +819,7 @@ export default function DeskHero() {
   className="desk-item"
 >
   <image
-    href="/omogiwaanimated1.svg"
+    href="/omogiwaanimated1-white.svg"
     x="0"
     y="0"
     width="170"
