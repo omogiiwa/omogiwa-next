@@ -2233,3 +2233,6 @@ section {
     transform: rotate(360deg);
   }
 }
+.service-card-active .service-item a {
+  color: white;
+}
