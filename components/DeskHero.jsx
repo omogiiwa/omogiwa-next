@@ -1222,7 +1222,8 @@ export default function DeskHero() {
             fontSize="6.5"
             fill="#666"
           >
-            Designer + Software Engineer
+            Designer
+            Software Engineer
           </text>
 
           <rect
