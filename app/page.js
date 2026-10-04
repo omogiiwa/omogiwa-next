@@ -381,7 +381,16 @@ Multidisciplinary designer
 
 
     <div className={`services-grid services-active-${activeService}`}>
-
+        <div className="services-preview" aria-hidden="true">
+  <div className="services-preview-orbit"></div>
+  <div className="services-preview-core">
+    <span>
+      {activeService === 0 && "BRAND"}
+      {activeService === 1 && "DIGITAL"}
+      {activeService === 2 && "STRATEGY"}
+    </span>
+  </div>
+</div>
   <article
   className={`service-card ${
     activeService === 0 ? "service-card-active" : ""
