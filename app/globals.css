@@ -2006,9 +2006,22 @@ section {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 18px;
   align-items: stretch;
+  transition: grid-template-columns 0.6s cubic-bezier(.2,.8,.2,1);
+}
+
+.services-grid.services-active-0 {
+  grid-template-columns: 1.45fr 0.775fr 0.775fr;
+}
+
+.services-grid.services-active-1 {
+  grid-template-columns: 0.775fr 1.45fr 0.775fr;
+}
+
+.services-grid.services-active-2 {
+  grid-template-columns: 0.775fr 0.775fr 1.45fr;
 }
 
 .service-card {
