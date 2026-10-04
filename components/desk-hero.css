@@ -70,10 +70,6 @@
   }
 }
 
-.desk-logo-white {
-  filter: grayscale(1) brightness(0) invert(1);
-}
-
 /* ========================================
    DESK ENTRANCE ANIMATION
    ======================================== */
