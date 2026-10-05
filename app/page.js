@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import DeskHero from "../components/DeskHero";
+import { supabase } from "../lib/supabase";
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
@@ -35,6 +36,30 @@ export default function Home() {
     readTime: "3 min read",
   },
 ];
+const [email, setEmail] = useState("");
+const [newsletterStatus, setNewsletterStatus] = useState("");
+const [isSubmitting, setIsSubmitting] = useState(false);
+const handleNewsletterSubmit = async (e) => {
+  e.preventDefault();
+
+  if (!email.trim()) return;
+
+  setIsSubmitting(true);
+  setNewsletterStatus("");
+
+  const { error } = await supabase
+    .from("subscribers")
+    .insert([{ email: email.trim().toLowerCase() }]);
+
+  if (error) {
+    setNewsletterStatus("Something went wrong. Please try again.");
+  } else {
+    setNewsletterStatus("You're in. Thanks for subscribing!");
+    setEmail("");
+  }
+
+  setIsSubmitting(false);
+};
 const changeProject = (direction) => {
   setActiveProject((current) => {
     return (
@@ -121,6 +146,8 @@ const [activeArticle, setActiveArticle] = useState(0);
        "An ongoing collection of experiments, strange ideas and things I'm building just to see what happens.",
    },
  ];
+
+
   return (
     <main>
 
@@ -769,21 +796,25 @@ THE DESK HERO
             experiments and useful things I discover.
           </p>
 
-          <form className="newsletter-form">
+          <form className="newsletter-form" onSubmit={handleNewsletterSubmit}>
 
             <input
-              type="email"
-              placeholder="Your email address"
-              aria-label="Your email address"
-              required
-            />
+  type="email"
+  placeholder="Your email address"
+  aria-label="Your email address"
+  value={email}
+  onChange={(e) => setEmail(e.target.value)}
+  required
+/>
 
-            <button type="submit">
-              Subscribe →
-            </button>
+            <button type="submit" disabled={isSubmitting}>
+  {isSubmitting ? "Subscribing..." : "Subscribe →"}
+</button>
 
           </form>
-
+{newsletterStatus && (
+  <p className="newsletter-status">{newsletterStatus}</p>
+)}
           <small>
             No spam. Just the good stuff.
           </small>
