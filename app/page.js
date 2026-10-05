@@ -161,9 +161,8 @@ THE DESK HERO
         </h2>
 
         <p className="large-text">
-          I work across design, technology, branding and visual communication
-          to create things that are not only visually compelling, but useful,
-          functional and memorable.
+          I work across design, technology, branding and visual communication.
+          Putting all these together gives your business a boost
         </p>
 
       </section>
@@ -342,7 +341,7 @@ THE DESK HERO
         <p>
           Add distinctive visual storytelling that helps your brand stand apart.
         </p>
-        <a href="#work">See examples →</a>
+        <a href="#work"> </a>
       </div>
 
       <div className="service-item">
@@ -366,7 +365,7 @@ THE DESK HERO
         <p>
           Turn information into polished presentations that communicate ideas and opportunities effectively.
         </p>
-        <a href="#work">See examples →</a>
+        <a href="#work"> </a>
       </div>
 
       <div className="service-item">
@@ -419,7 +418,7 @@ THE DESK HERO
         <p>
           Add purposeful interactions that make digital experiences feel engaging and intuitive.
         </p>
-        <a href="#work">See examples →</a>
+        <a href="#work"></a>
       </div>
 
       <div className="service-item">
@@ -427,7 +426,7 @@ THE DESK HERO
         <p>
           Build scalable visual systems that keep digital products consistent as they grow.
         </p>
-        <a href="#work">See examples →</a>
+        <a href="#work"></a>
       </div>
 
       <div className="service-item">
@@ -435,7 +434,7 @@ THE DESK HERO
         <p>
           Turn creative concepts into functional digital experiences that actually work.
         </p>
-        <a href="#work">See examples →</a>
+        <a href="#work"></a>
       </div>
 
       <div className="service-item">
@@ -443,7 +442,7 @@ THE DESK HERO
         <p>
           Create memorable digital experiences that encourage people to explore and engage.
         </p>
-        <a href="#work">See examples →</a>
+        <a href="#work"></a>
       </div>
 
       <div className="service-item">
@@ -451,7 +450,7 @@ THE DESK HERO
         <p>
           Design focused pages that communicate an offer quickly and guide visitors toward action.
         </p>
-        <a href="#work">See examples →</a>
+        <a href="#work"></a>
       </div>
 
       <div className="service-item">
@@ -478,7 +477,7 @@ THE DESK HERO
     <h3>Digital Strategy</h3>
 
     <p className="service-card-intro">
-      Connect your brand, content and digital presence with a clearer strategy built around your goals and audience.
+      Your brand looking good is not enough, you have to get it to the right audience and make it easier for them to find you
     </p>
 
     <div className="service-list">
@@ -496,7 +495,7 @@ THE DESK HERO
         <p>
           Clarify how your brand should be perceived and differentiated in the digital space.
         </p>
-        <a href="#work">See examples →</a>
+        <a href="#work"></a>
       </div>
 
       <div className="service-item">
@@ -504,7 +503,7 @@ THE DESK HERO
         <p>
           Create a clearer content direction that keeps your audience interested and your communication purposeful.
         </p>
-        <a href="#work">See examples →</a>
+        <a href="#work"></a>
       </div>
 
       <div className="service-item">
@@ -512,7 +511,7 @@ THE DESK HERO
         <p>
           Improve how your digital presence is discovered by people actively searching for what you offer.
         </p>
-        <a href="#work">See examples →</a>
+        <a href="#work"></a>
       </div>
 
       <div className="service-item">
@@ -520,7 +519,7 @@ THE DESK HERO
         <p>
           Identify how people interact with your digital experience and remove unnecessary friction.
         </p>
-        <a href="#work">See examples →</a>
+        <a href="#work"></a>
       </div>
 
       <div className="service-item">
@@ -528,7 +527,7 @@ THE DESK HERO
         <p>
           Connect business goals and user needs before investing time into building a digital product.
         </p>
-        <a href="#work">See examples →</a>
+        <a href="#work"></a>
       </div>
 
       <div className="service-item">
@@ -536,7 +535,7 @@ THE DESK HERO
         <p>
           Keep different creative outputs aligned around one clear idea, message and visual direction.
         </p>
-        <a href="#work">See examples →</a>
+        <a href="#work"></a>
       </div>
 
       <div className="service-item">
@@ -544,7 +543,6 @@ THE DESK HERO
         <p>
           Understand who you are speaking to and shape your message around what matters to them.
         </p>
-        <a href="#work">See examples →</a>
       </div>
 
     </div>
@@ -622,7 +620,7 @@ THE DESK HERO
             <div>
               <h3>Understand</h3>
               <p>
-                Understand the idea, problem, audience and desired outcome.
+                Identify the idea, problem, audience and desired outcome.
               </p>
             </div>
           </div>
@@ -633,7 +631,7 @@ THE DESK HERO
             <div>
               <h3>Explore</h3>
               <p>
-                Research, experiment and explore possible creative directions.
+                Research, experiment and explore possible creative directions to solve this problem.
               </p>
             </div>
           </div>
@@ -683,7 +681,7 @@ THE DESK HERO
           </div>
 
           <p>
-            I write a lot. I also don't limit myself to one niche, I write about anything as the spirit leads
+            I write a lot. I also don't limit myself to one niche, I write about anything.
           </p>
 
         </div>
