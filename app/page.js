@@ -627,15 +627,7 @@ THE DESK HERO
             That is how I think.
              </p>
             
-            <p> 
-               studied Human Anatomy in school, but that never stopped my long-term passion for software engineering. Instead of sacrificing one interest for another, I chose to let them strengthen each other.
-              </p>
-              
-              <p>
-                I call myself a master of all trades because I refuse to believe that having multiple interests means I have to be mediocre at any of them. I take what I learn from one field and use it to improve how I approach another.
-
-I don’t just want to do the work. I want to understand it, challenge it, and make it better.
-                 </p>
+            
           <a href="/about" className="button button-dark">
             Read more about me →
           </a>
