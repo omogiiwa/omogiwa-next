@@ -52,7 +52,15 @@ const handleNewsletterSubmit = async (e) => {
     .insert([{ email: email.trim().toLowerCase() }]);
 
   if (error) {
-    setNewsletterStatus(error.message);
+    if (error.code === "23505") {
+
+    setNewsletterStatus("You're already subscribed.");
+
+  } else {
+
+    setNewsletterStatus("Something went wrong. Please try again.");
+
+ }
   } else {
     setNewsletterStatus("You're in. Thanks for subscribing!");
     setEmail("");
