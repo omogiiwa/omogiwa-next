@@ -608,19 +608,34 @@ THE DESK HERO
           </h2>
 
           <p>
-            Hello, I&apos;m Omogbolahan Giwa, a designer and scientist.
+            You may not know this, but there is a clear difference between simply doing a task and actually thinking about what the work is supposed to achieve.
           </p>
-
+          <p> This is where I stand </p>
+          
           <p>
-            I studied Human Anatomy, taught myself software engineering, and I’m currently teaching myself a bunchof other things.  
-            I’m deeply into graphic design, illustration, branding, and turning ideas into things people can actually see and understand.
+            I’m a multidisciplinary designer, software engineer, and human anatomist. I don’t look at design, branding, websites, graphics, and digital experiences as isolated pieces. I look at the whole picture: how it fits, how it works, how people experience it, and whether it actually delivers results. 
+          
           </p>
-
+        <p> I’m naturally curious, obsessive about details, highly adaptive, and comfortable learning whatever I need to solve a problem. I want to understand your vision, challenge weak ideas when necessary, and turn the good ones into something genuinely remarkable. </p>
           <p>
-            My goal is simple: to make ideas tangible, useful and visually distinctive.
-            Whether you're a brand owner, business person or a media personell, this makes your identity stand out for itself and easier to reach.
+            Having experience across different fields — and being particularly obsessed with design — makes the impact of every decision I make more exciting. Knowledge from one discipline can completely change how I approach another.
           </p>
+        <p> 
+          Imagine an SEO expert who also understands graphic design. They may be two completely different fields, but that SEO knowledge can influence how they design a social media campaign, structure its content, or position it for greater reach and engagement.
+          </p>
+          <p>
+            That is how I think.
+             </p>
+            
+            <p> 
+               studied Human Anatomy in school, but that never stopped my long-term passion for software engineering. Instead of sacrificing one interest for another, I chose to let them strengthen each other.
+              </p>
+              
+              <p>
+                I call myself a master of all trades because I refuse to believe that having multiple interests means I have to be mediocre at any of them. I take what I learn from one field and use it to improve how I approach another.
 
+I don’t just want to do the work. I want to understand it, challenge it, and make it better.
+                 </p>
           <a href="/about" className="button button-dark">
             Read more about me →
           </a>
