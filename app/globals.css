@@ -1135,11 +1135,20 @@ section {
 }
   
 #about {
-  background-image: url("/IMG_0288.jpeg");
-  min-height: 200vh; /* fills the scree
-  background-size: cover;       /* scales to fill, crops overflow */
-  background-position: center;  /* keeps the middle visible */
-  background-repeat: no-repeat; /* no tiling */
+ background-image:
+ linear-gradient(
+   to bottom,
+   #ffffff 0%,
+   rgba(255, 255, 255, 0) 14%,
+   rgba(255, 255, 255, 0) 82%,
+   #ffffff 100%
+ ),
+ url("/IMG_0288.jpeg");
+
+ min-height: 200vh;
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
 }
 
 .about {
