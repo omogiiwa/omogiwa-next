@@ -2409,15 +2409,35 @@ section {
   gap: 18px;
 }
 
-.portfolio-card {
+..portfolio-card {
   position: relative;
   min-height: 300px;
   overflow: hidden;
   display: flex;
   align-items: flex-end;
   color: white;
-  background: #401e97;
+
+  background: rgba(64, 30, 151, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 24px;
+
+  box-shadow:
+    0 20px 50px rgba(23, 21, 29, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
   isolation: isolate;
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 28px 65px rgba(23, 21, 29, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
 }
 
 .portfolio-card-image {
@@ -2441,8 +2461,8 @@ section {
   background:
     linear-gradient(
       to top,
-      rgba(0, 0, 0, 0.78),
-      rgba(0, 0, 0, 0.05) 75%
+      rgba(0, 0, 0, 0.72),
+      rgba(0, 0, 0, 0.04) 75%
     );
 
   transition: background 0.4s ease;
@@ -2456,75 +2476,9 @@ section {
   background:
     linear-gradient(
       to top,
-      rgba(64, 30, 151, 0.82),
-      rgba(64, 30, 151, 0.08) 80%
+      rgba(64, 30, 151, 0.76),
+      rgba(64, 30, 151, 0.06) 80%
     );
-}
-
-.portfolio-brand .portfolio-card-image {
-  background-image: url("/portfolio-brand.jpg");
-}
-
-.portfolio-web .portfolio-card-image {
-  background-image: url("/portfolio-web.jpg");
-}
-
-.portfolio-strategy .portfolio-card-image {
-  background-image: url("/portfolio-strategy.jpg");
-}
-
-.portfolio-card-content {
-  width: 100%;
-  padding: 35px 40px;
-  display: grid;
-  grid-template-columns: 60px 1fr auto;
-  gap: 25px;
-  align-items: end;
-}
-
-.portfolio-number {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  align-self: start;
-}
-
-.portfolio-card h2 {
-  font-size: clamp(30px, 4vw, 52px);
-  line-height: 1;
-  letter-spacing: -2px;
-  margin-bottom: 14px;
-}
-
-.portfolio-card p {
-  max-width: 580px;
-  font-size: 16px;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.82);
-}
-
-.portfolio-arrow {
-  width: 48px;
-  height: 48px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 21px;
-
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease,
-    color 0.3s ease;
-}
-
-.portfolio-card:hover .portfolio-arrow {
-  transform: translate(4px, -4px);
-  background: white;
-  color: var(--purple);
 }
 
 
