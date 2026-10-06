@@ -2548,3 +2548,615 @@ section {
     border-radius: 20px;
   }
 }
+/* ========================================
+   OMO GIWA BRAND CASE STUDY
+======================================== */
+
+.brand-case-study {
+  background: #ffffff;
+  color: #111111;
+  overflow: hidden;
+}
+
+/* ========================================
+   CASE STUDY HERO
+======================================== */
+
+.brand-case-study-hero {
+  min-height: 820px;
+  padding: 120px 7% 100px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(64, 30, 151, 0.07),
+      transparent 25%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #faf9fd 55%,
+      #f4f1fa 100%
+    );
+}
+
+.brand-case-study-hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 1050px;
+}
+
+.brand-case-study-eyebrow {
+  color: var(--purple);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.brand-case-study-hero h1 {
+  max-width: 1000px;
+  font-size: clamp(65px, 10vw, 145px);
+  line-height: 0.88;
+  letter-spacing: -7px;
+  margin-bottom: 45px;
+}
+
+.brand-case-study-hero h1 span {
+  color: var(--purple);
+  display: block;
+}
+
+.brand-case-study-hero-description {
+  max-width: 650px;
+  color: #555;
+  font-size: 20px;
+  line-height: 1.65;
+}
+
+.brand-case-study-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 35px;
+}
+
+.brand-case-study-meta span {
+  border: 1px solid rgba(64, 30, 151, 0.25);
+  border-radius: 999px;
+  padding: 10px 16px;
+  color: var(--purple);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* ========================================
+   HERO DECORATION
+======================================== */
+
+.brand-case-study-orbit {
+  position: absolute;
+  border: 1px solid rgba(64, 30, 151, 0.14);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.brand-orbit-one {
+  width: 650px;
+  height: 650px;
+  right: -230px;
+  top: 70px;
+}
+
+.brand-orbit-two {
+  width: 430px;
+  height: 430px;
+  right: -120px;
+  top: 180px;
+}
+
+.brand-case-study-dot {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--purple);
+  opacity: 0.55;
+}
+
+.brand-dot-one {
+  right: 24%;
+  top: 22%;
+}
+
+.brand-dot-two {
+  right: 10%;
+  bottom: 25%;
+  width: 5px;
+  height: 5px;
+}
+
+.brand-case-study-hero-mark {
+  position: absolute;
+  right: 9%;
+  top: 50%;
+  width: 210px;
+  height: 210px;
+  border: 1px solid rgba(64, 30, 151, 0.18);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+  color: var(--purple);
+  z-index: 2;
+}
+
+.brand-case-study-hero-mark::before,
+.brand-case-study-hero-mark::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(64, 30, 151, 0.1);
+  border-radius: 50%;
+}
+
+.brand-case-study-hero-mark::before {
+  inset: 20px;
+}
+
+.brand-case-study-hero-mark::after {
+  inset: 42px;
+}
+
+.brand-case-study-hero-mark span {
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: -3px;
+  position: relative;
+  z-index: 2;
+}
+
+
+/* ========================================
+   INTRODUCTION
+======================================== */
+
+.brand-introduction {
+  padding: 150px 8%;
+  display: grid;
+  grid-template-columns: 0.35fr 1fr;
+  gap: 100px;
+  background: white;
+}
+
+.brand-introduction-label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--purple);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.brand-introduction-label span:first-child {
+  font-size: 35px;
+  letter-spacing: -2px;
+}
+
+.brand-introduction-content {
+  max-width: 900px;
+}
+
+.brand-introduction-content h2 {
+  max-width: 850px;
+  font-size: clamp(45px, 6vw, 85px);
+  line-height: 0.95;
+  letter-spacing: -4px;
+  margin-bottom: 50px;
+}
+
+.brand-introduction-content h2 span {
+  color: var(--purple);
+}
+
+.brand-introduction-content p {
+  max-width: 760px;
+  margin-bottom: 25px;
+  color: #555;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+
+/* ========================================
+   HERO VISUAL
+======================================== */
+
+.brand-hero-visual {
+  padding: 0 7% 150px;
+  background: white;
+}
+
+.brand-hero-visual-frame {
+  width: 100%;
+  min-height: 650px;
+  background: #f4f2f7;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+}
+
+.brand-hero-visual-frame::before {
+  content: "OMOGIWA";
+  position: absolute;
+  top: 35px;
+  left: 35px;
+  color: rgba(64, 30, 151, 0.35);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  z-index: 1;
+}
+
+.brand-hero-visual-frame img {
+  width: 100%;
+  height: 100%;
+  min-height: 650px;
+  object-fit: cover;
+}
+
+
+/* ========================================
+   BRAND SYSTEM SECTIONS
+======================================== */
+
+.brand-system-section {
+  position: relative;
+  padding: 160px 7%;
+  background: white;
+}
+
+.brand-system-section-soft {
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(64, 30, 151, 0.055),
+      transparent 25%
+    ),
+    #faf9fc;
+}
+
+.brand-system-section-dark {
+  background: #111111;
+  color: white;
+}
+
+.brand-section-number {
+  position: absolute;
+  top: 65px;
+  right: 7%;
+  color: rgba(64, 30, 151, 0.15);
+  font-size: clamp(100px, 15vw, 220px);
+  font-weight: 800;
+  line-height: 0.8;
+  letter-spacing: -12px;
+  user-select: none;
+}
+
+.brand-system-section-dark .brand-section-number {
+  color: rgba(255, 255, 255, 0.07);
+}
+
+.brand-section-heading {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  margin-bottom: 90px;
+}
+
+.brand-section-heading h2 {
+  max-width: 850px;
+  font-size: clamp(48px, 7vw, 95px);
+  line-height: 0.93;
+  letter-spacing: -5px;
+  margin-bottom: 30px;
+}
+
+.brand-section-heading > p:last-child {
+  max-width: 650px;
+  color: #666;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.brand-system-section-dark .brand-section-heading > p:last-child {
+  color: rgba(255,255,255,0.65);
+}
+
+.brand-system-section-dark .section-label {
+  color: #b89cff;
+}
+
+
+/* ========================================
+   IMAGE GRID
+======================================== */
+
+.brand-image-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.brand-image-grid-large {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.brand-image-card {
+  min-height: 520px;
+  margin: 0;
+  overflow: hidden;
+  background: #f1eff5;
+  border-radius: 22px;
+  position: relative;
+}
+
+.brand-image-card-wide {
+  grid-column: span 2;
+}
+
+.brand-image-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  object-fit: cover;
+  transition:
+    transform 0.7s cubic-bezier(.2,.8,.2,1);
+}
+
+.brand-image-card:hover img {
+  transform: scale(1.035);
+}
+
+.brand-image-card figcaption {
+  position: absolute;
+  left: 25px;
+  bottom: 22px;
+  z-index: 2;
+  padding: 9px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.9);
+  color: #111;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  backdrop-filter: blur(8px);
+}
+
+.brand-system-section-dark .brand-image-card {
+  background: #1b1b1b;
+}
+
+.brand-system-section-dark .brand-image-card figcaption {
+  background: rgba(255,255,255,0.92);
+}
+
+
+/* ========================================
+   CASE STUDY CONCLUSION
+======================================== */
+
+.brand-case-study-conclusion {
+  position: relative;
+  padding: 190px 7%;
+  text-align: center;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(64, 30, 151, 0.15),
+      transparent 40%
+    ),
+    white;
+}
+
+.brand-case-study-conclusion .section-label {
+  position: relative;
+  z-index: 2;
+}
+
+.brand-case-study-conclusion h2 {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-size: clamp(55px, 8vw, 115px);
+  line-height: 0.9;
+  letter-spacing: -6px;
+}
+
+.brand-case-study-conclusion h2 span {
+  display: block;
+  color: var(--purple);
+}
+
+.brand-case-study-conclusion > p:not(.section-label) {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+  margin: 40px auto;
+  color: #666;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.brand-conclusion-decoration {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border: 1px solid rgba(64, 30, 151, 0.1);
+  border-radius: 50%;
+  left: 50%;
+  bottom: -550px;
+  transform: translateX(-50%);
+}
+
+.brand-conclusion-decoration::before,
+.brand-conclusion-decoration::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(64, 30, 151, 0.08);
+  border-radius: 50%;
+}
+
+.brand-conclusion-decoration::before {
+  inset: 70px;
+}
+
+.brand-conclusion-decoration::after {
+  inset: 150px;
+}
+
+.brand-case-study-back-link {
+  position: relative;
+  z-index: 3;
+  display: inline-block;
+  margin-top: 30px;
+  padding-bottom: 7px;
+  border-bottom: 2px solid var(--purple);
+  color: var(--purple);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 800px) {
+
+  .brand-case-study-hero {
+    min-height: 720px;
+    padding: 90px 20px 80px;
+  }
+
+  .brand-case-study-hero h1 {
+    font-size: clamp(58px, 16vw, 90px);
+    letter-spacing: -4px;
+  }
+
+  .brand-case-study-hero-description {
+    font-size: 17px;
+  }
+
+  .brand-case-study-hero-mark {
+    width: 130px;
+    height: 130px;
+    right: -35px;
+    top: 75%;
+  }
+
+  .brand-case-study-hero-mark span {
+    font-size: 28px;
+  }
+
+  .brand-orbit-one {
+    width: 420px;
+    height: 420px;
+    right: -220px;
+  }
+
+  .brand-orbit-two {
+    width: 280px;
+    height: 280px;
+    right: -120px;
+  }
+
+  .brand-introduction {
+    padding: 100px 20px;
+    display: block;
+  }
+
+  .brand-introduction-label {
+    margin-bottom: 55px;
+  }
+
+  .brand-introduction-content h2 {
+    font-size: 48px;
+    letter-spacing: -2px;
+  }
+
+  .brand-introduction-content p {
+    font-size: 17px;
+  }
+
+  .brand-hero-visual {
+    padding: 0 20px 100px;
+  }
+
+  .brand-hero-visual-frame,
+  .brand-hero-visual-frame img {
+    min-height: 420px;
+  }
+
+  .brand-system-section {
+    padding: 110px 20px;
+  }
+
+  .brand-section-number {
+    top: 40px;
+    right: 20px;
+    font-size: 100px;
+    letter-spacing: -7px;
+  }
+
+  .brand-section-heading {
+    margin-bottom: 60px;
+  }
+
+  .brand-section-heading h2 {
+    font-size: 48px;
+    letter-spacing: -2px;
+  }
+
+  .brand-section-heading > p:last-child {
+    font-size: 17px;
+  }
+
+  .brand-image-grid,
+  .brand-image-grid-large {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .brand-image-card,
+  .brand-image-card-wide {
+    grid-column: auto;
+    min-height: 380px;
+  }
+
+  .brand-image-card img {
+    min-height: 380px;
+  }
+
+  .brand-case-study-conclusion {
+    padding: 130px 20px;
+  }
+
+  .brand-case-study-conclusion h2 {
+    font-size: 55px;
+    letter-spacing: -3px;
+  }
+
+  .brand-case-study-conclusion > p:not(.section-label) {
+    font-size: 17px;
+  }
+}
