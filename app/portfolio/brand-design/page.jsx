@@ -250,7 +250,7 @@ export default function BrandDesignCaseStudy() {
           </div>
 
           <div className="brand-case-study-hero-mark">
-            <span><img src="/logo.svg" /></span>
+            <span>O</span>
           </div>
         </section>
 
