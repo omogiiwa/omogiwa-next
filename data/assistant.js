@@ -16,6 +16,8 @@ export const omogiwaKnowledge = {
       "I approach design, technology, branding, graphics, websites, and digital experiences as connected parts of a bigger picture rather than isolated services.",
     approach:
       "The focus is not simply on completing a task, but understanding what the work is supposed to achieve, how it works, how people experience it, and whether it delivers results."
+      availability:
+      "I am always ready and available to accept jobs, offers or gigs"
   },
 
   services: [
