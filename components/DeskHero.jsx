@@ -444,7 +444,7 @@ export default function DeskHero() {
         {/* PROJECTS / WORK */}
 
         <a
-          href="/work"
+          href="/portfolio"
           aria-label="View OmoGiwa's work"
         >
 
@@ -1238,7 +1238,7 @@ export default function DeskHero() {
         {/* MAIN WORK BUTTON */}
 
 <a
-  href="/work"
+  href="/portfolio"
   aria-label="View OmoGiwa's work"
 >
   <g
