@@ -682,3 +682,157 @@
     width: 100%;
   }
 }
+/* =========================================
+   CROP MODE
+========================================= */
+
+.svg-editor-canvas.crop-active {
+  cursor: crosshair;
+  user-select: none;
+}
+
+.svg-crop-selection {
+  position: absolute;
+  z-index: 20;
+
+  border: 2px solid #401e97;
+  background: rgba(64, 30, 151, 0.08);
+
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.svg-crop-selection::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+
+  box-shadow:
+    0 0 0 9999px rgba(23, 21, 29, 0.28);
+}
+
+.svg-crop-selection span {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+
+  padding: 5px 8px;
+
+  border-radius: 6px;
+
+  background: #401e97;
+  color: #ffffff;
+
+  font-size: 0.68rem;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+
+/* CROP ACTIONS */
+
+.svg-crop-actions {
+  min-height: 60px;
+
+  padding: 12px 20px;
+
+  border-top: 1px solid #ebe8ef;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  background: #faf9fb;
+}
+
+.svg-crop-actions span {
+  color: #77717e;
+  font-size: 0.78rem;
+}
+
+.svg-crop-actions button {
+  min-height: 38px;
+
+  padding: 0 16px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #401e97;
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.svg-crop-actions button:hover {
+  background: #321778;
+  transform: translateY(-1px);
+}
+
+
+/* ZOOM */
+
+.svg-zoom-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 12px;
+
+  border-top: 1px solid #ebe8ef;
+
+  background: #ffffff;
+}
+
+.svg-zoom-controls button {
+  min-width: 36px;
+  height: 34px;
+
+  padding: 0 10px;
+
+  border: 1px solid #e3dfe8;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #4f4a56;
+
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.svg-zoom-controls button:hover {
+  border-color: #401e97;
+  color: #401e97;
+}
+
+.svg-zoom-controls span {
+  min-width: 55px;
+
+  color: #401e97;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  text-align: center;
+}
