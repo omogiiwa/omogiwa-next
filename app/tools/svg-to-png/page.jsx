@@ -1,5 +1,5 @@
 "use client";
-
+import "./svg-to-png.css";
 import { useRef, useState } from "react";
 
 export default function SvgToPngPage() {
