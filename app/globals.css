@@ -2409,7 +2409,7 @@ section {
   gap: 18px;
 }
 
-..portfolio-card {
+.portfolio-card {
   position: relative;
   min-height: 300px;
   overflow: hidden;
