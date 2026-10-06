@@ -3182,40 +3182,30 @@ object-fit: contain;
   margin: 0;
 }
 
-/* =========================================================
-   BRAND DESIGN — FINAL IMAGE OVERRIDES
-   ========================================================= */
+/* ========================================
+   BRAND DESIGN — IMAGE RESET
+======================================== */
 
 .brand-design-page img {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  height: auto !important;
-  object-fit: contain !important;
-}
-
-.brand-design-page .brand-hero-visual,
-.brand-design-page .brand-image-section,
-.brand-design-page .brand-visual,
-.brand-design-page .case-study-image-section {
-  width: 100%;
-  padding-left: 0;
-  padding-right: 0;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.brand-design-page .brand-hero-visual img,
-.brand-design-page .brand-image-section img,
-.brand-design-page .brand-visual img,
-.brand-design-page .case-study-image-section img,
-.brand-design-page .brand-case-study-image {
   width: 100% !important;
   max-width: 100% !important;
   height: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
   object-fit: contain !important;
+  object-position: center !important;
+  display: block !important;
 }
 
-.brand-design-page section {
-  overflow: visible;
+.brand-design-page [class*="image"],
+.brand-design-page [class*="visual"] {
+  max-width: 100%;
+}
+
+.brand-design-page [class*="image"] img,
+.brand-design-page [class*="visual"] img {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
 }
