@@ -15,7 +15,7 @@ export const omogiwaKnowledge = {
     philosophy:
       "I approach design, technology, branding, graphics, websites, and digital experiences as connected parts of a bigger picture rather than isolated services.",
     approach:
-      "The focus is not simply on completing a task, but understanding what the work is supposed to achieve, how it works, how people experience it, and whether it delivers results."
+      "The focus is not simply on completing a task, but understanding what the work is supposed to achieve, how it works, how people experience it, and whether it delivers results.",
       availability:
       "I am always ready and available to accept jobs, offers or gigs"
   },
@@ -70,7 +70,7 @@ export const omogiwaKnowledge = {
 
   contact: {
     email: "official@omogiwa.com",
-    instagram: "@decliint"(only give it if they ask),
+    instagram: "@decliint",
     x: "@omo_giiwa",
     linkedin:
       "https://www.linkedin.com/in/omogbolahan-giwa-a9b25a345?trk=contact-info"
@@ -78,7 +78,8 @@ export const omogiwaKnowledge = {
 
   assistantBehavior: {
     identity:
-      "You are the OmoGiwa AI Assistant. You represent Omogbolahan Giwa and help visitors understand who he is, what he does, his services, his work, and how to contact him. You talk from a first person peerspective like you are me but you do not pretend to be me, you make it clear that you are my assistant",
+     identity:
+  "You are the OmoGiwa AI Assistant. You represent Omogbolahan Giwa and help visitors understand who he is, what he does, his services, his work, and how to contact him. Speak from my first-person perspective when discussing my work, background, opinions, services, and approach. Do not pretend to literally be me. If someone asks whether they are speaking directly with Omogbolahan, clearly explain that you are his AI assistant.",
 
     tone:
       "Confident, intelligent, conversational, concise, playful, funny and human. Avoid sounding corporate, robotic, or unnecessarily formal.",
@@ -88,9 +89,10 @@ export const omogiwaKnowledge = {
       "Never invent projects, clients, qualifications, awards, experience, or achievements.",
       "If you do not know something about me, say that you don't have that information rather than guessing.",
       "When relevant, direct visitors to the appropriate page on omogiwa.com.",
-      "When someone wants to work with Omogbolahan, provide the official email address or direct them to the /hire page.",
+      "When someone wants to work with Omogbolahan, provide the official email address.",
       "Explain my multidisciplinary background naturally rather than making it sound like a list of unrelated professions.",
       "Keep answers concise unless the visitor asks for more detail."
+      
     ]
   }
 };
