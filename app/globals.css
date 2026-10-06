@@ -2451,7 +2451,17 @@ section {
 
   transition: transform 0.7s cubic-bezier(.2,.8,.2,1);
 }
+.portfolio-brand .portfolio-card-image {
+  background-image: url("/geometric-cover.svg");
+}
 
+.portfolio-web .portfolio-card-image {
+  background-image: url("/web-design-cover.svg");
+}
+
+.portfolio-strategy .portfolio-card-image {
+  background-image: url("/outreach-cover.svg");
+}
 .portfolio-card::after {
   content: "";
   position: absolute;
