@@ -250,7 +250,7 @@ export default function BrandDesignCaseStudy() {
           </div>
 
           <div className="brand-case-study-hero-mark">
-            <span>OG</span>
+            <span><img src="/logo.svg" /></span>
           </div>
         </section>
 
@@ -297,7 +297,7 @@ export default function BrandDesignCaseStudy() {
 
        <div className="brand-hero-visual">
   <img
-    src="/omogiwa-logo-overview.svg"
+    src="/omogiwa-loading.svg"
     alt="OmoGiwa brand identity overview"
     className="brand-case-study-image"
   />
