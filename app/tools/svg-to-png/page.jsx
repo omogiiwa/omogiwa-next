@@ -18,7 +18,11 @@ export default function SvgToPngPage() {
   const [background, setBackground] = useState("transparent");
 
   const [isDragging, setIsDragging] = useState(false);
-
+const [cropMode, setCropMode] = useState(false);
+const [cropStart, setCropStart] = useState(null);
+const [cropRect, setCropRect] = useState(null);
+const [isCropping, setIsCropping] = useState(false);
+const [zoom, setZoom] = useState(1);
   /*
    * Add unique IDs to SVG elements so we can identify
    * individual vectors when they are clicked.
@@ -150,6 +154,160 @@ export default function SvgToPngPage() {
    * Select individual SVG vectors.
    */
   const handleSvgClick = (event) => {
+    const handleCropStart = (event) => {
+  if (!cropMode || !svgMarkup) return;
+
+  const canvas = event.currentTarget;
+  const rect = canvas.getBoundingClientRect();
+
+  const x = event.clientX - rect.left;
+  const y = event.clientY - rect.top;
+
+  setCropStart({ x, y });
+  setCropRect({
+    x,
+    y,
+    width: 0,
+    height: 0,
+  });
+
+  setIsCropping(true);
+};
+
+const handleCropMove = (event) => {
+  if (!cropMode || !isCropping || !cropStart) return;
+
+  const canvas = event.currentTarget;
+  const rect = canvas.getBoundingClientRect();
+
+  const currentX = event.clientX - rect.left;
+  const currentY = event.clientY - rect.top;
+
+  const x = Math.min(cropStart.x, currentX);
+  const y = Math.min(cropStart.y, currentY);
+
+  const width = Math.abs(currentX - cropStart.x);
+  const height = Math.abs(currentY - cropStart.y);
+
+  setCropRect({
+    x,
+    y,
+    width,
+    height,
+  });
+};
+
+const handleCropEnd = () => {
+  if (!isCropping) return;
+
+  setIsCropping(false);
+};
+const applyCrop = () => {
+  if (!cropRect || cropRect.width < 5 || cropRect.height < 5) {
+    return;
+  }
+
+  const svgElement = document.querySelector(
+    ".svg-editable svg"
+  );
+
+  if (!svgElement) return;
+
+  const svgBounds = svgElement.getBoundingClientRect();
+
+  const viewBox =
+    svgElement.getAttribute("viewBox");
+
+  let viewBoxX = 0;
+  let viewBoxY = 0;
+  let viewBoxWidth = parseFloat(
+    svgElement.getAttribute("width")
+  ) || svgBounds.width;
+  let viewBoxHeight = parseFloat(
+    svgElement.getAttribute("height")
+  ) || svgBounds.height;
+
+  if (viewBox) {
+    const values = viewBox
+      .trim()
+      .split(/[\s,]+/)
+      .map(Number);
+
+    if (values.length === 4) {
+      [
+        viewBoxX,
+        viewBoxY,
+        viewBoxWidth,
+        viewBoxHeight,
+      ] = values;
+    }
+  }
+
+  /*
+   * Convert the screen-space crop rectangle
+   * into SVG coordinate space.
+   */
+
+  const scaleX =
+    viewBoxWidth / svgBounds.width;
+
+  const scaleY =
+    viewBoxHeight / svgBounds.height;
+
+  const cropX =
+    viewBoxX +
+    (cropRect.x -
+      (svgBounds.left -
+        svgElement.parentElement.getBoundingClientRect().left)) *
+      scaleX;
+
+  const cropY =
+    viewBoxY +
+    (cropRect.y -
+      (svgBounds.top -
+        svgElement.parentElement.getBoundingClientRect().top)) *
+      scaleY;
+
+  const cropWidth =
+    cropRect.width * scaleX;
+
+  const cropHeight =
+    cropRect.height * scaleY;
+
+  const parser = new DOMParser();
+
+  const document = parser.parseFromString(
+    svgMarkup,
+    "image/svg+xml"
+  );
+
+  const svg = document.documentElement;
+
+  saveHistory();
+
+  svg.setAttribute(
+    "viewBox",
+    `${cropX} ${cropY} ${cropWidth} ${cropHeight}`
+  );
+
+  svg.setAttribute(
+    "preserveAspectRatio",
+    "xMidYMid meet"
+  );
+
+  const updatedSvg =
+    new XMLSerializer().serializeToString(svg);
+
+  setSvgMarkup(updatedSvg);
+
+  setWidth(Math.round(cropWidth));
+  setHeight(Math.round(cropHeight));
+
+  setCropRect(null);
+  setCropStart(null);
+  setCropMode(false);
+  setZoom(1);
+};
     const target = event.target;
 
     if (!(target instanceof Element)) return;
@@ -366,22 +524,34 @@ export default function SvgToPngPage() {
 
                 <div className="svg-editor-tools">
 
-                  <button
-                    type="button"
-                    className="svg-tool-button active"
-                  >
-                    Select
-                  </button>
+  <button
+    type="button"
+    className={`svg-tool-button ${
+      !cropMode ? "active" : ""
+    }`}
+    onClick={() => {
+      setCropMode(false);
+      setCropRect(null);
+    }}
+  >
+    Select
+  </button>
 
-                  <button
-                    type="button"
-                    className="svg-tool-button"
-                    disabled
-                  >
-                    Crop
-                  </button>
+  <button
+    type="button"
+    className={`svg-tool-button ${
+      cropMode ? "active" : ""
+    }`}
+    onClick={() => {
+      setCropMode(true);
+      setSelectedId(null);
+      setCropRect(null);
+    }}
+  >
+    Crop
+  </button>
 
-                </div>
+</div>
 
                 <div className="svg-editor-actions">
 
@@ -409,19 +579,102 @@ export default function SvgToPngPage() {
 
               {/* CANVAS */}
 
-              <div className="svg-editor-canvas">
+            <div
+  className={`svg-editor-canvas ${
+    cropMode ? "crop-active" : ""
+  }`}
+  onPointerDown={handleCropStart}
+  onPointerMove={handleCropMove}
+  onPointerUp={handleCropEnd}
+  onPointerLeave={handleCropEnd}
+>
 
-                <div
-                  className="svg-editable"
-                  onClick={handleSvgClick}
-                  dangerouslySetInnerHTML={{
-                    __html: svgMarkup,
-                  }}
-                />
+  <div
+    className="svg-editable"
+    style={{
+      transform: `scale(${zoom})`,
+    }}
+    onClick={(event) => {
+      if (!cropMode) {
+        handleSvgClick(event);
+      }
+    }}
+    dangerouslySetInnerHTML={{
+      __html: svgMarkup,
+    }}
+  />
 
-              </div>
+  {cropMode && cropRect && (
+    <div
+      className="svg-crop-selection"
+      style={{
+        left: cropRect.x,
+        top: cropRect.y,
+        width: cropRect.width,
+        height: cropRect.height,
+      }}
+    >
+      <span>
+        {Math.round(cropRect.width)} ×{" "}
+        {Math.round(cropRect.height)}
+      </span>
+    </div>
+  )}
 
+</div>
 
+{cropMode && cropRect && cropRect.width > 5 && (
+  <div className="svg-crop-actions">
+
+    <span>
+      Drag around the area you want to keep.
+    </span>
+
+    <button
+      type="button"
+      onClick={applyCrop}
+    >
+      Apply crop
+    </button>
+
+  </div>
+)}
+<div className="svg-zoom-controls">
+
+  <button
+    type="button"
+    onClick={() =>
+      setZoom((value) =>
+        Math.max(0.25, value - 0.25)
+      )
+    }
+  >
+    −
+  </button>
+
+  <span>
+    {Math.round(zoom * 100)}%
+  </span>
+
+  <button
+    type="button"
+    onClick={() =>
+      setZoom((value) =>
+        Math.min(4, value + 0.25)
+      )
+    }
+  >
+    +
+  </button>
+
+  <button
+    type="button"
+    onClick={() => setZoom(1)}
+  >
+    Reset
+  </button>
+
+</div>
               {/* VECTOR CONTROLS */}
 
               <div className="svg-vector-controls">
