@@ -295,18 +295,13 @@ export default function BrandDesignCaseStudy() {
             HERO BRAND IMAGE
         ======================================== */}
 
-        <section
-          id="brand-hero-visual"
-          className="brand-hero-visual"
-        >
-          <div className="brand-hero-visual-frame">
-            <img
-              className="brand-case-study-image"
-              src="/omogiwa-logo-overview.svg"
-              alt="OmoGiwa brand identity overview"
-            />
-          </div>
-        </section>
+       <div className="brand-hero-visual">
+  <img
+    src="/omogiwa-logo-overview.svg"
+    alt="OmoGiwa brand identity overview"
+    className="brand-case-study-image"
+  />
+</div>
 
 
         {/* ========================================
