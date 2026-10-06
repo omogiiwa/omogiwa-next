@@ -381,7 +381,7 @@ export default function BrandDesignCaseStudy() {
               className="brand-image-card"
             >
               <img
-                src=""
+                src="/omogiwa-bus-card.png"
                 alt="OmoGiwa business card design"
               />
               <figcaption>Business Card</figcaption>
@@ -392,7 +392,7 @@ export default function BrandDesignCaseStudy() {
               className="brand-image-card"
             >
               <img
-                src=""
+                src="/omogiwa-letterhead.jpg"
                 alt="OmoGiwa letterhead design"
               />
               <figcaption>Letterhead</figcaption>
@@ -403,7 +403,7 @@ export default function BrandDesignCaseStudy() {
               className="brand-image-card brand-image-card-wide"
             >
               <img
-                src=""
+                src="/stationery mock-up .png"
                 alt="OmoGiwa branded email signature"
               />
               <figcaption>Email / Digital Stationery</figcaption>
