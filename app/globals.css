@@ -3092,10 +3092,6 @@ section {
     padding: 0 20px 100px;
   }
 
-  .brand-hero-visual-frame,
-  .brand-hero-visual-frame img {
-    min-height: 420px;
-  }
 
   .brand-system-section {
     padding: 110px 20px;
@@ -3181,40 +3177,22 @@ object-fit: contain;
   max-width: 100%;
   margin: 0;
 }
-
-/* ========================================
-   BRAND DESIGN — IMAGE RESET
-======================================== */
-
-/* Normal case-study images:
-   full width, natural proportions, never cropped */
 .brand-design-page img {
-  width: 100% !important;
-  max-width: 100% !important;
-  height: auto !important;
-  min-width: 0 !important;
-  min-height: 0 !important;
-  object-fit: contain !important;
-  object-position: center !important;
-  display: block !important;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
-/* Keep intentionally dimensioned image cards
-   behaving like designed visual frames */
 .brand-design-page .brand-image-card {
-  overflow: hidden;
+  overflow: hidden;      /* only rounds the corners now */
+  height: auto;
+  aspect-ratio: auto;
 }
 
-.brand-design-page .brand-image-card img {
-  width: 100% !important;
-  height: 100% !important;
-  min-height: 520px !important;
-  object-fit: cover !important;
+.brand-image-grid {
+  align-items: start;    /* desktop: stops cards stretching to the tallest in the row */
 }
 
-/* Mobile image cards */
-@media (max-width: 800px) {
-  .brand-design-page {
-    min-height: 380px !important;
-  }
-}
+
