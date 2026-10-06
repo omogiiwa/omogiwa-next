@@ -29,7 +29,7 @@ export default function Navbar() {
   <div className="menu-links">
     <a href="/">Home</a>
     <a href="/about">About</a>
-    <a href="/work">Work</a>
+    <a href="/portfolio">Portfolio</a>
     <a href="/contact">Contact</a>
     <a href="/tools">Tools</a>
   </div>
