@@ -3160,3 +3160,22 @@ section {
     font-size: 17px;
   }
 }
+/* ========================================
+BRAND CASE STUDY IMAGES
+======================================== */
+
+.brand-case-study-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* On phones, always show the complete image width */
+@media (max-width: 800px) {
+  .brand-case-study-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}
