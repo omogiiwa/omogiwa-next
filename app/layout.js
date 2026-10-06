@@ -51,13 +51,7 @@ export const metadata = {
   },
 
   openGraph: {
-    twitter: {
-  card: "summary_large_image",
-  title:
-    "Omogbolahan Giwa | Multidisciplinary Designer & Software Engineer",
-  description:
-    "The portfolio of Omogbolahan Giwa, working across design, technology, branding and visual communication.",
-},
+    
     type: "website",
     url: "https://omogiwa.com",
     siteName: "Omogbolahan Giwa",
@@ -67,7 +61,13 @@ export const metadata = {
       "The portfolio of Omogbolahan Giwa, working across design, technology, branding and visual communication.",
     locale: "en_NG",
   },
-
+twitter: {
+  card: "summary_large_image",
+  title:
+    "Omogbolahan Giwa | Multidisciplinary Designer & Software Engineer",
+  description:
+    "The portfolio of Omogbolahan Giwa, working across design, technology, branding and visual communication.",
+},
   robots: {
     index: true,
     follow: true,
