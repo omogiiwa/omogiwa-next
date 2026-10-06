@@ -406,7 +406,7 @@ export default function BrandDesignCaseStudy() {
                 src="/stationery mock-up .png"
                 alt="OmoGiwa branded email signature"
               />
-              <figcaption>Email / Digital Stationery</figcaption>
+              <figcaption> Stationery</figcaption>
             </figure>
           </div>
         </section>
