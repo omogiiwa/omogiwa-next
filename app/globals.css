@@ -3179,3 +3179,17 @@ BRAND CASE STUDY IMAGES
     object-fit: contain;
   }
 }
+
+#omogiwa-email-signature {
+aspect-ratio: 50 / 33;
+object-fit: contain;
+}
+
+#omogiwa-business-card {
+aspect-ratio: 200 / 111;
+object-fit: contain;
+}
+#omogiwa-letterhead {
+aspect-ratio: 200 / 283;
+object-fit: contain;
+}
