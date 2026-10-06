@@ -836,3 +836,190 @@
 
   text-align: center;
 }
+/* =========================================
+   SVG EDITOR FIXES
+========================================= */
+
+.svg-upload.dragging {
+  border-color: #401e97;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(64, 30, 151, 0.09),
+      rgba(106, 63, 208, 0.04)
+    );
+  transform: translateY(-3px) scale(1.01);
+}
+
+.svg-editor-canvas {
+  touch-action: none;
+}
+
+.svg-editable {
+  transform-origin: center center;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.svg-editable svg {
+  max-width: none;
+  max-height: none;
+  width: auto;
+  height: auto;
+}
+
+.svg-editable [data-svg-id] {
+  cursor: pointer;
+}
+
+.svg-editable [data-svg-id]:hover {
+  filter:
+    drop-shadow(
+      0 0 3px rgba(64, 30, 151, 0.45)
+    );
+}
+
+.svg-zoom-controls {
+  min-height: 58px;
+  padding: 10px 20px;
+  border-top: 1px solid #ebe8ef;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  background: #ffffff;
+}
+
+.svg-zoom-controls button {
+  min-width: 38px;
+  height: 36px;
+  padding: 0 12px;
+
+  border: 1px solid #e3dfe8;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #5d5764;
+
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.svg-zoom-controls button:hover {
+  border-color: #401e97;
+  color: #401e97;
+}
+
+.svg-zoom-controls span {
+  min-width: 58px;
+  text-align: center;
+
+  color: #403b47;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+/* =========================================
+   EXPORT SETTINGS
+========================================= */
+
+.svg-export-settings {
+  padding: 25px;
+  border-top: 1px solid #ebe8ef;
+  background: #ffffff;
+}
+
+.svg-export-settings > span {
+  display: block;
+  margin-bottom: 18px;
+
+  color: #401e97;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.svg-export-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.svg-export-settings .svg-setting-group {
+  margin-bottom: 18px;
+}
+
+.svg-export-settings .svg-download-button {
+  margin-top: 5px;
+}
+
+/* =========================================
+   CROP ACTION BUTTON
+========================================= */
+
+.svg-crop-actions button {
+  min-height: 40px;
+  padding: 0 17px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #401e97;
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.svg-crop-actions button:hover:not(:disabled) {
+  background: #321778;
+  transform: translateY(-1px);
+}
+
+.svg-crop-actions button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+  .svg-export-fields {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .svg-zoom-controls {
+    flex-wrap: wrap;
+  }
+
+  .svg-crop-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .svg-crop-actions button {
+    width: 100%;
+  }
+}
