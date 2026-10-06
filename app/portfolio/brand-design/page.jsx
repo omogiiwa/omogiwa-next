@@ -199,7 +199,7 @@ export default function BrandDesignCaseStudy() {
   };
 
   return (
-    <>
+  <main className="brand-design-page">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -1149,6 +1149,6 @@ export default function BrandDesignCaseStudy() {
         </section>
 
       </main>
-    </>
+    </main>
   );
 }
