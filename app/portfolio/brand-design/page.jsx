@@ -301,7 +301,7 @@ export default function BrandDesignCaseStudy() {
         >
           <div className="brand-hero-visual-frame">
             <img
-              src=""
+              src="/giwaoverview.png"
               alt="OmoGiwa brand identity overview"
             />
           </div>
