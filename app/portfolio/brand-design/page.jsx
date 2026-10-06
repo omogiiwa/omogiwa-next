@@ -340,44 +340,13 @@ export default function BrandDesignCaseStudy() {
               className="brand-image-card"
             >
               <img
-                src=""
+                src="/omogiwa-logo-process.svg"
                 alt="OmoGiwa logo and visual identity system"
               />
               <figcaption>Logo System</figcaption>
             </figure>
 
-            <figure
-              id="omogiwa-colour-system"
-              className="brand-image-card"
-            >
-              <img
-                src=""
-                alt="OmoGiwa brand colour palette"
-              />
-              <figcaption>Colour System</figcaption>
-            </figure>
-
-            <figure
-              id="omogiwa-typography-system"
-              className="brand-image-card"
-            >
-              <img
-                src=""
-                alt="OmoGiwa typography and type system"
-              />
-              <figcaption>Typography</figcaption>
-            </figure>
-
-            <figure
-              id="omogiwa-graphic-language"
-              className="brand-image-card brand-image-card-wide"
-            >
-              <img
-                src=""
-                alt="OmoGiwa graphic language and visual elements"
-              />
-              <figcaption>Graphic Language</figcaption>
-            </figure>
+            
 
           </div>
         </section>
