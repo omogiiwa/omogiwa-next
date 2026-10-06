@@ -2534,4 +2534,7 @@ section {
     font-size: 18px;
   }
 
+  .portfolio-card {
+    border-radius: 20px;
+  }
 }
