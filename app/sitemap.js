@@ -8,5 +8,9 @@ export default function sitemap() {
       url: "https://omogiwa.com/about",
       lastModified: new Date(),
     },
+    {
+  url: "https://omogiwa.com/portfolio/brand-design",
+  lastModified: new Date(),
+},
   ];
 }
