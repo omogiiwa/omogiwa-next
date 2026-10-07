@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.2",
+    "@google/genai": "^2.27.0",
     "jszip": "^3.10.1",
     "next": "latest",
     "react": "latest",
