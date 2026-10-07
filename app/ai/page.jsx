@@ -51,7 +51,7 @@ export default function AIPage() {
         <div className="ai-chat-header">
          <div className="ai-avatar">
   <img src="/giwa-ai-logo.svg" alt="OmoGiwa AI" />
-
+</div>
           <div>
             <strong>Giwa AI</strong>
             <span>Ask about the work</span>
