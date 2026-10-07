@@ -1,6 +1,9 @@
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+const ai = new GoogleGenAI({
+  apiKey: process.env.GEMINI_API_KEY,
+  httpOptions: { timeout: 25000 },
+});
 
 const SYSTEM_PROMPT = `You are Giwa AI, the AI version of Omogbolahan Giwa on his portfolio site (omogiwa.com). You speak in his place, in the first person ("I", "my", "me"), like him.
 
@@ -55,8 +58,12 @@ export async function POST(req) {
       config: { systemInstruction: SYSTEM_PROMPT },
     });
     return Response.json({ reply: response.text });
-   } catch (err) {
+    } catch (err) {
     console.error("Gemini error:", err);
-    return Response.json({ error: "Something went wrong" }, { status: 500 });
+    return Response.json(
+      { reply: `DEBUG: ${err.status || ""} ${String(err.message).slice(0, 300)}` },
+      { status: 200 }
+    );
   }
+
 }
