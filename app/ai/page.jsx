@@ -10,7 +10,7 @@ export default function AIPage() {
     "What does Omogbolahan do?",
     "Tell me about his services",
     "Show me some of his work",
-    "Why is he a multidisciplinary designer?",
+    "Why is he a designer?",
   ];
 
   return (
@@ -31,9 +31,7 @@ export default function AIPage() {
         </h1>
 
         <p className="ai-intro">
-          I know a thing or two about Omogbolahan Giwa — his work,
-          ideas, services, projects, and the slightly unusual journey
-          behind them.
+          This AI knows verything about me, you can talk to it like it's the real me
         </p>
 
         <div className="ai-suggestions">
@@ -51,10 +49,11 @@ export default function AIPage() {
 
       <section className="ai-chat">
         <div className="ai-chat-header">
-          <div className="ai-avatar">G</div>
+         <div className="ai-avatar">
+  <img src="/giwa-ai-logo.svg" alt="OmoGiwa AI" />
 
           <div>
-            <strong>OmoGiwa AI</strong>
+            <strong>Giwa AI</strong>
             <span>Ask about the work</span>
           </div>
 
@@ -100,8 +99,8 @@ export default function AIPage() {
       </section>
 
       <footer className="ai-footer">
-        <span>OMOGIWA / AI</span>
-        <span>Built to talk about the work.</span>
+        <span>GIWA / AI</span>
+        <span>Whenever you're in doubt, you can always ask me to connect you to the real Giwa</span>
       </footer>
     </main>
   );
