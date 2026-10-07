@@ -80,7 +80,6 @@ export default function AIPage() {
             Start the conversation.
           </div>
         </div>
-
         <form
           className="ai-input-area"
           onSubmit={(e) => e.preventDefault()}
@@ -93,14 +92,16 @@ export default function AIPage() {
           />
 
           <button type="submit" aria-label="Send message">
-            
+            →
           </button>
         </form>
       </section>
 
       <footer className="ai-footer">
         <span>GIWA / AI</span>
-        <span>Whenever you're in doubt, you can always ask me to connect you to the real Giwa</span>
+        <span>
+          Whenever you're in doubt, you can always ask me to connect you to the real Giwa
+        </span>
       </footer>
     </main>
   );
