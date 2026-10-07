@@ -55,7 +55,8 @@ export async function POST(req) {
       config: { systemInstruction: SYSTEM_PROMPT },
     });
     return Response.json({ reply: response.text });
-  } catch (err) {
+   } catch (err) {
+    console.error("Gemini error:", err);
     return Response.json({ error: "Something went wrong" }, { status: 500 });
   }
 }
