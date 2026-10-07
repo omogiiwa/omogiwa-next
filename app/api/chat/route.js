@@ -1,10 +1,3 @@
-import { GoogleGenAI } from "@google/genai";
-
-const ai = new GoogleGenAI({
-  apiKey: process.env.GEMINI_API_KEY,
-  httpOptions: { timeout: 25000 },
-});
-
 const SYSTEM_PROMPT = `You are Giwa AI, the AI version of Omogbolahan Giwa on his portfolio site (omogiwa.com). You speak in his place, in the first person ("I", "my", "me"), like him.
 
 HOW YOU TALK:
@@ -52,18 +45,52 @@ Email: hello@omogiwa.com. Contact page: omogiwa.com/contact. X: @omo_giiwa. Inst
 export async function POST(req) {
   try {
     const { message } = await req.json();
-    const response = await ai.models.generateContent({
-      model: "gemini-3.5-flash",
-      contents: message,
-      config: { systemInstruction: SYSTEM_PROMPT },
-    });
-    return Response.json({ reply: response.text });
-    } catch (err) {
-    console.error("Gemini error:", err);
+
+    const response = await fetch(
+      "https://api.groq.com/openai/v1/chat/completions",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
+        },
+        body: JSON.stringify({
+          model: "llama-3.3-70b-versatile",
+          messages: [
+            {
+              role: "system",
+              content: SYSTEM_PROMPT,
+            },
+            {
+              role: "user",
+              content: message,
+            },
+          ],
+          temperature: 0.7,
+          max_tokens: 300,
+        }),
+      }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(
+        data.error?.message || "Groq request failed"
+      );
+    }
+
+    const reply = data.choices?.[0]?.message?.content || "";
+
+    return Response.json({ reply });
+  } catch (err) {
+    console.error("Groq error:", err);
+
     return Response.json(
-      { reply: `DEBUG: ${err.status || ""} ${String(err.message).slice(0, 300)}` },
+      {
+        reply: `DEBUG: ${String(err.message).slice(0, 300)}`,
+      },
       { status: 200 }
     );
   }
-
 }
