@@ -21,7 +21,7 @@ export default function AIPage() {
       <section className="ai-hero">
         <div className="ai-status">
           <span></span>
-          OmoGiwa AI
+          Giwa AI
         </div>
 
         <h1>
@@ -43,7 +43,7 @@ export default function AIPage() {
               onClick={() => setInput(suggestion)}
             >
               {suggestion}
-              <span>↗</span>
+              <span></span>
             </button>
           ))}
         </div>
@@ -66,7 +66,7 @@ export default function AIPage() {
 
         <div className="ai-messages">
           <div className="ai-message ai-message-bot">
-            <span className="message-label">OmoGiwa AI</span>
+            <span className="message-label">Giwa AI</span>
             <p>
               Hey 👋
               <br />
@@ -94,7 +94,7 @@ export default function AIPage() {
           />
 
           <button type="submit" aria-label="Send message">
-            →
+            
           </button>
         </form>
       </section>
