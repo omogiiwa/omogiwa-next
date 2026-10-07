@@ -1,10 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+
 import "./ai.css";
 
 export default function AIPage() {
   const [input, setInput] = useState("");
+  const [messages, setMessages] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const bottomRef = useRef(null);
 
   const suggestions = [
     "What does Omogbolahan do?",
@@ -12,6 +16,38 @@ export default function AIPage() {
     "Show me some of his work",
     "Why is he a designer?",
   ];
+
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages, loading]);
+
+  async function sendMessage(text) {
+    const message = text.trim();
+    if (!message || loading) return;
+
+    setMessages((m) => [...m, { role: "user", text: message }]);
+    setInput("");
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message }),
+      });
+      const data = await res.json();
+      setMessages((m) => [
+        ...m,
+        { role: "bot", text: data.reply || "Sorry, something went wrong." },
+      ]);
+    } catch (err) {
+      setMessages((m) => [
+        ...m,
+        { role: "bot", text: "Sorry, I couldn't connect. Try again." },
+      ]);
+    }
+    setLoading(false);
+  }
 
   return (
     <main className="ai-page">
@@ -38,7 +74,7 @@ export default function AIPage() {
           {suggestions.map((suggestion) => (
             <button
               key={suggestion}
-              onClick={() => setInput(suggestion)}
+              onClick={() => sendMessage(suggestion)}
             >
               {suggestion}
               <span></span>
@@ -49,9 +85,10 @@ export default function AIPage() {
 
       <section className="ai-chat">
         <div className="ai-chat-header">
-         <div className="ai-avatar">
-  <img src="/giwa-ai-icon.svg" alt="OmoGiwa AI" />
-</div>
+          <div className="ai-avatar">
+            <img src="/giwa-ai-icon.svg" alt="OmoGiwa AI" />
+          </div>
+
           <div>
             <strong>Giwa AI</strong>
             <span>Ask about the work</span>
@@ -75,14 +112,43 @@ export default function AIPage() {
             </p>
           </div>
 
-          <div className="ai-empty">
-            <span>01</span>
-            Start the conversation.
-          </div>
+          {messages.length === 0 && (
+            <div className="ai-empty">
+              <span>01</span>
+              Start the conversation.
+            </div>
+          )}
+
+          {messages.map((m, i) => (
+            <div
+              key={i}
+              className={`ai-message ${
+                m.role === "user" ? "ai-message-user" : "ai-message-bot"
+              }`}
+            >
+              <span className="message-label">
+                {m.role === "user" ? "You" : "Giwa AI"}
+              </span>
+              <p>{m.text}</p>
+            </div>
+          ))}
+
+          {loading && (
+            <div className="ai-message ai-message-bot">
+              <span className="message-label">Giwa AI</span>
+              <p>Thinking...</p>
+            </div>
+          )}
+
+          <div ref={bottomRef} />
         </div>
+
         <form
           className="ai-input-area"
-          onSubmit={(e) => e.preventDefault()}
+          onSubmit={(e) => {
+            e.preventDefault();
+            sendMessage(input);
+          }}
         >
           <input
             type="text"
