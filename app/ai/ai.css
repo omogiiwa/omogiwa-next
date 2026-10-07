@@ -395,3 +395,8 @@
     gap: 8px;
   }
 }
+.ai-message-user {
+  margin-left: auto;
+  text-align: right;
+  background: #ae61e8;
+}
