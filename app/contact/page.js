@@ -49,7 +49,7 @@ const contacts = [
   {
     label: "WhatsApp",
     value: "YOUR WHATSAPP NUMBER",
-    href: "https://wa.me/YOURNUMBER",
+    href: "https://wa.me/2347041189806",
     description: "For a quick conversation",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -141,7 +141,7 @@ export default function ContactPage() {
         <div className="contact-footer">
           <span>Prefer email for professional enquiries.</span>
           <Link href="/" className="text-link">
-            ← Back home
+            Back home
           </Link>
         </div>
       </section>
