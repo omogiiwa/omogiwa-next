@@ -46,7 +46,7 @@ const images = [
     className: "mings-logo",
   },
   {
-    src: "/app-mings.png",
+    src: "/app-mockup.png",
     alt: "Mings app logo",
     className: "mings-watch",
   },
