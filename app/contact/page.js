@@ -48,7 +48,7 @@ const contacts = [
   },
   {
     label: "WhatsApp",
-    value: "YOUR WHATSAPP NUMBER",
+    value: "+234(704)118-9806",
     href: "https://wa.me/2347041189806",
     description: "For a quick conversation",
     icon: (
