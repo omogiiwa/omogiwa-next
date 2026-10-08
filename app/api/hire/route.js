@@ -64,13 +64,18 @@ export async function POST(request) {
   ]);
 
     if (error) {
-      console.error("Hire form error:", error);
+  console.error("Hire form error:", error);
 
-      return NextResponse.json(
-        { error: "Unable to submit your inquiry right now." },
-        { status: 500 }
-      );
-    }
+  return NextResponse.json(
+    {
+      error: error.message,
+      details: error.details,
+      hint: error.hint,
+      code: error.code,
+    },
+    { status: 500 }
+  );
+}
 
     return NextResponse.json({
       success: true,
@@ -80,7 +85,7 @@ export async function POST(request) {
     console.error("Hire API error:", error);
 
     return NextResponse.json(
-      { error: "Something went wrong. Please try again." },
+      { error: error.message || "Something went wrong. Please try again.", },
       { status: 500 }
     );
   }
