@@ -79,7 +79,7 @@ export async function POST(request) {
 
     return NextResponse.json({
       success: true,
-      id: data.id,
+      
     });
   } catch (error) {
     console.error("Hire API error:", error);
