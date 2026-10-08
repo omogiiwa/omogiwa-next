@@ -12,12 +12,13 @@ export default function Home() {
   const [activeProject, setActiveProject] = useState(0);
   const projects = [
   {
-    title: "Project One",
-    image: "/IMG_0298.jpg",
+    title: "Letterhead Collection",
+    image: "/stationery mock-up .jpg",
     description:
-      "A creative digital project combining design, technology and visual communication.",
+      "Letterhead, business card and envelope cover for OmoGiwa",
     category: "Web Design / Development",
     readTime: "5 min read",
+    href: "portfolio/brand-design",
   },
   {
     title: "Project Two",
