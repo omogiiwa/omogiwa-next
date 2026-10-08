@@ -12,12 +12,12 @@ export default function Home() {
   const [activeProject, setActiveProject] = useState(0);
   const projects = [
   {
-    title: "Letterhead Collection",
+    title: "Letterhead Collection for Giwa",
     image: "/stationery mock-up .png",
     description:
       "Letterhead, business card and envelope cover for OmoGiwa",
     category: "Web Design / Development",
-    readTime: "5 min read",
+    
     href: "portfolio/brand-design",
   },
   {
@@ -26,15 +26,15 @@ export default function Home() {
     description:
       "A visual identity project focused on creating a distinctive and memorable brand.",
     category: "Brand Identity",
-    readTime: "4 min read",
+    
   },
   {
-    title: "Project Three",
-    image: "/IMG_0295.jpg",
+    title: "Busiess card for Mings",
+    image: "/mings-show.png",
     description:
-      "A graphic design project exploring visual storytelling, composition and communication.",
+      "Clean business card for Mings",
     category: "Graphic Design",
-    readTime: "3 min read",
+    
   },
 ];
 const [email, setEmail] = useState("");
