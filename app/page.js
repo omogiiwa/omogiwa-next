@@ -13,7 +13,7 @@ export default function Home() {
   const projects = [
   {
     title: "Letterhead Collection",
-    image: "/stationery mock-up .jpg",
+    image: "/stationery mock-up .png",
     description:
       "Letterhead, business card and envelope cover for OmoGiwa",
     category: "Web Design / Development",
