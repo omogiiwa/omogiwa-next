@@ -1,9 +1,9 @@
 import "./brand-design.css";
 
 export const metadata = {
-  title: "Mings — Brand Identity",
+  title: "Brand Identity",
   description:
-    "Mings brand identity project by Omogbolahan Giwa.",
+    "Brand identity project by Omogbolahan Giwa.",
   keywords: [
     "Mings brand identity",
     "Mings branding",
@@ -44,6 +44,11 @@ const images = [
     src: "/mings-logo.png",
     alt: "Mings logo",
     className: "mings-logo",
+  },
+  {
+    src: "/app-mings.png",
+    alt: "Mings app logo",
+    className: "mings-watch",
   },
   {
     src: "/shirt-mockup.png",
@@ -94,6 +99,7 @@ export default function BrandDesignPage() {
         <div>
           <p className="mings-kicker">BRAND IDENTITY</p>
           <h1>Mings</h1>
+          <h2> Mings is a logistics company that focuses on delivery, shipping, private rental services and many more. </h2>
         </div>
 
         <p className="mings-year">2026</p>
