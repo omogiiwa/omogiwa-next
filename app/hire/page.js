@@ -268,12 +268,14 @@ export default function HirePage() {
 
       setSuccess(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
-    } catch (submitError) {
-      console.error(submitError);
-      setError(
-        "Something went wrong while submitting your inquiry. Please try again."
-      );
-    } finally {
+  } catch (submitError) {
+  console.error("Hire submission error:", submitError);
+
+  setError(
+    submitError.message ||
+      "Something went wrong while submitting your inquiry. Please try again."
+  );
+} finally {
       setSubmitting(false);
     }
   };
