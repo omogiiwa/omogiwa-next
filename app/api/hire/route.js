@@ -41,29 +41,27 @@ export async function POST(request) {
       );
     }
 
-    const { data, error } = await supabase
-      .from("hire_inquiries")
-      .insert([
-        {
-          full_name: fullName.trim(),
-          email: email.trim().toLowerCase(),
-          phone: phone?.trim() || null,
-          company_name: companyName?.trim() || null,
-          client_type: clientType || null,
-          location: location?.trim() || null,
-          website: website?.trim() || null,
-          discovery_source: discoverySource || null,
-          previous_client:
-            previousClient === true ||
-            previousClient === "yes" ||
-            previousClient === "Yes",
-          services,
-          answers: answers || {},
-          uploaded_files: uploadedFiles || [],
-        },
-      ])
-      .select("id")
-      .single();
+    const { error } = await supabase
+  .from("hire_inquiries")
+  .insert([
+    {
+      full_name: fullName.trim(),
+      email: email.trim().toLowerCase(),
+      phone: phone?.trim() || null,
+      company_name: companyName?.trim() || null,
+      client_type: clientType || null,
+      location: location?.trim() || null,
+      website: website?.trim() || null,
+      discovery_source: discoverySource || null,
+      previous_client:
+        previousClient === true ||
+        previousClient === "yes" ||
+        previousClient === "Yes",
+      services,
+      answers: answers || {},
+      uploaded_files: uploadedFiles || [],
+    },
+  ]);
 
     if (error) {
       console.error("Hire form error:", error);
