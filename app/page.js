@@ -21,11 +21,10 @@ export default function Home() {
     href: "portfolio/brand-design",
   },
   {
-    title: "Project Two",
-    image: "/IMG_0288.jpg",
+    title: "Logo collection",
+    image: "/some-logos.png",
     description:
-      "A visual identity project focused on creating a distinctive and memorable brand.",
-    category: "Brand Identity",
+      "Some logos and icons I have made",
     
   },
   {
