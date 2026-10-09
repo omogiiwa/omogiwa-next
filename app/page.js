@@ -17,6 +17,7 @@ export default function Home() {
     image: "/some-logos.png",
     description:
       "Some logos and icons I have made",
+      category: "Graphic Design",
     
   },
   {
@@ -32,7 +33,7 @@ export default function Home() {
     image: "/stationery mock-up .png",
     description:
       "Letterhead, business card and envelope cover for OmoGiwa",
-    category: "Web Design / Development",
+    category: "Graphics Design",
     
     href: "portfolio/brand-design",
   },
