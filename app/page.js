@@ -11,15 +11,7 @@ export default function Home() {
   const [workVisible, setWorkVisible] = useState(false);
   const [activeProject, setActiveProject] = useState(0);
   const projects = [
-  {
-    title: "Letterhead Collection for Giwa",
-    image: "/stationery mock-up .png",
-    description:
-      "Letterhead, business card and envelope cover for OmoGiwa",
-    category: "Web Design / Development",
-    
-    href: "portfolio/brand-design",
-  },
+
   {
     title: "Logo collection",
     image: "/some-logos.png",
@@ -34,6 +26,15 @@ export default function Home() {
       "Clean business card for Mings",
     category: "Graphic Design",
     
+  },
+    {
+    title: "Letterhead Collection for Giwa",
+    image: "/stationery mock-up .png",
+    description:
+      "Letterhead, business card and envelope cover for OmoGiwa",
+    category: "Web Design / Development",
+    
+    href: "portfolio/brand-design",
   },
 ];
 const [email, setEmail] = useState("");
