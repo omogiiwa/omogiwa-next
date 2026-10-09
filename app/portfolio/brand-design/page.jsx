@@ -90,6 +90,22 @@ const images = [
     alt: "Mings outdoor boards",
     className: "mings-boards",
   },
+  {
+    src: "/mings-mugs.png",
+    alt: "Mings mugs",
+  },
+  {
+    src: "/mings-cap.png",
+    alt: "Mings cap",
+  },
+  {
+    src: "/mings-letterhead.png",
+    alt: "Mings letterhead",
+  },
+  {
+    src: "/mings-box.png",
+    alt: "Mings box",
+  },
 ];
 
 export default function BrandDesignPage() {
