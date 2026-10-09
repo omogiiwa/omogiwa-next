@@ -36,8 +36,8 @@ export const metadata = {
 const contacts = [
   {
     label: "Email",
-    value: "official@omogiwa.com",
-    href: "mailto:official@omogiwa.com",
+    value: "hello@omogiwa.com",
+    href: "mailto:hello@omogiwa.com",
     description: "For enquiries, projects & collaborations",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -73,7 +73,7 @@ const contacts = [
     label: "Instagram",
     value: "@decliint",
     href: "https://instagram.com/decliint",
-    description: "Design, visuals & everything in between",
+    description: "Mostly personal stuff but you can hit me up anyway",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
