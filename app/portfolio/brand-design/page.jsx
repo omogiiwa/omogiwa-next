@@ -99,7 +99,7 @@ export default function BrandDesignPage() {
         <div>
           <p className="mings-kicker">BRAND IDENTITY</p>
           <h1>Mings</h1>
-          <h2> Mings is a logistics company that focuses on delivery, shipping, private rental services and many more. </h2>
+          <p> Mings is a logistics company that focuses on delivery, shipping, private rental services and many more. Click on any image to view it properly </p>
         </div>
 
         <p className="mings-year">2026</p>
