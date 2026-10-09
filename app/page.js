@@ -595,9 +595,7 @@ THE DESK HERO
       ========================== */}
       <section className="about-section" id="about">
 
-        <div className="about-image">
-          <img src="/profile2.png" alt="Omogbolahan Giwa" />
-        </div>
+        
 
         <div className="about-content">
 
