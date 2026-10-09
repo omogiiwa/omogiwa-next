@@ -58,22 +58,25 @@
   max-width: 1500px;
   margin: 0 auto;
 
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: minmax(70px, auto);
-
-  gap: 18px;
-  align-items: start;
+  columns: 3;
+  column-gap: 18px;
+  column-fill: balance;
 }
 
 .mings-gallery-item {
   position: relative;
-  display: block;
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 18px;
+
   overflow: hidden;
   background: #f4f3f6;
 
   text-decoration: none;
   cursor: zoom-in;
+
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
 
   transition:
     transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
@@ -81,9 +84,9 @@
 }
 
 .mings-gallery-item img {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
 
   transition:
     transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
@@ -103,66 +106,6 @@
 /* ========================================
    GALLERY COMPOSITION
 ======================================== */
-
-/* Large opening image */
-.mings-feature {
-  grid-column: 1 / 8;
-  grid-row: span 7;
-}
-
-/* Logo */
-.mings-logo {
-  grid-column: 8 / 13;
-  grid-row: span 4;
-}
-
-/* Shirt */
-.mings-shirt {
-  grid-column: 8 / 13;
-  grid-row: span 5;
-}
-
-/* Building */
-.mings-building {
-  grid-column: 1 / 6;
-  grid-row: span 6;
-}
-
-/* Watch */
-.mings-watch {
-  grid-column: 6 / 13;
-  grid-row: span 6;
-}
-
-/* Brand board */
-.mings-board {
-  grid-column: 1 / 8;
-  grid-row: span 6;
-}
-
-/* Stationery */
-.mings-stationery {
-  grid-column: 8 / 13;
-  grid-row: span 6;
-}
-
-/* Truck */
-.mings-truck {
-  grid-column: 1 / 7;
-  grid-row: span 6;
-}
-
-/* Jacket */
-.mings-jacket {
-  grid-column: 7 / 13;
-  grid-row: span 6;
-}
-
-/* Final boards */
-.mings-boards {
-  grid-column: 1 / 13;
-  grid-row: span 7;
-}
 
 
 /* ========================================
@@ -279,48 +222,6 @@
     font-size: clamp(50px, 11vw, 80px);
   }
 
-  .mings-gallery {
-    gap: 12px;
-  }
-
-  .mings-feature {
-    grid-column: 1 / 8;
-  }
-
-  .mings-logo {
-    grid-column: 8 / 13;
-  }
-
-  .mings-shirt {
-    grid-column: 8 / 13;
-  }
-
-  .mings-building {
-    grid-column: 1 / 6;
-  }
-
-  .mings-watch {
-    grid-column: 6 / 13;
-  }
-
-  .mings-board {
-    grid-column: 1 / 8;
-  }
-
-  .mings-stationery {
-    grid-column: 8 / 13;
-  }
-
-  .mings-truck {
-    grid-column: 1 / 7;
-  }
-
-  .mings-jacket {
-    grid-column: 7 / 13;
-  }
-}
-
-
 /* ========================================
    MOBILE
 ======================================== */
@@ -350,53 +251,3 @@
     padding-top: 5px;
     font-size: 12px;
   }
-
-  .mings-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-  }
-
-  /*
-    On mobile we let the images naturally determine
-    their height. This avoids awkward empty spaces.
-  */
-
-  .mings-gallery-item {
-    grid-column: auto !important;
-    grid-row: auto !important;
-  }
-
-  .mings-feature,
-  .mings-boards {
-    grid-column: 1 / -1 !important;
-  }
-
-  .mings-gallery-item:hover {
-    transform: none;
-    box-shadow: none;
-  }
-
-  .mings-gallery-item:hover img {
-    transform: none;
-  }
-
-  .mings-lightbox {
-    padding: 20px;
-  }
-
-  .mings-lightbox-content {
-    max-width: 96vw;
-    max-height: 85vh;
-  }
-
-  .mings-lightbox-content img {
-    max-width: 96vw;
-    max-height: 82vh;
-  }
-
-  .mings-lightbox-close {
-    top: -42px;
-    right: 0;
-  }
-}
