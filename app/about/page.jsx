@@ -39,238 +39,314 @@ export const metadata = {
 };
 export default function AboutPage() {
   return (
-    <main className="omg-about-page" id="omg-about-page">
-      {/* HERO */}
-      <section
-        className="omg-about-hero"
-        id="omg-about-introduction"
-        aria-labelledby="omg-about-title"
-      >
-        <div className="omg-about-hero-content">
-          <div className="omg-about-hero-text">
-            <p className="omg-about-eyebrow">About</p>
-            <h1 className="omg-about-title" id="omg-about-title">
-          Omogbolahan Giwa
-            </h1>
-            <p className="omg-about-intro">
-              A multidisciplinary designer, human anatomist and software engineer.
-            </p>
-          </div>
-          <div className="omg-about-profile-wrap">
-            <img
-              src="/profile.png"
-              alt="Portrait of Omogbolahan Giwa"
-              className="omg-about-profile-image"
-            />
+  <main className="omg-about-page">
+    {/* HERO */}
+    <section className="omg-about-hero">
+      <div className="omg-about-hero-content">
+        <div className="omg-about-hero-text">
+          <p className="omg-about-eyebrow">About</p>
+          <h1 className="omg-about-title">
+            Omogbolahan Giwa
+          </h1>
+          <p className="omg-about-intro">
+            Multidisciplinary designer and software engineer
+            helping businesses turn ideas into thoughtful
+            visual identities, digital experiences, and
+            practical creative solutions.
+          </p>
+        </div>
+        <div className="omg-about-profile-wrap">
+          <img
+            src="/your-profile-image.jpg"
+            alt="Omogbolahan Giwa"
+            className="omg-about-profile-image"
+          />
+        </div>
+      </div>
+    </section>
+    {/* PHILOSOPHY */}
+    <section className="omg-about-section">
+      <details className="omg-about-details">
+        <summary className="omg-about-summary">
+          Philosophy
+          <span className="omg-about-summary-icon">+</span>
+        </summary>
+        <div className="omg-about-content">
+          <p className="omg-about-lead">
+            Good design is not just about making things look
+            good. It is about making the right things clear,
+            memorable, and useful.
+          </p>
+          <p>
+            I believe creativity works best when it has a
+            purpose. A beautiful identity means little if
+            people cannot recognise the brand behind it.
+            A website is not doing its job if it looks
+            impressive but leaves visitors wondering what to
+            do next.
+          </p>
+          <p>
+            That is why I approach design as more than
+            decoration. I consider the message, the audience,
+            the experience, and the bigger picture before
+            worrying about which shade of purple looks best.
+            Although, admittedly, the shade of purple still
+            matters.
+          </p>
+          <p>
+            My goal is to create work that looks considered,
+            communicates clearly, and serves a real purpose
+            for the people and businesses behind it.
+          </p>
+        </div>
+      </details>
+    </section>
+    {/* BACKGROUND AND EXPERTISE */}
+    <section className="omg-about-section">
+      <details className="omg-about-details">
+        <summary className="omg-about-summary">
+          Background & Expertise
+          <span className="omg-about-summary-icon">+</span>
+        </summary>
+        <div className="omg-about-content">
+          <p className="omg-about-lead">
+            My work sits at the intersection of design,
+            technology, and problem-solving.
+          </p>
+          <p>
+            I hold a bachelor's degree in Human Anatomy from
+            Gregory University Uturu, and I am a self-taught
+            software engineer. My path into design grew from
+            a natural interest in visual communication into
+            consistent practice in branding, graphic design,
+            illustration, and digital design.
+          </p>
+          <p>
+            I also design and build websites, which allows
+            me to think beyond how a digital product looks
+            and consider how it actually works. Layout,
+            usability, responsiveness, performance, and the
+            experience a visitor has all matter.
+          </p>
+          <p>
+            I do not see these disciplines as separate
+            boxes. They give me different ways to approach
+            a problem, and that range helps me connect the
+            visual side of a project with its practical
+            requirements.
+          </p>
+          <p>
+            I am also exploring AI development and the
+            possibilities it creates for building useful
+            digital products. There is plenty to learn,
+            but that has never been a particularly good
+            reason to avoid learning something.
+          </p>
+        </div>
+      </details>
+    </section>
+    {/* WHAT I CAN DO */}
+    <section className="omg-about-section">
+      <details className="omg-about-details">
+        <summary className="omg-about-summary">
+          What Can I Do for You?
+          <span className="omg-about-summary-icon">+</span>
+        </summary>
+        <div className="omg-about-content">
+          <p className="omg-about-lead">
+            I help businesses communicate better through
+            thoughtful branding, digital experiences, and
+            visual design.
+          </p>
+          <p>
+            Whether you are launching a new business,
+            improving an existing brand, or building a
+            digital presence, I can help you bring the
+            different pieces together.
+          </p>
+          <div className="omg-about-service-list">
+            <article className="omg-about-service">
+              <h2>Brand & Visual Design</h2>
+              <p>
+                I create visual identities that give
+                businesses a recognisable and consistent
+                presence. From logos and typography to
+                colour systems and supporting graphics,
+                every element should feel like it belongs
+                to the same brand.
+              </p>
+            </article>
+            <article className="omg-about-service">
+              <h2>Web & Digital Design</h2>
+              <p>
+                I design and develop websites that combine
+                visual appeal with usability and purpose.
+                The aim is to help visitors understand
+                what you offer, navigate with ease, and
+                take the next step.
+              </p>
+            </article>
+            <article className="omg-about-service">
+              <h2>Digital Strategy</h2>
+              <p>
+                I help connect your brand's visual
+                communication and digital presence to
+                your business goals. That means thinking
+                about what you need to communicate,
+                who needs to hear it, and how the
+                experience should support your objectives.
+              </p>
+            </article>
           </div>
         </div>
-      </section>
-      {/* PHILOSOPHY */}
-      <section className="omg-about-section" id="omg-about-philosophy">
-        <details className="omg-about-details" open>
-          <summary className="omg-about-summary">
-            <span>Philosophy</span>
-            <span className="omg-about-summary-icon" aria-hidden="true">
-              +
-            </span>
-          </summary>
-          <div className="omg-about-content">
-            <p>
-              I believe the human body does not have limits; we are not meant
-              to be confined to a single definition of what we can become.
-              One of my many missions in life is to substantiate this
-              statement by succeeding in as many fields as possible while
-              giving each of them my all.
-            </p>
-            <p>
-              This is not a challenge, nor am I trying to just insert as much
-              as possible into my CV, and no, these fields are not random
-              either. They are the total embodiment of what I — Omogbolahan
-              Giwa — have always dreamed of for years as a kid, despite facing
-              the resource constraints shared by millions of young Nigerians
-              from similar backgrounds.
-            </p>
-            <p>
-              There were many things I wanted to become, and instead of
-              choosing one and abandoning the others, I’m trying to build the
-              ability to pursue all of them.
-            </p>
-            <p>
-              Whenever I get asked my dream or what I want to be, I never have
-              a definite answer like others because there are too many.
-            </p>
-          </div>
-        </details>
-      </section>
-      {/* SKILLS */}
-      <section className="omg-about-section" id="omg-about-skills">
-        <details className="omg-about-details">
-          <summary className="omg-about-summary">
-            <span>Skills</span>
-            <span className="omg-about-summary-icon" aria-hidden="true">
-              +
-            </span>
-          </summary>
-          <div className="omg-about-content">
-            <p>
-              For a start, I am fascinated by how the human body works, so I
-              studied Human Anatomy at Gregory University Uturu, where I earned
-              my bachelor’s degree.
-            </p>
-            <p>
-              I am also a self-taught software engineer. This website is the
-              evidence of that — I designed every bit of it independently.
-            </p>
-            <p>
-              I am also in the process of learning AI development. Who knows,
-              maybe my AI company can rival OpenAI and Anthropic in the future.
-              I know you laughed, or at least chuckled, a bit, but people also
-              laughed when the Wright brothers claimed they were going to
-              build a technology that allowed flight transport over
-              several miles, and yet here we are.
-            </p>
-            <p>
-              Everybody who knows me personally knows I am a creative and
-              artistic person. It only makes sense that I learn graphic
-              design. I didn’t even need to learn it; I just had to know how
-              the buttons work. The skills have always been there. All I had to
-              do was put them on screen.
-            </p>
-            <p>
-              Over time, the zeal developed into serious and consistent
-              practice in graphic design, illustration, and branding.
-            </p>
-          </div>
-        </details>
-      </section>
-      {/* WHAT I CAN DO */}
-      <section className="omg-about-section" id="omg-about-services">
-        <details className="omg-about-details">
-          <summary className="omg-about-summary">
-            <span>What Can I Do for You?</span>
-            <span className="omg-about-summary-icon" aria-hidden="true">
-              +
-            </span>
-          </summary>
-          <div className="omg-about-content">
-            <p className="omg-about-lead">
-              I turn ideas into visual identities, digital experiences and
-              creative systems that make brands easier to recognize,
-              understand and remember.
-            </p>
-            <div className="omg-about-service-list">
-              <article
-                className="omg-about-service"
-                id="omg-about-brand-identity"
-              >
-                <h2>Brand Identity</h2>
-                <p>
-                  I help brands build a distinct visual identity — from logos
-                  and color systems to typography, graphics and the overall
-                  visual language that makes a brand stand out.
-                </p>
-              </article>
-              <article
-                className="omg-about-service"
-                id="omg-about-web-design-development"
-              >
-                <h2>Web Design &amp; Development</h2>
-                <p>
-                  I design and build websites that don’t just look good, but
-                  communicate clearly and work properly. I focus mainly on how
-                  they interact with your potential clients or anybody that
-                  visits your page. You can judge that yourself from this
-                  site.
-                </p>
-              </article>
-              <article
-                className="omg-about-service"
-                id="omg-about-illustration"
-              >
-                <h2>Illustration</h2>
-                <p>
-                  I create custom illustrations and visual concepts. Whenever
-                  you have an idea or business that you just can’t put down, I
-                  am the right person to call. Talk to me and I’ll bring it to
-                  life.
-                </p>
-              </article>
-            </div>
-          </div>
-        </details>
-      </section>
-      {/* HOW I CAN HELP */}
-      <section className="omg-about-section" id="omg-about-brand-help">
-        <details className="omg-about-details">
-          <summary className="omg-about-summary">
-            <span>How I Can Help Your Brand</span>
-            <span className="omg-about-summary-icon" aria-hidden="true">
-              +
-            </span>
-          </summary>
-          <div className="omg-about-content">
-            <p>
-              Your brand doesn’t need to do everything. It needs to communicate
-              the right things to the right people.
-            </p>
-            <p>
-              Whether you’re starting from scratch, rebuilding an existing
-              identity or simply need better visual communication, I can help
-              turn your ideas into something people can actually see,
-              understand and remember.
-            </p>
-            <p>
-              I approach every project as more than a collection of individual
-              designs. The goal is to create something intentional, consistent
-              and unmistakably yours.
-            </p>
-            <p>
-              I enjoy working at the intersection of art, design and
-              technology, turning ideas into visual identities.
-            </p>
-          </div>
-        </details>
-      </section>
-      {/* OUTSIDE THE WORK */}
-      <section className="omg-about-section" id="omg-about-outside-work">
-        <details className="omg-about-details">
-          <summary className="omg-about-summary">
-            <span>Outside the Work</span>
-            <span className="omg-about-summary-icon" aria-hidden="true">
-              +
-            </span>
-          </summary>
-          <div className="omg-about-content">
-            <h2>And when I’m not designing?</h2>
-            <p>
-              I play volleyball, a lot. In fact, I — along with my teammates
-              at Gregory University Titans — won the silver medal at 2025
-              ASTESF, making us the second-best volleyball team in Abia State!
-            </p>
-            <p>
-              I’m naturally curious, which is probably why I have a habit of
-              picking up completely different things and trying to understand
-              how they work. One day I might be learning something about AI or
-              software; the following day I’m learning about the French
-              Revolution or the Kiriji War.
-            </p>
-            <p>
-              I am a man of many interests and very competitive, which is why
-              I’m always at a sport or another. My interests span across:
-            </p>
-            <ul className="omg-about-interests">
-              <li>Volleyball</li>
-              <li>Politics</li>
-              <li>History</li>
-              <li>Fashion</li>
-              <li>Football</li>
-              <li>Basketball</li>
-              <li>Anime</li>
-              <li>Chess</li>
-            </ul>
-          </div>
-        </details>
-      </section>
-    </main>
-  );
+      </details>
+    </section>
+    {/* HOW I WORK */}
+    <section className="omg-about-section">
+      <details className="omg-about-details">
+        <summary className="omg-about-summary">
+          How I Work
+          <span className="omg-about-summary-icon">+</span>
+        </summary>
+        <div className="omg-about-content">
+          <p className="omg-about-lead">
+            I do not believe in designing first and asking
+            questions later. That is a very efficient way
+            to create something nobody asked for.
+          </p>
+          <h2>01. Understand the problem</h2>
+          <p>
+            Before getting into visuals or development,
+            I want to understand what you are trying to
+            achieve, who you are trying to reach, and
+            what the project actually needs. The brief
+            matters because good execution cannot rescue
+            a misunderstood problem.
+          </p>
+          <h2>02. Find the right direction</h2>
+          <p>
+            I translate the project's goals into a clear
+            creative direction. This is where I consider
+            the message, visual language, structure, and
+            experience that make the most sense for your
+            business rather than simply following whatever
+            happens to be trending.
+          </p>
+          <h2>03. Design and build with intention</h2>
+          <p>
+            I develop the solution with attention to
+            detail, consistency, and functionality.
+            Every choice should contribute to the bigger
+            picture, whether I am working on a visual
+            identity, a website, or a wider digital
+            experience.
+          </p>
+          <h2>04. Refine the details</h2>
+          <p>
+            I review the work, address issues, and refine
+            the details that affect the final result.
+            Alignment, spacing, responsiveness, clarity,
+            and those seemingly tiny decisions all add up.
+          </p>
+          <h2>05. Deliver work with a purpose</h2>
+          <p>
+            The final result should do more than look
+            finished. It should give you something useful:
+            a clearer brand, a more effective digital
+            presence, or a practical solution that helps
+            you move forward.
+          </p>
+        </div>
+      </details>
+    </section>
+    {/* WHAT MAKES ME DIFFERENT */}
+    <section className="omg-about-section">
+      <details className="omg-about-details">
+        <summary className="omg-about-summary">
+          What Makes My Approach Different?
+          <span className="omg-about-summary-icon">+</span>
+        </summary>
+        <div className="omg-about-content">
+          <p className="omg-about-lead">
+            I bring design and technology into the same
+            conversation instead of treating them as
+            strangers who happen to work in the same office.
+          </p>
+          <p>
+            My background across visual design and software
+            engineering allows me to consider both how
+            something should look and how it should work.
+            I can think about the identity, the interface,
+            and the experience as connected parts of a
+            larger system.
+          </p>
+          <p>
+            I also care about the reasoning behind the
+            work. I want to understand why a direction
+            makes sense, what it communicates, and how
+            it serves the business. A design decision
+            should have a reason beyond "it looks cool,"
+            even when it does look very cool.
+          </p>
+          <p>
+            I value clarity over unnecessary complexity,
+            consistency over disconnected visuals, and
+            thoughtful execution over doing things just
+            to make them look busy.
+          </p>
+          <p>
+            Most importantly, I approach each project
+            as its own problem to solve. Your business
+            does not need a copy of somebody else's
+            identity or website. It needs a solution
+            that makes sense for what you are building.
+          </p>
+        </div>
+      </details>
+    </section>
+    {/* HOW I CAN HELP YOUR BRAND */}
+    <section className="omg-about-section">
+      <details className="omg-about-details">
+        <summary className="omg-about-summary">
+          How I Can Help Your Brand
+          <span className="omg-about-summary-icon">+</span>
+        </summary>
+        <div className="omg-about-content">
+          <p className="omg-about-lead">
+            Your brand does not need to do everything.
+            It needs to communicate the right things to
+            the right people.
+          </p>
+          <p>
+            If you are starting a business, I can help
+            establish a visual identity and digital
+            presence that give people a clear first
+            impression of what you do.
+          </p>
+          <p>
+            If your business is already running, I can
+            help you improve how it presents itself,
+            communicate its value more clearly, and
+            create a more consistent experience across
+            its visual and digital touchpoints.
+          </p>
+          <p>
+            And if you have an idea that is still
+            difficult to explain, that is fine too.
+            You do not have to arrive with every detail
+            figured out. Part of the process is working
+            through the idea and finding the right way
+            to bring it to life.
+          </p>
+          <p>
+            The objective is simple: create thoughtful,
+            practical work that helps your business
+            present itself with greater clarity and
+            confidence.
+          </p>
+        </div>
+      </details>
+    </section>
+  </main>
+);
 }
