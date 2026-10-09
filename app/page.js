@@ -178,7 +178,7 @@ THE DESK HERO
 
     <p>
       A little look at the things I design,
-      build, experiment with and obsess over.
+      build and experiment with. Click on any to see more details
     </p>
   </div>
 
