@@ -57,7 +57,7 @@ export default function AboutPage() {
         </div>
         <div className="omg-about-profile-wrap">
           <img
-            src="/your-profile-image.jpg"
+            src="/profile1.png"
             alt="Omogbolahan Giwa"
             className="omg-about-profile-image"
           />
