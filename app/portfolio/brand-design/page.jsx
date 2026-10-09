@@ -28,9 +28,9 @@ export const metadata = {
     url: "https://omogiwa.com/portfolio/brand-design",
     siteName: "Omogbolahan Giwa",
     locale: "en_NG",
-    title: "Mings — Brand Identity | Omogbolahan Giwa",
+    title: " Brand Identity | Omogbolahan Giwa",
     description:
-      "Mings brand identity project by Omogbolahan Giwa.",
+      "Brans identity project by Omogbolahan Giwa.",
   },
 };
 
