@@ -1823,7 +1823,56 @@ section {
 .journal-feature-item strong {
  font-size: 16px;
 }
-
+/* Featured article image */
+.journal-feature-visual {
+  position: relative;
+  overflow: hidden;
+}
+.journal-feature-image-link {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+}
+.journal-feature-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+.journal-feature-visual:hover .journal-feature-image {
+  transform: scale(1.04);
+}
+.journal-feature-number,
+.journal-feature-category {
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+/* Featured article title */
+.journal-feature-content h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+.journal-feature-content h3 a:hover {
+  color: #6a3fd0;
+}
+/* Read article link */
+.journal-feature-read-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  color: #401e97;
+  font-weight: 600;
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+.journal-feature-read-link:hover {
+  gap: 13px;
+}
 
   /* NEWSLETTER */
 
