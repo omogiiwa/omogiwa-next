@@ -123,39 +123,52 @@ const changeProject = (direction) => {
 }, []);
 const [activeArticle, setActiveArticle] = useState(0);
  const journalArticles = [
-   {
-     number: "01",
-     category: "DESIGN",
-     readTime: "5 MIN READ",
-     title: "Why good design is more than making things look good.",
-     description:
-       "Good design isn't decoration. It's about making ideas clearer, more useful and easier to experience.",
-   },
-   {
-     number: "02",
-     category: "TECHNOLOGY",
-     readTime: "7 MIN READ",
-     title: "What I am learning while becoming a software engineer.",
-     description:
-       "A look at the things I'm learning, breaking, rebuilding and discovering while teaching myself software engineering.",
-   },
-   {
-     number: "03",
-     category: "CREATIVITY",
-     readTime: "4 MIN READ",
-     title: "Building things across different disciplines.",
-     description:
-       "Why I don't think creativity needs to stay inside one discipline, and how different interests can influence each other.",
-   },
-   {
-     number: "04",
-     category: "EXPERIMENTS",
-     readTime: "6 MIN READ",
-     title: "Making ideas tangible.",
-     description:
-       "An ongoing collection of experiments, strange ideas and things I'm building just to see what happens.",
-   },
- ];
+  {
+    number: "01",
+    category: "ANATOMY AND DESIGN",
+    readTime: "8 MIN READ",
+    title: "What is the correlation between Anatomy and Design",
+    description:
+      "What does a degree in Human Anatomy have to do with design? More than you might think. I explore how understanding the human body shapes the way I think about form, function, creativity, and the things we create for people.",
+    href: "/blogs/relationship-between-anatomy-and-design",
+    image: "/anatomy-cover.png",
+    imageAlt:
+      "Exploring the relationship between human anatomy and design.",
+  },
+  {
+    number: "02",
+    category: "TECHNOLOGY",
+    readTime: "7 MIN READ",
+    title: "What I am learning while becoming a software engineer.",
+    description:
+      "A look at the things I'm learning, breaking, rebuilding and discovering while teaching myself software engineering.",
+    href: "/blogs/becoming-a-software-engineer",
+    image: "/blog-software-engineering.png",
+    imageAlt: "Software engineering, code, and digital development.",
+  },
+  {
+    number: "03",
+    category: "CREATIVITY",
+    readTime: "4 MIN READ",
+    title: "Building things across different disciplines.",
+    description:
+      "Why I don't think creativity needs to stay inside one discipline, and how different interests can influence each other.",
+    href: "/blogs/building-across-disciplines",
+    image: "/blog-creativity.png",
+    imageAlt: "Creative ideas and work across different disciplines.",
+  },
+  {
+    number: "04",
+    category: "EXPERIMENTS",
+    readTime: "6 MIN READ",
+    title: "Making ideas tangible.",
+    description:
+      "An ongoing collection of experiments, strange ideas and things I'm building just to see what happens.",
+    href: "/blogs/making-ideas-tangible",
+    image: "/blog-experiments.png",
+    imageAlt: "Experiments and ideas brought to life through design and technology.",
+  },
+];
 
 
   return (
@@ -733,30 +746,46 @@ THE DESK HERO
 
   <div className="journal-feature-main">
     <div className="journal-feature-visual">
-      <span className="journal-feature-number">
-        {journalArticles[activeArticle].number}
-      </span>
-
-      <span className="journal-feature-category">
-        {journalArticles[activeArticle].category}
-      </span>
-
-      <div className="journal-feature-shape"></div>
-    </div>
+  <a
+    href={journalArticles[activeArticle].href}
+    className="journal-feature-image-link"
+    aria-label={`Read ${journalArticles[activeArticle].title}`}
+  >
+    <img
+      src={journalArticles[activeArticle].image}
+      alt={journalArticles[activeArticle].imageAlt}
+      className="journal-feature-image"
+      loading="lazy"
+    />
+  </a>
+  <span className="journal-feature-number">
+    {journalArticles[activeArticle].number}
+  </span>
+  <span className="journal-feature-category">
+    {journalArticles[activeArticle].category}
+  </span>
+</div>
 
     <div className="journal-feature-content">
-      <p>
-        {journalArticles[activeArticle].category} · {journalArticles[activeArticle].readTime}
-      </p>
-
-      <h3>{journalArticles[activeArticle].title}</h3>
-
-      <span>{journalArticles[activeArticle].description}</span>
-
-      <a href="#">
-        Read article →
-      </a>
-    </div>
+  <p>
+    {journalArticles[activeArticle].category} ·{" "}
+    {journalArticles[activeArticle].readTime}
+  </p>
+  <h3>
+    <a href={journalArticles[activeArticle].href}>
+      {journalArticles[activeArticle].title}
+    </a>
+  </h3>
+  <span>
+    {journalArticles[activeArticle].description}
+  </span>
+  <a
+    href={journalArticles[activeArticle].href}
+    className="journal-feature-read-link"
+  >
+    Read article →
+  </a>
+</div>
   </div>
 
   <div className="journal-feature-list">
@@ -765,7 +794,7 @@ THE DESK HERO
         key={article.number}
         type="button"
         className={`journal-feature-item ${
-          index === 0 ? "active" : ""
+          index === activeArticle ? "active" : ""
         }`}
         onMouseEnter={() => setActiveArticle(index)}
 
