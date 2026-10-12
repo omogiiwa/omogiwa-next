@@ -71,8 +71,8 @@ const contacts = [
   },
   {
     label: "Instagram",
-    value: "@decliint",
-    href: "https://instagram.com/decliint",
+    value: "@omo.giwaa",
+    href: "https://instagram.com/omo.giwaa",
     description: "Mostly personal stuff but you can hit me up anyway",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
