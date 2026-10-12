@@ -63,7 +63,7 @@ export default function Footer() {
 
             {/* Instagram */}
             <a
-              href="https://www.instagram.com/decliint"
+              href="https://www.instagram.com/omo.giwaa"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -87,7 +87,7 @@ export default function Footer() {
                 />
               </svg>
 
-              <span>@decliint</span>
+              <span>@omo.giwaa</span>
             </a>
 
 
