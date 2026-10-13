@@ -136,13 +136,13 @@ const [activeArticle, setActiveArticle] = useState(0);
       "Exploring the relationship between human anatomy and design.",
   },
   {
-    number: "02",
-    category: "TECHNOLOGY",
-    readTime: "7 MIN READ",
-    title: "What I am learning while becoming a software engineer.",
-    description:
-      "A look at the things I'm learning, breaking, rebuilding and discovering while teaching myself software engineering.",
-    href: "/blogs/becoming-a-software-engineer",
+  number: "02",
+  category: "Personal Notes",
+  readTime: "5 MIN READ",
+  title: "From Ododo Arts and Design to Giwa",
+  description:
+    "The story behind the transition from Ododo Arts and Design to Giwa, and how my work grew beyond graphic design.",
+  href: "/journal/from-ododo-to-giwa"
     image: "/blog-software-engineering.png",
     imageAlt: "Software engineering, code, and digital development.",
   },
