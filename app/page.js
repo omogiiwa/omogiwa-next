@@ -142,7 +142,7 @@ const [activeArticle, setActiveArticle] = useState(0);
   title: "From Ododo Arts and Design to Giwa",
   description:
     "The story behind the transition from Ododo Arts and Design to Giwa, and how my work grew beyond graphic design.",
-  href: "/journal/from-ododo-to-giwa"
+  href: "/journal/from-ododo-to-giwa",
     image: "/blog-software-engineering.png",
     imageAlt: "Software engineering, code, and digital development.",
   },
