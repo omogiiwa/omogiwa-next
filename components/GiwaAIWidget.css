@@ -1,141 +1,236 @@
-/* Floating Giwa AI widget */
+/* ========================================
+GIWA AI FLOATING WIDGET
+======================================== */
 
 .giwa-ai-widget {
-  position: relative;
-  z-index: 10000;
+position: relative;
+z-index: 10000;
 }
 
-/* Floating launcher button */
+/* ========================================
+FLOATING LAUNCHER BUTTON
+======================================== */
 
 .giwa-ai-widget-toggle {
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
+position: fixed;
+right: 24px;
+bottom: 24px;
+z-index: 10001;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
 
-  width: 58px;
-  height: 58px;
+min-height: 58px;
+padding: 0 22px;
 
-  padding: 0;
+border: 1px solid rgba(255, 255, 255, 0.2);
+border-radius: 50px;
 
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
+background: #401e97;
+color: #ffffff;
 
-  background: #401e97;
-  color: #ffffff;
+font-family: inherit;
+font-size: 14px;
+font-weight: 600;
+letter-spacing: 0.1px;
+white-space: nowrap;
 
-  box-shadow: 0 8px 30px rgba(64, 30, 151, 0.25);
+cursor: pointer;
 
-  cursor: pointer;
+box-shadow:
+0 0 12px rgba(106, 63, 208, 0.55),
+0 0 28px rgba(64, 30, 151, 0.4),
+0 8px 25px rgba(24, 12, 48, 0.2);
 
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease;
+animation: giwaGlow 2.5s ease-in-out infinite;
+
+transition:
+transform 0.25s ease,
+background 0.25s ease,
+box-shadow 0.25s ease;
 }
 
+/* Launcher logo */
+
+.giwa-ai-widget-toggle img {
+display: block;
+width: 25px;
+height: 25px;
+object-fit: contain;
+flex-shrink: 0;
+}
+
+/* Hover interaction */
+
 .giwa-ai-widget-toggle:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(64, 30, 151, 0.35);
+transform: translateY(-3px);
+background: #5630b0;
+
+box-shadow:
+0 0 18px rgba(106, 63, 208, 0.8),
+0 0 40px rgba(64, 30, 151, 0.55),
+0 12px 30px rgba(24, 12, 48, 0.25);
+}
+
+/* Keyboard accessibility */
+
+.giwa-ai-widget-toggle:focus-visible {
+outline: 3px solid #a78bfa;
+outline-offset: 4px;
+}
+
+/* Launcher when the chat is open */
+
+.giwa-ai-widget-toggle.is-open {
+width: 54px;
+min-width: 54px;
+min-height: 54px;
+padding: 0;
+border-radius: 50%;
+gap: 0;
+}
+
+/* Close icon */
+
+.giwa-ai-close-icon {
+display: block;
+font-size: 32px;
+font-weight: 300;
+line-height: 1;
+}
+
+/* ========================================
+GLOWING ANIMATION
+======================================== */
+
+@keyframes giwaGlow {
+0%,
+100% {
+box-shadow:
+0 0 10px rgba(106, 63, 208, 0.4),
+0 0 22px rgba(64, 30, 151, 0.3),
+0 8px 25px rgba(24, 12, 48, 0.18);
+}
+
+50% {
+box-shadow:
+0 0 17px rgba(106, 63, 208, 0.75),
+0 0 36px rgba(64, 30, 151, 0.5),
+0 8px 28px rgba(24, 12, 48, 0.22);
+}
+}
+
+/* ========================================
+FLOATING CHAT WINDOW
+======================================== */
+
+.giwa-ai-widget-panel {
+position: fixed;
+right: 24px;
+bottom: 96px;
+z-index: 10000;
+
+width: min(420px, calc(100vw - 32px));
+height: min(680px, calc(100dvh - 120px));
+
+overflow: hidden;
+
+border: 1px solid #e9e3f3;
+border-radius: 22px;
+
+background: #ffffff;
+
+box-shadow: 0 18px 70px rgba(24, 12, 48, 0.2);
+
+animation: giwaWidgetOpen 0.25s ease-out;
+}
+
+/* The existing Giwa AI page inside the window */
+
+.giwa-ai-widget-frame {
+display: block;
+width: 100%;
+height: 100%;
+border: 0;
+background: #ffffff;
+}
+
+/* Chat window entrance animation */
+
+@keyframes giwaWidgetOpen {
+from {
+opacity: 0;
+transform: translateY(12px) scale(0.98);
+}
+
+to {
+opacity: 1;
+transform: translateY(0) scale(1);
+}
+}
+
+/* ========================================
+MOBILE RESPONSIVENESS
+======================================== */
+
+@media (max-width: 600px) {
+.giwa-ai-widget-toggle {
+right: 16px;
+bottom: 18px;
+
+min-height: 54px;
+padding: 0 18px;
+font-size: 13px;
+gap: 9px;
+
 }
 
 .giwa-ai-widget-toggle img {
-  display: block;
-
-  width: 28px;
-  height: 28px;
-
-  object-fit: contain;
+width: 23px;
+height: 23px;
 }
 
-.giwa-ai-close-icon {
-  font-size: 32px;
-  font-weight: 300;
-  line-height: 1;
+.giwa-ai-widget-toggle.is-open {
+width: 50px;
+min-width: 50px;
+min-height: 50px;
+padding: 0;
 }
-
-/* Floating chat window */
 
 .giwa-ai-widget-panel {
-  position: fixed;
+right: 8px;
+bottom: 82px;
+left: 8px;
 
-  right: 24px;
-  bottom: 96px;
+width: auto;
+height: calc(100dvh - 100px);
+border-radius: 18px;
 
-  width: min(420px, calc(100vw - 32px));
-  height: min(680px, calc(100dvh - 120px));
-
-  overflow: hidden;
-
-  border: 1px solid #e9e3f3;
-  border-radius: 22px;
-
-  background: #ffffff;
-
-  box-shadow: 0 18px 70px rgba(24, 12, 48, 0.2);
-
-  animation: giwaWidgetOpen 0.25s ease-out;
+}
 }
 
-/* Existing Giwa AI page inside the window */
+/* Short-screen devices */
 
-.giwa-ai-widget-frame {
-  display: block;
-
-  width: 100%;
-  height: 100%;
-
-  border: 0;
+@media (max-height: 500px) and (max-width: 900px) {
+.giwa-ai-widget-panel {
+height: calc(100dvh - 90px);
+bottom: 76px;
+}
 }
 
-/* Opening animation */
-
-@keyframes giwaWidgetOpen {
-  from {
-    opacity: 0;
-    transform: translateY(12px) scale(0.98);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* Mobile layout */
-
-@media (max-width: 600px) {
-  .giwa-ai-widget-toggle {
-    right: 16px;
-    bottom: 16px;
-
-    width: 54px;
-    height: 54px;
-  }
-
-  .giwa-ai-widget-panel {
-    right: 8px;
-    bottom: 82px;
-    left: 8px;
-
-    width: auto;
-    height: calc(100dvh - 100px);
-
-    border-radius: 18px;
-  }
-}
-
-/* Respect reduced-motion preferences */
+/* ========================================
+REDUCED MOTION ACCESSIBILITY
+======================================== */
 
 @media (prefers-reduced-motion: reduce) {
-  .giwa-ai-widget-toggle {
-    transition: none;
-  }
+.giwa-ai-widget-toggle {
+animation: none;
+transition: none;
+}
 
-  .giwa-ai-widget-panel {
-    animation: none;
-  }
+.giwa-ai-widget-panel {
+animation: none;
+}
 }
