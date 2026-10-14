@@ -1,39 +1,41 @@
-"use client";
+“use client”;
 
-import { useState } from "react";
-import "./GiwaAIWidget.css";
+import { useState, useEffect } from “react”;
+import { createPortal } from “react-dom”;
+import “./GiwaAIWidget.css”;
 
 export default function GiwaAIWidget() {
-  const [isOpen, setIsOpen] = useState(false);
+const [isOpen, setIsOpen] = useState(false);
+const [mounted, setMounted] = useState(false);
 
-  return (
-    <div className="giwa-ai-widget">
-      {isOpen && (
-        <div className="giwa-ai-widget-panel">
-          <iframe
-            src="/ai"
-            title="Giwa AI Assistant"
-            className="giwa-ai-widget-frame"
-          />
-        </div>
-      )}
+useEffect(() => {
+setMounted(true);
+}, []);
 
-      <button
-  type="button"
-  className={`giwa-ai-widget-toggle ${isOpen ? "is-open" : ""}`}
-  onClick={() => setIsOpen((previous) => !previous)}
-  aria-label={isOpen ? "Close Giwa AI" : "Ask Giwa AI"}
-  aria-expanded={isOpen}
->
-  {isOpen ? (
-    <span className="giwa-ai-close-icon">×</span>
-  ) : (
-    <>
-      <img src="/giwa-ai-icon.svg" alt="" />
-      <span>Ask Giwa AI</span>
-    </>
-  )}
-</button>
-    </div>
-  );
+if (!mounted) return null;
+
+return createPortal(
+{isOpen && (
+)}
+
+  <button
+    type="button"
+    className={`giwa-ai-widget-toggle ${isOpen ? "is-open" : ""}`}
+    onClick={() => setIsOpen((previous) => !previous)}
+    aria-label={isOpen ? "Close Giwa AI" : "Ask Giwa AI"}
+    aria-expanded={isOpen}
+  >
+    {isOpen ? (
+      <span className="giwa-ai-close-icon">×</span>
+    ) : (
+      <>
+        <img src="/giwa-ai-icon.svg" alt="" />
+        <span>Ask Giwa AI</span>
+      </>
+    )}
+  </button>
+</div>,
+document.body
+
+);
 }
