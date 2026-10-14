@@ -117,9 +117,7 @@ export default function AIPage() {
               </h1>
 
               <p>
-                Get to know Omogbolahan, explore his work,
-                or discover how he can help bring your ideas
-                to life.
+                Get to know me.
               </p>
 
               <div className="ai-suggestions">
