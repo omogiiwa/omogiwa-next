@@ -19,20 +19,21 @@ export default function GiwaAIWidget() {
       )}
 
       <button
-        type="button"
-        className={`giwa-ai-widget-toggle ${
-          isOpen ? "is-open" : ""
-        }`}
-        onClick={() => setIsOpen((previous) => !previous)}
-        aria-label={isOpen ? "Close Giwa AI" : "Open Giwa AI"}
-        aria-expanded={isOpen}
-      >
-        {isOpen ? (
-          <span className="giwa-ai-close-icon">×</span>
-        ) : (
-          <img src="/giwa-ai-icon.svg" alt="" />
-        )}
-      </button>
+  type="button"
+  className={`giwa-ai-widget-toggle ${isOpen ? "is-open" : ""}`}
+  onClick={() => setIsOpen((previous) => !previous)}
+  aria-label={isOpen ? "Close Giwa AI" : "Ask Giwa AI"}
+  aria-expanded={isOpen}
+>
+  {isOpen ? (
+    <span className="giwa-ai-close-icon">×</span>
+  ) : (
+    <>
+      <img src="/giwa-ai-icon.svg" alt="" />
+      <span>Ask Giwa AI</span>
+    </>
+  )}
+</button>
     </div>
   );
 }
