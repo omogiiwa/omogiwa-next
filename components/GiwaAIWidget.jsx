@@ -2,14 +2,13 @@
 
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import "./GiwaAIWidget.css";
 
 export default function GiwaAIWidget() {
+  const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
-  const isOpen = pathname === "/ai";
 
   useEffect(() => {
     setMounted(true);
@@ -17,12 +16,23 @@ export default function GiwaAIWidget() {
 
   if (!mounted) return null;
 
+  // Stops the widget from rendering inside its own iframe
+  if (pathname === "/ai") return null;
+
   return createPortal(
     <div className="giwa-ai-widget">
-      <Link
-        href={isOpen ? "/" : "/ai"}
+      {isOpen && (
+        <div className="giwa-ai-panel">
+          <iframe src="/ai" title="Giwa AI" className="giwa-ai-frame" />
+        </div>
+      )}
+
+      <button
+        type="button"
         className={`giwa-ai-widget-toggle ${isOpen ? "is-open" : ""}`}
+        onClick={() => setIsOpen((previous) => !previous)}
         aria-label={isOpen ? "Close Giwa AI" : "Ask Giwa AI"}
+        aria-expanded={isOpen}
       >
         {isOpen ? (
           <span className="giwa-ai-close-icon">×</span>
@@ -32,7 +42,7 @@ export default function GiwaAIWidget() {
             <span>Ask Giwa AI</span>
           </>
         )}
-      </Link>
+      </button>
     </div>,
     document.body
   );
