@@ -640,3 +640,10 @@
   height: 18px;
   object-fit: contain;
 }
+
+/* Keep Giwa AI below the website navbar */
+.ai-page {
+top: 80px;
+height: calc(100vh - 80px);
+height: calc(100dvh - 80px);
+}
