@@ -67,7 +67,7 @@ if (!reply) {
 return Response.json({ reply });
 
 } catch (error) {
-console.error(“Giwa AI error:”, error);
+console.error("Giwa AI error:", error);
 
 return Response.json(
   { error: "Something went wrong. Please try again." },
