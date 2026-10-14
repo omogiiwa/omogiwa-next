@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import DeskHero from "../components/DeskHero";
+import GiwaAIWidget from "../components/GiwaAIWidget";
 import { supabase } from "../lib/supabase";
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -295,6 +296,7 @@ THE DESK HERO
 
               </div>
             </div>
+            <GiwaAIWidget />
           </>
         )}
       </article>
