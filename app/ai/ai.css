@@ -611,3 +611,32 @@
     margin-top: 15px;
   }
 }
+/* Reduce Giwa AI logo sizes */
+.ai-avatar img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.ai-welcome-mark {
+  width: 48px;
+  height: 48px;
+}
+
+.ai-welcome-mark img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.ai-message-avatar {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.ai-message-avatar img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
