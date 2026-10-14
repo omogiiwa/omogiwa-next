@@ -296,7 +296,7 @@ THE DESK HERO
 
               </div>
             </div>
-            <GiwaAIWidget />
+            
           </>
         )}
       </article>
@@ -893,6 +893,7 @@ THE DESK HERO
         </a>
 
       </section>
+      <GiwaAIWidget />
 </main>
 );
 }
