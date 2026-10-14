@@ -1,5 +1,5 @@
-import { omogiwaKnowledge } from “../../../data/assistant”;
-import { assistantPrompt } from “../../../data/assistantPrompt”;
+import { omogiwaKnowledge } from "../../../data/assistant";
+import { assistantPrompt } from "../../../data/assistantPrompt";
 
 export async function POST(request) {
 try {
@@ -39,7 +39,7 @@ Information about Omogbolahan Giwa:
 ${JSON.stringify(omogiwaKnowledge, null, 2)}`,
 },
 {
-role: “user”,
+role: "user",
 content: message.trim(),
 },
 ],
