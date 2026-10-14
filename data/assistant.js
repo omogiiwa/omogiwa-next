@@ -64,8 +64,8 @@ export const omogiwaKnowledge = {
     url: "https://omogiwa.com",
     pages: {
       home: "https://omogiwa.com",
-      about: "https://omogiwa.com/about"
-      portfolio: "https://omogiwa.com/portfolio"
+      about: "https://omogiwa.com/about",
+      portfolio: "https://omogiwa.com/portfolio",
     }
   },
 
