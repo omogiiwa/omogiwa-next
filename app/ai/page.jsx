@@ -1,14 +1,15 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-
 import "./ai.css";
 
 export default function AIPage() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
+
   const messagesRef = useRef(null);
+  const inputRef = useRef(null);
 
   const suggestions = [
     "What does Omogbolahan do?",
@@ -18,164 +19,198 @@ export default function AIPage() {
   ];
 
   useEffect(() => {
-  const container = messagesRef.current;
+    const container = messagesRef.current;
 
-  if (container) {
-    container.scrollTo({
-      top: container.scrollHeight,
-      behavior: "smooth",
-    });
-  }
-}, [messages, loading]);
+    if (container) {
+      container.scrollTo({
+        top: container.scrollHeight,
+        behavior: "smooth",
+      });
+    }
+  }, [messages, loading]);
 
   async function sendMessage(text) {
     const message = text.trim();
+
     if (!message || loading) return;
 
-    setMessages((m) => [...m, { role: "user", text: message }]);
+    setMessages((previous) => [
+      ...previous,
+      { role: "user", text: message },
+    ]);
+
     setInput("");
     setLoading(true);
 
     try {
-      const res = await fetch("/api/assistant", {
+      const response = await fetch("/api/assistant", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({ message }),
       });
-      const data = await res.json();
-      setMessages((m) => [
-        ...m,
-        { role: "bot", text: data.reply || "Sorry, something went wrong." },
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Something went wrong.");
+      }
+
+      setMessages((previous) => [
+        ...previous,
+        {
+          role: "bot",
+          text: data.reply || "I couldn't generate a response.",
+        },
       ]);
-    } catch (err) {
-      setMessages((m) => [
-        ...m,
-        { role: "bot", text: "Sorry, I couldn't connect. Try again." },
+    } catch (error) {
+      console.error("Giwa AI error:", error);
+
+      setMessages((previous) => [
+        ...previous,
+        {
+          role: "bot",
+          text: "I couldn't connect just now. Please try again.",
+        },
       ]);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    sendMessage(input);
   }
 
   return (
     <main className="ai-page">
-      <div className="ai-orbit ai-orbit-one"></div>
-      <div className="ai-orbit ai-orbit-two"></div>
-
-      <section className="ai-hero">
-        <div className="ai-status">
-          <span></span>
-          Giwa AI
-        </div>
-
-        <h1>
-          Ask me
-          <br />
-          <span>anything.</span>
-        </h1>
-
-        <p className="ai-intro">
-          This AI knows verything about me, you can talk to it like it's the real me
-        </p>
-
-        <div className="ai-suggestions">
-          {suggestions.map((suggestion) => (
-            <button
-              key={suggestion}
-              onClick={() => sendMessage(suggestion)}
-            >
-              {suggestion}
-              <span></span>
-            </button>
-          ))}
-        </div>
-      </section>
+      <div className="ai-orbit ai-orbit-one" />
+      <div className="ai-orbit ai-orbit-two" />
 
       <section className="ai-chat">
-        <div className="ai-chat-header">
+        <header className="ai-chat-header">
           <div className="ai-avatar">
-            <img src="/giwa-ai-icon.svg" alt="OmoGiwa AI" />
+            <img src="/giwa-ai-icon.svg" alt="Giwa AI" />
           </div>
 
-          <div>
+          <div className="ai-header-info">
             <strong>Giwa AI</strong>
             <span>Ask about the work</span>
           </div>
 
           <div className="ai-live">
-            <span></span>
+            <span />
             Online
           </div>
-        </div>
+        </header>
 
         <div className="ai-messages" ref={messagesRef}>
-          <div className="ai-message ai-message-bot">
-            <span className="message-label">Giwa AI</span>
-            <p>
-              Hey 👋
-              <br />
-              I'm here to help you understand Omogbolahan,
-              his work, his services, or just what he's trying
-              to build.
-            </p>
-          </div>
-
           {messages.length === 0 && (
-            <div className="ai-empty">
-              <span>01</span>
-              Start the conversation.
+            <div className="ai-welcome">
+              <div className="ai-welcome-mark">
+                <img src="/giwa-ai-icon.svg" alt="" />
+              </div>
+
+              <h1>
+                Ask me <span>anything.</span>
+              </h1>
+
+              <p>
+                Get to know Omogbolahan, explore his work,
+                or discover how he can help bring your ideas
+                to life.
+              </p>
+
+              <div className="ai-suggestions">
+                {suggestions.map((suggestion) => (
+                  <button
+                    key={suggestion}
+                    type="button"
+                    onClick={() => sendMessage(suggestion)}
+                    disabled={loading}
+                  >
+                    {suggestion}
+                    <span>↗</span>
+                  </button>
+                ))}
+              </div>
             </div>
           )}
 
-          {messages.map((m, i) => (
+          {messages.map((message, index) => (
             <div
-              key={i}
+              key={index}
               className={`ai-message ${
-                m.role === "user" ? "ai-message-user" : "ai-message-bot"
+                message.role === "user"
+                  ? "ai-message-user"
+                  : "ai-message-bot"
               }`}
             >
-              <span className="message-label">
-                {m.role === "user" ? "You" : "Giwa AI"}
-              </span>
-              <p>{m.text}</p>
+              {message.role === "bot" && (
+                <div className="ai-message-avatar">
+                  <img src="/giwa-ai-icon.svg" alt="" />
+                </div>
+              )}
+
+              <div className="ai-message-content">
+                <span className="message-label">
+                  {message.role === "user" ? "You" : "Giwa"}
+                </span>
+
+                <p>{message.text}</p>
+              </div>
             </div>
           ))}
 
           {loading && (
             <div className="ai-message ai-message-bot">
-              <span className="message-label">Giwa AI</span>
-              <p>Thinking...</p>
+              <div className="ai-message-avatar">
+                <img src="/giwa-ai-icon.svg" alt="" />
+              </div>
+
+              <div className="ai-message-content">
+                <span className="message-label">Giwa</span>
+
+                <p className="ai-thinking">
+                  <span />
+                  <span />
+                  <span />
+                </p>
+              </div>
             </div>
           )}
-
-          <div ref={bottomRef} />
         </div>
 
-        <form
-          className="ai-input-area"
-          onSubmit={(e) => {
-            e.preventDefault();
-            sendMessage(input);
-          }}
-        >
-          <input
-            type="text"
-            placeholder="Ask me something..."
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-          />
+        <div className="ai-composer-wrap">
+          <form className="ai-input-area" onSubmit={handleSubmit}>
+            <input
+              ref={inputRef}
+              type="text"
+              placeholder="Message Giwa AI..."
+              value={input}
+              onChange={(event) => setInput(event.target.value)}
+              disabled={loading}
+              autoComplete="off"
+              aria-label="Message Giwa AI"
+            />
 
-          <button type="submit" aria-label="Send message">
-            →
-          </button>
-        </form>
+            <button
+              type="submit"
+              aria-label="Send message"
+              disabled={!input.trim() || loading}
+            >
+              ↑
+            </button>
+          </form>
+
+          <p className="ai-disclaimer">
+            GIWA / AI · Whenever you're in doubt, ask me to connect you
+            with the real Giwa.
+          </p>
+        </div>
       </section>
-
-      <footer className="ai-footer">
-        <span>GIWA / AI</span>
-        <span>
-          Whenever you're in doubt, you can always ask me to connect you to the real Giwa
-        </span>
-      </footer>
     </main>
   );
 }
