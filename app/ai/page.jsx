@@ -12,10 +12,9 @@ export default function AIPage() {
   const inputRef = useRef(null);
 
   const suggestions = [
-    "What does Omogbolahan do?",
-    "Tell me about his services",
-    "Show me some of his work",
-    "Why is he a designer?",
+    "What do you do?",
+    "Tell me about your services",
+    "Show me some of your work",
   ];
 
   useEffect(() => {
