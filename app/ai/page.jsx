@@ -8,7 +8,7 @@ export default function AIPage() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
-  const bottomRef = useRef(null);
+  const messagesRef = useRef(null);
 
   const suggestions = [
     "What does Omogbolahan do?",
@@ -18,8 +18,15 @@ export default function AIPage() {
   ];
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages, loading]);
+  const container = messagesRef.current;
+
+  if (container) {
+    container.scrollTo({
+      top: container.scrollHeight,
+      behavior: "smooth",
+    });
+  }
+}, [messages, loading]);
 
   async function sendMessage(text) {
     const message = text.trim();
@@ -100,7 +107,7 @@ export default function AIPage() {
           </div>
         </div>
 
-        <div className="ai-messages">
+        <div className="ai-messages" ref={messagesRef}>
           <div className="ai-message ai-message-bot">
             <span className="message-label">Giwa AI</span>
             <p>
