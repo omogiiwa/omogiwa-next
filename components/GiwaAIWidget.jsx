@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect } from “react”;
-import { createPortal } from “react-dom”;
-import “./GiwaAIWidget.css”;
+import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
+import "./GiwaAIWidget.css";
 
 export default function GiwaAIWidget() {
 const [isOpen, setIsOpen] = useState(false);
