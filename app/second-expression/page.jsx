@@ -68,7 +68,7 @@ const products = [
   </div>
 </section>
 
-      <section className="se-statement" id="about">
+      <section className="se-statement">
         <p className="se-eyebrow">
           THE SECOND EXPRESSION PHILOSOPHY
         </p>
