@@ -135,6 +135,11 @@ const products = [
     </div>
   </div>
 </section>
+<div className="se-shop-cta">
+  <a href="#shop" className="se-shop-button">
+    GO TO SHOP
+  </a>
+</div>
 
 <section className="se-band">
   <p>Two colors. Endless ways to wear them.</p>
