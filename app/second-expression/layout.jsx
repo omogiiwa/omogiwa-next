@@ -1,4 +1,4 @@
-
+import ConditionalFooter from "@/components/ConditioalFooter";
 import "./second-expression.css";
 
 export const metadata = {
