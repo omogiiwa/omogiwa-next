@@ -1776,3 +1776,17 @@
   clip: rect(0 0 0 0);
   white-space: nowrap;
 }
+/* Second Expression — Footer Theme */
+footer {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+footer p,
+footer h2,
+footer h3,
+footer a,
+footer span,
+footer li {
+  color: #ffffff !important;
+}
