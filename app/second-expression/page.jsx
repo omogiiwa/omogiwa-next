@@ -40,9 +40,9 @@ export default function SecondExpressionPage() {
 
   <div className="se-stage-copy">
     <h1 className={exo.className}>
-      Second
+      SECOND
       <br />
-      Expression
+      EXPRESSION
     </h1>
     <p>Dare to be different.</p>
     <a className="se-stage-cta" href="#about">
