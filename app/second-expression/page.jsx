@@ -1,5 +1,5 @@
 const fashionImage =
-“https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=2200&q=85”;
+"https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=2200&q=85";
 
 export default function SecondExpressionPage() {
 return (
