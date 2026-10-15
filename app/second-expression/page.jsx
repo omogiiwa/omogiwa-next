@@ -10,7 +10,19 @@ const exo = Exo_2({
   style: ["italic"],
   display: "swap",
 });
+const WORDS = ["wear", "layer", "mix", "style", "own"];
 
+export default function Statement() {
+  const [i, setI] = useState(0);
+
+  useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) return;
+    const t = setInterval(() => setI((n) => (n + 1) % WORDS.length), 2200);
+    return () => clearInterval(t);
+  }, []);
+
+  const prev = (i - 1 + WORDS.length) % WORDS.length;
 export default function SecondExpressionPage() {
   const [activeFilter, setActiveFilter] = useState("all");
   const [bagCount, setBagCount] = useState(0);
@@ -157,20 +169,29 @@ export default function SecondExpressionPage() {
 
       {/* PHILOSOPHY */}
       <section className="se-statement">
-        <p className="se-eyebrow">
-          THE SECOND EXPRESSION PHILOSOPHY
-        </p>
+      <p className="se-eyebrow">THE SECOND EXPRESSION PHILOSOPHY</p>
 
-        <h2>
-          Two colours.
-          <br />
-          <span>Endless ways to wear them.</span>
-        </h2>
+      <h2>
+        Two colours.
+        <br />
+        <span>
+          Endless ways to{" "}
+          <span className="se-rotator" aria-hidden="true">
+            {WORDS.map((w, n) => (
+              <span
+                key={w}
+                className={n === i ? "is-active" : n === prev ? "is-prev" : ""}
+              >
+                {w}
+              </span>
+            ))}
+          </span>
+          <span className="se-sr-only">wear</span> them.
+        </span>
+      </h2>
 
-        <a href="#collection">
-          DISCOVER THE COLLECTION
-        </a>
-      </section>
+      <a href="#collection">DISCOVER THE COLLECTION</a>
+    </section>
 
       {/* COLLECTION */}
       <section className="se-store" id="collection">
