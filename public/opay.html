@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OPay Transaction Receipt</title>
+<style>
+:root{--bg:#1b1b1b;--card:#2b2b2b;--green:#5ecba1;--grey:#a3a3a3;--white:#f2f2f2;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme: dark){:root{--bg:#1b1b1b}}
+html,body{margin:0;background:var(--bg);min-height:100%}
+body{display:flex;justify-content:center;font-family:"Helvetica Neue",Roboto,Arial,sans-serif}
+.page{position:relative;width:min(100%,828px);aspect-ratio:828/1017;background:var(--bg);container-type:inline-size;overflow:hidden}
+.card{position:absolute;left:4.6%;right:4.6%;top:0;bottom:1.2%;background:var(--card);border-radius:0 0 3cqw 3cqw;overflow:hidden}
+.card::before,.card::after{content:"";position:absolute;left:0;right:0;height:3.2cqw;background:radial-gradient(circle at 50% 50%,var(--bg) 0,var(--bg) 1.45cqw,transparent 1.5cqw) 0 0/4.35cqw 3.2cqw repeat-x;z-index:3}
+.card::before{top:-1.6cqw}
+.card::after{bottom:-1.6cqw}
+.wm{position:absolute;inset:-20%;z-index:0;pointer-events:none}
+.wm span{position:absolute;font-weight:700;font-size:6cqw;color:#fff;opacity:.05;transform:rotate(-14deg);white-space:nowrap}
+.t{position:absolute;margin:0;transform:translateY(-50%);white-space:nowrap;z-index:2;line-height:1}
+.l{left:7.85%;color:var(--grey);font-size:2.9cqw}
+.r{right:8%;color:var(--white);font-size:2.9cqw;text-align:right}
+.c{left:0;right:0;text-align:center}
+.dash{position:absolute;left:7.85%;right:7.85%;border-top:.25cqw dashed #5a5a5a;z-index:2}
+.logo{left:9%;top:7.6%;display:flex;align-items:center;color:#8d8d8d;font-weight:700;font-size:7.2cqw;letter-spacing:-.02em}
+.logo i{display:inline-block;width:5.3cqw;height:5.3cqw;border:1.25cqw solid #8d8d8d;border-radius:50%;margin-right:1.2cqw;box-sizing:border-box;border-right-color:#8d8d8d}
+.foot{position:absolute;left:9.06%;width:80%;top:82.7%;margin:0;color:#d6d6d6;font-size:2.9cqw;line-height:3.6cqw;z-index:2;opacity:.92}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="card">
+    <div class="wm" id="wm"></div>
+  </div>
+
+  <div class="t logo"><i></i>Pay</div>
+  <p class="t r" style="top:7.8%;font-size:3.4cqw">Transaction Receipt</p>
+
+  <p class="t c" style="top:19%;color:var(--green);font-size:6.9cqw;font-weight:600">₦8,500.00</p>
+  <p class="t c" style="top:26.1%;color:var(--white);font-size:3.9cqw">Successful</p>
+  <p class="t c" style="top:32.3%;color:var(--grey);font-size:2.7cqw">Oct 14th, 2026 11:50:55</p>
+
+  <div class="dash" style="top:40.4%"></div>
+
+  <p class="t l" style="top:45.8%">Recipient Details</p>
+  <p class="t r" style="top:45.8%;font-weight:500">JAMES AGBAEZE</p>
+  <p class="t r" style="top:49.8%">SmartCash Payment Service Bank | 0469058242</p>
+
+  <p class="t l" style="top:56.4%">Sender Details</p>
+  <p class="t r" style="top:56.4%;font-weight:500">OMOGBOLAHAN GIWA</p>
+  <p class="t r" style="top:60.4%">OPay | 704****806</p>
+
+  <p class="t l" style="top:67%">Transaction No.</p>
+  <p class="t r" style="top:67%">261014020100286859186674</p>
+
+  <p class="t l" style="top:73.6%">Session ID</p>
+  <p class="t r" style="top:73.6%">100004261014105059174232117155</p>
+
+  <div class="dash" style="top:79%"></div>
+
+  <p class="foot">Enjoy a better life with OPay. Get free transfers, withdrawals, bill payments, instant loans, and good annual interest On your savings. OPay is licensed by the Central Bank of Nigeria and insured by the NDIC.</p>
+</div>
+<script>
+(function(){
+  var w=document.getElementById('wm'),h='';
+  for(var r=0;r<9;r++){for(var c=0;c<5;c++){
+    h+='<span style="left:'+(c*24+(r%2?12:0))+'%;top:'+(r*12)+'%">OPay</span>';
+  }}
+  w.innerHTML=h;
+})();
+</script>
+</body>
+</html>
