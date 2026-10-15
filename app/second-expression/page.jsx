@@ -1,7 +1,6 @@
-
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Exo_2 } from "next/font/google";
 
 const exo = Exo_2({
@@ -10,9 +9,13 @@ const exo = Exo_2({
   style: ["italic"],
   display: "swap",
 });
+
 const WORDS = ["wear", "layer", "mix", "style", "own"];
 
-export default function Statement() {
+export default function SecondExpressionPage() {
+  const [activeFilter, setActiveFilter] = useState("all");
+  const [bagCount, setBagCount] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [i, setI] = useState(0);
 
   useEffect(() => {
@@ -23,10 +26,6 @@ export default function Statement() {
   }, []);
 
   const prev = (i - 1 + WORDS.length) % WORDS.length;
-export default function SecondExpressionPage() {
-  const [activeFilter, setActiveFilter] = useState("all");
-  const [bagCount, setBagCount] = useState(0);
-  const [menuOpen, setMenuOpen] = useState(false);
 
   const products = [
     { name: "Boxy Tee", category: "tops", price: "$38", description: "Black, heavyweight cotton", style: "t2", tag: "New" },
