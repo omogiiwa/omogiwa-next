@@ -134,12 +134,19 @@ const products = [
         ))}
     </div>
   </div>
-</section>
-<div className="se-shop-cta">
+  <div className="se-shop-cta">
+
   <a href="#shop" className="se-shop-button">
+
     GO TO SHOP
+
   </a>
+
+  <p>There's more to discover.</p>
+
 </div>
+</section>
+
 
 <section className="se-band">
   <p>Two colors. Endless ways to wear them.</p>
