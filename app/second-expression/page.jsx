@@ -74,7 +74,7 @@ const products = [
 
         <a href="#contact">
           DISCOVER THE COLLECTION
-          <span aria-hidden="true">↗</span>
+      
         </a>
       </section>
 
@@ -162,7 +162,7 @@ const products = [
 
     <a href="#collection" className="se-footer-cta">
       <span>EXPLORE THE COLLECTION</span>
-      <span className="se-footer-cta-arrow">↗</span>
+     
     </a>
 
     <span className="se-footer-watermark" aria-hidden="true">
@@ -199,14 +199,14 @@ const products = [
         target="_blank"
         rel="noreferrer"
       >
-        Instagram <span>↗</span>
+        Instagram <span></span>
       </a>
       <a
         href="https://www.pinterest.com/"
         target="_blank"
         rel="noreferrer"
       >
-        Pinterest <span>↗</span>
+        Pinterest <span></span>
       </a>
     </div>
 
@@ -218,7 +218,7 @@ const products = [
         and everything in between.
       </p>
       <a href="#contact" className="se-footer-contact-link">
-        LET'S TALK <span>↗</span>
+        LET'S TALK <span></span>
       </a>
     </div>
   </div>
