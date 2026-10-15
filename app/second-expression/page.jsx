@@ -243,11 +243,6 @@ export default function SecondExpressionPage() {
         </div>
       </section>
 
-      {/* CLOSING STATEMENT */}
-      <section className="se-band">
-        <p>Two colors. Endless ways to wear them.</p>
-      </section>
-
       {/* FOOTER */}
       <footer className="se-footer" id="se-footer">
         <div className="se-footer-top">
