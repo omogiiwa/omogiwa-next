@@ -1,4 +1,4 @@
-import “./second-expression.css”;
+import "./second-expression.css";
 
 export const metadata = {
 title: {
