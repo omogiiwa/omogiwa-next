@@ -139,41 +139,101 @@ const products = [
 <section className="se-band">
   <p>Two colors. Endless ways to wear them.</p>
 </section>
+      
+      
+      
+<footer className="se-footer" id="se-footer">
+  <div className="se-footer-top">
+    <div className="se-footer-top-copy">
+      <span className="se-footer-eyebrow">
+        THE ART OF BEING YOURSELF
+      </span>
 
-<footer className="se-store-footer">
-  <div className="se-wrap">
-    <span>© 2026 Second Expression</span>
+      <h2>
+        MAKE ROOM
+        <br />
+        FOR <span>EXPRESSION.</span>
+      </h2>
 
-    <div className="se-footer-links">
-      <a href="#shipping">Shipping</a>
-      <a href="#returns">Returns</a>
-      <a href="mailto:hello@omogiwa.com">Contact</a>
-      <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
-        Instagram
+      <p>
+        Style is personal. Make it yours.
+      </p>
+    </div>
+
+    <a href="#collection" className="se-footer-cta">
+      <span>EXPLORE THE COLLECTION</span>
+      <span className="se-footer-cta-arrow">↗</span>
+    </a>
+
+    <span className="se-footer-watermark" aria-hidden="true">
+      SE.
+    </span>
+  </div>
+
+  <div className="se-footer-main">
+    <div className="se-footer-brand">
+      <a href="#top" className="se-footer-logo">
+        SECOND
+        <br />
+        EXPRESSION<span>.</span>
+      </a>
+
+      <p>
+        Less noise. More expression.
+        <br />
+        A different way to dress.
+      </p>
+    </div>
+
+    <div className="se-footer-column">
+      <span className="se-footer-label">DISCOVER</span>
+      <a href="#collection">The Collection</a>
+      <a href="#about">Our Philosophy</a>
+      <a href="#contact">Get In Touch</a>
+    </div>
+
+    <div className="se-footer-column">
+      <span className="se-footer-label">FOLLOW ALONG</span>
+      <a
+        href="https://www.instagram.com/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Instagram <span>↗</span>
+      </a>
+      <a
+        href="https://www.pinterest.com/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Pinterest <span>↗</span>
+      </a>
+    </div>
+
+    <div className="se-footer-column se-footer-contact">
+      <span className="se-footer-label">STAY CONNECTED</span>
+      <p>
+        For enquiries, collaborations
+        <br />
+        and everything in between.
+      </p>
+      <a href="#contact" className="se-footer-contact-link">
+        LET'S TALK <span>↗</span>
       </a>
     </div>
   </div>
+
+  <div className="se-footer-bottom">
+    <span>© {new Date().getFullYear()} SECOND EXPRESSION</span>
+
+    <span className="se-footer-bottom-note">
+      MADE FOR YOUR OWN EXPRESSION.
+    </span>
+
+ 
+  </div>
 </footer>
 
-
-      <footer
-        id="contact"
-        style={{
-          padding: "28px 6%",
-          borderTop: "1px solid #eeeeee",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          gap: "16px",
-          flexWrap: "wrap",
-          fontSize: "11px",
-          letterSpacing: "1px",
-        }}
-      >
-      
-        <span>SECOND EXPRESSION</span>
-        <span>LESS NOISE. MORE EXPRESSION.</span>
-      </footer>
     </main>
   );
 }
