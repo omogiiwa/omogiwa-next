@@ -190,10 +190,9 @@ transition:
 background 200ms ease,
 color 200ms ease;
 }
-
 .se-button:hover {
-background: var(–se-black);
-color: var(–se-white) !important;
+  background: var(--se-black);
+  color: var(--se-white) !important;
 }
 
 .se-button span {
