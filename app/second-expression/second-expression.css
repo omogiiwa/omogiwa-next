@@ -1,9 +1,3 @@
-
-/* ========================================
-   SECOND EXPRESSION
-   Monochrome fashion editorial
-======================================== */
-
 .second-expression {
   --se-black: #111111;
   --se-white: #ffffff;
@@ -44,199 +38,121 @@
 }
 
 /* ========================================
-   NAVIGATION
+   HERO (nav + models + headline)
 ======================================== */
 
-.second-expression .se-header {
-  position: relative;
-  z-index: 5;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  width: 100%;
-  height: 76px;
-  padding: 0 5%;
-  border-bottom: 1px solid var(--se-border);
-  background: var(--se-white);
-}
-
-.second-expression .se-logo {
-  flex-shrink: 0;
-  font-size: 17px;
-  font-weight: 900;
-  letter-spacing: -1px;
-  white-space: nowrap;
-}
-
-.second-expression .se-logo span {
-  margin-left: 4px;
-  font-weight: 400;
-}
-
-.second-expression .se-nav {
-  display: flex;
-  align-items: center;
-  gap: 34px;
-}
-
-.second-expression .se-nav a,
-.second-expression .se-bag {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.second-expression .se-nav a {
-  transition: opacity 180ms ease;
-}
-
-.second-expression .se-nav a:hover {
-  opacity: 0.5;
-}
-
-.second-expression .se-bag {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  gap: 10px;
-}
-
-.second-expression .se-bag span {
-  display: grid;
-  width: 25px;
-  height: 25px;
-  place-items: center;
-  border: 1px solid var(--se-black);
-  border-radius: 50%;
-  font-size: 10px;
-}
-
-/* ========================================
-   HERO
-======================================== */
-
-.second-expression .se-hero {
+.second-expression .se-stage {
   position: relative;
   display: flex;
-  align-items: center;
-  min-height: 660px;
-  height: min(780px, calc(100svh - 76px));
+  flex-direction: column;
+  min-height: 100svh;
   overflow: hidden;
-  background: #343434;
-  color: var(--se-white);
+  background: #000;
+  color: #fff;
   isolation: isolate;
 }
 
-.second-expression .se-hero-image {
+/* models: right side, bleeding to the bottom */
+.second-expression .se-stage-models {
   position: absolute;
   z-index: -2;
-  inset: 0;
-  width: 100%;
+  top: 0;
+  right: 0;
+  width: 66%;
+  max-width: none;
   height: 100%;
   object-fit: cover;
-  object-position: center 35%;
+  object-position: center top;
 }
 
-.second-expression .se-hero-overlay {
+/* melts the image into the black on the left */
+.second-expression .se-stage-fade {
   position: absolute;
   z-index: -1;
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(0, 0, 0, 0.76) 0%,
-    rgba(0, 0, 0, 0.48) 48%,
-    rgba(0, 0, 0, 0.12) 100%
+    #000 0%,
+    #000 30%,
+    rgba(0, 0, 0, 0.55) 42%,
+    rgba(0, 0, 0, 0) 58%
   );
 }
 
-.second-expression .se-hero-content {
-  width: 100%;
-  padding: 70px 8%;
-}
-
-.second-expression .se-eyebrow {
-  margin: 0;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 3px;
-  line-height: 1.8;
-}
-
-.second-expression .se-hero .se-eyebrow {
-  margin-bottom: 24px;
-}
-
-.second-expression .se-hero h1 {
-  margin: 0;
-  font-size: clamp(54px, 9.2vw, 132px);
-  font-weight: 900;
-  letter-spacing: -0.085em;
-  line-height: 0.84;
-}
-
-.second-expression .se-hero h1 span {
-  color: #c5c5c5;
-}
-
-.second-expression .se-hero-bottom {
+/* top bar */
+.second-expression .se-stage-bar {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 30px;
-  max-width: 760px;
-  margin-top: 48px;
-}
-
-.second-expression .se-hero-bottom p {
-  margin: 0;
-  font-size: 15px;
-  line-height: 1.7;
-}
-
-/* HERO BUTTON */
-
-.second-expression .se-button {
-  display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  gap: 30px;
-  min-height: 52px;
-  padding: 17px 20px;
-  border: 1px solid var(--se-white);
-  background: var(--se-white);
-  color: var(--se-black);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1px;
+  gap: 24px;
+  padding: 28px 3% 0;
+}
+
+.second-expression .se-stage-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 46px;
+}
+
+.second-expression .se-stage-nav a {
+  font-size: clamp(14px, 1.15vw, 21px);
+  transition: opacity 180ms ease;
+}
+
+.second-expression .se-stage-nav a:hover {
+  opacity: 0.55;
+}
+
+.second-expression .se-stage-bag {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: clamp(28px, 2.4vw, 44px);
+  color: #fff;
+}
+
+.second-expression .se-stage-bag svg {
+  width: 100%;
+  height: auto;
+}
+
+/* copy block */
+.second-expression .se-stage-copy {
+  margin-top: auto;
+  padding: 0 4% clamp(48px, 24svh, 260px);
+}
+
+.second-expression .se-stage-copy h1 {
+  margin: 0;
+  font-size: clamp(46px, 7.4vw, 140px);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 0.98;
+  text-shadow: 0 0 24px rgba(255, 255, 255, 0.18);
+}
+
+.second-expression .se-stage-copy p {
+  margin: clamp(14px, 1.6vw, 28px) 0 clamp(24px, 2.6vw, 46px);
+  font-size: clamp(18px, 2.2vw, 40px);
+  line-height: 1.2;
+}
+
+.second-expression .se-stage-cta {
+  display: inline-block;
+  padding: clamp(14px, 1.7vw, 30px) clamp(30px, 3.5vw, 64px);
+  border: 1px solid #fff;
+  background: #fff;
+  color: #000;
+  font-size: clamp(16px, 1.5vw, 28px);
+  font-weight: 500;
   transition:
     background 200ms ease,
-    color 200ms ease,
-    border-color 200ms ease;
+    color 200ms ease;
 }
 
-.second-expression .se-button:hover {
-  border-color: var(--se-white);
+.second-expression .se-stage-cta:hover {
   background: transparent;
-  color: var(--se-white);
-}
-
-.second-expression .se-button span {
-  font-size: 16px;
-  transition: transform 200ms ease;
-}
-
-.second-expression .se-button:hover span {
-  transform: translate(3px, -3px);
-}
-
-.second-expression .se-hero-index {
-  position: absolute;
-  right: 5%;
-  bottom: 28px;
-  font-size: 9px;
-  letter-spacing: 2px;
+  color: #fff;
 }
 
 /* ========================================
@@ -247,6 +163,14 @@
   padding: 110px 8%;
   text-align: center;
   background: var(--se-white);
+}
+
+.second-expression .se-eyebrow {
+  margin: 0;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  line-height: 1.8;
 }
 
 .second-expression .se-statement .se-eyebrow {
@@ -302,7 +226,7 @@
   outline-offset: 5px;
 }
 
-.second-expression .se-hero a:focus-visible {
+.second-expression .se-stage a:focus-visible {
   outline-color: var(--se-white);
 }
 
@@ -310,103 +234,41 @@
    TABLET AND MOBILE
 ======================================== */
 
+@media (max-width: 800px) {
+  .second-expression .se-stage-models {
+    width: 100%;
+    object-position: 62% top;
+  }
+
+  .second-expression .se-stage-fade {
+    background:
+      linear-gradient(
+        0deg,
+        #000 0%,
+        rgba(0, 0, 0, 0.82) 38%,
+        rgba(0, 0, 0, 0.1) 70%
+      ),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 70%);
+  }
+
+  .second-expression .se-stage-bar {
+    padding: 20px 5% 0;
+  }
+
+  .second-expression .se-stage-nav {
+    gap: 8px 20px;
+  }
+
+  .second-expression .se-stage-copy {
+    padding: 0 6% 56px;
+  }
+
+  .second-expression .se-stage-copy h1 {
+    font-size: clamp(44px, 14vw, 84px);
+  }
+}
+
 @media (max-width: 700px) {
-  .second-expression .se-header {
-    height: 66px;
-    padding: 0 5%;
-    gap: 12px;
-  }
-
-  .second-expression .se-logo {
-    font-size: 12px;
-    letter-spacing: -0.7px;
-  }
-
-  .second-expression .se-logo span {
-    margin-left: 3px;
-  }
-
-  .second-expression .se-nav {
-    gap: 13px;
-  }
-
-  .second-expression .se-nav a {
-    font-size: 9px;
-    letter-spacing: 0;
-  }
-
-  .second-expression .se-nav a:last-child {
-    display: none;
-  }
-
-  .second-expression .se-bag {
-    gap: 6px;
-    font-size: 9px;
-  }
-
-  .second-expression .se-bag span {
-    width: 22px;
-    height: 22px;
-  }
-
-  .second-expression .se-hero {
-    min-height: 600px;
-    height: calc(85svh - 66px);
-    max-height: 780px;
-  }
-
-  .second-expression .se-hero-image {
-    object-position: 57% center;
-  }
-
-  .second-expression .se-hero-overlay {
-    background: linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.72) 0%,
-      rgba(0, 0, 0, 0.38) 65%,
-      rgba(0, 0, 0, 0.18) 100%
-    );
-  }
-
-  .second-expression .se-hero-content {
-    padding: 50px 6%;
-  }
-
-  .second-expression .se-hero .se-eyebrow {
-    margin-bottom: 22px;
-    font-size: 9px;
-    letter-spacing: 2px;
-  }
-
-  .second-expression .se-hero h1 {
-    font-size: clamp(44px, 10.5vw, 76px);
-    letter-spacing: -0.075em;
-  }
-
-  .second-expression .se-hero-bottom {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 24px;
-    margin-top: 34px;
-  }
-
-  .second-expression .se-hero-bottom p {
-    font-size: 14px;
-  }
-
-  .second-expression .se-button {
-    gap: 20px;
-    min-height: 48px;
-    padding: 15px 16px;
-    font-size: 9px;
-  }
-
-  .second-expression .se-hero-index {
-    right: 6%;
-    bottom: 20px;
-    font-size: 8px;
-  }
-
   .second-expression .se-statement {
     padding: 78px 6%;
   }
@@ -421,47 +283,6 @@
     margin-bottom: 28px;
     font-size: clamp(32px, 8vw, 48px);
     letter-spacing: -0.055em;
-  }
-}
-
-/* ========================================
-   SMALL PHONES
-======================================== */
-
-@media (max-width: 380px) {
-  .second-expression .se-header {
-    gap: 8px;
-    padding-right: 4%;
-    padding-left: 4%;
-  }
-
-  .second-expression .se-logo {
-    font-size: 10px;
-  }
-
-  .second-expression .se-logo span {
-    margin-left: 2px;
-  }
-
-  .second-expression .se-nav {
-    gap: 9px;
-  }
-
-  .second-expression .se-nav a {
-    font-size: 8px;
-  }
-
-  .second-expression .se-bag {
-    font-size: 8px;
-  }
-
-  .second-expression .se-bag span {
-    width: 20px;
-    height: 20px;
-  }
-
-  .second-expression .se-hero h1 {
-    font-size: 43px;
   }
 }
 
