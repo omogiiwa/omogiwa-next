@@ -39,13 +39,6 @@ const products = [
   <div className="se-stage-fade" aria-hidden="true" />
 
   <header className="se-stage-bar">
-    <nav className="se-stage-nav" aria-label="Main navigation">
-      <a href="/second-expression">Home</a>
-      <a href="#about">About</a>
-      <a href="#collection">Shop</a>
-      <a href="#contact">Support</a>
-      <a href="/refund-policy">Refund Policy</a>
-    </nav>
 
     <a className="se-stage-bag" href="#collection" aria-label="Shopping bag, 0 items">
       <svg viewBox="0 0 40 48" width="40" height="48" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinejoin="round" strokeLinecap="round" aria-hidden="true">
