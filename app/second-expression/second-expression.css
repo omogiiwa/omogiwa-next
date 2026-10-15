@@ -328,6 +328,17 @@
     letter-spacing: -0.055em;
   }
 }
+.se-statement h2 {
+  --x: 50%; --y: 50%;
+  background:
+    radial-gradient(circle 130px at var(--x) var(--y), #fff 0%, transparent 100%),
+    linear-gradient(110deg, #5c5c5c 40%, #aaa 50%, #5c5c5c 60%);
+  background-size: 100% 100%, 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 4s linear infinite;
+}
 
 /* ========================================
    REDUCED MOTION
