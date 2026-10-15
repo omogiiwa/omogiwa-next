@@ -235,8 +235,9 @@
 }
 
 .se-shop-button:hover {
-  background: #ffffff;
-  color: #111111;
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
 }
 
 @media (max-width: 600px) {
@@ -1024,8 +1025,9 @@
 }
 
 .se-shop-button:hover {
-  background: #ffffff;
-  color: #111111;
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
 }
 
 .se-shop-cta p {
