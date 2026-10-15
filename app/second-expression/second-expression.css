@@ -207,6 +207,48 @@
   opacity: 0.55;
 }
 
+/* Go to shop */
+/* Go to Shop button */
+.se-shop-cta {
+  display: flex;
+  justify-content: center;
+  padding: 48px 20px 72px;
+  background: #ffffff;
+}
+
+.se-shop-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 190px;
+  padding: 16px 32px;
+  border: 1px solid #111111;
+  background: #111111;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-decoration: none;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.se-shop-button:hover {
+  background: #ffffff;
+  color: #111111;
+}
+
+@media (max-width: 600px) {
+  .se-shop-cta {
+    padding: 32px 20px 52px;
+  }
+
+  .se-shop-button {
+    width: 100%;
+    max-width: 280px;
+  }
+}
 /* ========================================
    FOOTER
 ======================================== */
