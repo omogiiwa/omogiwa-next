@@ -55,7 +55,14 @@ export default async function AdminPage() {
     .select("*")
     .order("created_at", { ascending: false })
     .limit(100);
-
+const {
+  data: subscribersData,
+  error: subscribersError,
+} = await supabase
+  .from("subscribers")
+  .select("*")
+  .order("created_at", { ascending: false })
+  .limit(500);
   return (
     <AdminDashboard
       displayName={profile.display_name || "Administrator"}
@@ -64,6 +71,8 @@ export default async function AdminPage() {
       subscriberCount={subscriberError ? null : subscriberCount ?? 0}
       inquiries={inquiriesError ? [] : inquiriesData ?? []}
       inquiriesLoadError={Boolean(inquiriesError)}
+      subscribers={subscribersError ? [] : subscribersData ?? []}
+      subscribersLoadError={Boolean(subscribersError)}
     />
   );
 
