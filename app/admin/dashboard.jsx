@@ -381,9 +381,153 @@ export default function AdminDashboard({
         })}
       </div>
     )}
+    </section>
+
+) : activeSection === "Subscribers" ? (
+
+  <section className="inquiries-section">
+
+    <div className="inquiries-heading">
+
+      <div>
+
+        <h2>Newsletter subscribers</h2>
+
+        <p>People who have signed up to hear from OmoGiwa.</p>
+
+      </div>
+
+      <span className="inquiry-total">
+
+        {subscribers.length} loaded
+
+      </span>
+
+    </div>
+
+    {subscribersLoadError ? (
+
+      <div className="inquiries-empty">
+
+        <h3>Couldn't load subscribers</h3>
+
+        <p>
+
+          Check the admin read-access policy for subscribers
+
+          in Supabase, then refresh this page.
+
+        </p>
+
+      </div>
+
+    ) : subscribers.length === 0 ? (
+
+      <div className="inquiries-empty">
+
+        <span className="coming-icon">✉</span>
+
+        <h3>No subscribers to display yet</h3>
+
+        <p>
+
+          Newsletter signups from your website will appear here.
+
+        </p>
+
+      </div>
+
+    ) : (
+
+      <div className="inquiry-list">
+
+        {subscribers.map((subscriber, index) => {
+
+          const emailAddress =
+
+            subscriber.email || subscriber.email_address || "";
+
+          const subscribedAt =
+
+            subscriber.created_at || subscriber.createdAt;
+
+          const name =
+
+            subscriber.name || subscriber.full_name || "";
+
+          return (
+
+            <div
+
+              className="inquiry-card subscriber-card"
+
+              key={subscriber.id || emailAddress || index}
+
+            >
+
+              <div className="inquiry-summary">
+
+                <div className="inquiry-avatar">
+
+                  {String(name || emailAddress || "?")
+
+                    .charAt(0)
+
+                    .toUpperCase()}
+
+                </div>
+
+                <div className="inquiry-person">
+
+                  <strong>{name || "Newsletter subscriber"}</strong>
+
+                  <span>{emailAddress || "No email recorded"}</span>
+
+                  <small>
+
+                    {subscribedAt
+
+                      ? `Joined ${new Date(subscribedAt).toLocaleDateString()}`
+
+                      : "Signup date unavailable"}
+
+                  </small>
+
+                </div>
+
+                {emailAddress && (
+
+                  <a
+
+                    className="subscriber-email-button"
+
+                    href={`mailto:${emailAddress}`}
+
+                  >
+
+                    Email
+
+                  </a>
+
+                )}
+
+              </div>
+
+            </div>
+
+          );
+
+        })}
+
+      </div>
+
+    )}
+
   </section>
+
 ) : (
-            <div className="coming-soon">
+
+  <div className="coming-soon">
               <span className="coming-icon">✳</span>
               <h2>{activeSection} is up next.</h2>
               <p>
