@@ -13,7 +13,12 @@ const navigation = [
   { name: "Finances", icon: "₦" },
 ];
 
-export default function AdminDashboard({ displayName, email }) {
+export default function AdminDashboard({
+  displayName,
+  email,
+  inquiryCount,
+  subscriberCount,
+}) {
   const [activeSection, setActiveSection] = useState("Overview");
   const [menuOpen, setMenuOpen] = useState(false);
   const [signingOut, setSigningOut] = useState(false);
@@ -150,7 +155,7 @@ export default function AdminDashboard({ displayName, email }) {
                     <span>Hiring inquiries</span>
                     <span className="stat-icon purple">↗</span>
                   </div>
-                  <strong>—</strong>
+                 <strong>{inquiryCount ?? "—"}</strong>
                   <p>Incoming opportunities</p>
                 </article>
 
@@ -159,7 +164,7 @@ export default function AdminDashboard({ displayName, email }) {
                     <span>Subscribers</span>
                     <span className="stat-icon blue">✉</span>
                   </div>
-                  <strong>—</strong>
+                  <strong>{subscriberCount ?? "—"}</strong>
                   <p>Newsletter audience</p>
                 </article>
 
