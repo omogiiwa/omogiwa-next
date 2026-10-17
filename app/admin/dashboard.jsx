@@ -18,6 +18,8 @@ export default function AdminDashboard({
   email,
   inquiryCount,
   subscriberCount,
+  inquiries = [],
+  inquiriesLoadError = false,
 }) {
   const [activeSection, setActiveSection] = useState("Overview");
   const [menuOpen, setMenuOpen] = useState(false);
