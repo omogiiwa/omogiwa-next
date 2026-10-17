@@ -47,12 +47,23 @@ export default async function AdminPage() {
       .select("*", { count: "exact", head: true }),
   ]);
 
+  const {
+    data: inquiriesData,
+    error: inquiriesError,
+  } = await supabase
+    .from("hire_inquiries")
+    .select("*")
+    .order("created_at", { ascending: false })
+    .limit(100);
+
   return (
     <AdminDashboard
       displayName={profile.display_name || "Administrator"}
       email={user.email || ""}
       inquiryCount={inquiryError ? null : inquiryCount ?? 0}
       subscriberCount={subscriberError ? null : subscriberCount ?? 0}
+      inquiries={inquiriesError ? [] : inquiriesData ?? []}
+      inquiriesLoadError={Boolean(inquiriesError)}
     />
   );
 
