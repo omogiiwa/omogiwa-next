@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1140" height="440"
+     viewBox="0 0 1140 440"
+     role="img" aria-labelledby="title">
+  <title id="title">ododo geometric wordmark</title>
+
+  <g fill="none"
+     stroke="#111111"
+     stroke-width="28"
+     stroke-linecap="round"
+     stroke-linejoin="round">
+
+    <!-- o -->
+    <circle cx="130" cy="270" r="90"/>
+
+    <!-- d -->
+    <circle cx="350" cy="270" r="90"/>
+    <path d="M440 65 V270"/>
+
+    <!-- o -->
+    <circle cx="570" cy="270" r="90"/>
+
+    <!-- d -->
+    <circle cx="790" cy="270" r="90"/>
+    <path d="M880 65 V270"/>
+
+    <!-- o -->
+    <circle cx="1010" cy="270" r="90"/>
+
+  </g>
+</svg>
