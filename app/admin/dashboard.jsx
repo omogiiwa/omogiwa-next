@@ -238,7 +238,149 @@ export default function AdminDashboard({
                 </article>
               </div>
             </>
-          ) : (
+         
+) : activeSection === "Inquiries" ? (
+  <section className="inquiries-section">
+    <div className="inquiries-heading">
+      <div>
+        <h2>Hiring inquiries</h2>
+        <p>Review submissions from your website's hire form.</p>
+      </div>
+      <span className="inquiry-total">
+        {inquiries.length} loaded
+      </span>
+    </div>
+
+    {inquiriesLoadError ? (
+      <div className="inquiries-empty">
+        <h3>Couldn't load inquiries</h3>
+        <p>
+          Check the admin read-access policy for hire_inquiries
+          in Supabase, then refresh this page.
+        </p>
+      </div>
+    ) : inquiries.length === 0 ? (
+      <div className="inquiries-empty">
+        <span className="coming-icon">↗</span>
+        <h3>No inquiries to display yet</h3>
+        <p>
+          New submissions from your website will appear here
+          once someone completes your hire form.
+        </p>
+      </div>
+    ) : (
+      <div className="inquiry-list">
+        {inquiries.map((item, index) => {
+          const getValue = (...keys) => {
+            for (const key of keys) {
+              if (
+                item[key] !== undefined &&
+                item[key] !== null &&
+                item[key] !== ""
+              ) {
+                return item[key];
+              }
+            }
+            return null;
+          };
+
+          const name =
+            getValue("fullName", "full_name", "name") ||
+            "Unnamed inquiry";
+
+          const emailAddress =
+            getValue("email", "client_email");
+
+          const company =
+            getValue("companyName", "company_name");
+
+          const services =
+            getValue("services", "service");
+
+          const submittedAt =
+            getValue("created_at", "createdAt");
+
+          const formatValue = (value) => {
+            if (value === null || value === undefined || value === "") {
+              return "Not provided";
+            }
+
+            if (Array.isArray(value)) {
+              return value
+                .map((entry) =>
+                  typeof entry === "object"
+                    ? JSON.stringify(entry)
+                    : String(entry)
+                )
+                .join(", ");
+            }
+
+            if (typeof value === "object") {
+              return JSON.stringify(value, null, 2);
+            }
+
+            return String(value);
+          };
+
+          return (
+            <details className="inquiry-card" key={item.id || index}>
+              <summary className="inquiry-summary">
+                <div className="inquiry-avatar">
+                  {String(name).charAt(0).toUpperCase()}
+                </div>
+
+                <div className="inquiry-person">
+                  <strong>{String(name)}</strong>
+                  <span>{String(emailAddress || "No email provided")}</span>
+                  <small>
+                    {String(company || "Independent client")}
+                  </small>
+                </div>
+
+                <div className="inquiry-meta">
+                  <span>
+                    {services ? formatValue(services) : "Project inquiry"}
+                  </span>
+                  <small>
+                    {submittedAt
+                      ? new Date(submittedAt).toLocaleDateString()
+                      : "Date unavailable"}
+                  </small>
+                </div>
+
+                <span className="inquiry-chevron">⌄</span>
+              </summary>
+
+              <div className="inquiry-details">
+                {Object.entries(item).map(([key, value]) => (
+                  <div className="inquiry-field" key={key}>
+                    <span>
+                      {key
+                        .replace(/([A-Z])/g, " $1")
+                        .replace(/_/g, " ")
+                        .replace(/^./, (letter) => letter.toUpperCase())}
+                    </span>
+                    <div>
+                      {key.toLowerCase().includes("email") &&
+                      typeof value === "string" ? (
+                        <a href={`mailto:${value}`}>{value}</a>
+                      ) : key.toLowerCase().includes("phone") &&
+                        typeof value === "string" ? (
+                        <a href={`tel:${value}`}>{value}</a>
+                      ) : (
+                        <pre>{formatValue(value)}</pre>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </details>
+          );
+        })}
+      </div>
+    )}
+  </section>
+) : (
             <div className="coming-soon">
               <span className="coming-icon">✳</span>
               <h2>{activeSection} is up next.</h2>
@@ -896,7 +1038,218 @@ export default function AdminDashboard({
             transition-duration: 0.01ms !important;
           }
         }
-      `}</style>
+     
+.inquiries-section {
+  min-width: 0;
+}
+
+.inquiries-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.inquiries-heading h2 {
+  margin: 0;
+  font-size: 19px;
+  letter-spacing: -0.4px;
+}
+
+.inquiries-heading p {
+  margin: 8px 0 0;
+  color: #898394;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.inquiry-total {
+  flex-shrink: 0;
+  padding: 8px 11px;
+  border-radius: 8px;
+  background: #f0ebfc;
+  color: #401e97;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.inquiries-empty {
+  padding: 48px 22px;
+  border: 1px solid #ece9f2;
+  border-radius: 15px;
+  background: #fff;
+  text-align: center;
+}
+
+.inquiries-empty h3 {
+  margin: 12px 0 8px;
+  font-size: 16px;
+}
+
+.inquiries-empty p {
+  max-width: 390px;
+  margin: 0 auto;
+  color: #898394;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.inquiry-list {
+  display: grid;
+  gap: 12px;
+}
+
+.inquiry-card {
+  overflow: hidden;
+  border: 1px solid #ece9f2;
+  border-radius: 13px;
+  background: white;
+}
+
+.inquiry-summary {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 17px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.inquiry-summary::-webkit-details-marker {
+  display: none;
+}
+
+.inquiry-avatar {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: #f0ebfc;
+  color: #401e97;
+  font-weight: 700;
+}
+
+.inquiry-person {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+  gap: 4px;
+}
+
+.inquiry-person strong {
+  overflow-wrap: anywhere;
+  font-size: 13px;
+}
+
+.inquiry-person span,
+.inquiry-person small {
+  overflow-wrap: anywhere;
+  color: #898394;
+  font-size: 11px;
+}
+
+.inquiry-meta {
+  display: grid;
+  max-width: 35%;
+  gap: 5px;
+  text-align: right;
+}
+
+.inquiry-meta span {
+  overflow-wrap: anywhere;
+  color: #5d536f;
+  font-size: 11px;
+}
+
+.inquiry-meta small {
+  color: #a19bad;
+  font-size: 10px;
+}
+
+.inquiry-chevron {
+  color: #81798f;
+  transition: transform 0.2s ease;
+}
+
+.inquiry-card[open] .inquiry-chevron {
+  transform: rotate(180deg);
+}
+
+.inquiry-details {
+  padding: 4px 18px 18px;
+  border-top: 1px solid #efedf3;
+}
+
+.inquiry-field {
+  display: grid;
+  grid-template-columns: minmax(100px, 0.7fr) minmax(0, 1.5fr);
+  gap: 16px;
+  padding: 13px 0;
+  border-bottom: 1px solid #f0edf4;
+}
+
+.inquiry-field:last-child {
+  border-bottom: 0;
+}
+
+.inquiry-field > span {
+  color: #898394;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.inquiry-field > div {
+  min-width: 0;
+  color: #30283c;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.inquiry-field a {
+  color: #401e97;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.inquiry-field pre {
+  margin: 0;
+  font: inherit;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 520px) {
+  .inquiry-summary {
+    gap: 10px;
+    padding: 13px;
+  }
+
+  .inquiry-avatar {
+    width: 34px;
+    height: 34px;
+  }
+
+  .inquiry-meta {
+    display: none;
+  }
+
+  .inquiry-field {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  .inquiry-details {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+}
+
+       `}
+      </style>
     </main>
   );
 }
