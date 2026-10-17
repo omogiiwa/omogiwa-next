@@ -16,6 +16,8 @@ export default function sitemap() {
     // Tools
     "/tools/frame-picker",
     "/tools/svg-to-png",
+    
+    //articles
   ];
 
   return routes.map((route) => ({
