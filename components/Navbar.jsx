@@ -19,7 +19,7 @@ export default function Navbar() {
         <details className="menu">
 <summary className="menu-button">
   <Image
-    src="/menubar.png"
+    src="/menubar.svg"
     alt="Menu bar"
     width={30}
     height={30}
