@@ -33,10 +33,27 @@ export default async function AdminPage() {
     redirect("/admin/login");
   }
 
+  
+  const [
+    { count: inquiryCount, error: inquiryError },
+    { count: subscriberCount, error: subscriberError },
+  ] = await Promise.all([
+    supabase
+      .from("hire_inquiries")
+      .select("*", { count: "exact", head: true }),
+
+    supabase
+      .from("subscribers")
+      .select("*", { count: "exact", head: true }),
+  ]);
+
   return (
     <AdminDashboard
       displayName={profile.display_name || "Administrator"}
       email={user.email || ""}
+      inquiryCount={inquiryError ? null : inquiryCount ?? 0}
+      subscriberCount={subscriberError ? null : subscriberCount ?? 0}
     />
   );
+
 }
