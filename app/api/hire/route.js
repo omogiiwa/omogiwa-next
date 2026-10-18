@@ -80,7 +80,7 @@ export async function POST(request) {
     console.error("Hire API error:", error);
 
     return NextResponse.json(
-      { error: error.message || "Something went wrong. Please try again.", },
+      { error: "Something went wrong. Please try again.", },
       { status: 500 }
     );
   }
