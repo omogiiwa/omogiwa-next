@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { supabase } from "../../lib/supabase";
 import "./hire.css";
@@ -137,7 +137,12 @@ export default function HirePage() {
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
-
+useEffect(() => {
+  formTopRef.current?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+}, [step]);
   const update = (field, value) => {
     setForm((prev) => ({
       ...prev,
@@ -280,7 +285,6 @@ const previousStep = () => {
       }
 
       setSuccess(true);
-      window.scrollTo({ top: 0, behavior: "smooth" });
   } catch (submitError) {
   console.error("Hire submission error:", submitError);
 
