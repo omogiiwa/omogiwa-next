@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import { supabase } from "../../lib/supabase";
 import "./hire.css";
@@ -131,6 +131,7 @@ const toggleArray = (array, value) =>
 
 export default function HirePage() {
   const [step, setStep] = useState(0);
+  const formTopRef = useRef(null);
   const [form, setForm] = useState(initialForm);
   const [files, setFiles] = useState([]);
   const [submitting, setSubmitting] = useState(false);
@@ -189,17 +190,29 @@ export default function HirePage() {
   };
 
   const nextStep = () => {
-    if (!validateStep()) return;
+  if (!validateStep()) return;
 
-    setStep((current) => Math.min(current + 1, steps.length - 1));
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  setStep((current) => Math.min(current + 1, steps.length - 1));
 
-  const previousStep = () => {
-    setError("");
-    setStep((current) => Math.max(current - 1, 0));
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  requestAnimationFrame(() => {
+    formTopRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  });
+};
+
+const previousStep = () => {
+  setError("");
+  setStep((current) => Math.max(current - 1, 0));
+
+  requestAnimationFrame(() => {
+    formTopRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  });
+};
 
   const uploadFiles = async () => {
     const uploaded = [];
@@ -342,6 +355,7 @@ export default function HirePage() {
         <div className="hire-progress">
           <div className="hire-progress-top">
             <span>
+              <div ref={formTopRef} />
               Step {step + 1} of {steps.length}
             </span>
 
