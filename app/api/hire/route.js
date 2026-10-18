@@ -64,15 +64,10 @@ export async function POST(request) {
   ]);
 
     if (error) {
-  console.error("Hire form error:", error);
+  console.error("Hire form submission failed:", error);
 
   return NextResponse.json(
-    {
-      error: error.message,
-      details: error.details,
-      hint: error.hint,
-      code: error.code,
-    },
+    { error: "We couldn't submit your inquiry. Please try again." },
     { status: 500 }
   );
 }
