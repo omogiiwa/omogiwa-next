@@ -1,6 +1,24 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 import "./navbar.css";
+
 export default function Navbar() {
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    function closeMenuOnOutsidePointer(event) {
+      const menu = menuRef.current;
+      if (menu?.open && !menu.contains(event.target)) {
+        menu.open = false;
+      }
+    }
+
+    document.addEventListener("pointerdown", closeMenuOnOutsidePointer);
+    return () => document.removeEventListener("pointerdown", closeMenuOnOutsidePointer);
+  }, []);
+
   return (
     <header className="site-header">
       <nav className="navbar">
@@ -16,7 +34,7 @@ export default function Navbar() {
           />
         </a>
 
-        <details className="menu">
+        <details className="menu" ref={menuRef}>
 <summary className="menu-button">
   <Image
     src="/menubar.svg"
