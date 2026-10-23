@@ -57,7 +57,7 @@ export default function DeskHero() {
     <div className="desk-hero-canvas" ref={deskRef}>
       <svg
         viewBox="0 0 1200 800"
-        role="img"
+        role="group"
         aria-label="OmoGiwa's creative workspace desk"
       >
         <defs>
