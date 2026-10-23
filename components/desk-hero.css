@@ -375,3 +375,38 @@
     transform: none;
   }
 }
+
+
+/* Homepage Desk Hero calls to action */
+.desk-hero-canvas a .desk-cta {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 220ms ease, filter 220ms ease;
+}
+
+.desk-hero-canvas a:hover .desk-cta,
+.desk-hero-canvas a:focus-visible .desk-cta {
+  transform: translateY(-3px) scale(1.035);
+  filter: drop-shadow(0 7px 10px rgba(64, 30, 151, 0.24));
+}
+
+.desk-hero-canvas a:active .desk-cta {
+  transform: translateY(0) scale(0.985);
+}
+
+.desk-hero-canvas a .desk-cta-primary {
+  animation: deskCtaPulse 3.8s ease-in-out 1.4s infinite;
+}
+
+@keyframes deskCtaPulse {
+  0%, 84%, 100% { transform: scale(1); }
+  90% { transform: scale(1.035); }
+  95% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .desk-hero-canvas a .desk-cta {
+    animation: none !important;
+    transition: none !important;
+  }
+}
