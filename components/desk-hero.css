@@ -303,3 +303,54 @@
     animation-duration: 24s;
   }
 }
+
+
+/* Independent, restrained motion on existing loose desk objects. */
+.desk-hero-canvas svg .desk-item:not(.desk-appear) {
+  animation: deskObjectFloat 7s ease-in-out infinite;
+  animation-delay: var(--desk-float-delay, 0s);
+}
+
+.desk-hero-canvas svg .desk-item:not(.desk-appear):nth-of-type(3n) {
+  --desk-float-delay: -2.2s;
+}
+
+.desk-hero-canvas svg .desk-item:not(.desk-appear):nth-of-type(3n + 1) {
+  --desk-float-delay: -4.4s;
+}
+
+@keyframes deskObjectFloat {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -2.5px; }
+}
+
+/* A soft edge highlight adds depth while leaving the wooden desk intact. */
+.desk-hero-canvas svg {
+  filter: drop-shadow(0 12px 22px rgba(64, 30, 151, 0.045));
+}
+
+.desk-hero-canvas a:hover,
+.desk-hero-canvas a:focus-visible {
+  filter: drop-shadow(0 0 5px rgba(106, 63, 208, 0.12));
+}
+
+.desk-hero-canvas .desk-screen-panel {
+  transition: opacity 600ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .desk-hero-canvas svg .desk-item:not(.desk-appear) {
+    animation: none;
+    translate: none;
+  }
+
+  .desk-hero-canvas .desk-screen-panel {
+    transition: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .desk-hero-canvas svg .desk-item:not(.desk-appear) {
+    animation-duration: 9s;
+  }
+}
