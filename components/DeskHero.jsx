@@ -827,7 +827,7 @@ export default function DeskHero() {
 
 <g
   transform="translate(515 350)"
-  className="desk-item"
+  className="desk-item desk-center-mark"
 >
   <image
     href="/omogiwaanimated1-white.svg"
