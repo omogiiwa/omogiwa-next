@@ -39,7 +39,7 @@ export default function GiwaAIWidget() {
         ) : (
           <>
             <img src="/giwa-ai-icon.svg" alt="" />
-            <span>Ask Giwa AI</span>
+            <span className="giwa-ai-label"><span className="giwa-ai-label-ask">Ask</span> <span className="giwa-ai-label-name">Giwa AI</span></span>
           </>
         )}
       </button>
