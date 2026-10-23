@@ -15,6 +15,7 @@ export default function AIPage() {
     "What do you do?",
     "Tell me about your services",
     "Show me some of your work",
+    "What's the pricing?",
   ];
 
   useEffect(() => {
