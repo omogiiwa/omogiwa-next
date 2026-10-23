@@ -1,10 +1,57 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import "./desk-hero.css";
 
 export default function DeskHero() {
   const deskRef = useRef(null);
+
+  useEffect(() => {
+    const root = deskRef.current;
+    if (!root) return;
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+    if (reducedMotion.matches || !finePointer.matches) return;
+
+    const items = Array.from(root.querySelectorAll(".desk-item"));
+    let frame = 0;
+    let pointerX = 0;
+    let pointerY = 0;
+
+    const applyParallax = () => {
+      frame = 0;
+      items.forEach((item, index) => {
+        const depth = ((index % 5) - 2) * 0.45;
+        item.style.translate = `${pointerX * depth}px ${pointerY * depth}px`;
+      });
+    };
+
+    const onPointerMove = (event) => {
+      const bounds = root.getBoundingClientRect();
+      if (!bounds.width || !bounds.height) return;
+      pointerX = Math.max(-1, Math.min(1, ((event.clientX - bounds.left) / bounds.width - 0.5) * 2));
+      pointerY = Math.max(-1, Math.min(1, ((event.clientY - bounds.top) / bounds.height - 0.5) * 2));
+      if (!frame) frame = window.requestAnimationFrame(applyParallax);
+    };
+
+    const resetParallax = () => {
+      if (frame) window.cancelAnimationFrame(frame);
+      frame = 0;
+      items.forEach((item) => { item.style.translate = ""; });
+    };
+
+    root.addEventListener("pointermove", onPointerMove, { passive: true });
+    root.addEventListener("pointerleave", resetParallax);
+    reducedMotion.addEventListener?.("change", resetParallax);
+
+    return () => {
+      root.removeEventListener("pointermove", onPointerMove);
+      root.removeEventListener("pointerleave", resetParallax);
+      reducedMotion.removeEventListener?.("change", resetParallax);
+      resetParallax();
+    };
+  }, []);
 
   return (
     <div className="desk-hero-canvas" ref={deskRef}>
@@ -1046,14 +1093,6 @@ export default function DeskHero() {
             <circle cx="112" cy="133" r="2" fill="#ff8d78" opacity=".35" />
           </g>
 
-          <a
-            href="/ai"
-            aria-label="Open Giwa AI"
-            className="desk-screen-link"
-          >
-            <rect x="82" y="24" width="150" height="124" fill="transparent" />
-          </a>
-
           {/* DESIGN SELECTION */}
 
           <rect
@@ -1097,6 +1136,10 @@ export default function DeskHero() {
             />
 
           </g>
+
+          <a href="/ai" aria-label="Open Giwa AI" className="desk-screen-link">
+            <rect x="82" y="24" width="150" height="124" fill="transparent" />
+          </a>
 
         </g>
 
