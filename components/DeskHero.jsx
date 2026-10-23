@@ -874,7 +874,8 @@ export default function DeskHero() {
             fill="#b4b5bd"
           />
 
-          {/* SCREEN */}
+          {/* SCREEN LID: the existing screen artwork stays unchanged. */}
+          <g className="desk-laptop-lid">
 
           <rect
             width="320"
@@ -1140,6 +1141,8 @@ export default function DeskHero() {
           <a href="/ai" aria-label="Open Giwa AI" className="desk-screen-link">
             <rect x="82" y="24" width="150" height="124" fill="transparent" />
           </a>
+
+          </g>
 
         </g>
 
