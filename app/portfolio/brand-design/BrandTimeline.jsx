@@ -94,14 +94,14 @@ export default function BrandTimeline() {
       <main className="mings-page">
         <header className="mings-header">
           <div className="mings-header-copy">
-            <p className="mings-kicker">BRAND IDENTITY / 2026</p>
+            <p className="mings-kicker">CASE STUDY 01 / BRAND IDENTITY / 2026</p>
             <h1>Mings</h1>
             <p className="mings-description">
               A visual identity for a logistics company built to move things forward.
             </p>
             <p className="mings-instruction">A closer look at the identity, its applications, and the details in between.</p>
           </div>
-          <p className="mings-year">SELECTED PROJECT</p>
+          <p className="mings-year">CASE STUDY 01<br />MORE PROJECTS TO COME</p>
         </header>
 
         <nav className="mings-stage-nav" aria-label="Jump to a project stage">
@@ -151,8 +151,9 @@ export default function BrandTimeline() {
           ))}
         </div>
         <footer className="mings-endnote">
-          <span>END OF PROJECT</span>
+          <span>END OF CASE STUDY 01</span>
           <p>One identity, carried through every touchpoint.</p>
+          <p className="mings-next-case-study">This is the first in a growing collection of brand design case studies. More projects and stories are on the way.</p>
           <button type="button" onClick={() => window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" })}>
             Back to the beginning
           </button>
