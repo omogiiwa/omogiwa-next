@@ -145,57 +145,37 @@ export default function AboutPage() {
         </div>
       </details>
     </section>
-    {/* WHAT I CAN DO */}
-    <section className="omg-about-section">
+    {/* WHAT I DO */}
+    <section className="omg-about-section omg-about-work-section">
       <details className="omg-about-details">
         <summary className="omg-about-summary">
-          What Can I Do for You?
+          What I Do
           <span className="omg-about-summary-icon">+</span>
         </summary>
-        <div className="omg-about-content">
-          <p className="omg-about-lead">
-            I help businesses communicate better through
-            thoughtful branding, digital experiences, and
-            visual design.
-          </p>
-          <p>
-            Whether you are launching a new business,
-            improving an existing brand, or building a
-            digital presence, I can help you bring the
-            different pieces together.
-          </p>
+        <div className="omg-about-content omg-about-work-content">
+          <div className="omg-about-work-heading">
+            <p className="omg-about-eyebrow">One connected practice</p>
+            <h2>Branding, websites, and digital strategy — all connected.</h2>
+            <p>
+              I bring design, technology, and strategy together to help
+              businesses communicate clearly and grow with purpose.
+            </p>
+          </div>
           <div className="omg-about-service-list">
             <article className="omg-about-service">
-              <h2>Brand & Visual Design</h2>
-              <p>
-                I create visual identities that give
-                businesses a recognisable and consistent
-                presence. From logos and typography to
-                colour systems and supporting graphics,
-                every element should feel like it belongs
-                to the same brand.
-              </p>
+              <span className="omg-about-service-number">01</span>
+              <h3>Branding</h3>
+              <p>Distinctive identities and visual systems that make your brand memorable.</p>
             </article>
             <article className="omg-about-service">
-              <h2>Web & Digital Design</h2>
-              <p>
-                I design and develop websites that combine
-                visual appeal with usability and purpose.
-                The aim is to help visitors understand
-                what you offer, navigate with ease, and
-                take the next step.
-              </p>
+              <span className="omg-about-service-number">02</span>
+              <h3>Websites</h3>
+              <p>Purposeful digital experiences that look considered and work beautifully.</p>
             </article>
             <article className="omg-about-service">
-              <h2>Digital Strategy</h2>
-              <p>
-                I help connect your brand's visual
-                communication and digital presence to
-                your business goals. That means thinking
-                about what you need to communicate,
-                who needs to hear it, and how the
-                experience should support your objectives.
-              </p>
+              <span className="omg-about-service-number">03</span>
+              <h3>Digital Strategy</h3>
+              <p>Clear direction that connects your message, audience, and business goals.</p>
             </article>
           </div>
         </div>
