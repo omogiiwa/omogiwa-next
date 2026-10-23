@@ -792,17 +792,15 @@ THE DESK HERO
 
   <div className="journal-feature-list">
     {journalArticles.map((article, index) => (
-      <button
+      <a
         key={article.number}
-        type="button"
+        href={article.href}
         className={`journal-feature-item ${
           index === activeArticle ? "active" : ""
         }`}
         onMouseEnter={() => setActiveArticle(index)}
-
-  onFocus={() => setActiveArticle(index)}
-
-  onClick={() => setActiveArticle(index)}
+        onFocus={() => setActiveArticle(index)}
+        aria-label={`Read article: ${article.title}`}
       >
         <span>{article.number}</span>
 
@@ -811,8 +809,8 @@ THE DESK HERO
           <strong>{article.title}</strong>
         </div>
 
-        <span className="journal-feature-arrow">↗</span>
-      </button>
+        <span className="journal-feature-arrow" aria-hidden="true">↗</span>
+      </a>
     ))}
   </div>
 
