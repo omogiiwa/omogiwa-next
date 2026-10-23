@@ -354,3 +354,24 @@
     animation-duration: 9s;
   }
 }
+
+
+/* The existing laptop starts closed, then its screen lid opens into place. */
+.desk-hero-canvas .desk-laptop-lid {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: deskLaptopOpen 1.35s cubic-bezier(0.2, 0.8, 0.2, 1) 0.65s both;
+}
+
+@keyframes deskLaptopOpen {
+  0%, 14% { transform: scaleY(0.035); }
+  76% { transform: scaleY(1.045); }
+  100% { transform: scaleY(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .desk-hero-canvas .desk-laptop-lid {
+    animation: none;
+    transform: none;
+  }
+}
