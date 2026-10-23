@@ -1,58 +1,10 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import "./desk-hero.css";
 
 export default function DeskHero() {
   const deskRef = useRef(null);
-
-  useEffect(() => {
-    const desk = deskRef.current;
-
-    if (!desk || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      return;
-    }
-
-    const interactiveItems = desk.querySelectorAll(
-      ".desk-item, a .lift"
-    );
-
-    let mouseX = 0;
-    let mouseY = 0;
-    let currentX = 0;
-    let currentY = 0;
-    let animationFrame;
-
-    const handlePointerMove = (event) => {
-      mouseX = event.clientX / window.innerWidth - 0.5;
-      mouseY = event.clientY / window.innerHeight - 0.5;
-    };
-
-    window.addEventListener("pointermove", handlePointerMove);
-
-    const animate = () => {
-      currentX += (mouseX - currentX) * 0.035;
-      currentY += (mouseY - currentY) * 0.035;
-
-      interactiveItems.forEach((item, index) => {
-        const strength = index % 3 === 0 ? 2.2 : 1.4;
-
-        const x = currentX * strength;
-        const y = currentY * strength;
-
-        item.style.translate = `${x}px ${y}px`;
-      });
-
-      animationFrame = requestAnimationFrame(animate);
-    };
-
-    animate();
-
-    return () => {
-      window.removeEventListener("pointermove", handlePointerMove);
-      cancelAnimationFrame(animationFrame);
-    };
-  }, []);
 
   return (
     <div className="desk-hero-canvas" ref={deskRef}>
@@ -195,8 +147,20 @@ export default function DeskHero() {
 <rect
   width="1200"
   height="800"
-  fill="#ffffff"
+  fill="url(#deskAtmosphere)"
 />
+
+<defs>
+  <linearGradient id="deskAtmosphere" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stopColor="#ffffff" />
+    <stop offset="58%" stopColor="#fbf9ff" />
+    <stop offset="100%" stopColor="#f0eaff" />
+  </linearGradient>
+</defs>
+
+<circle className="desk-ambient-glow desk-ambient-glow-one" cx="170" cy="390" r="180" fill="#b9a1ff" opacity=".32" filter="url(#b)" />
+<circle className="desk-ambient-glow desk-ambient-glow-two" cx="1030" cy="300" r="175" fill="#d8c9ff" opacity=".4" filter="url(#b)" />
+<circle className="desk-ambient-glow desk-ambient-glow-three" cx="600" cy="760" r="150" fill="#ffb09e" opacity=".2" filter="url(#b)" />
 
         {/* DESK SHADOW */}
 
@@ -1046,6 +1010,49 @@ export default function DeskHero() {
             rx="6"
             fill="#401e97"
           />
+
+          {/* SUBTLE ROTATING SCREEN PREVIEWS */}
+          <g className="desk-screen-panel desk-screen-panel-code" aria-hidden="true">
+            <rect x="82" y="24" width="150" height="124" fill="#17151f" />
+            <rect x="82" y="24" width="150" height="18" fill="#252132" />
+            <circle cx="92" cy="33" r="2.5" fill="#ff8d78" />
+            <circle cx="100" cy="33" r="2.5" fill="#d6c5ff" />
+            <circle cx="108" cy="33" r="2.5" fill="#8d79d9" />
+            <text className="desk-ui" x="118" y="36" fontSize="7" fill="#f7f2ff">BUILD MODE</text>
+            <g strokeLinecap="round" strokeWidth="3">
+              <path d="M94 57h34" stroke="#bba5ff" />
+              <path d="M104 68h69" stroke="#ff9d89" />
+              <path d="M104 79h54" stroke="#8fdfca" />
+              <path d="M94 90h76" stroke="#bba5ff" />
+              <path d="M104 101h61" stroke="#ff9d89" />
+              <path d="M104 112h40" stroke="#8fdfca" />
+              <path d="M94 123h65" stroke="#bba5ff" />
+            </g>
+            <rect x="163" y="119" width="2" height="8" fill="#ff8d78" className="desk-screen-cursor" />
+          </g>
+
+          <g className="desk-screen-panel desk-screen-panel-ai" aria-hidden="true">
+            <rect x="82" y="24" width="150" height="124" fill="#20153b" />
+            <circle cx="104" cy="52" r="10" fill="#6a3fd0" />
+            <text className="desk-ui" x="104" y="55" textAnchor="middle" fontSize="8" fontWeight="700" fill="#fff">G</text>
+            <text className="desk-ui" x="119" y="50" fontSize="9" fontWeight="700" fill="#fff">Giwa AI</text>
+            <text className="desk-ui" x="119" y="61" fontSize="6" fill="#c9b9f7">Your creative copilot</text>
+            <rect x="94" y="73" width="118" height="22" rx="6" fill="#38245c" />
+            <text className="desk-ui" x="101" y="86" fontSize="7" fill="#f7f2ff">Let's bring this idea to life.</text>
+            <rect x="111" y="102" width="101" height="19" rx="6" fill="#6a3fd0" />
+            <text className="desk-ui" x="118" y="114" fontSize="7" fill="#fff">Where do we start?</text>
+            <circle cx="98" cy="133" r="2" fill="#ff8d78" />
+            <circle cx="105" cy="133" r="2" fill="#ff8d78" opacity=".65" />
+            <circle cx="112" cy="133" r="2" fill="#ff8d78" opacity=".35" />
+          </g>
+
+          <a
+            href="/ai"
+            aria-label="Open Giwa AI"
+            className="desk-screen-link"
+          >
+            <rect x="82" y="24" width="150" height="124" fill="transparent" />
+          </a>
 
           {/* DESIGN SELECTION */}
 
