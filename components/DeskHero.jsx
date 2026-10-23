@@ -1295,15 +1295,15 @@ export default function DeskHero() {
   aria-label="View OmoGiwa's work"
 >
   <g
-    className="lift"
+    className="lift desk-cta desk-cta-primary"
     filter="url(#s)"
   >
     <rect
-  x="500"
-  y="470"
-  width="200"
-  height="52"
-  rx="26"
+  x="488"
+  y="467"
+  width="224"
+  height="58"
+  rx="29"
       fill="#401e97"
       stroke="#d9b36a"
       strokeWidth="2"
@@ -1314,7 +1314,7 @@ export default function DeskHero() {
       x="600"
       y="503"
       textAnchor="middle"
-      fontSize="16"
+      fontSize="17"
       fontWeight="600"
       fill="#fff"
     >
@@ -1330,15 +1330,15 @@ export default function DeskHero() {
   aria-label="Work with OmoGiwa"
 >
   <g
-    className="lift"
+    className="lift desk-cta desk-cta-secondary"
     filter="url(#s)"
   >
     <rect
-  x="500"
-  y="535"
-  width="200"
-  height="52"
-  rx="26"
+  x="488"
+  y="532"
+  width="224"
+  height="58"
+  rx="29"
       fill="#0d0d0f"
       stroke="#d9b36a"
       strokeWidth="2"
@@ -1349,7 +1349,7 @@ export default function DeskHero() {
       x="600"
       y="568"
       textAnchor="middle"
-      fontSize="16"
+      fontSize="17"
       fontWeight="600"
       fill="#fff"
     >
