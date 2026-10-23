@@ -213,3 +213,144 @@
     animation-duration: 14s;
   }
 }
+
+
+/* Extra polish for the existing illustration — no replacement artwork. */
+.desk-hero-canvas .desk-center-mark image {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: deskLogoGlow 5s ease-in-out infinite;
+}
+
+@keyframes deskLogoGlow {
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(106, 63, 208, 0)); }
+  50% { filter: drop-shadow(0 0 9px rgba(106, 63, 208, 0.38)); }
+}
+
+.desk-hero-canvas .desk-screen-link:hover,
+.desk-hero-canvas .desk-screen-link:focus-visible {
+  filter: drop-shadow(0 0 7px rgba(106, 63, 208, 0.42));
+}
+
+.desk-hero-canvas a .lift {
+  will-change: transform;
+}
+
+.desk-hero-canvas a:focus-visible .lift {
+  filter: drop-shadow(0 7px 10px rgba(64, 30, 151, 0.22));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .desk-hero-canvas .desk-center-mark image { animation: none; }
+}
+
+
+/* Bring the existing desk to life without changing its illustration or layout. */
+.desk-hero-canvas::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    112deg,
+    transparent 24%,
+    rgba(255, 255, 255, 0.16) 43%,
+    rgba(185, 161, 255, 0.12) 50%,
+    transparent 67%
+  );
+  background-size: 220% 100%;
+  animation: deskLightSweep 18s ease-in-out infinite;
+}
+
+@keyframes deskLightSweep {
+  0%, 15% { background-position: 130% 0; opacity: 0; }
+  35% { opacity: 0.65; }
+  65% { opacity: 0.35; }
+  85%, 100% { background-position: -30% 0; opacity: 0; }
+}
+
+/* More responsive tactile feedback for the actual linked objects. */
+.desk-hero-canvas a {
+  -webkit-tap-highlight-color: rgba(106, 63, 208, 0.18);
+  touch-action: manipulation;
+}
+
+.desk-hero-canvas a .lift {
+  transition:
+    transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 220ms ease;
+}
+
+.desk-hero-canvas a:hover .lift,
+.desk-hero-canvas a:focus-visible .lift {
+  filter: drop-shadow(0 9px 10px rgba(64, 30, 151, 0.24));
+}
+
+.desk-hero-canvas .desk-center-mark {
+  filter: drop-shadow(0 3px 7px rgba(64, 30, 151, 0.12));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .desk-hero-canvas::after {
+    animation: none;
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .desk-hero-canvas::after {
+    animation-duration: 24s;
+  }
+}
+
+
+/* Independent, restrained motion on existing loose desk objects. */
+.desk-hero-canvas svg .desk-item:not(.desk-appear) {
+  animation: deskObjectFloat 7s ease-in-out infinite;
+  animation-delay: var(--desk-float-delay, 0s);
+}
+
+.desk-hero-canvas svg .desk-item:not(.desk-appear):nth-of-type(3n) {
+  --desk-float-delay: -2.2s;
+}
+
+.desk-hero-canvas svg .desk-item:not(.desk-appear):nth-of-type(3n + 1) {
+  --desk-float-delay: -4.4s;
+}
+
+@keyframes deskObjectFloat {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -2.5px; }
+}
+
+/* A soft edge highlight adds depth while leaving the wooden desk intact. */
+.desk-hero-canvas svg {
+  filter: drop-shadow(0 12px 22px rgba(64, 30, 151, 0.045));
+}
+
+.desk-hero-canvas a:hover,
+.desk-hero-canvas a:focus-visible {
+  filter: drop-shadow(0 0 5px rgba(106, 63, 208, 0.12));
+}
+
+.desk-hero-canvas .desk-screen-panel {
+  transition: opacity 600ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .desk-hero-canvas svg .desk-item:not(.desk-appear) {
+    animation: none;
+    translate: none;
+  }
+
+  .desk-hero-canvas .desk-screen-panel {
+    transition: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .desk-hero-canvas svg .desk-item:not(.desk-appear) {
+    animation-duration: 9s;
+  }
+}
