@@ -253,3 +253,34 @@ animation: none;
   height: 100%;
   border: 0;
 }
+
+
+/* White launcher keeps the purple Giwa AI logo clearly visible */
+.giwa-ai-widget-toggle {
+  background: #ffffff;
+  color: #111111;
+  border-color: rgba(64, 30, 151, 0.2);
+  box-shadow:
+    0 4px 18px rgba(0, 0, 0, 0.12),
+    0 0 20px rgba(64, 30, 151, 0.1);
+}
+
+.giwa-ai-widget-toggle:hover {
+  background: #ffffff;
+  box-shadow:
+    0 7px 24px rgba(0, 0, 0, 0.15),
+    0 0 24px rgba(64, 30, 151, 0.16);
+}
+
+.giwa-ai-widget-toggle .giwa-ai-label-ask {
+  color: #111111;
+}
+
+.giwa-ai-widget-toggle .giwa-ai-label-name {
+  color: #401e97;
+}
+
+.giwa-ai-widget-toggle.is-open {
+  background: #ffffff;
+  color: #111111;
+}
