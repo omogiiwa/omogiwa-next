@@ -127,3 +127,89 @@
     animation: none;
   }
 }
+
+/* Ambient light: slow, low-cost opacity changes only. */
+.desk-hero-canvas {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 18% 42%, rgba(106, 63, 208, 0.10), transparent 38%),
+    radial-gradient(ellipse at 82% 28%, rgba(185, 161, 255, 0.12), transparent 35%),
+    linear-gradient(135deg, #fff 0%, #fbf9ff 58%, #f0eaff 100%);
+}
+
+.desk-hero-canvas .desk-ambient-glow {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: deskGlow 9s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.desk-hero-canvas .desk-ambient-glow-two {
+  animation-delay: -3s;
+}
+
+.desk-hero-canvas .desk-ambient-glow-three {
+  animation-delay: -6s;
+}
+
+@keyframes deskGlow {
+  from { opacity: 0.16; }
+  to { opacity: 0.42; }
+}
+
+/* The laptop cycles through design, code and Giwa AI previews. */
+.desk-hero-canvas .desk-screen-panel {
+  opacity: 0;
+  pointer-events: none;
+  animation: deskScreenCycle 15s linear infinite;
+}
+
+.desk-hero-canvas .desk-screen-panel-code {
+  animation-delay: 5s;
+}
+
+.desk-hero-canvas .desk-screen-panel-ai {
+  animation-delay: 10s;
+}
+
+@keyframes deskScreenCycle {
+  0%, 3% { opacity: 0; }
+  8%, 28% { opacity: 1; }
+  33%, 100% { opacity: 0; }
+}
+
+.desk-hero-canvas .desk-screen-cursor {
+  animation: deskCursorBlink 1s steps(2, start) infinite;
+}
+
+@keyframes deskCursorBlink {
+  to { opacity: 0; }
+}
+
+.desk-hero-canvas a:focus-visible {
+  outline: 3px solid #ff8d78;
+  outline-offset: 4px;
+}
+
+.desk-hero-canvas .desk-screen-link {
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .desk-hero-canvas .desk-ambient-glow,
+  .desk-hero-canvas .desk-screen-panel,
+  .desk-hero-canvas .desk-screen-cursor {
+    animation: none;
+  }
+
+  .desk-hero-canvas .desk-screen-panel {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .desk-hero-canvas .desk-ambient-glow {
+    animation-duration: 14s;
+  }
+}
