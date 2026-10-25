@@ -865,14 +865,16 @@ export default function DeskHero() {
             fill="url(#k)"
           />
 
-          <rect
-            x="120"
-            y="248"
-            width="80"
-            height="22"
-            rx="5"
-            fill="#b4b5bd"
-          />
+          <a href="/admin" aria-label="Open admin dashboard">
+            <rect
+              x="120"
+              y="248"
+              width="80"
+              height="22"
+              rx="5"
+              fill="#b4b5bd"
+            />
+          </a>
 
           {/* SCREEN LID: the existing screen artwork stays unchanged. */}
           <g className="desk-laptop-lid">
