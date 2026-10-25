@@ -11,7 +11,7 @@ export default function Footer() {
         {/* Brand section */}
         <div className="footer-brand">
         <div id="footerlogo">
-          <img src="/omogiwaanimated1.svg" alt="OmoGiwa.com logo" />
+          <img src="/omogiwalogo.svg" alt="OmoGiwa." />
           </div>
 
           <p className="footer-description">
