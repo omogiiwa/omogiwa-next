@@ -832,7 +832,7 @@ export default function SvgToPngPage() {
 
       <section className="svg-png-hero">
         <span className="section-label">
-          OmoGiwa Tools
+          OmoGiwa. Tools
         </span>
 
         <h1>SVG → PNG</h1>
