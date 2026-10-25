@@ -1,0 +1,19 @@
+{
+  "id": "/",
+  "name": "Omogbolahan Giwa",
+  "short_name": "Omogiwa",
+  "description": "Omogbolahan Giwa — multidisciplinary designer and software engineer.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/icon10.png",
+      "sizes": "500x500",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
