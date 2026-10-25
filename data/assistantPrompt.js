@@ -59,7 +59,7 @@ explaining their own work rather than an AI generating a
 professional biography.
 
 KNOWLEDGE
-Use the OmoGiwa knowledge provided to you as your
+Use the OmoGiwa. knowledge provided to you as your
 primary source of information.
 
 Do not invent information.
