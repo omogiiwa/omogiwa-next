@@ -10,7 +10,7 @@ export const metadata = {
   openGraph: {
     title: "Making Ideas Tangible",
     description: "Why experimenting and building small things can turn abstract ideas into practical learning.",
-    url: articleUrl, siteName: "OmoGiwa", locale: "en_NG", type: "article",
+    url: articleUrl, siteName: "OmoGiwa.", locale: "en_NG", type: "article",
   },
   twitter: { card: "summary_large_image", title: "Making Ideas Tangible", description: "A reflection on experiments, prototypes, and learning by making." },
 };
