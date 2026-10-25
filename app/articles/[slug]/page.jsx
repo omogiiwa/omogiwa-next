@@ -22,5 +22,6 @@ function cleanHtml(html="") {
 export default async function PublishedArticle({params}) {
  const {slug}=await params; const a=await findArticle(slug); if(!a)notFound();
  const meta=a.body?.metadata||{}; const html=typeof a.body?.html==="string"?cleanHtml(a.body.html):"";
- return <main className="published-article"><a className="article-back" href="/">← Back to OmoGiwa</a><article><p className="article-category">{meta.category||"ARTICLE"}</p><h1>{a.title}</h1>{a.excerpt&&<p className="article-excerpt">{a.excerpt}</p>}{a.featured_image_path&&<img className="article-cover" src={a.featured_image_path} alt={meta.alt||""}/>}<div className="article-body" dangerouslySetInnerHTML={{__html:html}}/><footer>Written for OmoGiwa · <a href="/#contact">Get in touch</a></footer></article></main>;
+ const authorName=typeof meta.authorName==="string"&&meta.authorName.trim()?meta.authorName.trim():"OmoGiwa";
+ return <main className="published-article"><a className="article-back" href="/">← Back to OmoGiwa</a><article><p className="article-category">{meta.category||"ARTICLE"}</p><h1>{a.title}</h1>{a.excerpt&&<p className="article-excerpt">{a.excerpt}</p>}<p className="article-author">By {authorName}</p>{a.featured_image_path&&<img className="article-cover" src={a.featured_image_path} alt={meta.alt||""}/>}<div className="article-body" dangerouslySetInnerHTML={{__html:html}}/><footer>Written for OmoGiwa · <a href="/#contact">Get in touch</a></footer></article></main>;
 }
