@@ -1,6 +1,6 @@
 import FramePickerClient from "./FramePickerClient";
 export const metadata = {
-  title: "Video Frame Picker | Extract Frames from Video | Omogiwa",
+  title: "Video Frame Picker | Extract Frames from Video | OmoGiwa.",
   description:
     "Free online video frame picker by Omogbolahan Giwa. Upload a video and extract, select, and save individual frames directly in your browser.",
   keywords: [
@@ -13,27 +13,27 @@ export const metadata = {
     "free video frame extractor",
     "online frame picker",
     "video frame grabber",
-    "Omogiwa",
+    "OmoGiwa.",
     "Omogbolahan Giwa",
   ],
   authors: [{ name: "Omogbolahan Giwa", url: "https://omogiwa.com" }],
   creator: "Omogbolahan Giwa",
-  publisher: "Omogiwa",
+  publisher: "OmoGiwa.",
   metadataBase: new URL("https://omogiwa.com"),
   alternates: {
     canonical: "/tools/frame-picker",
   },
   openGraph: {
-    title: "Video Frame Picker | Omogiwa",
+    title: "Video Frame Picker | OmoGiwa.",
     description:
-      "Extract and select frames or pictures from your videos directly in your browser with Omogiwa's free Video Frame Picker.",
+      "Extract and select frames or pictures from your videos directly in your browser with OmoGiwa.'s free Video Frame Picker.",
     url: "https://omogiwa.com/tools/frame-picker",
-    siteName: "Omogiwa",
+    siteName: "OmoGiwa.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Video Frame Picker | Omogiwa",
+    title: "Video Frame Picker | OmoGiwa.",
     description:
       "A free browser-based tool for extracting and selecting frames from video.",
     creator: "@omo_giiwa",
