@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 import { createClient } from "../../../lib/supabase/server";
 import EditorHome from "./EditorHome";
 
-export const metadata = { title: "Writer's Desk | OmoGiwa", robots: { index: false, follow: false } };
+export const metadata = { title: "Writer's Desk | OmoGiwa.", robots: { index: false, follow: false } };
 
 export default async function EditorPage() {
   const supabase = await createClient();
