@@ -30,7 +30,7 @@ export default function OmoGiwaExperience({
   return (
     <aside
       className={`omogiwa-experience omogiwa-stage-${stage}`}
-      aria-label="OmoGiwa.com"
+      aria-label="OmoGiwa."
     >
       <button
         className="omogiwa-experience__close"
@@ -41,15 +41,14 @@ export default function OmoGiwaExperience({
       </button>
 
       <div className="omogiwa-experience__canvas">
-
         {/* Stage 0 — Mark */}
         <div className="omogiwa-experience__mark">
           <span>✦</span>
         </div>
 
         {/* Stage 1 — Brand */}
-        <div className="omogiwa-experience__brand">
-          OMOGIWA
+        <div className="omogiwa-experience__brand" aria-label="OmoGiwa.">
+          <img src="/omogiwalogo.svg" alt="OmoGiwa." />
         </div>
 
         {/* Stage 2 — Browser */}
@@ -61,7 +60,7 @@ export default function OmoGiwaExperience({
           </div>
 
           <div className="omogiwa-experience__browser-content">
-            <strong>OMOGIWA</strong>
+            <strong>OmoGiwa.</strong>
             <span>DESIGN × DEVELOPMENT</span>
           </div>
         </div>
@@ -91,15 +90,12 @@ export default function OmoGiwaExperience({
         {/* Stage 5 — CTA */}
         <div className="omogiwa-experience__cta">
           <p>I build creative websites.</p>
-
           <h3>Need one?</h3>
-
           <a href="/contact">
             LET&apos;S BUILD
             <span>→</span>
           </a>
         </div>
-
       </div>
     </aside>
   );
