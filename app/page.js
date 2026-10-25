@@ -4,10 +4,66 @@ import { useEffect, useState } from "react";
 import DeskHero from "../components/DeskHero";
 import GiwaAIWidget from "../components/GiwaAIWidget";
 import { supabase } from "../lib/supabase";
+
+const whatIDoServices = [
+  {
+    key: "brand",
+    number: "01",
+    title: "Brand & Visual Design",
+    intro: "Build a distinctive visual presence that makes your business recognizable, credible and memorable.",
+    colour: "purple",
+    items: [
+      { title: "Brand Identity", description: "Create a consistent identity that helps people recognize and trust your brand.", href: "/portfolio/brand-design", link: "See examples →" },
+      { title: "Art Direction", description: "Give your brand a clear visual direction across campaigns, platforms and experiences.", href: "/portfolio/brand-design", link: "See examples →" },
+      { title: "Graphic Design", description: "Communicate ideas clearly through visuals designed to capture attention and drive engagement.", href: "/portfolio/brand-design", link: "See examples →" },
+      { title: "Illustration", description: "Add distinctive visual storytelling that helps your brand stand apart.", href: "/portfolio/brand-design" },
+      { title: "Visual Systems", description: "Create reusable visual rules that keep your brand consistent wherever it appears.", href: "/portfolio/brand-design", link: "See examples →" },
+      { title: "Campaign & Marketing Design", description: "Turn campaigns into attention-grabbing visuals that support your marketing goals.", href: "/portfolio/brand-design", link: "See examples →" },
+      { title: "Presentation Design", description: "Turn information into polished presentations that communicate ideas and opportunities effectively.", href: "/portfolio/brand-design" },
+      { title: "Social Media Design", description: "Create scroll-stopping visuals that make your online presence more consistent and recognizable.", href: "/portfolio/brand-design", link: "See examples →" }
+    ]
+  },
+  {
+    key: "web",
+    number: "02",
+    title: "Web & Digital Design",
+    intro: "Design digital experiences that look great, feel intuitive and help businesses turn attention into action.",
+    colour: "coral",
+    items: [
+      { title: "Web Design", description: "Create websites that communicate your value clearly and make a strong first impression.", href: "/portfolio/web", link: "See examples →" },
+      { title: "UI/UX Design", description: "Make digital products easier and more enjoyable for people to understand and use.", href: "/portfolio/web#ui", link: "See examples →" },
+      { title: "Interaction Design", description: "Add purposeful interactions that make digital experiences feel engaging and intuitive.", href: "/portfolio/web" },
+      { title: "Design Systems", description: "Build scalable visual systems that keep digital products consistent as they grow.", href: "/portfolio" },
+      { title: "Creative Development", description: "Turn creative concepts into functional digital experiences that actually work.", href: "/portfolio" },
+      { title: "Interactive Experiences", description: "Create memorable digital experiences that encourage people to explore and engage.", href: "/portfolio" },
+      { title: "Landing Pages", description: "Design focused pages that communicate an offer quickly and guide visitors toward action.", href: "/portfolio/web#landing" },
+      { title: "Digital Products & Tools", description: "Design useful digital tools that solve problems and create practical value for users.", href: "/portfolio", link: "See examples →" }
+    ]
+  },
+  {
+    key: "strategy",
+    number: "03",
+    title: "Digital Strategy",
+    intro: "Your brand looking good is not enough, you have to get it to the right audience and make it easier for them to find you",
+    colour: "lavender",
+    items: [
+      { title: "Digital Presence Strategy", description: "Build a clearer digital presence so your business knows what to communicate and where.", href: "/portfolio/digital", link: "See examples →" },
+      { title: "Brand & Digital Positioning", description: "Clarify how your brand should be perceived and differentiated in the digital space.", href: "/portfolio/digital" },
+      { title: "Content Strategy", description: "Create a clearer content direction that keeps your audience interested and your communication purposeful.", href: "#work" },
+      { title: "SEO", description: "Improve how your digital presence is discovered by people actively searching for what you offer.", href: "/portfolio/digital" },
+      { title: "User Experience Strategy", description: "Identify how people interact with your digital experience and remove unnecessary friction.", href: "/portfolio" },
+      { title: "Digital Product Strategy", description: "Connect business goals and user needs before investing time into building a digital product.", href: "/portfolio" },
+      { title: "Creative Direction", description: "Keep different creative outputs aligned around one clear idea, message and visual direction.", href: "/portfolio" },
+      { title: "Audience & Communication Strategy", description: "Understand who you are speaking to and shape your message around what matters to them." }
+    ]
+  }
+];
+
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
-  const [activeService, setActiveService] = useState(0);
+  const [selectedServices, setSelectedServices] = useState(["brand", "web"]);
+  const [expandedServiceItems, setExpandedServiceItems] = useState([]);
   const [introVisible, setIntroVisible] = useState(false);
   const [workVisible, setWorkVisible] = useState(false);
   const [activeProject, setActiveProject] = useState(0);
@@ -127,185 +183,10 @@ const [homepageArticles, setHomepageArticles] = useState(null);
  const journalArticles = [
   { number:"01", category:"ANATOMY AND DESIGN", readTime:"8 MIN READ", title:"What is the correlation between Anatomy and Design", description:"What does a degree in Human Anatomy have to do with design? More than you might think. I explore how understanding the human body shapes the way I think about form, function, creativity, and the things we create for people.", href:"/blogs/relationship-between-anatomy-and-design", image:"/anatomy-cover.png", imageAlt:"Exploring the relationship between human anatomy and design." },
   { number:"02", category:"PERSONAL NOTES", readTime:"5 MIN READ", title:"From Ododo Arts and Design to Giwa", description:"The story behind the transition from Ododo Arts and Design to Giwa, and how my work grew beyond graphic design.", href:"/journal/from-ododo-to-giwa", image:"/blog-software-engineering.png", imageAlt:"Software engineering, code, and digital development." },
-  { number:"03", category:"CREATIVITY", readTime:"4 MIN READ", title:"Building things across different disciplines.", description:"Why I don't think creativity needs to stay inside one discipline, and how different interests can influence each other.", href:"/blogs/building-across-disciplines", image:"/blog-creativity.png", imageAlt:"Creative ideas and work across different disciplines." },
-  { number:"04", category:"EXPERIMENTS", readTime:"6 MIN READ", title:"Making ideas tangible.", description:"An ongoing collection of experiments, strange ideas and things I'm building just to see what happens.", href:"/blogs/making-ideas-tangible", image:"/blog-experiments.png", imageAlt:"Experiments and ideas brought to life through design and technology." },
-];
-useEffect(() => {
-  let cancelled = false;
-  async function loadPublishedArticles() {
-    const { data, error } = await supabase.from("content").select("title,slug,excerpt,body,featured_image_path").eq("content_type", "blog").eq("status", "published");
-    if (cancelled || error || !data?.length) return;
-    const mixed = [...journalArticles];
-    data.forEach((item, i) => {
-      const meta = item.body?.metadata || {};
-      const article = { number:String(i+5).padStart(2,"0"), category:meta.category||"ARTICLE", readTime:"NEW ARTICLE", title:item.title, description:item.excerpt||"", href:"/articles/"+item.slug, image:item.featured_image_path||"/blog-creativity.png", imageAlt:meta.alt||item.title };
-      mixed.splice(Math.floor(Math.random()*(mixed.length+1)),0,article);
-    });
-    setHomepageArticles(mixed);
-  }
-  loadPublishedArticles();
-  return () => { cancelled = true; };
-}, []);
-const displayArticles = homepageArticles || journalArticles;
-
-
-
-  return (
-    <main>
-
-      {/* =========================
-          NAVIGATION
-      ========================== */}
-    
-
-
-      
-
-{/* =========================
-THE DESK HERO
-========================== */}
-
-<section className="desk-hero">
-  <div className="desk-hero-intro">
-    <span>WELCOME TO MY DESK</span>
-
-    <p>
-      A little look at the things I design,
-      build and experiment with. Click on any to see more details
-    </p>
-  </div>
-
-  <DeskHero />
-</section>
-
-      {/* =========================
-          INTRO / STATEMENT
-      ========================== */}
-      <section className={`intro-section ${introVisible ? "intro-visible" : ""}`}>
-
-        <p className="section-label">01 / INTRODUCTION</p>
-
-        <h2>
-          I don't believe creativity belongs in just one box.
-        </h2>
-
-        <p className="large-text">
-          I work across design, technology, branding and visual communication.
-          Putting all these together gives your business a boost
-        </p>
-
-      </section>
-
-
-      {/* =========================
-          SELECTED WORK
-      ========================== */}
-  <section className="work-section" id="work">
-  <div className="section-heading">
-    <div>
-      <p className="section-label purple">02 / SELECTED WORK</p>
-      <h2>
-        Things I&apos;ve <span>created.</span>
-      </h2>
-    </div>
-    <p>
-      A selection of projects across design, branding, development and
-      visual communication.
-    </p>
-  </div>
-  <div className="work-carousel">
-    <button
-      type="button"
-      className="carousel-arrow carousel-arrow-left"
-      aria-label="Previous project"
-      onClick={() => changeProject(-1)}
-    >
-      ←
-    </button>
-    <div className="carousel-stage">
-
-  {projects.map((project, index) => {
-    const previousIndex =
-      (activeProject - 1 + projects.length) % projects.length;
-
-    const nextIndex =
-      (activeProject + 1) % projects.length;
-
-    let position = "carousel-card-hidden";
-
-    if (index === activeProject) {
-      position = "carousel-card-active";
-    } else if (index === previousIndex) {
-      position = "carousel-card-prev";
-    } else if (index === nextIndex) {
-      position = "carousel-card-next";
-    }
-
-    return (
-      <article
-        key={project.title}
-        className={`carousel-card ${position}`}
-        onClick={() => setActiveProject(index)}
-      >
-        <div
-          className="carousel-card-image"
-          style={{
-            backgroundImage: `url('${project.image}')`,
-          }}
-        />
-
-        {index === activeProject && (
-          <>
-            <div className="carousel-card-title">
-              {project.title}
-            </div>
-
-            <div className="carousel-card-overlay">
-              <div className="carousel-card-details">
-
-                <p className="carousel-card-description">
-                  {project.description}
-                </p>
-
-                <div className="carousel-card-meta">
-                  <span>{project.category}</span>
-                  <span>{project.readTime}</span>
-                </div>
-
-              </div>
-            </div>
-            
-          </>
-        )}
-      </article>
-    );
-  })}
-
-</div>
-
-    <button
-      type="button"
-      className="carousel-arrow carousel-arrow-right"
-      aria-label="Next project"
-      onClick={() => changeProject(1)}
-    >
-      →
-    </button>
-  </div>
-  <a href="/portfolio" className="text-link">
-    View all projects →
-  </a>
-</section>
-
-
-      {/* =========================
-          WHAT I DO
-      ========================== */}
-      <section className="services-section" id="services">
-
+  { number:"03", category:"CREATIVITY", readTime:"4 MIN READ", title:"Building things across different disciplines.", description:"Why I don't think creativity needs to stay inside one disci
+      <section className="services-section services-mix-section" id="services">
         <div className="services-intro">
           <p className="section-label">03 / WHAT I DO</p>
-
           <h2>
             Different disciplines.
             <br />
@@ -313,96 +194,96 @@ THE DESK HERO
           </h2>
         </div>
 
+        <div className="mix-explorer">
+          <div className="mix-orbit-scene" aria-hidden="true">
+            <div className="mix-orbit mix-orbit-one" />
+            <div className="mix-orbit mix-orbit-two" />
+            <div className="mix-orbit mix-orbit-three" />
+            <div className="mix-particle mix-particle-one" />
+            <div className="mix-particle mix-particle-two" />
+            <div className="mix-particle mix-particle-three" />
+            <div className="mix-core">
+              <span>OMOGIWA</span>
+              <strong>{selectedServices.length === 3 ? "ALL IN" : selectedServices.length === 2 ? "IN SYNC" : selectedServices.length === 1 ? "IN FOCUS" : "POSSIBILITY"}</strong>
+            </div>
+            {whatIDoServices.map((service, index) => (
+              <div
+                key={service.key}
+                className={`mix-orbit-node mix-node-${service.key} ${selectedServices.includes(service.key) ? "is-selected" : ""}`}
+              >
+                <span>{service.number}</span>
+              </div>
+            ))}
+          </div>
 
-    <div className={`services-grid services-active-${activeService}`}>
-        <div className="services-preview" aria-hidden="true">
-  <div className="services-preview-orbit"></div>
-  <div className="services-preview-core">
-    <span>
-      {activeService === 0 && "BRAND"}
-      {activeService === 1 && "DIGITAL"}
-      {activeService === 2 && "STRATEGY"}
-    </span>
-  </div>
-</div>
-  <article
-  className={`service-card ${
-    activeService === 0 ? "service-card-active" : ""
-  }`}
-  onMouseEnter={() => setActiveService(0)}
-  onClick={() => setActiveService(0)}
->
-    <span className="service-number">01</span>
+          <div className="mix-controls">
+            <div className="mix-controls-heading">
+              {whatIDoServices.map((service) => (
+                <button
+                  type="button"
+                  key={service.key}
+                  className={`mix-toggle mix-toggle-${service.key} ${selectedServices.includes(service.key) ? "is-selected" : ""}`}
+                  aria-pressed={selectedServices.includes(service.key)}
+                  onClick={() => setSelectedServices((current) => current.includes(service.key) ? current.filter((key) => key !== service.key) : [...current, service.key])}
+                >
+                  <span className="mix-toggle-symbol">{selectedServices.includes(service.key) ? "−" : "+"}</span>
+                  <span className="mix-toggle-number">{service.number}</span>
+                  <span className="mix-toggle-title">{service.title}</span>
+                  <span className="mix-toggle-state">{selectedServices.includes(service.key) ? "Selected" : "Select"}</span>
+                </button>
+              ))}
+            </div>
 
-    <h3>Brand &amp; Visual Design</h3>
+            <div className="mix-selected-count" aria-live="polite">
+              <span>{String(selectedServices.length).padStart(2, "0")} / 03</span>
+              <div className="mix-count-track"><span style={{ width: `${(selectedServices.length / 3) * 100}%` }} /></div>
+            </div>
 
-    <p className="service-card-intro">
-      Build a distinctive visual presence that makes your business recognizable, credible and memorable.
-    </p>
-
-    <div className="service-list">
-
-      <div className="service-item">
-        <h4>Brand Identity</h4>
-        <p>
-          Create a consistent identity that helps people recognize and trust your brand.
-        </p>
-        <a href="/portfolio/brand-design">See examples →</a>
-      </div>
-
-      <div className="service-item">
-        <h4>Art Direction</h4>
-        <p>
-          Give your brand a clear visual direction across campaigns, platforms and experiences.
-        </p>
-        <a href="/portfolio/brand-design">See examples →</a>
-      </div>
-
-      <div className="service-item">
-        <h4>Graphic Design</h4>
-        <p>
-          Communicate ideas clearly through visuals designed to capture attention and drive engagement.
-        </p>
-        <a href="/portfolio/brand-design">See examples →</a>
-      </div>
-
-      <div className="service-item">
-        <h4>Illustration</h4>
-        <p>
-          Add distinctive visual storytelling that helps your brand stand apart.
-        </p>
-        <a href="/portfolio/brand-design"> </a>
-      </div>
-
-      <div className="service-item">
-        <h4>Visual Systems</h4>
-        <p>
-          Create reusable visual rules that keep your brand consistent wherever it appears.
-        </p>
-        <a href="/portfolio/brand-design">See examples →</a>
-      </div>
-
-      <div className="service-item">
-        <h4>Campaign &amp; Marketing Design</h4>
-        <p>
-          Turn campaigns into attention-grabbing visuals that support your marketing goals.
-        </p>
-        <a href="/portfolio/brand-design">See examples →</a>
-      </div>
-
-      <div className="service-item">
-        <h4>Presentation Design</h4>
-        <p>
-          Turn information into polished presentations that communicate ideas and opportunities effectively.
-        </p>
-        <a href="/portfolio/brand-design"> </a>
-      </div>
-
-      <div className="service-item">
-        <h4>Social Media Design</h4>
-        <p>
-          Create scroll-stopping visuals that make your online presence more consistent and recognizable.
-        </p>
+            <div className="mix-service-details">
+              {whatIDoServices.filter((service) => selectedServices.includes(service.key)).map((service) => (
+                <article className={`mix-detail mix-detail-${service.key}`} key={service.key}>
+                  <div className="mix-detail-heading">
+                    <span className="mix-detail-number">{service.number} /</span>
+                    <div>
+                      <h3>{service.title}</h3>
+                      <p>{service.intro}</p>
+                    </div>
+                  </div>
+                  <div className="mix-detail-items">
+                    {service.items.map((item, index) => {
+                      const itemKey = `${service.key}-${index}`;
+                      const expanded = expandedServiceItems.includes(itemKey);
+                      return (
+                        <div className={`mix-detail-item ${expanded ? "is-expanded" : ""}`} key={item.title}>
+                          <button
+                            type="button"
+                            aria-expanded={expanded}
+                            onClick={() => setExpandedServiceItems((current) => current.includes(itemKey) ? current.filter((key) => key !== itemKey) : [...current, itemKey])}
+                          >
+                            <span>{item.title}</span>
+                            <span className="mix-item-plus">{expanded ? "−" : "+"}</span>
+                          </button>
+                          <div className="mix-item-content">
+                            <p>{item.description}</p>
+                            {item.link && item.href && <a href={item.href}>{item.link}</a>}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </article>
+              ))}
+              {selectedServices.length === 0 && (
+                <div className="mix-empty-state" aria-hidden="true">
+                  <span>+</span>
+                  <div className="mix-empty-orbit" />
+                  <div className="mix-empty-orbit mix-empty-orbit-two" />
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>/p>
         <a href="/portfolio/brand-design">See examples →</a>
       </div>
 
