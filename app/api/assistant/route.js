@@ -21,7 +21,7 @@ if (mode === "writer") {
     headers: { "Content-Type": "application/json", Authorization: "Bearer " + apiKey },
     body: JSON.stringify({
       model: "gpt-4.1-mini",
-      instructions: prompt + " You have web search available. When asked to research or source an image, search the web, provide direct source links in your answer, and distinguish image source pages from direct image files. Never invent a direct image URL or claim an image has been inserted. For article changes, provide a proposed draft that the editor can explicitly insert.",
+      instructions: prompt + " You have web search available. When asked to research or source an image, search the web, provide source links in your answer, and distinguish image source pages from direct image files. If you find a verified direct HTTPS image URL suitable for insertion, include it using Markdown image syntax ![descriptive alt text](https://direct-image-url) and cite the image source page separately. Never invent a direct image URL or claim an image has been inserted. For article changes, provide a proposed draft that the editor can explicitly insert.",
       tools: [{ type: "web_search_preview" }],
       input: [{ role: "user", content: message.trim().slice(0, 5000) }],
       max_output_tokens: 1400
