@@ -47,8 +47,11 @@ export const metadata = {
   ],
 
   icons: {
-    icon: "/logo.svg",
+    icon: [{ url: "/icon10.png", type: "image/png", sizes: "500x500" }],
+    apple: [{ url: "/icon10.png", type: "image/png", sizes: "500x500" }],
+    shortcut: ["/icon10.png"],
   },
+  manifest: "/manifest.json",
 
   openGraph: {
     
