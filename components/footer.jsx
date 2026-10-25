@@ -32,7 +32,7 @@ export default function Footer() {
           <nav className="footer-links">
             <a href="/">Home</a>
             <a href="/about">About</a>
-            <a href="/work">Work</a>
+            <a href="/portfolio">Work</a>
             <a href="/tools">Tools</a>
             <a href="/contact">Contact</a>
           </nav>
