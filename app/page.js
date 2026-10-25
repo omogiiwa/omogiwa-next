@@ -4,10 +4,63 @@ import { useEffect, useState } from "react";
 import DeskHero from "../components/DeskHero";
 import GiwaAIWidget from "../components/GiwaAIWidget";
 import { supabase } from "../lib/supabase";
+const whatIDoServices = [
+  {
+    key: "brand",
+    number: "01",
+    title: "Brand & Visual Design",
+    intro: "Build a distinctive visual presence that makes your business recognizable, credible and memorable.",
+    items: [
+      { title: "Brand Identity", description: "Create a consistent identity that helps people recognize and trust your brand.", href: "/portfolio/brand-design", link: "See examples →" },
+      { title: "Art Direction", description: "Give your brand a clear visual direction across campaigns, platforms and experiences.", href: "/portfolio/brand-design", link: "See examples →" },
+      { title: "Graphic Design", description: "Communicate ideas clearly through visuals designed to capture attention and drive engagement.", href: "/portfolio/brand-design", link: "See examples →" },
+      { title: "Illustration", description: "Add distinctive visual storytelling that helps your brand stand apart.", href: "/portfolio/brand-design" },
+      { title: "Visual Systems", description: "Create reusable visual rules that keep your brand consistent wherever it appears.", href: "/portfolio/brand-design", link: "See examples →" },
+      { title: "Campaign & Marketing Design", description: "Turn campaigns into attention-grabbing visuals that support your marketing goals.", href: "/portfolio/brand-design", link: "See examples →" },
+      { title: "Presentation Design", description: "Turn information into polished presentations that communicate ideas and opportunities effectively.", href: "/portfolio/brand-design" },
+      { title: "Social Media Design", description: "Create scroll-stopping visuals that make your online presence more consistent and recognizable.", href: "/portfolio/brand-design", link: "See examples →" }
+    ]
+  },
+  {
+    key: "web",
+    number: "02",
+    title: "Web & Digital Design",
+    intro: "Design digital experiences that look great, feel intuitive and help businesses turn attention into action.",
+    items: [
+      { title: "Web Design", description: "Create websites that communicate your value clearly and make a strong first impression.", href: "/portfolio/web", link: "See examples →" },
+      { title: "UI/UX Design", description: "Make digital products easier and more enjoyable for people to understand and use.", href: "/portfolio/web#ui", link: "See examples →" },
+      { title: "Interaction Design", description: "Add purposeful interactions that make digital experiences feel engaging and intuitive.", href: "/portfolio/web" },
+      { title: "Design Systems", description: "Build scalable visual systems that keep digital products consistent as they grow.", href: "/portfolio" },
+      { title: "Creative Development", description: "Turn creative concepts into functional digital experiences that actually work.", href: "/portfolio" },
+      { title: "Interactive Experiences", description: "Create memorable digital experiences that encourage people to explore and engage.", href: "/portfolio" },
+      { title: "Landing Pages", description: "Design focused pages that communicate an offer quickly and guide visitors toward action.", href: "/portfolio/web#landing" },
+      { title: "Digital Products & Tools", description: "Design useful digital tools that solve problems and create practical value for users.", href: "/portfolio", link: "See examples →" }
+    ]
+  },
+  {
+    key: "strategy",
+    number: "03",
+    title: "Digital Strategy",
+    intro: "Your brand looking good is not enough, you have to get it to the right audience and make it easier for them to find you",
+    items: [
+      { title: "Digital Presence Strategy", description: "Build a clearer digital presence so your business knows what to communicate and where.", href: "/portfolio/digital", link: "See examples →" },
+      { title: "Brand & Digital Positioning", description: "Clarify how your brand should be perceived and differentiated in the digital space.", href: "/portfolio/digital" },
+      { title: "Content Strategy", description: "Create a clearer content direction that keeps your audience interested and your communication purposeful.", href: "#work" },
+      { title: "SEO", description: "Improve how your digital presence is discovered by people actively searching for what you offer.", href: "/portfolio/digital" },
+      { title: "User Experience Strategy", description: "Identify how people interact with your digital experience and remove unnecessary friction.", href: "/portfolio" },
+      { title: "Digital Product Strategy", description: "Connect business goals and user needs before investing time into building a digital product.", href: "/portfolio" },
+      { title: "Creative Direction", description: "Keep different creative outputs aligned around one clear idea, message and visual direction.", href: "/portfolio" },
+      { title: "Audience & Communication Strategy", description: "Understand who you are speaking to and shape your message around what matters to them." }
+    ]
+  }
+];
+
+
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
-  const [activeService, setActiveService] = useState(0);
+  const [selectedServices, setSelectedServices] = useState(["brand"]);
+  const [expandedServiceItems, setExpandedServiceItems] = useState([]);
   const [introVisible, setIntroVisible] = useState(false);
   const [workVisible, setWorkVisible] = useState(false);
   const [activeProject, setActiveProject] = useState(0);
@@ -302,10 +355,8 @@ THE DESK HERO
           WHAT I DO
       ========================== */}
       <section className="services-section services-mix-section" id="services">
-
         <div className="services-intro">
           <p className="section-label">03 / WHAT I DO</p>
-
           <h2>
             Different disciplines.
             <br />
@@ -313,273 +364,98 @@ THE DESK HERO
           </h2>
         </div>
 
+        <div className="mix-workspace">
+          <div className="mix-visual" aria-hidden="true">
+            <div className="mix-visual-ring mix-visual-ring-a" />
+            <div className="mix-visual-ring mix-visual-ring-b" />
+            <div className="mix-visual-ring mix-visual-ring-c" />
+            <div className="mix-visual-dash mix-visual-dash-a" />
+            <div className="mix-visual-dash mix-visual-dash-b" />
+            <div className="mix-visual-particle mix-visual-particle-a" />
+            <div className="mix-visual-particle mix-visual-particle-b" />
+            <div className="mix-visual-particle mix-visual-particle-c" />
+            <div className={`mix-visual-core mix-core-count-${selectedServices.length}`}>
+              <span>OMOGIWA</span>
+              <strong key={selectedServices.join("-")}>{selectedServices.length === 3 ? "ALL THREE" : selectedServices.length === 2 ? "IN SYNC" : selectedServices.length === 1 ? whatIDoServices.find((service) => service.key === selectedServices[0])?.number : " "}</strong>
+            </div>
+            {whatIDoServices.map((service) => (
+              <div key={service.key} className={`mix-visual-node mix-visual-node-${service.key} ${selectedServices.includes(service.key) ? "is-active" : ""}`}>
+                {service.number}
+              </div>
+            ))}
+          </div>
 
-    <div className={`services-grid services-active-${activeService}`}>
-        <div className="services-preview" aria-hidden="true">
-  <div className="services-preview-orbit"></div>
-  <div className="services-preview-core">
-    <span>
-      {activeService === 0 && "BRAND"}
-      {activeService === 1 && "DIGITAL"}
-      {activeService === 2 && "STRATEGY"}
-    </span>
-  </div>
-</div>
-  <article
-  className={`service-card ${
-    activeService === 0 ? "service-card-active" : ""
-  }`}
-  onMouseEnter={() => setActiveService(0)}
-  onClick={() => setActiveService(0)}
->
-    <span className="service-number">01</span>
+          <div className="mix-content">
+            <div className="mix-service-switches" aria-label="Choose services">
+              {whatIDoServices.map((service) => {
+                const selected = selectedServices.includes(service.key);
+                return (
+                  <button
+                    type="button"
+                    key={service.key}
+                    className={`mix-service-switch mix-switch-${service.key} ${selected ? "is-active" : ""}`}
+                    aria-pressed={selected}
+                    onClick={() => setSelectedServices((current) => selected ? current.filter((key) => key !== service.key) : [...current, service.key])}
+                  >
+                    <span className="mix-switch-mark">{selected ? "−" : "+"}</span>
+                    <span className="mix-switch-number">{service.number}</span>
+                    <span className="mix-switch-name">{service.title}</span>
+                    <span className="mix-switch-indicator"><span /></span>
+                  </button>
+                );
+              })}
+            </div>
 
-    <h3>Brand &amp; Visual Design</h3>
+            <div className="mix-progress" aria-live="polite">
+              <span>{String(selectedServices.length).padStart(2, "0")} / 03</span>
+              <div className="mix-progress-track"><span style={{ width: `${selectedServices.length / 3 * 100}%` }} /></div>
+            </div>
 
-    <p className="service-card-intro">
-      Build a distinctive visual presence that makes your business recognizable, credible and memorable.
-    </p>
-
-    <div className="service-list">
-
-      <div className="service-item">
-        <h4>Brand Identity</h4>
-        <p>
-          Create a consistent identity that helps people recognize and trust your brand.
-        </p>
-        <a href="/portfolio/brand-design">See examples →</a>
-      </div>
-
-      <div className="service-item">
-        <h4>Art Direction</h4>
-        <p>
-          Give your brand a clear visual direction across campaigns, platforms and experiences.
-        </p>
-        <a href="/portfolio/brand-design">See examples →</a>
-      </div>
-
-      <div className="service-item">
-        <h4>Graphic Design</h4>
-        <p>
-          Communicate ideas clearly through visuals designed to capture attention and drive engagement.
-        </p>
-        <a href="/portfolio/brand-design">See examples →</a>
-      </div>
-
-      <div className="service-item">
-        <h4>Illustration</h4>
-        <p>
-          Add distinctive visual storytelling that helps your brand stand apart.
-        </p>
-        <a href="/portfolio/brand-design"> </a>
-      </div>
-
-      <div className="service-item">
-        <h4>Visual Systems</h4>
-        <p>
-          Create reusable visual rules that keep your brand consistent wherever it appears.
-        </p>
-        <a href="/portfolio/brand-design">See examples →</a>
-      </div>
-
-      <div className="service-item">
-        <h4>Campaign &amp; Marketing Design</h4>
-        <p>
-          Turn campaigns into attention-grabbing visuals that support your marketing goals.
-        </p>
-        <a href="/portfolio/brand-design">See examples →</a>
-      </div>
-
-      <div className="service-item">
-        <h4>Presentation Design</h4>
-        <p>
-          Turn information into polished presentations that communicate ideas and opportunities effectively.
-        </p>
-        <a href="/portfolio/brand-design"> </a>
-      </div>
-
-      <div className="service-item">
-        <h4>Social Media Design</h4>
-        <p>
-          Create scroll-stopping visuals that make your online presence more consistent and recognizable.
-        </p>
-        <a href="/portfolio/brand-design">See examples →</a>
-      </div>
-
-    </div>
-  </article>
-
-
-  <article
-  className={`service-card ${
-    activeService === 1 ? "service-card-active" : ""
-  }`}
-  onMouseEnter={() => setActiveService(1)}
-  onClick={() => setActiveService(1)}
->
-    <span className="service-number">02</span>
-
-    <h3>Web &amp; Digital Design</h3>
-
-    <p className="service-card-intro">
-      Design digital experiences that look great, feel intuitive and help businesses turn attention into action.
-    </p>
-
-    <div className="service-list">
-
-      <div className="service-item">
-        <h4>Web Design</h4>
-        <p>
-          Create websites that communicate your value clearly and make a strong first impression.
-        </p>
-        <a href="/portfolio/web">See examples →</a>
-      </div>
-
-      <div className="service-item">
-        <h4>UI/UX Design</h4>
-        <p>
-          Make digital products easier and more enjoyable for people to understand and use.
-        </p>
-        <a href="/portfolio/web#ui">See examples →</a>
-      </div>
-
-      <div className="service-item">
-        <h4>Interaction Design</h4>
-        <p>
-          Add purposeful interactions that make digital experiences feel engaging and intuitive.
-        </p>
-        <a href="/portfolio/web"></a>
-      </div>
-
-      <div className="service-item">
-        <h4>Design Systems</h4>
-        <p>
-          Build scalable visual systems that keep digital products consistent as they grow.
-        </p>
-        <a href="/portfolio"></a>
-      </div>
-
-      <div className="service-item">
-        <h4>Creative Development</h4>
-        <p>
-          Turn creative concepts into functional digital experiences that actually work.
-        </p>
-        <a href="/portfolio"></a>
-      </div>
-
-      <div className="service-item">
-        <h4>Interactive Experiences</h4>
-        <p>
-          Create memorable digital experiences that encourage people to explore and engage.
-        </p>
-        <a href="/portfolio"></a>
-      </div>
-
-      <div className="service-item">
-        <h4>Landing Pages</h4>
-        <p>
-          Design focused pages that communicate an offer quickly and guide visitors toward action.
-        </p>
-        <a href="/portfolio/web#landing"></a>
-      </div>
-
-      <div className="service-item">
-        <h4>Digital Products &amp; Tools</h4>
-        <p>
-          Design useful digital tools that solve problems and create practical value for users.
-        </p>
-        <a href="/portfolio">See examples →</a>
-      </div>
-
-    </div>
-  </article>
-
-
-  <article
-  className={`service-card ${
-    activeService === 2 ? "service-card-active" : ""
-  }`}
-  onMouseEnter={() => setActiveService(2)}
-  onClick={() => setActiveService(2)}
->
-    <span className="service-number">03</span>
-
-    <h3>Digital Strategy</h3>
-
-    <p className="service-card-intro">
-      Your brand looking good is not enough, you have to get it to the right audience and make it easier for them to find you
-    </p>
-
-    <div className="service-list">
-
-      <div className="service-item">
-        <h4>Digital Presence Strategy</h4>
-        <p>
-          Build a clearer digital presence so your business knows what to communicate and where.
-        </p>
-        <a href="/portfolio/digital">See examples →</a>
-      </div>
-
-      <div className="service-item">
-        <h4>Brand &amp; Digital Positioning</h4>
-        <p>
-          Clarify how your brand should be perceived and differentiated in the digital space.
-        </p>
-        <a href="/portfolio/digital"></a>
-      </div>
-
-      <div className="service-item">
-        <h4>Content Strategy</h4>
-        <p>
-          Create a clearer content direction that keeps your audience interested and your communication purposeful.
-        </p>
-        <a href="#work"></a>
-      </div>
-
-      <div className="service-item">
-        <h4>SEO</h4>
-        <p>
-          Improve how your digital presence is discovered by people actively searching for what you offer.
-        </p>
-        <a href="/portfolio/digital"></a>
-      </div>
-
-      <div className="service-item">
-        <h4>User Experience Strategy</h4>
-        <p>
-          Identify how people interact with your digital experience and remove unnecessary friction.
-        </p>
-        <a href="/portfolio"></a>
-      </div>
-
-      <div className="service-item">
-        <h4>Digital Product Strategy</h4>
-        <p>
-          Connect business goals and user needs before investing time into building a digital product.
-        </p>
-        <a href="/portfolio"></a>
-      </div>
-
-      <div className="service-item">
-        <h4>Creative Direction</h4>
-        <p>
-          Keep different creative outputs aligned around one clear idea, message and visual direction.
-        </p>
-        <a href="/portfolio"></a>
-      </div>
-
-      <div className="service-item">
-        <h4>Audience &amp; Communication Strategy</h4>
-        <p>
-          Understand who you are speaking to and shape your message around what matters to them.
-        </p>
-      </div>
-
-    </div>
-  </article>
-
-</div>
-
+            <div className="mix-details">
+              {whatIDoServices.filter((service) => selectedServices.includes(service.key)).map((service) => (
+                <article key={service.key} className={`mix-detail-card mix-card-${service.key}`}>
+                  <div className="mix-detail-topline">
+                    <span>{service.number} /</span>
+                    <span className="mix-detail-line" />
+                  </div>
+                  <h3>{service.title}</h3>
+                  <p className="mix-detail-intro">{service.intro}</p>
+                  <div className="mix-accordion">
+                    {service.items.map((item, index) => {
+                      const itemKey = `${service.key}-${index}`;
+                      const expanded = expandedServiceItems.includes(itemKey);
+                      return (
+                        <div key={item.title} className={`mix-accordion-item ${expanded ? "is-open" : ""}`}>
+                          <button
+                            type="button"
+                            aria-expanded={expanded}
+                            onClick={() => setExpandedServiceItems((current) => expanded ? current.filter((key) => key !== itemKey) : [...current, itemKey])}
+                          >
+                            <span>{item.title}</span>
+                            <span className="mix-accordion-icon">{expanded ? "−" : "+"}</span>
+                          </button>
+                          <div className="mix-accordion-panel">
+                            <div>
+                              <p>{item.description}</p>
+                              {item.link && <a href={item.href}>{item.link}</a>}
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </article>
+              ))}
+              {selectedServices.length === 0 && (
+                <div className="mix-empty-state">
+                  <div className="mix-empty-orbit mix-empty-orbit-a" />
+                  <div className="mix-empty-orbit mix-empty-orbit-b" />
+                  <span>+</span>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
       </section>
 
 
