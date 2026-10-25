@@ -123,6 +123,7 @@ const changeProject = (direction) => {
   };
 }, []);
 const [activeArticle, setActiveArticle] = useState(0);
+const [homepageArticles, setHomepageArticles] = useState(null);
  const journalArticles = [
   {
     number: "01",
@@ -167,7 +168,30 @@ const [activeArticle, setActiveArticle] = useState(0);
       "An ongoing collection of experiments, strange ideas and things I'm building just to see what happens.",
     href: "/blogs/making-ideas-tangible",
     image: "/blog-experiments.png",
-    imageAlt: "Experiments and ideas brought to life through design and technology.",
+    imageAlt: "Experiments an
+useEffect(() => {
+  let cancelled = false;
+  async function loadPublishedArticles() {
+    const { data, error } = await supabase.from("content")
+      .select("title,slug,excerpt,body,featured_image_path")
+      .eq("content_type", "blog").eq("status", "published");
+    if (cancelled || error || !data?.length) return;
+    const mixed = [...journalArticles];
+    data.forEach((item, i) => {
+      const meta = item.body?.metadata || {};
+      const article = { number: String(i + 5).padStart(2, "0"), category: meta.category || "ARTICLE",
+        readTime: "NEW ARTICLE", title: item.title, description: item.excerpt || "",
+        href: "/articles/" + item.slug, image: item.featured_image_path || "/blog-creativity.png",
+        imageAlt: meta.alt || item.title };
+      mixed.splice(Math.floor(Math.random() * (mixed.length + 1)), 0, article);
+    });
+    setHomepageArticles(mixed);
+  }
+  loadPublishedArticles();
+  return () => { cancelled = true; };
+}, []);
+const displayArticles = homepageArticles || journalArticles;
+d ideas brought to life through design and technology.",
   },
 ];
 
@@ -749,40 +773,40 @@ THE DESK HERO
   <div className="journal-feature-main">
     <div className="journal-feature-visual">
   <a
-    href={journalArticles[activeArticle].href}
+    href={displayArticles[activeArticle].href}
     className="journal-feature-image-link"
-    aria-label={`Read ${journalArticles[activeArticle].title}`}
+    aria-label={`Read ${displayArticles[activeArticle].title}`}
   >
     <img
-      src={journalArticles[activeArticle].image}
-      alt={journalArticles[activeArticle].imageAlt}
+      src={displayArticles[activeArticle].image}
+      alt={displayArticles[activeArticle].imageAlt}
       className="journal-feature-image"
       loading="lazy"
     />
   </a>
   <span className="journal-feature-number">
-    {journalArticles[activeArticle].number}
+    {displayArticles[activeArticle].number}
   </span>
   <span className="journal-feature-category">
-    {journalArticles[activeArticle].category}
+    {displayArticles[activeArticle].category}
   </span>
 </div>
 
     <div className="journal-feature-content">
   <p>
-    {journalArticles[activeArticle].category} ·{" "}
-    {journalArticles[activeArticle].readTime}
+    {displayArticles[activeArticle].category} ·{" "}
+    {displayArticles[activeArticle].readTime}
   </p>
   <h3>
-    <a href={journalArticles[activeArticle].href}>
-      {journalArticles[activeArticle].title}
+    <a href={displayArticles[activeArticle].href}>
+      {displayArticles[activeArticle].title}
     </a>
   </h3>
   <span>
-    {journalArticles[activeArticle].description}
+    {displayArticles[activeArticle].description}
   </span>
   <a
-    href={journalArticles[activeArticle].href}
+    href={displayArticles[activeArticle].href}
     className="journal-feature-read-link"
   >
     Read article →
@@ -791,7 +815,7 @@ THE DESK HERO
   </div>
 
   <div className="journal-feature-list">
-    {journalArticles.map((article, index) => (
+    {displayArticles.map((article, index) => (
       <a
         key={article.number}
         href={article.href}
