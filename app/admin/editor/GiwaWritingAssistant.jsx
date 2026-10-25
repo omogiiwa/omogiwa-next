@@ -5,6 +5,7 @@ export default function GiwaWritingAssistant({ title, getArticleHtml, getSelecte
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState("");
   const [reply, setReply] = useState("");
+  const [selectedContext, setSelectedContext] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   async function ask(event) {
@@ -12,7 +13,7 @@ export default function GiwaWritingAssistant({ title, getArticleHtml, getSelecte
     if (!message.trim() || busy) return;
     setBusy(true); setError(""); setReply("");
     try {
-      const r = await fetch("/api/assistant", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ mode: "writer", message, title, selectedText: getSelectedText?.() || "", articleHtml: getArticleHtml?.() || "" }) });
+      const r = await fetch("/api/assistant", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ mode: "writer", message, title, selectedText: selectedContext || "", articleHtml: getArticleHtml?.() || "" }) });
       const data = await r.json();
       if (!r.ok) throw new Error(data.error || "Giwa AI could not respond.");
       setReply(data.reply || "");
@@ -21,7 +22,7 @@ export default function GiwaWritingAssistant({ title, getArticleHtml, getSelecte
     finally { setBusy(false); }
   }
   return <>
-    <button type="button" className="writer-ai-open" onClick={() => setOpen(true)}><img src="/giwa-ai-icon.svg" alt="" /> Ask Giwa AI</button>
+    <button type="button" className="writer-ai-open" onClick={() => { setSelectedContext(getSelectedText?.() || ""); setOpen(true); }}><img src="/giwa-ai-icon.svg" alt="" /> Ask Giwa AI</button>
     {open && <div className="writer-ai-shade"><button className="writer-ai-outside" aria-label="Close Giwa AI" onClick={() => setOpen(false)} /><section className="writer-ai-panel"><header><img src="/giwa-ai-icon.svg" alt="" /><div><b>Giwa AI</b><small>Writing copilot</small></div><button onClick={() => setOpen(false)} aria-label="Close">×</button></header><div className="writer-ai-content"><h2>What can I help you write?</h2><p>I can use your current title, article text and selected passage as context.</p>{reply && <div className="writer-ai-reply"><p>{reply}</p><button onClick={() => { applyToArticle?.(reply); setReply(""); }}>Insert response into article</button></div>}{error && <p className="writer-ai-error">{error}</p>}</div><form onSubmit={ask}><textarea value={message} onChange={e => setMessage(e.target.value)} placeholder="Ask me to draft, rewrite, proofread or suggest sources…" rows={3}/><button disabled={busy || !message.trim()}>{busy ? "…" : "↑"}</button></form><small className="writer-ai-note">Review generated facts and sources before publishing.</small></section></div>}
     <style jsx global>{`
       .writer-ai-open{position:fixed;right:16px;bottom:16px;z-index:25;display:flex;align-items:center;gap:8px;border:1px solid #e4dced;border-radius:999px;background:#fff;padding:10px 14px;color:#30223f;font:600 12px var(--font-outfit),sans-serif;box-shadow:0 8px 25px #21122b20;cursor:pointer}.writer-ai-open img{width:25px;height:25px;object-fit:contain}
