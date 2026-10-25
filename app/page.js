@@ -125,65 +125,21 @@ const changeProject = (direction) => {
 const [activeArticle, setActiveArticle] = useState(0);
 const [homepageArticles, setHomepageArticles] = useState(null);
  const journalArticles = [
-  {
-    number: "01",
-    category: "ANATOMY AND DESIGN",
-    readTime: "8 MIN READ",
-    title: "What is the correlation between Anatomy and Design",
-    description:
-      "What does a degree in Human Anatomy have to do with design? More than you might think. I explore how understanding the human body shapes the way I think about form, function, creativity, and the things we create for people.",
-    href: "/blogs/relationship-between-anatomy-and-design",
-    image: "/anatomy-cover.png",
-    imageAlt:
-      "Exploring the relationship between human anatomy and design.",
-  },
-  {
-  number: "02",
-  category: "Personal Notes",
-  readTime: "5 MIN READ",
-  title: "From Ododo Arts and Design to Giwa",
-  description:
-    "The story behind the transition from Ododo Arts and Design to Giwa, and how my work grew beyond graphic design.",
-  href: "/journal/from-ododo-to-giwa",
-    image: "/blog-software-engineering.png",
-    imageAlt: "Software engineering, code, and digital development.",
-  },
-  {
-    number: "03",
-    category: "CREATIVITY",
-    readTime: "4 MIN READ",
-    title: "Building things across different disciplines.",
-    description:
-      "Why I don't think creativity needs to stay inside one discipline, and how different interests can influence each other.",
-    href: "/blogs/building-across-disciplines",
-    image: "/blog-creativity.png",
-    imageAlt: "Creative ideas and work across different disciplines.",
-  },
-  {
-    number: "04",
-    category: "EXPERIMENTS",
-    readTime: "6 MIN READ",
-    title: "Making ideas tangible.",
-    description:
-      "An ongoing collection of experiments, strange ideas and things I'm building just to see what happens.",
-    href: "/blogs/making-ideas-tangible",
-    image: "/blog-experiments.png",
-    imageAlt: "Experiments an
+  { number:"01", category:"ANATOMY AND DESIGN", readTime:"8 MIN READ", title:"What is the correlation between Anatomy and Design", description:"What does a degree in Human Anatomy have to do with design? More than you might think. I explore how understanding the human body shapes the way I think about form, function, creativity, and the things we create for people.", href:"/blogs/relationship-between-anatomy-and-design", image:"/anatomy-cover.png", imageAlt:"Exploring the relationship between human anatomy and design." },
+  { number:"02", category:"Personal Notes", readTime:"5 MIN READ", title:"From Ododo Arts and Design to Giwa", description:"The story behind the transition from Ododo Arts and Design to Giwa, and how my work grew beyond graphic design.", href:"/journal/from-ododo-to-giwa", image:"/blog-software-engineering.png", imageAlt:"Software engineering, code, and digital development." },
+  { number:"03", category:"CREATIVITY", readTime:"4 MIN READ", title:"Building things across different disciplines.", description:"Why I don't think creativity needs to stay inside one discipline, and how different interests can influence each other.", href:"/blogs/building-across-disciplines", image:"/blog-creativity.png", imageAlt:"Creative ideas and work across different disciplines." },
+  { number:"04", category:"EXPERIMENTS", readTime:"6 MIN READ", title:"Making ideas tangible.", description:"An ongoing collection of experiments, strange ideas and things I'm building just to see what happens.", href:"/blogs/making-ideas-tangible", image:"/blog-experiments.png", imageAlt:"Experiments and ideas brought to life through design and technology." },
+];
 useEffect(() => {
   let cancelled = false;
   async function loadPublishedArticles() {
-    const { data, error } = await supabase.from("content")
-      .select("title,slug,excerpt,body,featured_image_path")
-      .eq("content_type", "blog").eq("status", "published");
+    const { data, error } = await supabase.from("content").select("title,slug,excerpt,body,featured_image_path").eq("content_type", "blog").eq("status", "published");
     if (cancelled || error || !data?.length) return;
     const mixed = [...journalArticles];
     data.forEach((item, i) => {
       const meta = item.body?.metadata || {};
-      const article = { number: String(i + 5).padStart(2, "0"), category: meta.category || "ARTICLE",
-        readTime: "NEW ARTICLE", title: item.title, description: item.excerpt || "",
-        href: "/articles/" + item.slug, image: item.featured_image_path || "/blog-creativity.png",
-        imageAlt: meta.alt || item.title };
-      mixed.splice(Math.floor(Math.random() * (mixed.length + 1)), 0, article);
+      const article = { number:String(i+5).padStart(2,"0"), category:meta.category||"ARTICLE", readTime:"NEW ARTICLE", title:item.title, description:item.excerpt||"", href:"/articles/"+item.slug, image:item.featured_image_path||"/blog-creativity.png", imageAlt:meta.alt||item.title };
+      mixed.splice(Math.floor(Math.random()*(mixed.length+1)),0,article);
     });
     setHomepageArticles(mixed);
   }
