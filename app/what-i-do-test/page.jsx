@@ -61,6 +61,12 @@ export default function WhatIDoTestPage() {
   const [portalMode, setPortalMode] = useState(false);
   const [activePath, setActivePath] = useState("make");
   const [activeShape, setActiveShape] = useState("orbit");
+  const [activeScene, setActiveScene] = useState(0);
+  const [activeWord, setActiveWord] = useState("PLAY");
+  const [activeBrief, setActiveBrief] = useState("launch");
+  const [activeGallery, setActiveGallery] = useState(0);
+  const [activeSignal, setActiveSignal] = useState(0);
+  const [activeLab, setActiveLab] = useState("type");
   const selectedService =
     services.find((service) => service.key === playgroundService) || services[2];
   const networkService =
@@ -89,6 +95,12 @@ export default function WhatIDoTestPage() {
           <a href="#portal">07 Portal switch</a>
           <a href="#choose-path">08 Choose your path</a>
           <a href="#shape-shifter">09 Shape shifter</a>
+          <a href="#kinetic-world">10 Kinetic world</a>
+          <a href="#word-play">11 Word play</a>
+          <a href="#brief-builder">12 Brief builder</a>
+          <a href="#infinite-gallery">13 Infinite gallery</a>
+          <a href="#signal-room">14 Signal room</a>
+          <a href="#creative-lab">15 Creative lab</a>
         </nav>
       </section>
 
@@ -329,6 +341,66 @@ export default function WhatIDoTestPage() {
         </div>
         <p className="concept-note">The feel: abstract motion graphics, responsive shapes, and a visual identity that changes as people explore.</p>
       </section>
+\n
+      <section className="concept-section kinetic-concept" id="kinetic-world">
+        <div className="concept-heading"><p className="concept-number">CONCEPT 10</p><div><h2>Kinetic World</h2><p>Scroll or tap through a sequence where the visual world changes around the story.</p></div><span className="concept-type">SCROLL / CINEMATIC</span></div>
+        <div className={"kinetic-stage scene-" + activeScene}>
+          <div className="kinetic-top"><span>SCENE {String(activeScene + 1).padStart(2,"0")} / 03</span><span>KEEP EXPLORING ↓</span></div>
+          <div className="kinetic-art"><span className="kinetic-ring" /><span className="kinetic-orb" /><h3>{["MAKE","MOVE","MATTER"][activeScene]}<i>.</i></h3><span className="kinetic-side">{["IDENTITY","EXPERIENCE","DIRECTION"][activeScene]}</span></div>
+          <div className="kinetic-bottom"><p>{["Give an idea a feeling people recognise.","Turn that feeling into something people can use.","Make every touchpoint point somewhere meaningful."][activeScene]}</p><div>{[0,1,2].map((n) => <button key={n} className={activeScene===n?"active":""} onClick={()=>setActiveScene(n)} aria-label={"Show scene "+(n+1)}>{String(n+1).padStart(2,"0")}</button>)}</div></div>
+        </div>
+        <p className="concept-note">Inspired by scroll-led storytelling and motion-led portfolio experiences. The visitor moves through a sequence, not a stack of cards.</p>
+      </section>
+
+      <section className="concept-section wordplay-concept" id="word-play">
+        <div className="concept-heading"><p className="concept-number">CONCEPT 11</p><div><h2>Word Play</h2><p>Make the typography itself the toy: click, shuffle, and reshape the message.</p></div><span className="concept-type">KINETIC TYPE / PLAY</span></div>
+        <div className="wordplay-stage">
+          <div className="wordplay-head"><span>PRESS A WORD</span><span>TYPE IS A PLAYGROUND</span></div>
+          <div className="wordplay-words">{["PLAY","MAKE","FEEL","SHIFT","BUILD","WOW"].map((word,i)=><button key={word} className={activeWord===word?"selected":""} onClick={()=>setActiveWord(word)}>{word}<span>0{i+1}</span></button>)}</div>
+          <div className={"wordplay-hero word-"+activeWord.toLowerCase()}><span>OMO / GIWA STUDIO</span><h3 key={activeWord}>{activeWord.split("").map((letter,i)=><i key={i} style={{"--letter-index":i}}>{letter}</i>)}</h3><p>Ideas with a pulse. Design with a point of view.</p></div>
+        </div>
+        <p className="concept-note">Inspired by interactive typography experiments: the words are the interface, not just labels above it.</p>
+      </section>
+
+      <section className="concept-section brief-concept" id="brief-builder">
+        <div className="concept-heading"><p className="concept-number">CONCEPT 12</p><div><h2>The Brief Builder</h2><p>Let visitors choose the challenge, then reveal how your three disciplines can solve it.</p></div><span className="concept-type">PERSONALISED / USEFUL</span></div>
+        <div className="brief-stage">
+          <div className="brief-intro"><span>LET'S START WITH YOU</span><h3>What are you trying to do?</h3><p>Pick the situation that sounds most like you.</p></div>
+          <div className="brief-options">{[{key:"launch",label:"Launch something new",symbol:"✳",answer:"Make a first impression that sticks.",detail:"A recognisable brand, a clear story, and a digital home that is ready for the world."},{key:"refresh",label:"Refresh what exists",symbol:"↻",answer:"Keep the good. Change the feeling.",detail:"Find what's working, sharpen the message, and give the experience a more confident point of view."},{key:"connect",label:"Make things work together",symbol:"⌘",answer:"Turn separate pieces into one system.",detail:"Bring identity, content, and digital touchpoints into a consistent experience."}].map((item)=><button key={item.key} className={activeBrief===item.key?"active":""} onClick={()=>setActiveBrief(item.key)}><span>{item.symbol}</span>{item.label}<b>{activeBrief===item.key?"SELECTED":"CHOOSE →"}</b></button>)}</div>
+          {(() => {const item=[{key:"launch",answer:"Make a first impression that sticks.",detail:"A recognisable brand, a clear story, and a digital home that is ready for the world."},{key:"refresh",answer:"Keep the good. Change the feeling.",detail:"Find what's working, sharpen the message, and give the experience a more confident point of view."},{key:"connect",answer:"Turn separate pieces into one system.",detail:"Bring identity, content, and digital touchpoints into a consistent experience."}].find(x=>x.key===activeBrief);return <div className="brief-answer"><span>YOUR CREATIVE ROUTE</span><h4>{item.answer}</h4><p>{item.detail}</p><div><span>BRAND</span><span>WEB</span><span>STRATEGY</span></div></div>})()}
+        </div>
+        <p className="concept-note">Unlike a generic services list, this begins with the visitor's problem and makes your services the answer.</p>
+      </section>
+
+      <section className="concept-section gallery-concept" id="infinite-gallery">
+        <div className="concept-heading"><p className="concept-number">CONCEPT 13</p><div><h2>Infinite Gallery</h2><p>A horizontal, tactile strip of visual worlds. Swipe, drag, or tap to move between them.</p></div><span className="concept-type">DRAG / DISCOVER</span></div>
+        <div className="gallery-stage">
+          <div className="gallery-top"><span>SELECT A WORLD</span><span>{String(activeGallery+1).padStart(2,"0")} / 04</span></div>
+          <div className="gallery-track">{[{name:"IDENTITY",word:"FEEL",detail:"Build a world people recognise.",className:"gallery-brand"},{name:"DIGITAL",word:"FLOW",detail:"Make every interaction count.",className:"gallery-web"},{name:"DIRECTION",word:"WHY",detail:"Give every decision a reason.",className:"gallery-strategy"},{name:"EXPERIMENT",word:"WHAT IF",detail:"Leave room for the unexpected.",className:"gallery-experiment"}].map((item,i)=><button key={item.name} className={"gallery-tile "+item.className+(activeGallery===i?" active":"")} onClick={()=>setActiveGallery(i)}><span>{item.name}</span><strong>{item.word}</strong><small>{activeGallery===i?item.detail:"TAP TO EXPLORE"}</small></button>)}</div>
+          <div className="gallery-controls"><span>SWIPE THE STRIP ON MOBILE</span><div><button onClick={()=>setActiveGallery((activeGallery+3)%4)} aria-label="Previous gallery item">←</button><button onClick={()=>setActiveGallery((activeGallery+1)%4)} aria-label="Next gallery item">→</button></div></div>
+        </div>
+        <p className="concept-note">Inspired by horizontal and infinite galleries. It feels more like browsing a collection than reading a service menu.</p>
+      </section>
+
+      <section className="concept-section signal-concept" id="signal-room">
+        <div className="concept-heading"><p className="concept-number">CONCEPT 14</p><div><h2>Signal Room</h2><p>A reactive field of signals, labels, and connected ideas that responds to each tap.</p></div><span className="concept-type">GENERATIVE / SYSTEM</span></div>
+        <div className={"signal-stage signal-"+activeSignal}>
+          <div className="signal-head"><span>OMOGIWA / CREATIVE SIGNALS</span><span>LIVE SYSTEM ●</span></div>
+          <div className="signal-field" aria-label="Select a creative discipline">{[{label:"IDENTITY",sub:"How it feels",x:"12%",y:"22%"},{label:"STORY",sub:"What it says",x:"60%",y:"12%"},{label:"DIGITAL",sub:"How it works",x:"54%",y:"59%"},{label:"PURPOSE",sub:"Why it matters",x:"8%",y:"68%"},{label:"PEOPLE",sub:"Who it's for",x:"75%",y:"42%"}].map((node,i)=><button key={node.label} className={"signal-node node-"+i+(activeSignal===i?" active":"")} style={{"--x":node.x,"--y":node.y}} onClick={()=>setActiveSignal(i)}><strong>{node.label}</strong><small>{node.sub}</small></button>)}</div>
+          <div className="signal-footer"><strong>{["IDENTITY","STORY","DIGITAL","PURPOSE","PEOPLE"][activeSignal]}</strong><p>{["Build a visual world that feels unmistakably yours.","Find the words and ideas worth remembering.","Make the experience intuitive, useful, and expressive.","Connect creative choices to a clear reason.","Design around the people on the other side of the screen."][activeSignal]}</p></div>
+        </div>
+        <p className="concept-note">Inspired by node-based interfaces and generative systems: every element belongs to a bigger picture.</p>
+      </section>
+
+      <section className="concept-section lab-concept" id="creative-lab">
+        <div className="concept-heading"><p className="concept-number">CONCEPT 15</p><div><h2>The Creative Lab</h2><p>A mini interactive playground where the visitor switches between experiments in type, motion, and form.</p></div><span className="concept-type">EXPERIMENT / DISCOVERY</span></div>
+        <div className={"lab-stage lab-"+activeLab}>
+          <div className="lab-menu"><span>EXPERIMENT_0{["type","motion","form"].indexOf(activeLab)+1}</span>{[{key:"type",label:"TYPE"},{key:"motion",label:"MOTION"},{key:"form",label:"FORM"}].map(item=><button key={item.key} className={activeLab===item.key?"active":""} onClick={()=>setActiveLab(item.key)}>{item.label}</button>)}</div>
+          <div className="lab-canvas" key={activeLab}>{activeLab==="type"?<><span>WORDS HAVE WEIGHT</span><h3>MAKE<br/><i>WAVES</i></h3><small>01 / TYPOGRAPHY STUDY</small></>:activeLab==="motion"?<><div className="lab-motion-shape"/><h3>IN<br/>MOTION</h3><small>02 / MOVEMENT STUDY</small></>:<><div className="lab-form-shape"/><h3>FORM<br/><i>FOLLOWS</i></h3><small>03 / SHAPE STUDY</small></>}</div>
+          <p className="lab-caption">Not every idea needs a predictable layout. Sometimes the interaction is the work.</p>
+        </div>
+        <p className="concept-note">Inspired by experimental portfolios and creative-code showcases. A section that feels like entering your sketchbook.</p>
+      </section>
 \n      <section className="decision-section">
         <p className="test-kicker">YOUR CALL</p>
         <h2>Which one feels like <em>OmoGiwa?</em></h2>
@@ -454,6 +526,18 @@ export default function WhatIDoTestPage() {
         .test-nav { max-width:900px; }
         .test-nav a { font-size:11px; }
         @media (max-width: 720px) {
+          .brief-options { grid-template-columns:1fr; }
+          .brief-options button { min-height:110px; }
+          .gallery-track { grid-template-columns:repeat(2,minmax(0,1fr)); }
+          .gallery-tile { min-height:210px; }
+          .signal-field { min-height:330px; }
+          .signal-node { min-width:82px; min-height:82px; padding:9px; }
+          .signal-node strong { font-size:8px; }
+          .signal-node small { font-size:7px; }
+          .signal-footer { grid-template-columns:1fr; gap:8px; }
+          .kinetic-art { min-height:280px; }
+          .wordplay-hero { min-height:250px; }
+          .lab-canvas { min-height:290px; }
           .mix-stage,.portal-stage,.shape-stage { grid-template-columns:1fr; }
           .mix-result { min-height:280px; padding:22px; }
           .reveal-grid { grid-template-columns:1fr; }
@@ -554,6 +638,91 @@ export default function WhatIDoTestPage() {
         .shape-index { position:absolute; right:20px; top:20px; color:#c6b4ff; font-size:12px; }
         @keyframes orb-arrive { from { opacity:0; transform:scale(.65) rotate(-15deg); } to { opacity:1; transform:scale(1) rotate(0); } }
         @keyframes portal-pulse { from { transform:scale(.85) rotate(0); opacity:.35; } to { transform:scale(1.08) rotate(25deg); opacity:1; } }
+\n
+        .kinetic-stage { background:#20192d; color:#fff; padding:22px clamp(18px,4vw,44px); overflow:hidden; }
+        .kinetic-top,.kinetic-bottom,.gallery-top,.gallery-controls,.signal-head,.lab-menu { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; font-size:9px; letter-spacing:.12em; opacity:.8; }
+        .kinetic-art { min-height:340px; position:relative; display:grid; place-items:center; overflow:hidden; isolation:isolate; }
+        .kinetic-art h3 { z-index:2; font-size:clamp(76px,17vw,190px); letter-spacing:-.12em; line-height:.8; margin:0; animation:text-arrive .5s ease both; }
+        .kinetic-art h3 i { color:#c6b4ff; font-style:normal; }
+        .kinetic-ring { position:absolute; width:clamp(190px,38vw,420px); aspect-ratio:1; border:1px solid #c6b4ff88; border-radius:50%; animation:orbit-spin 18s linear infinite; }
+        .kinetic-orb { position:absolute; width:clamp(70px,12vw,130px); aspect-ratio:1; border-radius:30%; background:#d7fa70; filter:blur(.2px); mix-blend-mode:screen; animation:bob 3s ease-in-out infinite; }
+        .scene-1 .kinetic-orb { background:#ff806e; border-radius:50%; transform:translate(90px,-40px); }
+        .scene-2 .kinetic-orb { background:#c6b4ff; border-radius:0; transform:translate(-100px,40px) rotate(45deg); }
+        .kinetic-side { position:absolute; right:0; bottom:15%; writing-mode:vertical-rl; font-size:9px; letter-spacing:.2em; color:#c6b4ff; }
+        .kinetic-bottom { border-top:1px solid #ffffff30; padding-top:17px; }
+        .kinetic-bottom p { max-width:360px; font-size:12px; letter-spacing:0; line-height:1.7; }
+        .kinetic-bottom div { display:flex; gap:6px; }
+        .kinetic-bottom button { background:transparent; color:#fff; border:1px solid #ffffff50; border-radius:50%; width:36px; height:36px; cursor:pointer; }
+        .kinetic-bottom button.active { background:#c6b4ff; color:#20192d; }
+        .wordplay-stage { background:#f3edff; color:#241b35; padding:clamp(20px,4vw,42px); }
+        .wordplay-head { display:flex; justify-content:space-between; gap:12px; font-size:9px; letter-spacing:.14em; color:#6e5c8c; }
+        .wordplay-words { display:flex; gap:7px; flex-wrap:wrap; margin:24px 0; }
+        .wordplay-words button { border:1px solid #cbbbe9; border-radius:99px; padding:10px 14px; background:transparent; color:#401e97; cursor:pointer; font:inherit; font-size:11px; }
+        .wordplay-words button.selected { background:#401e97; color:#fff; }
+        .wordplay-words button span { font-size:8px; margin-left:9px; opacity:.65; }
+        .wordplay-hero { min-height:290px; position:relative; display:flex; flex-direction:column; justify-content:center; align-items:center; background:#401e97; color:#fff; overflow:hidden; }
+        .wordplay-hero>span,.wordplay-hero>p { font-size:9px; letter-spacing:.15em; opacity:.7; }
+        .wordplay-hero h3 { font-size:clamp(78px,18vw,190px); letter-spacing:-.12em; line-height:.8; margin:22px 0; }
+        .wordplay-hero h3 i { font-style:normal; display:inline-block; animation:letter-pop .42s cubic-bezier(.2,.8,.2,1) both; animation-delay:calc(var(--letter-index)*.055s); }
+        .word-make h3 i:nth-child(2n) { color:#d7fa70; transform:rotate(-5deg); }
+        .word-feel h3 i { color:#f5d77a; }
+        .word-shift h3 i:nth-child(odd) { transform:translateY(-12px) rotate(8deg); }
+        .word-wow h3 { letter-spacing:.04em; }
+        .brief-stage { background:#211a31; color:#fff; padding:clamp(24px,5vw,52px); }
+        .brief-intro>span,.brief-answer>span { color:#c6b4ff; font-size:9px; letter-spacing:.15em; }
+        .brief-intro h3 { font-size:clamp(36px,6vw,70px); letter-spacing:-.08em; line-height:.95; max-width:650px; margin:20px 0 10px; }
+        .brief-intro p { color:#bfb4ce; font-size:13px; }
+        .brief-options { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:28px 0; }
+        .brief-options button { text-align:left; min-height:150px; padding:17px; display:flex; flex-direction:column; justify-content:space-between; gap:16px; border:1px solid #5c4b70; background:#30243f; color:#fff; cursor:pointer; font:inherit; font-size:15px; transition:transform .2s,background .2s; }
+        .brief-options button.active { background:#c6b4ff; color:#241b35; transform:translateY(-4px); }
+        .brief-options button>span { font-size:25px; }
+        .brief-options button b { font-size:8px; letter-spacing:.12em; }
+        .brief-answer { border-top:1px solid #ffffff30; padding-top:24px; animation:text-arrive .3s ease both; }
+        .brief-answer h4 { font-size:clamp(26px,4vw,44px); letter-spacing:-.06em; margin:12px 0; }
+        .brief-answer p { color:#c5bbd2; max-width:650px; font-size:13px; line-height:1.8; }
+        .brief-answer div { display:flex; gap:7px; flex-wrap:wrap; margin-top:20px; }
+        .brief-answer div span { border:1px solid #6a5b7b; border-radius:99px; padding:8px 12px; font-size:8px; letter-spacing:.12em; }
+        .gallery-stage { background:#f3edff; color:#241b35; padding:clamp(18px,3vw,32px); overflow:hidden; }
+        .gallery-track { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin:22px 0; }
+        .gallery-tile { min-height:300px; display:flex; flex-direction:column; justify-content:space-between; text-align:left; border:0; padding:18px; cursor:pointer; transition:transform .3s,filter .3s; overflow:hidden; }
+        .gallery-tile:hover,.gallery-tile.active { transform:translateY(-7px) rotate(-1deg); filter:saturate(1.12); }
+        .gallery-tile>span,.gallery-tile small { font-size:8px; letter-spacing:.12em; line-height:1.6; }
+        .gallery-tile strong { font-size:clamp(28px,4vw,48px); letter-spacing:-.09em; overflow-wrap:anywhere; }
+        .gallery-brand { background:#401e97; color:#fff; }
+        .gallery-web { background:#d7fa70; color:#211a31; }
+        .gallery-strategy { background:#f5d77a; color:#211a31; }
+        .gallery-experiment { background:#ff806e; color:#211a31; }
+        .gallery-controls { border-top:1px solid #d7cceb; padding-top:15px; color:#6e5c8c; }
+        .gallery-controls div { display:flex; gap:7px; }
+        .gallery-controls button { width:38px; height:38px; border:1px solid #cbbbe9; background:transparent; color:#401e97; border-radius:50%; cursor:pointer; font-size:18px; }
+        .signal-stage { background:#100f17; color:#fff; padding:clamp(18px,3vw,32px); }
+        .signal-head { color:#c6b4ff; }
+        .signal-field { position:relative; min-height:390px; margin:15px 0; background-image:radial-gradient(#c6b4ff44 1px,transparent 1px); background-size:22px 22px; border:1px solid #ffffff18; overflow:hidden; }
+        .signal-field:before,.signal-field:after { content:""; position:absolute; left:14%; top:30%; width:72%; height:1px; background:#8c6de8aa; transform:rotate(17deg); }
+        .signal-field:after { transform:rotate(-28deg); }
+        .signal-node { position:absolute; left:var(--x); top:var(--y); transform:translate(-10%,-10%); z-index:1; display:flex; flex-direction:column; gap:6px; align-items:flex-start; padding:14px 16px; border:1px solid #7864a0; border-radius:50%; min-width:105px; min-height:105px; justify-content:center; background:#20192d; color:#fff; cursor:pointer; transition:all .25s; }
+        .signal-node strong { font-size:10px; letter-spacing:.08em; }
+        .signal-node small { font-size:9px; opacity:.65; }
+        .signal-node.active { background:#c6b4ff; color:#20192d; border-color:#c6b4ff; transform:translate(-10%,-10%) scale(1.12); box-shadow:0 0 35px #c6b4ff66; }
+        .signal-footer { border-top:1px solid #ffffff30; padding-top:18px; display:grid; grid-template-columns:130px 1fr; gap:18px; align-items:start; }
+        .signal-footer strong { color:#c6b4ff; font-size:11px; letter-spacing:.1em; }
+        .signal-footer p { margin:0; font-size:12px; color:#c5bbd2; line-height:1.7; }
+        .lab-stage { background:#f5d77a; color:#211a31; padding:clamp(18px,3vw,32px); }
+        .lab-menu button { border:1px solid #211a3166; background:transparent; color:#211a31; padding:9px 12px; cursor:pointer; font:inherit; font-size:9px; letter-spacing:.1em; }
+        .lab-menu button.active { background:#211a31; color:#f5d77a; }
+        .lab-canvas { position:relative; min-height:350px; display:flex; flex-direction:column; justify-content:center; align-items:center; margin-top:20px; overflow:hidden; background:#401e97; color:#fff; animation:text-arrive .4s ease both; }
+        .lab-canvas>span,.lab-canvas>small { font-size:9px; letter-spacing:.15em; z-index:1; }
+        .lab-canvas h3 { position:relative; z-index:1; font-size:clamp(65px,13vw,140px); letter-spacing:-.11em; line-height:.76; margin:20px 0; text-align:center; }
+        .lab-canvas h3 i { font-style:normal; color:#d7fa70; }
+        .lab-motion-shape,.lab-form-shape { position:absolute; width:180px; height:180px; background:#ff806e; border-radius:50%; opacity:.85; animation:lab-float 3s ease-in-out infinite alternate; }
+        .lab-motion-shape { border-radius:25%; mix-blend-mode:screen; }
+        .lab-form-shape { border-radius:10% 90% 40% 60%; background:#c6b4ff; transform:rotate(35deg); }
+        .lab-motion .lab-canvas { background:#191421; }
+        .lab-form .lab-canvas { background:#d7fa70; color:#211a31; }
+        .lab-form .lab-canvas h3 i { color:#401e97; }
+        .lab-caption { font-size:12px; opacity:.7; margin:18px 0 0; }
+        @keyframes letter-pop { from { opacity:0; transform:translateY(35px) rotate(12deg) scale(.7); } to { opacity:1; transform:translateY(0) rotate(0) scale(1); } }
+        @keyframes lab-float { from { translate:-40px -15px; rotate:-15deg; } to { translate:50px 20px; rotate:35deg; } }
 \n        @keyframes orbit-spin { to { rotate: 360deg; } }
         @keyframes bob { 0%,100% { translate: 0 0; } 50% { translate: 0 -9px; } }
         @keyframes dash-flow { to { stroke-dashoffset: -200; } }
