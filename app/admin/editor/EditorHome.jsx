@@ -25,7 +25,7 @@ export default function EditorHome({ userId, displayName, email, articles }) {
     }
     setSavingName(true);
     setError("");
-    const { error: updateError } = await db.from("admin_profiles").update({ display_name: clean }).eq("id", userId);
+    const { error: updateError } = await db.auth.updateUser({ data: { author_name: clean } });
     setSavingName(false);
     if (updateError) {
       setError("We couldn't save your display name. Your account may need permission to update its own profile. Please contact the administrator.");
@@ -41,7 +41,7 @@ export default function EditorHome({ userId, displayName, email, articles }) {
   }), [articles, search]);
   const drafts = articles.filter((a) => a.status === "draft").length;
   const published = articles.filter((a) => a.status === "published").length;
-  const firstTime = !displayName.trim();
+  const firstTime = !displayName.trim() || ["omolola", "editor", "writer", "content editor"].includes(displayName.trim().toLowerCase());
 
   return (
     <main className="writer-app">
