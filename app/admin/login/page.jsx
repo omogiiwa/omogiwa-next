@@ -59,10 +59,10 @@ export default function AdminLoginPage() {
           OMO<span>GIWA</span>
         </a>
 
-        <p className="admin-eyebrow">PRIVATE WORKSPACE</p>
+        <p className="admin-eyebrow">Who goes you?</p>
         <h1>Welcome back.</h1>
         <p className="admin-description">
-          Sign in to manage your business.
+          Identify yourself
         </p>
 
         <form onSubmit={handleLogin}>
