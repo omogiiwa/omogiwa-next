@@ -10,7 +10,7 @@ export const metadata = {
   openGraph: {
     title: "Building Things Across Different Disciplines",
     description: "A reflection on connecting different interests to make more thoughtful creative work.",
-    url: articleUrl, siteName: "OmoGiwa", locale: "en_NG", type: "article",
+    url: articleUrl, siteName: "OmoGiwa.", locale: "en_NG", type: "article",
   },
   twitter: { card: "summary_large_image", title: "Building Things Across Different Disciplines", description: "Why creativity does not need to stay inside one discipline." },
 };
