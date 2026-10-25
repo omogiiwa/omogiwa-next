@@ -63,7 +63,8 @@ export default function Home() {
   const [expandedServiceItems, setExpandedServiceItems] = useState([]);
   const [introVisible, setIntroVisible] = useState(false);
   const [workVisible, setWorkVisible] = useState(false);
-  const [activeProject, setActiveProject] = useState(0);\n  const [activeAboutLens, setActiveAboutLens] = useState("anatomy");
+  const [activeProject, setActiveProject] = useState(0);
+  const [activeAboutLens, setActiveAboutLens] = useState("anatomy");
   const projects = [
 
   {
