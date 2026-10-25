@@ -48,7 +48,7 @@ export default function AdminDashboard({
     <main className="admin-shell">
       <aside className={`admin-sidebar ${menuOpen ? "open" : ""}`}>
         <a href="/admin" className="admin-logo" aria-label="OmoGiwa. Business OS">
-          <img src="/omogiwalogo.svg" alt="OmoGiwa." />
+          <img src="/omogiwalogo.svg" alt="OmoGiwa." style={{ width: 160, maxWidth: "100%", height: "auto" }} />
           <small>BUSINESS OS</small>
         </a>
 
