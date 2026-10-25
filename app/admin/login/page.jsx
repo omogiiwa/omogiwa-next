@@ -96,7 +96,7 @@ export default function AdminLoginPage() {
         </form>
 
         <p className="admin-login-footer">
-          OmoGiwa Business OS · Authorised access only
+          OmoGiwa. Business OS · Authorised access only
         </p>
       </section>
 
