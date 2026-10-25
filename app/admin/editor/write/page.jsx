@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 import { createClient } from "../../../../lib/supabase/server";
 import ArticleEditor from "../ArticleEditor";
 
-export const metadata = { title: "Write an Article | OmoGiwa", robots: { index: false, follow: false } };
+export const metadata = { title: "Write an Article | OmoGiwa.", robots: { index: false, follow: false } };
 
 export default async function WriteArticlePage({ searchParams }) {
   const params = await searchParams;
@@ -16,5 +16,5 @@ export default async function WriteArticlePage({ searchParams }) {
   const defaultNames = ["omolola", "editor", "writer", "content editor"];
   const authorName = savedAuthorName || (defaultNames.includes(profileName.trim().toLowerCase()) ? "" : profileName);
   if (profile.role === "editor" && !authorName) redirect("/admin/editor?setup=1");
-  return <ArticleEditor role={profile.role} userId={user.id} authorName={authorName || "OmoGiwa"} initialArticleId={typeof params?.article === "string" ? params.article : null} />;
+  return <ArticleEditor role={profile.role} userId={user.id} authorName={authorName || "OmoGiwa."} initialArticleId={typeof params?.article === "string" ? params.article : null} />;
 }
