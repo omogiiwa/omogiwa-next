@@ -147,9 +147,7 @@ useEffect(() => {
   return () => { cancelled = true; };
 }, []);
 const displayArticles = homepageArticles || journalArticles;
-d ideas brought to life through design and technology.",
-  },
-];
+
 
 
   return (
