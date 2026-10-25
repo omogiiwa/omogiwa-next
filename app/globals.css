@@ -3995,3 +3995,113 @@ object-fit: contain;
     scroll-behavior: auto !important;
   }
 }
+
+/* Homepage About hybrid — scoped to #about only */
+#about.about-hybrid{position:relative;isolation:isolate;overflow:hidden;padding:clamp(78px,10vw,145px) clamp(22px,7.5vw,110px);background:linear-gradient(125deg,#fff 15%,#faf7ff 66%,#f4eefc);color:#17141c}
+#about.about-hybrid *{box-sizing:border-box}
+#about.about-hybrid .about-hybrid-bg{position:absolute;z-index:-1;inset:0;overflow:hidden;pointer-events:none}
+#about.about-hybrid .about-hybrid-logo{position:absolute;width:clamp(220px,38vw,520px);height:auto;opacity:.055;filter:saturate(1.1)}
+#about.about-hybrid .about-hybrid-logo-a{right:-7%;top:3%;animation:home-about-logo-float 25s ease-in-out infinite alternate}
+#about.about-hybrid .about-hybrid-logo-b{width:clamp(140px,24vw,340px);right:27%;bottom:-10%;opacity:.035;animation:home-about-logo-float-b 29s ease-in-out infinite alternate}
+#about.about-hybrid .about-hybrid-orbit{position:absolute;right:0;top:10%;width:clamp(300px,48vw,680px);aspect-ratio:1;border:1px solid rgba(65,31,150,.11);border-radius:50%;animation:home-about-orbit 58s linear infinite}
+#about.about-hybrid .about-hybrid-orbit-b{right:8%;top:19%;width:clamp(220px,33vw,470px);border-style:dashed;border-color:rgba(172,95,230,.18);animation-duration:73s;animation-direction:reverse}
+#about.about-hybrid .about-hybrid-inner{position:relative;max-width:1200px;margin:0 auto}
+#about.about-hybrid .about-hybrid-top{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:clamp(48px,7vw,88px)}
+#about.about-hybrid .about-hybrid-eyebrow{margin:0;color:#542ca2;font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+#about.about-hybrid .about-hybrid-coordinate{font-size:9px;font-weight:750;letter-spacing:.12em;color:#8a8195}
+#about.about-hybrid .about-hybrid-intro{max-width:900px;margin-bottom:clamp(58px,8vw,105px)}
+#about.about-hybrid .about-hybrid-intro h2{margin:0;font-size:clamp(3.3rem,8.6vw,8rem);font-weight:650;letter-spacing:-.085em;line-height:.88}
+#about.about-hybrid .about-hybrid-intro h2 em,#about.about-hybrid .about-hybrid-connection h3 em,#about.about-hybrid .about-hybrid-end h3 em{font-family:Georgia,serif;font-weight:400;color:#542ca2}
+#about.about-hybrid .about-hybrid-deck{max-width:670px;margin:30px 0 0;color:#625b6d;font-size:clamp(1.08rem,2vw,1.45rem);line-height:1.7}
+#about.about-hybrid .about-hybrid-story{display:grid;grid-template-columns:150px minmax(0,760px);justify-content:space-between;gap:clamp(28px,6vw,80px);margin-bottom:clamp(90px,12vw,155px)}
+#about.about-hybrid .about-hybrid-story-rail{position:relative;min-height:100%;display:flex;flex-direction:column;align-items:flex-start;padding-top:8px}
+#about.about-hybrid .about-hybrid-rail-dot{width:10px;height:10px;border-radius:50%;background:#542ca2;box-shadow:0 0 0 7px rgba(84,44,162,.09);margin:0 0 15px 1px}
+#about.about-hybrid .about-hybrid-rail-line{position:absolute;top:37px;bottom:42px;left:5px;width:1px;background:linear-gradient(#542ca2,rgba(172,95,230,.12))}
+#about.about-hybrid .about-hybrid-rail-label{position:sticky;top:25vh;writing-mode:vertical-rl;transform:rotate(180deg);font-size:9px;font-weight:800;letter-spacing:.16em;color:#8b8197}
+#about.about-hybrid .about-hybrid-paragraphs{display:flex;flex-direction:column;gap:clamp(28px,4vw,48px)}
+#about.about-hybrid .about-hybrid-paragraphs p{display:grid;grid-template-columns:38px minmax(0,1fr);gap:18px;margin:0;color:#615968;font-size:clamp(1rem,1.45vw,1.2rem);line-height:1.9}
+#about.about-hybrid .about-hybrid-drop{padding-top:7px;color:#7448b7;font-size:9px;font-weight:800;letter-spacing:.1em}
+#about.about-hybrid .about-hybrid-connection{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:clamp(30px,6vw,85px);align-items:center;padding:clamp(30px,5vw,62px);border:1px solid rgba(84,44,162,.13);border-radius:24px;background:rgba(255,255,255,.68);box-shadow:0 25px 90px rgba(56,29,91,.045);backdrop-filter:blur(8px)}
+#about.about-hybrid .about-hybrid-connection h3{margin:16px 0 20px;font-size:clamp(2.4rem,4.5vw,4.5rem);line-height:.98;letter-spacing:-.075em}
+#about.about-hybrid .about-hybrid-connection-copy>p:last-child{max-width:360px;margin:0;color:#6e6578;line-height:1.8;font-size:.98rem}
+#about.about-hybrid .about-hybrid-node-map{position:relative;width:100%;max-width:520px;aspect-ratio:520/400;margin:0 auto}
+#about.about-hybrid .about-hybrid-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+#about.about-hybrid .about-hybrid-lines path{fill:none;stroke:url(#home-about-node-gradient);stroke-width:1.5;stroke-dasharray:5 8;opacity:.55;animation:home-about-dash 20s linear infinite}
+#about.about-hybrid .about-hybrid-lines path:nth-child(3){animation-delay:-7s}
+#about.about-hybrid .about-hybrid-lines path:nth-child(4){opacity:.28;animation-duration:27s}
+#about.about-hybrid .about-hybrid-node{position:absolute;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:clamp(102px,12vw,142px);height:clamp(102px,12vw,142px);padding:8px;border-radius:50%;border:1px solid #ded4ed;background:rgba(255,255,255,.96);color:#211b29;cursor:pointer;box-shadow:0 9px 32px rgba(48,25,82,.06);transition:transform .3s ease,background .3s,border-color .3s,color .3s,box-shadow .3s}
+#about.about-hybrid .about-hybrid-node:hover{transform:translateY(-4px)}
+#about.about-hybrid .about-hybrid-node.is-active{background:#411f96;color:white;border-color:#411f96;box-shadow:0 14px 40px rgba(65,31,150,.22),0 0 0 8px rgba(65,31,150,.06)}
+#about.about-hybrid .about-hybrid-node-anatomy{left:50%;top:0;transform:translateX(-50%)}
+#about.about-hybrid .about-hybrid-node-anatomy:hover{transform:translateX(-50%) translateY(-4px)}
+#about.about-hybrid .about-hybrid-node-anatomy.is-active{transform:translateX(-50%) scale(1.04)}
+#about.about-hybrid .about-hybrid-node-design{left:0;top:48%;transform:translateY(-50%)}
+#about.about-hybrid .about-hybrid-node-tech{right:0;top:48%;transform:translateY(-50%)}
+#about.about-hybrid .about-hybrid-node-design:hover,#about.about-hybrid .about-hybrid-node-tech:hover{transform:translateY(calc(-50% - 4px))}
+#about.about-hybrid .about-hybrid-node span{font-size:8px;font-weight:800;letter-spacing:.1em;opacity:.65}
+#about.about-hybrid .about-hybrid-node b{font-size:clamp(1.4rem,2.5vw,2rem);line-height:1;color:#7044b5}
+#about.about-hybrid .about-hybrid-node.is-active b{color:#d8c6ff}
+#about.about-hybrid .about-hybrid-node strong{font-size:clamp(.69rem,1.1vw,.84rem);font-weight:750}
+#about.about-hybrid .about-hybrid-node small{font-size:.65rem;opacity:.65}
+#about.about-hybrid .about-hybrid-node-core{position:absolute;z-index:1;left:50%;bottom:0;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:7px}
+#about.about-hybrid .about-hybrid-node-core img{width:clamp(43px,6vw,65px);animation:home-about-core 5s ease-in-out infinite}
+#about.about-hybrid .about-hybrid-node-core span{font-size:7px;letter-spacing:.13em;font-weight:800;color:#887d96;white-space:nowrap}
+#about.about-hybrid .about-hybrid-node-detail{grid-column:1/-1;display:grid;grid-template-columns:minmax(160px,.55fr) minmax(0,1fr);column-gap:25px;row-gap:8px;padding-top:24px;border-top:1px solid #e8e0f0;animation:home-about-detail .35s ease both}
+#about.about-hybrid .about-hybrid-node-detail>span{grid-column:1/-1;font-size:9px;font-weight:800;letter-spacing:.13em;color:#542ca2}
+#about.about-hybrid .about-hybrid-node-detail h4{grid-column:1;margin:0;font-size:clamp(1.3rem,2.3vw,1.8rem);letter-spacing:-.05em}
+#about.about-hybrid .about-hybrid-node-detail p{grid-column:2;grid-row:2;margin:0;color:#6a6273;font-size:.94rem;line-height:1.8}
+#about.about-hybrid .about-hybrid-end{display:grid;grid-template-columns:1.1fr .7fr;gap:50px;align-items:end;margin-top:clamp(90px,12vw,150px);padding-top:35px;border-top:1px solid rgba(84,44,162,.16)}
+#about.about-hybrid .about-hybrid-end h3{margin:15px 0 0;font-size:clamp(2.8rem,6.2vw,6rem);line-height:.94;letter-spacing:-.08em}
+#about.about-hybrid .about-hybrid-end>div:last-child p{margin:0 0 22px;color:#6a6273;font-size:1rem;line-height:1.8}
+#about.about-hybrid .about-hybrid-end .button{display:inline-flex;align-items:center;gap:18px}
+#about.about-hybrid .about-reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .85s cubic-bezier(.2,.75,.2,1)}
+#about.about-hybrid .about-reveal.is-visible{opacity:1;transform:translateY(0)}
+@keyframes home-about-logo-float{0%{transform:translate3d(0,0,0) rotate(-10deg)}100%{transform:translate3d(-22px,20px,0) rotate(12deg)}}
+@keyframes home-about-logo-float-b{0%{transform:translate3d(0,0,0) rotate(8deg) scale(.95)}100%{transform:translate3d(16px,-18px,0) rotate(-8deg) scale(1.04)}}
+@keyframes home-about-orbit{to{transform:rotate(360deg)}}
+@keyframes home-about-dash{to{stroke-dashoffset:-260}}
+@keyframes home-about-core{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-6px) rotate(4deg)}}
+@keyframes home-about-detail{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:800px){
+ #about.about-hybrid{padding:78px 6vw}
+ #about.about-hybrid .about-hybrid-story{grid-template-columns:35px minmax(0,1fr);gap:20px}
+ #about.about-hybrid .about-hybrid-rail-label{font-size:7px}
+ #about.about-hybrid .about-hybrid-connection{grid-template-columns:1fr;gap:30px;padding:28px 22px}
+ #about.about-hybrid .about-hybrid-connection-copy>p:last-child{max-width:520px}
+ #about.about-hybrid .about-hybrid-node-map{width:min(100%,500px)}
+ #about.about-hybrid .about-hybrid-end{grid-template-columns:1fr;gap:25px}
+}
+@media(max-width:520px){
+ #about.about-hybrid{padding:70px 22px}
+ #about.about-hybrid .about-hybrid-top{align-items:flex-start;flex-direction:column;gap:10px;margin-bottom:48px}
+ #about.about-hybrid .about-hybrid-intro h2{font-size:clamp(3.2rem,15vw,5.1rem)}
+ #about.about-hybrid .about-hybrid-deck{margin-top:23px;font-size:1.05rem}
+ #about.about-hybrid .about-hybrid-story{grid-template-columns:1fr;gap:15px;margin-bottom:75px}
+ #about.about-hybrid .about-hybrid-story-rail{min-height:22px}
+ #about.about-hybrid .about-hybrid-rail-line,#about.about-hybrid .about-hybrid-rail-label{display:none}
+ #about.about-hybrid .about-hybrid-paragraphs{gap:26px}
+ #about.about-hybrid .about-hybrid-paragraphs p{grid-template-columns:26px minmax(0,1fr);gap:11px;font-size:1rem;line-height:1.8}
+ #about.about-hybrid .about-hybrid-connection{padding:23px 15px;border-radius:18px}
+ #about.about-hybrid .about-hybrid-connection h3{font-size:2.6rem}
+ #about.about-hybrid .about-hybrid-node-map{width:100%;min-width:0;aspect-ratio:1/1.03}
+ #about.about-hybrid .about-hybrid-node{width:clamp(86px,25vw,110px);height:clamp(86px,25vw,110px);gap:4px}
+ #about.about-hybrid .about-hybrid-node-anatomy{top:0}
+ #about.about-hybrid .about-hybrid-node-design{left:0;top:47%}
+ #about.about-hybrid .about-hybrid-node-tech{right:0;top:47%}
+ #about.about-hybrid .about-hybrid-node strong{font-size:.65rem}
+ #about.about-hybrid .about-hybrid-node small{font-size:.6rem}
+ #about.about-hybrid .about-hybrid-node-core img{width:44px}
+ #about.about-hybrid .about-hybrid-node-core span{font-size:6px}
+ #about.about-hybrid .about-hybrid-node-detail{grid-template-columns:1fr;gap:8px}
+ #about.about-hybrid .about-hybrid-node-detail h4,#about.about-hybrid .about-hybrid-node-detail p{grid-column:1;grid-row:auto}
+ #about.about-hybrid .about-hybrid-end h3{font-size:clamp(2.7rem,12vw,4rem)}
+ #about.about-hybrid .about-hybrid-coordinate{font-size:8px}
+ #about.about-hybrid .about-hybrid-logo-a{width:78vw;right:-30%;top:5%}
+ #about.about-hybrid .about-hybrid-logo-b{width:45vw;right:5%;bottom:0}
+ #about.about-hybrid .about-hybrid-orbit{right:-30%;width:95vw}
+ #about.about-hybrid .about-hybrid-orbit-b{right:-17%;width:75vw}
+}
+@media(prefers-reduced-motion:reduce){
+ #about.about-hybrid *,#about.about-hybrid *::before,#about.about-hybrid *::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+ #about.about-hybrid .about-reveal{opacity:1;transform:none}
+}
