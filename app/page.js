@@ -690,7 +690,7 @@ THE DESK HERO
           </h2>
 
           <p>
-            Join the newsletter to getupdates about new projects,
+            Join the newsletter to get updates about new projects,
             experiments and useful things I discover.
           </p>
 
