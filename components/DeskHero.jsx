@@ -436,7 +436,7 @@ export default function DeskHero() {
             fontWeight="700"
             fill="#fff"
           >
-            OmoGiwa.
+            OmoGiwa
           </text>
 
           <text
@@ -830,7 +830,7 @@ export default function DeskHero() {
   className="desk-item desk-center-mark"
 >
   <image
-    href="/omogiwalogo.svg"
+    href="/omogiwaanimated1-white.svg"
     x="0"
     y="0"
     width="170"
@@ -1033,7 +1033,7 @@ export default function DeskHero() {
             fontSize="13"
             fill="#401e97"
           >
-            OmoGiwa.
+            OmoGiwa
           </text>
 
           <rect
