@@ -55,8 +55,8 @@ export default function AdminLoginPage() {
   return (
     <main className="admin-login">
       <section className="admin-login-card">
-        <a href="/" className="admin-brand">
-          OMO<span>GIWA</span>
+        <a href="/" className="admin-brand" aria-label="OmoGiwa.">
+          <img src="/omogiwalogo.svg" alt="OmoGiwa." style={{ width: 180, maxWidth: "100%", height: "auto" }} />
         </a>
 
         <p className="admin-eyebrow">Who goes you?</p>
