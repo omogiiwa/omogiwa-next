@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1930 1930" fill="none" role="img" aria-label="OmoGiwa OG mark">
+  <defs><clipPath id="og-eye"><circle cx="957" cy="897" r="268"/></clipPath></defs>
+  <path fill="#411f96" fill-rule="evenodd" d="M1518 454C1370 285 1200 220 970 220 560 220 260 560 260 905c0 355 280 661 700 661 440 0 670-316 670-691v-57H930v252l382 5c-42 165-182 249-352 249-260 0-397-194-397-417 0-227 167-417 407-417 150 0 260 60 346 166l202-202Z"/>
+  <circle cx="957" cy="897" r="268" fill="#111"/>
+  <rect x="930" y="818" width="300" height="254" fill="#ac5fe6" clip-path="url(#og-eye)"/>
+</svg>
