@@ -255,20 +255,7 @@ THE DESK HERO
       {/* =========================
           INTRO / STATEMENT
       ========================== */}
-      <section className={`intro-section ${introVisible ? "intro-visible" : ""}`}>
 
-        
-
-        <h2>
-          I don't believe creativity belongs in just one box.
-        </h2>
-
-        <p className="large-text">
-          I work across design, technology, branding and visual communication.
-          Putting all these together gives your business a boost
-        </p>
-
-      </section>
 
 
       {/* =========================
