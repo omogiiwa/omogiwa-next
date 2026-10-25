@@ -64,6 +64,7 @@ export default function EditorHome({ userId, displayName, email, articles }) {
         </nav>
         <div className="sidebar-bottom"><a href="/" target="_blank" rel="noreferrer">View website</a><button onClick={async () => { await db.auth.signOut(); router.replace("/admin/login"); router.refresh(); }}>Sign out</button></div>
       </aside>
+      {menuOpen && <button type="button" className="writer-backdrop" aria-label="Close menu" onClick={() => setMenuOpen(false)} />}
       <section className="writer-main">
         <header className="writer-top"><button className="menu-toggle" aria-label="Toggle menu" onClick={() => setMenuOpen(!menuOpen)}>☰</button><span>WRITER'S DESK</span><div className="top-right"><span className="online-dot" /> Private workspace</div></header>
         <div className="writer-content">
