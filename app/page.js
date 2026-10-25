@@ -63,7 +63,7 @@ export default function Home() {
   const [expandedServiceItems, setExpandedServiceItems] = useState([]);
   const [introVisible, setIntroVisible] = useState(false);
   const [workVisible, setWorkVisible] = useState(false);
-  const [activeProject, setActiveProject] = useState(0);
+  const [activeProject, setActiveProject] = useState(0);\n  const [activeAboutLens, setActiveAboutLens] = useState("anatomy");
   const projects = [
 
   {
@@ -174,6 +174,26 @@ const changeProject = (direction) => {
   return () => {
     observer.disconnect();
   };
+}, []);
+
+useEffect(() => {
+  const section = document.querySelector(".about-hybrid");
+  if (!section) return;
+  const elements = section.querySelectorAll(".about-reveal");
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) {
+    elements.forEach((element) => element.classList.add("is-visible"));
+    return;
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.16, rootMargin: "0px 0px -5% 0px" });
+  elements.forEach((element) => observer.observe(element));
+  return () => observer.disconnect();
 }, []);
 const [activeArticle, setActiveArticle] = useState(0);
 const [homepageArticles, setHomepageArticles] = useState(null);
@@ -462,47 +482,76 @@ THE DESK HERO
       {/* =========================
           ABOUT
       ========================== */}
-      <section className="about-section" id="about">
-
-        
-
-        <div className="about-content">
-
-          
-
-          <h2>
-            More than one
-            <br />
-            <span>definition.</span>
-          </h2>
-
-          <p>
-            You may not know this, but there is a clear difference between simply doing a task and actually thinking about what the work is supposed to achieve.
-          </p>
-          <p> This is where I stand </p>
-          
-          <p>
-            I’m a multidisciplinary designer, software engineer, and human anatomist. I don’t look at design, branding, websites, graphics, and digital experiences as isolated pieces. I look at the whole picture: how it fits, how it works, how people experience it, and whether it actually delivers results. 
-          
-          </p>
-        <p> I’m naturally curious, obsessive about details, highly adaptive, and comfortable learning whatever I need to solve a problem. I want to understand your vision, challenge weak ideas when necessary, and turn the good ones into something genuinely remarkable. </p>
-          <p>
-            Having experience across different fields — and being particularly obsessed with design — makes the impact of every decision I make more exciting. Knowledge from one discipline can completely change how I approach another.
-          </p>
-        <p> 
-          Imagine an SEO expert who also understands graphic design. They may be two completely different fields, but that SEO knowledge can influence how they design a social media campaign, structure its content, or position it for greater reach and engagement.
-          </p>
-          <p>
-            That is how I think.
-             </p>
-            
-            
-          <a href="/about" className="button button-dark">
-            Read more about me →
-          </a>
-
+      <section className="about-section about-hybrid" id="about">
+        <div className="about-hybrid-bg" aria-hidden="true">
+          <img src="/og-mark.svg" alt="" className="about-hybrid-logo about-hybrid-logo-a" />
+          <img src="/og-mark.svg" alt="" className="about-hybrid-logo about-hybrid-logo-b" />
+          <span className="about-hybrid-orbit about-hybrid-orbit-a" />
+          <span className="about-hybrid-orbit about-hybrid-orbit-b" />
         </div>
 
+        <div className="about-hybrid-inner">
+          <div className="about-hybrid-top">
+            <p className="about-hybrid-eyebrow">A little about how I think</p>
+            <span className="about-hybrid-coordinate">DESIGN × TECHNOLOGY × PEOPLE</span>
+          </div>
+
+          <div className="about-hybrid-intro about-reveal">
+            <h2>More than one<br /><em>definition.</em></h2>
+            <p className="about-hybrid-deck">I don't believe creativity belongs in just one box. The interesting things happen when different ways of thinking meet.</p>
+          </div>
+
+          <div className="about-hybrid-story">
+            <div className="about-hybrid-story-rail" aria-hidden="true">
+              <span className="about-hybrid-rail-dot" />
+              <span className="about-hybrid-rail-line" />
+              <span className="about-hybrid-rail-label">THE WAY I SEE IT</span>
+            </div>
+            <div className="about-hybrid-paragraphs">
+              <p className="about-reveal"><span className="about-hybrid-drop">01</span> You can do a task and still miss what the work is supposed to achieve. I care about the thinking behind the execution: what needs to change, who it is for, and how we will know it works.</p>
+              <p className="about-reveal"><span className="about-hybrid-drop">02</span> I'm a multidisciplinary designer, software engineer, and human anatomist. I don't see branding, websites, graphics, and digital experiences as isolated pieces. I look at the whole picture: how it fits, how it works, and how people experience it.</p>
+              <p className="about-reveal"><span className="about-hybrid-drop">03</span> I'm naturally curious, attentive to detail, adaptive, and comfortable learning what a problem requires. I'll understand your vision, challenge weak ideas when needed, and help turn the strong ones into something genuinely remarkable.</p>
+              <p className="about-reveal"><span className="about-hybrid-drop">04</span> Knowledge travels. An understanding of SEO can influence how a designer structures a campaign; design can make a strategy clearer; technology can turn a good idea into something people can actually use.</p>
+            </div>
+          </div>
+
+          <div className="about-hybrid-connection">
+            <div className="about-hybrid-connection-copy about-reveal">
+              <p className="about-hybrid-eyebrow">Different lenses. One connected mind.</p>
+              <h3>Click a node.<br /><em>See the connection.</em></h3>
+              <p>My background gives me more than one way into a problem. Each discipline brings a different strength to the same creative process.</p>
+            </div>
+
+            <div className="about-hybrid-node-map">
+              <svg viewBox="0 0 520 400" className="about-hybrid-lines" aria-hidden="true">
+                <defs><linearGradient id="home-about-node-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#411f96" /><stop offset="100%" stopColor="#ac5fe6" /></linearGradient></defs>
+                <path d="M260 78 C160 110 95 155 100 230 S180 310 260 320" />
+                <path d="M260 78 C360 110 425 155 420 230 S340 310 260 320" />
+                <path d="M100 230 C190 195 330 195 420 230" />
+              </svg>
+              <button type="button" className={`about-hybrid-node about-hybrid-node-anatomy ${activeAboutLens === "anatomy" ? "is-active" : ""}`} onClick={() => setActiveAboutLens("anatomy")} aria-pressed={activeAboutLens === "anatomy"}>
+                <span>01</span><b>◎</b><strong>Anatomy</strong><small>Observe</small>
+              </button>
+              <button type="button" className={`about-hybrid-node about-hybrid-node-design ${activeAboutLens === "design" ? "is-active" : ""}`} onClick={() => setActiveAboutLens("design")} aria-pressed={activeAboutLens === "design"}>
+                <span>02</span><b>✳</b><strong>Design</strong><small>Communicate</small>
+              </button>
+              <button type="button" className={`about-hybrid-node about-hybrid-node-tech ${activeAboutLens === "technology" ? "is-active" : ""}`} onClick={() => setActiveAboutLens("technology")} aria-pressed={activeAboutLens === "technology"}>
+                <span>03</span><b>⌘</b><strong>Technology</strong><small>Build</small>
+              </button>
+              <div className="about-hybrid-node-core"><img src="/og-mark.svg" alt="" /><span>ONE CONNECTED PRACTICE</span></div>
+            </div>
+            <div className="about-hybrid-node-detail about-reveal" aria-live="polite" key={activeAboutLens}>
+              {activeAboutLens === "anatomy" && <><span>01 / HUMAN ANATOMY</span><h4>Understand the system.</h4><p>Studying the human body trained me to notice structure, relationships, and how individual parts affect the whole.</p></>}
+              {activeAboutLens === "design" && <><span>02 / DESIGN</span><h4>Make meaning visible.</h4><p>Visual communication turns ideas into identities and experiences people can recognise, understand, and remember.</p></>}
+              {activeAboutLens === "technology" && <><span>03 / TECHNOLOGY</span><h4>Make the idea work.</h4><p>Software engineering helps me think beyond appearance: usability, responsiveness, structure, performance, and real-world usefulness.</p></>}
+            </div>
+          </div>
+
+          <div className="about-hybrid-end about-reveal">
+            <div><p className="about-hybrid-eyebrow">That is how I think.</p><h3>Different perspectives.<br /><em>Better possibilities.</em></h3></div>
+            <div><p>I bring the pieces together to create thoughtful visual identities, digital experiences, and practical creative solutions.</p><a href="/about" className="button button-dark">Read more about me <span aria-hidden="true">↗</span></a></div>
+          </div>
+        </div>
       </section>
 
 
