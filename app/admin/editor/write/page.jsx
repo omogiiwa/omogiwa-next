@@ -11,6 +11,10 @@ export default async function WriteArticlePage({ searchParams }) {
   if (error || !user) redirect("/admin/login?next=/admin/editor/write");
   const { data: profile, error: profileError } = await supabase.from("admin_profiles").select("display_name, role").eq("id", user.id).single();
   if (profileError || !["admin", "editor"].includes(profile?.role)) redirect("/admin/login?next=/admin/editor/write");
-  if (profile.role === "editor" && !profile.display_name?.trim()) redirect("/admin/editor?setup=1");
-  return <ArticleEditor role={profile.role} userId={user.id} authorName={profile.display_name || "OmoGiwa"} initialArticleId={typeof params?.article === "string" ? params.article : null} />;
+  const savedAuthorName = typeof user.user_metadata?.author_name === "string" ? user.user_metadata.author_name.trim() : "";
+  const profileName = profile.display_name || "";
+  const defaultNames = ["omolola", "editor", "writer", "content editor"];
+  const authorName = savedAuthorName || (defaultNames.includes(profileName.trim().toLowerCase()) ? "" : profileName);
+  if (profile.role === "editor" && !authorName) redirect("/admin/editor?setup=1");
+  return <ArticleEditor role={profile.role} userId={user.id} authorName={authorName || "OmoGiwa"} initialArticleId={typeof params?.article === "string" ? params.article : null} />;
 }
