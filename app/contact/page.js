@@ -7,7 +7,7 @@ export const metadata = {
   keywords: [
     "Contact Omogbolahan Giwa",
     "Omogbolahan Giwa contact",
-    "OmoGiwa contact",
+    "OmoGiwa. contact",
     "designer contact Nigeria",
     "software engineer Nigeria",
     "brand designer Nigeria",
@@ -23,7 +23,7 @@ export const metadata = {
     description:
       "Get in touch with Omogbolahan Giwa for design, branding, web development, digital strategy and creative collaborations.",
     url: "https://omogiwa.com/contact",
-    siteName: "OmoGiwa",
+    siteName: "OmoGiwa.",
     type: "website",
   },
   twitter: {
