@@ -4,7 +4,7 @@ import {useRouter} from "next/navigation";
 import {createClient} from "../../../lib/supabase/client";
 const blank={title:"",slug:"",excerpt:"",category:"",tags:"",html:"",cover:"",alt:"",seo:"",description:"",canonical:"",keywords:"",ogTitle:"",ogDescription:"",twitter:"summary_large_image",index:true,follow:true,status:"draft"};
 const slugify=s=>s.toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
-export default function ArticleEditor({role,userId,authorName="OmoGiwa",initialArticleId=null}){
+export default function ArticleEditor({role,userId,authorName="OmoGiwa.",initialArticleId=null}){
  const db=useMemo(()=>createClient(),[]), router=useRouter(), editor=useRef(null);
  const [items,setItems]=useState([]),[f,setF]=useState(blank),[id,setId]=useState(null),[filter,setFilter]=useState("all"),[tab,setTab]=useState("write"),[busy,setBusy]=useState(false),[msg,setMsg]=useState(""),[err,setErr]=useState("");
  const admin=role==="admin";
