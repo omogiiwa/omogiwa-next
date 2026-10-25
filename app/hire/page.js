@@ -319,7 +319,7 @@ const previousStep = () => {
           </p>
 
           <div className="hire-success-actions">
-            <Link href="/">Back to OmoGiwa</Link>
+            <Link href="/">Back to OmoGiwa.</Link>
             <Link href="/work">View My Work</Link>
           </div>
         </section>
@@ -464,7 +464,7 @@ const previousStep = () => {
                   "X / Twitter",
                   "Referral",
                   "Someone I know",
-                  "OmoGiwa website",
+                  "OmoGiwa. website",
                   "Other",
                 ]}
               />
