@@ -45,7 +45,7 @@ export const metadata = {
   ],
 
   creator: "Omogbolahan Giwa",
-  publisher: "OmoGiwa",
+  publisher: "OmoGiwa.",
 
   alternates: {
     canonical: article.url,
@@ -55,7 +55,7 @@ export const metadata = {
     title: article.title,
     description: article.description,
     url: article.url,
-    siteName: "OmoGiwa",
+    siteName: "OmoGiwa.",
     locale: "en_NG",
     type: "article",
 
@@ -503,7 +503,7 @@ const articleStructuredData = {
 
   publisher: {
     "@type": "Organization",
-    name: "OmoGiwa",
+    name: "OmoGiwa.",
     url: siteUrl,
     logo: {
       "@type": "ImageObject",
