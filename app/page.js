@@ -33,7 +33,7 @@ export default function Home() {
     title: "Letterhead Collection for Giwa",
     image: "/stationery mock-up .png",
     description:
-      "Letterhead, business card and envelope cover for OmoGiwa",
+      "Letterhead, business card and envelope cover for OmoGiwa.",
     category: "Graphics Design",
     
     href: "portfolio/brand-design",
