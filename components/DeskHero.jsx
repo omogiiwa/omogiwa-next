@@ -58,7 +58,7 @@ export default function DeskHero() {
       <svg
         viewBox="0 0 1200 800"
         role="group"
-        aria-label="OmoGiwa's creative workspace desk"
+        aria-label="OmoGiwa.'s creative workspace desk"
       >
         <defs>
 
@@ -436,7 +436,7 @@ export default function DeskHero() {
             fontWeight="700"
             fill="#fff"
           >
-            OmoGiwa
+            OmoGiwa.
           </text>
 
           <text
@@ -456,7 +456,7 @@ export default function DeskHero() {
 
         <a
           href="/portfolio"
-          aria-label="View OmoGiwa's work"
+          aria-label="View OmoGiwa.'s work"
         >
 
           <g
@@ -526,7 +526,7 @@ export default function DeskHero() {
 
         <a
           href="/about"
-          aria-label="Learn about OmoGiwa"
+          aria-label="Learn about OmoGiwa."
         >
 
           <g
@@ -596,7 +596,7 @@ export default function DeskHero() {
 
         <a
           href="/contact"
-          aria-label="Contact OmoGiwa"
+          aria-label="Contact OmoGiwa."
         >
 
           <g
@@ -1033,7 +1033,7 @@ export default function DeskHero() {
             fontSize="13"
             fill="#401e97"
           >
-            OmoGiwa
+            OmoGiwa.
           </text>
 
           <rect
@@ -1294,7 +1294,7 @@ export default function DeskHero() {
 
 <a
   href="/portfolio"
-  aria-label="View OmoGiwa's work"
+  aria-label="View OmoGiwa.'s work"
 >
   <g
     className="lift desk-cta desk-cta-primary"
@@ -1329,7 +1329,7 @@ export default function DeskHero() {
 
 <a
   href="/contact"
-  aria-label="Work with OmoGiwa"
+  aria-label="Work with OmoGiwa."
 >
   <g
     className="lift desk-cta desk-cta-secondary"
