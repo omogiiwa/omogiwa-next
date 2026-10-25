@@ -236,7 +236,7 @@ THE DESK HERO
       ========================== */}
       <section className={`intro-section ${introVisible ? "intro-visible" : ""}`}>
 
-        <p className="section-label">01 / INTRODUCTION</p>
+        
 
         <h2>
           I don't believe creativity belongs in just one box.
@@ -256,7 +256,7 @@ THE DESK HERO
   <section className="work-section" id="work">
   <div className="section-heading">
     <div>
-      <p className="section-label purple">02 / SELECTED WORK</p>
+      
       <h2>
         Things I&apos;ve <span>created.</span>
       </h2>
@@ -356,7 +356,7 @@ THE DESK HERO
       ========================== */}
       <section className="services-section services-mix-section" id="services">
         <div className="services-intro">
-          <p className="section-label">03 / WHAT I DO</p>
+          
           <h2>
             Different disciplines.
             <br />
@@ -468,7 +468,7 @@ THE DESK HERO
 
         <div className="about-content">
 
-          <p className="section-label purple">04 / ABOUT</p>
+          
 
           <h2>
             More than one
@@ -513,7 +513,7 @@ THE DESK HERO
 
         <div className="process-heading">
 
-          <p className="section-label">05 / PROCESS</p>
+          
 
           <h2>
             From idea
@@ -582,7 +582,7 @@ THE DESK HERO
         <div className="section-heading">
 
           <div>
-            <p className="section-label purple">06 / JOURNAL</p>
+            
 
             <h2>
               Thoughts,
@@ -681,7 +681,7 @@ THE DESK HERO
 
         <div className="newsletter-inner">
 
-          <p className="section-label">07 / NEWSLETTER</p>
+          
 
           <h2>
             Be the first to know.
@@ -727,7 +727,7 @@ THE DESK HERO
       ========================== */}
       <section className="contact-section" id="contact">
 
-        <p className="section-label">08 / CONTACT</p>
+        
 
         <h2>
           Do you have an idea?
