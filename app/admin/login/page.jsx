@@ -37,13 +37,13 @@ export default function AdminLoginPage() {
         .eq("id", data.user.id)
         .single();
 
-      if (profileError || profile?.role !== "admin") {
+      if (profileError || !["admin", "editor"].includes(profile?.role)) {
         await supabase.auth.signOut();
-        setError("This account is not authorised to access the admin dashboard.");
+        setError("This account is not authorised to access the content studio.");
         return;
       }
 
-      router.replace("/admin");
+      router.replace(profile.role === "editor" ? "/admin/editor" : "/admin");
       router.refresh();
     } catch {
       setError("Something went wrong. Please try again.");
