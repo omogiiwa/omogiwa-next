@@ -229,7 +229,7 @@ export default function AdminDashboard({
                   </div>
                   <div className="account-divider" />
                   <p className="account-note">
-                    You're signed in to the private OmoGiwa business
+                    You're signed in to the private OmoGiwa. business
                     workspace.
                   </p>
                   <button
