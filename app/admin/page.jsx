@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 import { createClient } from "../../lib/supabase/server";
 import AdminDashboard from "./dashboard";
 
-export const metadata = { title: "Admin Dashboard | OmoGiwa", robots: { index: false, follow: false } };
+export const metadata = { title: "Admin Dashboard | OmoGiwa.", robots: { index: false, follow: false } };
 
 export default async function AdminPage() {
   const supabase = await createClient();
