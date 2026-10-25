@@ -477,3 +477,11 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Use the original OmoGiwa. wordmark artwork for brand stages. */
+.omogiwa-experience__brand img {
+  display: block;
+  width: min(220px, 90%);
+  height: auto;
+  object-fit: contain;
+}
