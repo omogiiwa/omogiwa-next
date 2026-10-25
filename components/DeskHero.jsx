@@ -1358,6 +1358,14 @@ export default function DeskHero() {
   </g>
 </a>
 
+        {/* Tiny private entry point. The admin route still requires an authorised admin login. */}
+        <a
+          href="/admin"
+          className="desk-admin-entry"
+          aria-label="Open admin dashboard"
+        >
+          <rect x="1090" y="714" width="10" height="10" fill="transparent" />
+        </a>
       </svg>
     </div>
   );
