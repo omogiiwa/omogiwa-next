@@ -11,6 +11,7 @@ const navigation = [
   { name: "Subscribers", icon: "✉" },
   { name: "Projects", icon: "▦" },
   { name: "Finances", icon: "₦" },
+  { name: "Articles", icon: "✎" },
 ];
 
 export default function AdminDashboard({
@@ -61,6 +62,7 @@ export default function AdminDashboard({
                 activeSection === item.name ? "active" : ""
               }`}
               onClick={() => {
+                if (item.name === "Articles") { router.push("/admin/editor"); return; }
                 setActiveSection(item.name);
                 setMenuOpen(false);
               }}
