@@ -189,77 +189,59 @@ export default function BrandTimeline() {
 const ododoStages = [
   {
     number: "01",
-    title: "The identity system",
-    description: "The logo, monogram, and icon in their supplied colour versions.",
+    title: "A name with room to grow",
+    description: "The core identity, presented as a deliberate family of primary, monochrome, and reversed marks.",
+    layout: "identity",
+    files: ["ododo-logo-full-colour.png", "ododo-logo-black.png", "ododo-logo-reversed.png"],
+  },
+  {
+    number: "02",
+    title: "One system, distinct signals",
+    description: "A compact look at the app icon and avatar variations across the brand's three core surfaces.",
+    layout: "touchpoints",
     files: [
-      "ododo-logo-full-colour.png", "ododo-logo-full-colour.svg",
-      "ododo-logo-reversed.png", "ododo-logo-reversed.svg",
-      "ododo-logo-black.png", "ododo-logo-black.svg",
-      "ododo-logo-white.png", "ododo-logo-white.svg",
-      "ododo-monogram-full-colour.png", "ododo-monogram-full-colour.svg",
-      "ododo-monogram-reversed.png", "ododo-monogram-reversed.svg",
-      "ododo-monogram-black.png", "ododo-monogram-black.svg",
-      "ododo-monogram-white.png", "ododo-monogram-white.svg",
-      "ododo-icon-ink-1024.png", "ododo-icon-ink.svg",
-      "ododo-icon-paper-1024.png", "ododo-icon-paper.svg",
-      "ododo-icon-signal-1024.png", "ododo-icon-signal.svg",
-      "ododo-avatar-circle-ink-1024.png", "ododo-avatar-circle-paper-1024.png",
+      "ododo-icon-ink-1024.png",
+      "ododo-icon-paper-1024.png",
+      "ododo-icon-signal-1024.png",
+      "ododo-avatar-circle-ink-1024.png",
+      "ododo-avatar-circle-paper-1024.png",
       "ododo-avatar-circle-signal-1024.png",
     ],
   },
   {
-    number: "02",
-    title: "The pattern garden",
-    description: "Five repeat patterns, shown in the supplied colourways without recolouring or cropping.",
+    number: "03",
+    title: "A pattern language in bloom",
+    description: "Five signature motifs bring rhythm and texture to the system. Each tile is shown in its original ink-on-paper colourway.",
+    layout: "patterns",
     files: [
-      "ododo-pattern-bloom-ink-on-paper-tile.png", "ododo-pattern-bloom-ink-on-paper.svg",
-      "ododo-pattern-bloom-ink-on-signal-tile.png", "ododo-pattern-bloom-ink-on-signal.svg",
-      "ododo-pattern-bloom-paper-on-ink-tile.png", "ododo-pattern-bloom-paper-on-ink.svg",
-      "ododo-pattern-bloom-signal-on-ink-tile.png", "ododo-pattern-bloom-signal-on-ink.svg",
-      "ododo-pattern-chain-ink-on-paper-tile.png", "ododo-pattern-chain-ink-on-paper.svg",
-      "ododo-pattern-chain-ink-on-signal-tile.png", "ododo-pattern-chain-ink-on-signal.svg",
-      "ododo-pattern-chain-paper-on-ink-tile.png", "ododo-pattern-chain-paper-on-ink.svg",
-      "ododo-pattern-chain-signal-on-ink-tile.png", "ododo-pattern-chain-signal-on-ink.svg",
-      "ododo-pattern-garden-ink-on-paper-tile.png", "ododo-pattern-garden-ink-on-paper.svg",
-      "ododo-pattern-garden-ink-on-signal-tile.png", "ododo-pattern-garden-ink-on-signal.svg",
-      "ododo-pattern-garden-paper-on-ink-tile.png", "ododo-pattern-garden-paper-on-ink.svg",
-      "ododo-pattern-garden-signal-on-ink-tile.png", "ododo-pattern-garden-signal-on-ink.svg",
-      "ododo-pattern-orbit-ink-on-paper-tile.png", "ododo-pattern-orbit-ink-on-paper.svg",
-      "ododo-pattern-orbit-ink-on-signal-tile.png", "ododo-pattern-orbit-ink-on-signal.svg",
-      "ododo-pattern-orbit-paper-on-ink-tile.png", "ododo-pattern-orbit-paper-on-ink.svg",
-      "ododo-pattern-orbit-signal-on-ink-tile.png", "ododo-pattern-orbit-signal-on-ink.svg",
-      "ododo-pattern-petals-ink-on-paper-tile.png", "ododo-pattern-petals-ink-on-paper.svg",
-      "ododo-pattern-petals-ink-on-signal-tile.png", "ododo-pattern-petals-ink-on-signal.svg",
-      "ododo-pattern-petals-paper-on-ink-tile.png", "ododo-pattern-petals-paper-on-ink.svg",
-      "ododo-pattern-petals-signal-on-ink-tile.png", "ododo-pattern-petals-signal-on-ink.svg",
+      "ododo-pattern-bloom-ink-on-paper-tile.png",
+      "ododo-pattern-chain-ink-on-paper-tile.png",
+      "ododo-pattern-garden-ink-on-paper-tile.png",
+      "ododo-pattern-orbit-ink-on-paper-tile.png",
+      "ododo-pattern-petals-ink-on-paper-tile.png",
     ],
   },
   {
-    number: "03",
-    title: "App icon family",
-    description: "The supplied iOS, Android, adaptive-layer, and notification icon exports.",
-    files: [
-      "ios-1024.png", "ios-180.png", "ios-167.png", "ios-152.png", "ios-120.png", "ios-60.png",
-      "android-512.png", "android-192.png", "android-144.png", "android-96.png",
-      "android-72.png", "android-48.png",
-      "android-adaptive-foreground-432.png", "android-adaptive-background-432.png",
-      "android-notification-96.png",
-    ],
+    number: "04",
+    title: "Made for the screen",
+    description: "A considered set of platform exports carries the same identity into everyday digital use.",
+    layout: "app-icons",
+    files: ["ios-1024.png", "ios-180.png", "android-512.png", "android-192.png"],
   },
 ].map((stage) => ({
   ...stage,
   images: stage.files.map((file) => {
     const label = file
-      .replace(/\.(png|svg)$/i, "")
+      .replace(/\\.(png|svg)$/i, "")
       .replace(/^ododo-/, "")
       .replace(/-tile$/, "")
       .replace(/-/g, " ");
-    const darkSurface = /paper-on-ink|signal-on-ink|logo-white|logo-reversed|monogram-white|monogram-reversed|icon-paper|icon-signal/.test(file);
-    const signalSurface = /ink-on-signal/.test(file);
+    const darkSurface = /reversed|logo-black|paper-on-ink|signal-on-ink|icon-paper|icon-signal|avatar-circle-paper|avatar-circle-signal/.test(file);
+    const signalSurface = /ink-on-signal|icon-signal|avatar-circle-signal/.test(file);
     return {
       src: `/ododo/${file}`,
       alt: `Ododo Bloom brand asset: ${label}`,
-      surface: darkSurface ? "ink" : signalSurface ? "signal" : "paper",
+      surface: signalSurface ? "signal" : darkSurface ? "ink" : "paper",
     };
   }),
 }));
