@@ -336,3 +336,199 @@
   .ododo-timeline-image { min-height: 100px; padding: 10px; }
   .ododo-case-study .mings-stage-gallery { grid-template-columns: 1fr; }
 }
+
+
+/* Ododo Bloom — editorial art direction */
+.ododo-case-study {
+  --ododo-ink: #121212;
+  --ododo-paper: #f3efe8;
+  --ododo-signal: #ff4b1f;
+  margin-top: 32px;
+  padding-top: clamp(42px, 7vw, 96px);
+  border-top: 1px solid #d9d1c6;
+  background: var(--ododo-paper);
+}
+.ododo-case-study .mings-header {
+  align-items: flex-end;
+  padding-bottom: clamp(34px, 6vw, 76px);
+}
+.ododo-case-study .mings-header-copy { max-width: 820px; }
+.ododo-case-study .mings-kicker { color: #655c52; letter-spacing: .16em; }
+.ododo-case-study .mings-header h1 {
+  font-size: clamp(76px, 15vw, 184px);
+  line-height: .82;
+  letter-spacing: -.085em;
+  color: var(--ododo-ink);
+}
+.ododo-case-study .mings-description {
+  max-width: 600px;
+  margin-top: 32px;
+  font-size: clamp(20px, 2.6vw, 32px);
+  line-height: 1.2;
+  letter-spacing: -.04em;
+}
+.ododo-case-study .mings-instruction { max-width: 470px; color: #655c52; }
+.ododo-case-study .mings-year { color: #655c52; }
+.ododo-case-study .ododo-guidelines-link {
+  color: var(--ododo-ink);
+  border-color: var(--ododo-signal);
+  font-weight: 600;
+  letter-spacing: .01em;
+}
+.ododo-case-study .ododo-guidelines-link:hover { color: var(--ododo-signal); }
+.ododo-case-study .mings-stage-nav {
+  position: sticky;
+  top: 10px;
+  z-index: 5;
+  padding: 13px 15px;
+  border: 1px solid #d9d1c6;
+  border-radius: 3px;
+  background: rgba(243,239,232,.94);
+  backdrop-filter: blur(12px);
+}
+.ododo-case-study .mings-nav-label { color: #655c52; }
+.ododo-case-study .mings-stage-nav button { color: var(--ododo-ink); }
+.ododo-case-study .mings-stage-nav button span { color: var(--ododo-signal); }
+.ododo-case-study .mings-timeline { margin-top: 52px; }
+.ododo-case-study .mings-timeline-stage {
+  grid-template-columns: 58px minmax(0,1fr);
+  gap: clamp(18px, 3vw, 42px);
+  padding-bottom: clamp(66px, 10vw, 132px);
+}
+.ododo-case-study .mings-stage-marker { align-items: center; }
+.ododo-case-study .mings-stage-marker>span:first-child {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--ododo-signal);
+  background: var(--ododo-paper);
+  font-size: 11px;
+}
+.ododo-case-study .mings-stage-heading {
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+.ododo-case-study .mings-stage-heading h2 {
+  max-width: 680px;
+  font-size: clamp(30px, 5vw, 58px);
+  line-height: .98;
+  letter-spacing: -.065em;
+}
+.ododo-case-study .mings-stage-heading p {
+  max-width: 540px;
+  margin-top: 12px;
+  color: #655c52;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.ododo-case-study .mings-stage-count {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #cfc5b8;
+  color: #655c52;
+  white-space: nowrap;
+}
+.ododo-case-study .ododo-stage-gallery {
+  display: grid;
+  grid-template-columns: repeat(12,minmax(0,1fr));
+  gap: 12px;
+}
+.ododo-case-study .ododo-timeline-image {
+  position: relative;
+  grid-column: span 4;
+  min-height: 210px;
+  overflow: hidden;
+  padding: clamp(14px, 2.4vw, 32px);
+  border: 1px solid rgba(18,18,18,.06);
+  border-radius: 2px;
+  transition: transform .25s ease, border-color .25s ease;
+}
+.ododo-case-study .ododo-timeline-image:hover {
+  transform: translateY(-3px);
+  border-color: rgba(18,18,18,.24);
+}
+.ododo-case-study .ododo-timeline-image img {
+  width: 100%;
+  max-height: 380px;
+  object-fit: contain;
+}
+.ododo-case-study #ododo-stage-01 .ododo-timeline-image:first-child {
+  grid-column: span 8;
+  min-height: 300px;
+}
+.ododo-case-study #ododo-stage-01 .ododo-timeline-image:nth-child(2),
+.ododo-case-study #ododo-stage-01 .ododo-timeline-image:nth-child(3) {
+  grid-column: span 4;
+}
+.ododo-case-study #ododo-stage-02 .ododo-timeline-image {
+  grid-column: span 4;
+  min-height: 240px;
+}
+.ododo-case-study #ododo-stage-03 .ododo-timeline-image {
+  grid-column: span 4;
+  min-height: 260px;
+}
+.ododo-case-study #ododo-stage-03 .ododo-timeline-image:nth-child(1),
+.ododo-case-study #ododo-stage-03 .ododo-timeline-image:nth-child(4) {
+  grid-column: span 6;
+}
+.ododo-case-study #ododo-stage-04 .ododo-timeline-image {
+  grid-column: span 3;
+  min-height: 180px;
+  padding: 12px;
+}
+.ododo-case-study .mings-image-index {
+  top: 10px;
+  left: 12px;
+  color: var(--ododo-ink);
+  mix-blend-mode: multiply;
+}
+.ododo-case-study .mings-image-open {
+  right: 12px;
+  bottom: 12px;
+  color: var(--ododo-ink);
+}
+.ododo-case-study .mings-endnote {
+  border-top: 1px solid #d9d1c6;
+  padding-top: 34px;
+  padding-bottom: 26px;
+}
+.ododo-case-study .mings-endnote>span { color: var(--ododo-signal); }
+.ododo-case-study .mings-endnote>p:first-of-type {
+  font-size: clamp(34px, 7vw, 82px);
+  line-height: .95;
+  letter-spacing: -.07em;
+}
+.ododo-case-study .mings-endnote button { border-bottom-color: var(--ododo-signal); }
+@media (max-width: 760px) {
+  .ododo-case-study .mings-stage-nav { position: static; }
+  .ododo-case-study .mings-timeline-stage { grid-template-columns: 34px minmax(0,1fr); gap: 12px; }
+  .ododo-case-study .mings-stage-marker>span:first-child { width: 29px; height: 29px; }
+  .ododo-case-study .ododo-timeline-image,
+  .ododo-case-study #ododo-stage-01 .ododo-timeline-image:first-child,
+  .ododo-case-study #ododo-stage-01 .ododo-timeline-image:nth-child(2),
+  .ododo-case-study #ododo-stage-01 .ododo-timeline-image:nth-child(3),
+  .ododo-case-study #ododo-stage-02 .ododo-timeline-image,
+  .ododo-case-study #ododo-stage-03 .ododo-timeline-image,
+  .ododo-case-study #ododo-stage-03 .ododo-timeline-image:nth-child(1),
+  .ododo-case-study #ododo-stage-03 .ododo-timeline-image:nth-child(4),
+  .ododo-case-study #ododo-stage-04 .ododo-timeline-image {
+    grid-column: span 6;
+    min-height: 150px;
+    padding: 12px;
+  }
+  .ododo-case-study #ododo-stage-01 .ododo-timeline-image:first-child { grid-column: span 12; }
+}
+@media (max-width: 480px) {
+  .ododo-case-study .mings-header { display: block; }
+  .ododo-case-study .mings-year { margin-top: 24px; text-align: left; }
+  .ododo-case-study .ododo-stage-gallery { gap: 8px; }
+  .ododo-case-study .ododo-timeline-image,
+  .ododo-case-study #ododo-stage-01 .ododo-timeline-image:nth-child(2),
+  .ododo-case-study #ododo-stage-01 .ododo-timeline-image:nth-child(3),
+  .ododo-case-study #ododo-stage-02 .ododo-timeline-image,
+  .ododo-case-study #ododo-stage-03 .ododo-timeline-image,
+  .ododo-case-study #ododo-stage-03 .ododo-timeline-image:nth-child(1),
+  .ododo-case-study #ododo-stage-03 .ododo-timeline-image:nth-child(4),
+  .ododo-case-study #ododo-stage-04 .ododo-timeline-image {
+    grid-column: span 12;
+  }
+}
