@@ -304,6 +304,18 @@ function OdodoCaseStudy() {
         <p className="mings-year">CASE STUDY 02<br />ONE NAME, MANY BLOOMS</p>
       </header>
 
+      <div className="ododo-feature-spread" aria-label="Ododo Bloom identity hero">
+        <div className="ododo-feature-mark">
+          <span className="ododo-feature-overline">A CREATIVE WORLD IN FULL BLOOM</span>
+          <img src="/ododo/ododo-logo-full-colour.png" alt="Ododo Bloom logo" />
+          <p>Fashion. Design. App. Film.</p>
+        </div>
+        <div className="ododo-feature-pattern" aria-hidden="true">
+          <img src="/ododo/ododo-pattern-bloom-ink-on-signal-tile.png" alt="" />
+        </div>
+        <span className="ododo-feature-index">IDENTITY / 2026</span>
+      </div>
+
       <nav className="mings-stage-nav" aria-label="Jump to an Ododo project stage">
         <span className="mings-nav-label">EXPLORE THE PROJECT</span>
         {ododoStages.map((stage) => (
