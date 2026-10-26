@@ -532,3 +532,77 @@
     grid-column: span 12;
   }
 }
+
+
+/* Editorial hero spread: a single composed opening, not another thumbnail grid. */
+.ododo-case-study .ododo-feature-spread {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  min-height: clamp(330px, 48vw, 650px);
+  margin: 0 0 clamp(50px, 8vw, 110px);
+  overflow: hidden;
+  background: #ff4b1f;
+  color: #121212;
+}
+.ododo-case-study .ododo-feature-mark {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(25px, 5vw, 72px);
+}
+.ododo-case-study .ododo-feature-overline,
+.ododo-case-study .ododo-feature-index {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .16em;
+}
+.ododo-case-study .ododo-feature-mark img {
+  display: block;
+  width: min(100%, 530px);
+  height: auto;
+  margin: 30px 0 22px;
+  mix-blend-mode: multiply;
+}
+.ododo-case-study .ododo-feature-mark p {
+  margin: 0;
+  font-size: clamp(16px, 2vw, 24px);
+  letter-spacing: -.04em;
+}
+.ododo-case-study .ododo-feature-pattern {
+  min-width: 0;
+  min-height: 100%;
+  overflow: hidden;
+  background: #121212;
+}
+.ododo-case-study .ododo-feature-pattern img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+.ododo-case-study .ododo-feature-index {
+  position: absolute;
+  right: 16px;
+  bottom: 14px;
+  z-index: 2;
+  color: #f3efe8;
+  mix-blend-mode: difference;
+}
+.ododo-case-study .mings-stage-nav { margin-bottom: clamp(42px, 7vw, 88px); }
+.ododo-case-study .mings-timeline { margin-top: 0; }
+.ododo-case-study .mings-stage-nav button { font-size: 11px; }
+.ododo-case-study .ododo-timeline-image { background-size: cover; }
+@media (max-width: 560px) {
+  .ododo-case-study .ododo-feature-spread {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .ododo-case-study .ododo-feature-mark { padding: 28px 22px 34px; }
+  .ododo-case-study .ododo-feature-mark img { max-width: 330px; margin: 24px 0 16px; }
+  .ododo-case-study .ododo-feature-pattern { height: 260px; min-height: 260px; }
+  .ododo-case-study .ododo-feature-index { bottom: 12px; }
+}
