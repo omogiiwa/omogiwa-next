@@ -306,3 +306,33 @@
 @media (prefers-reduced-motion:reduce) { .mings-page *,.mings-viewer,.mings-viewer * { animation-duration:.01ms!important; transition-duration:.01ms!important; scroll-behavior:auto!important; } }
 @media (max-width:800px) { .mings-page { padding:48px 5vw 80px; } .mings-header { margin-bottom:45px; } .mings-timeline-stage { grid-template-columns:42px minmax(0,1fr); gap:15px; padding-bottom:58px; } .mings-stage-marker>span:first-child { width:34px; height:34px; } .mings-stage-gallery { gap:10px; } .mings-endnote { padding-left:57px; } }
 @media (max-width:560px) { .mings-page { padding:36px 17px 60px; } .mings-header { align-items:flex-start; gap:15px; margin-bottom:38px; } .mings-header h1 { font-size:clamp(58px,19vw,84px); } .mings-description { margin-top:22px; font-size:17px; } .mings-instruction { font-size:12px; } .mings-year { max-width:70px; text-align:right; font-size:9px; line-height:1.5; } .mings-stage-nav { gap:5px; margin-bottom:40px; } .mings-nav-label { flex-basis:100%; margin-bottom:5px; } .mings-stage-nav button { padding:8px 7px; font-size:10px; } .mings-timeline-stage { grid-template-columns:27px minmax(0,1fr); gap:10px; padding-bottom:44px; } .mings-stage-marker { gap:10px; } .mings-stage-marker>span:first-child { width:26px; height:26px; font-size:9px; } .mings-stage-heading { display:block; margin-bottom:16px; } .mings-stage-heading h2 { font-size:24px; } .mings-stage-heading p { font-size:12px; } .mings-stage-count { display:inline-block; margin-top:8px; } .mings-stage-gallery { grid-template-columns:1fr; gap:10px; } .mings-image-wide { grid-column:auto; } .mings-image-open { opacity:1; transform:none; } .mings-endnote { padding-left:37px; } .mings-viewer { padding:58px 18px 75px; } .mings-viewer-content,.mings-viewer-content img { max-width:100%; } .mings-viewer-content img { max-height:68vh; } .mings-viewer-arrow { top:auto; bottom:12px; width:38px; height:38px; transform:none; } .mings-viewer-prev { left:calc(50% - 48px); } .mings-viewer-next { right:calc(50% - 48px); } .mings-viewer-hint { bottom:24px; font-size:9px; } .mings-viewer-caption { align-items:flex-start; } }
+
+
+/* Ododo Bloom case study — use the supplied assets as-is. */
+.ododo-case-study { border-top: 1px solid #e9e5f1; }
+.ododo-guidelines-link {
+  display: inline-flex;
+  margin-top: 18px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #401e97;
+  color: #401e97;
+  font-size: 12px;
+  text-decoration: none;
+}
+.ododo-guidelines-link:hover { color: #6a3fd0; }
+.ododo-stage-gallery { align-items: stretch; }
+.ododo-timeline-image { display: flex; align-items: center; justify-content: center; min-height: 150px; padding: 18px; }
+.ododo-timeline-image img { width: 100%; height: auto; max-height: 520px; object-fit: contain; }
+.ododo-surface-paper { background: #F3EFE8; }
+.ododo-surface-ink { background: #121212; }
+.ododo-surface-signal { background: #FF4B1F; }
+.ododo-case-study .mings-stage-marker>span:first-child { border-color: rgba(255,75,31,.55); color: #121212; }
+.ododo-case-study .mings-stage-line { background: linear-gradient(to bottom,rgba(255,75,31,.45),rgba(255,75,31,.04)); }
+.ododo-case-study .mings-stage-count { color: #6b6258; }
+.ododo-case-study .mings-image-index { color: #121212; }
+.ododo-case-study .mings-endnote>span { color: #FF4B1F; }
+.ododo-case-study .mings-endnote button { border-bottom-color: #FF4B1F; color: #121212; }
+@media (max-width:560px) {
+  .ododo-timeline-image { min-height: 100px; padding: 10px; }
+  .ododo-case-study .mings-stage-gallery { grid-template-columns: 1fr; }
+}
