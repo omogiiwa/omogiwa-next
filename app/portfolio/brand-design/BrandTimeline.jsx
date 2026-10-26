@@ -179,6 +179,7 @@ export default function BrandTimeline() {
           <button type="button" className="mings-viewer-arrow mings-viewer-next" onClick={() => showRelativeImage(1)} aria-label="Next image">›</button>
           <p className="mings-viewer-hint">Use the arrows to explore · Esc to close</p>
         </div>
+      )}
 
       <OdodoCaseStudy />
     </>
