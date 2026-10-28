@@ -30,9 +30,9 @@ export default function LolaPhotoGallery() {
   return (
     <section className="lola-album" aria-labelledby="lola-album-title">
       <div className="lola-album-intro">
-        <span className="lola-album-overline"><span /> A FEW PAGES FROM LOLA'S LIFE</span>
+        <span className="lola-album-overline"><span /> </span>
         <h2 id="lola-album-title">Meet Lola, <em>beyond the dream.</em></h2>
-        <p>Before she is a medical student, she is a daughter, a sister, and a person with a whole life ahead of her. Here are a few moments from her story.</p>
+        <p></p>
       </div>
 
       <div className="lola-album-spread">
@@ -56,12 +56,12 @@ export default function LolaPhotoGallery() {
             <span className="lola-album-photo-frame"><img src={photos[2].src} alt={photos[2].alt} loading="lazy" /></span>
             <span className="lola-album-photo-note">A future still worth believing in</span>
           </button>
-          <p className="lola-album-side-note">Her story is still being written.</p>
+          <p className="lola-album-side-note">.</p>
           <span className="lola-album-side-rule" />
           <span className="lola-album-side-caption">Help her turn the page.</span>
         </div>
       </div>
-      <div className="lola-album-bottom"><span>KEPT WITH LOVE, SHARED WITH HOPE</span><button type="button" onClick={() => setSelected(0)}>Open the album <span aria-hidden="true">↗</span></button></div>
+      <div className="lola-album-bottom"><span></span><button type="button" onClick={() => setSelected(0)}>Open the album <span aria-hidden="true">↗</span></button></div>
 
       {selected !== null && (
         <div className="lola-album-viewer" role="dialog" aria-modal="true" aria-label="Lola's photo album" onClick={() => setSelected(null)}>
