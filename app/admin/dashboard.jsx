@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "../../lib/supabase/client";
 
@@ -25,6 +25,26 @@ export default function AdminDashboard({
   subscribersLoadError = false,
 }) {
   const [activeSection, setActiveSection] = useState("Overview");
+  const [articles, setArticles] = useState([]);
+  const [articlesLoading, setArticlesLoading] = useState(false);
+  const [articlesError, setArticlesError] = useState("");
+
+  useEffect(() => {
+    if (activeSection !== "Articles") return;
+    let cancelled = false;
+    async function loadArticles() {
+      setArticlesLoading(true);
+      setArticlesError("");
+      const supabase = createClient();
+      const { data, error } = await supabase.from("content").select("id,title,slug,status,excerpt,updated_at,created_at").eq("content_type", "blog").order("updated_at", { ascending: false }).limit(100);
+      if (cancelled) return;
+      if (error) setArticlesError(error.message || "Could not load articles.");
+      else setArticles(data || []);
+      setArticlesLoading(false);
+    }
+    loadArticles();
+    return () => { cancelled = true; };
+  }, [activeSection]);
   const [menuOpen, setMenuOpen] = useState(false);
   const [signingOut, setSigningOut] = useState(false);
   const router = useRouter();
@@ -62,7 +82,6 @@ export default function AdminDashboard({
                 activeSection === item.name ? "active" : ""
               }`}
               onClick={() => {
-                if (item.name === "Articles") { router.push("/admin/editor"); return; }
                 setActiveSection(item.name);
                 setMenuOpen(false);
               }}
@@ -243,6 +262,39 @@ export default function AdminDashboard({
               </div>
             </>
          
+ ) : activeSection === "Articles" ? (
+  <section className="inquiries-section">
+    <div className="inquiries-heading">
+      <div><h2>Articles</h2><p>Write, review, and publish stories for OmoGiwa.</p></div>
+      <button className="primary-button" onClick={() => router.push("/admin/editor/write")}>＋ Write an article</button>
+    </div>
+    <div className="articles-toolbar"><span>{articles.length} article{articles.length === 1 ? "" : "s"}</span><button className="secondary-button" onClick={() => router.push("/admin/editor/write")}>Open writing studio →</button></div>
+    {articlesLoading ? <div className="inquiries-empty"><p>Loading articles…</p></div> : articlesError ? (
+      <div className="inquiries-empty"><h3>Couldn't load articles</h3><p>{articlesError}</p><button className="secondary-button" onClick={() => { setActiveSection("Overview"); setTimeout(() => setActiveSection("Articles"), 0); }}>Try again</button></div>
+    ) : articles.length === 0 ? (
+      <div className="inquiries-empty"><span className="coming-icon">✎</span><h3>Your publishing desk is ready</h3><p>There are no articles in the CMS yet. Start a draft, add images and an excerpt, then publish when it's ready.</p><button className="primary-button" onClick={() => router.push("/admin/editor/write")}>Create your first article</button></div>
+    ) : (
+      <div className="inquiry-list article-list">
+        {articles.map((article) => <article className="inquiry-card article-row" key={article.id}>
+          <div className="article-row-main"><div className="article-row-title"><strong>{article.title || "Untitled article"}</strong><span>{article.excerpt || "No excerpt added yet."}</span><small>Updated {article.updated_at ? new Date(article.updated_at).toLocaleDateString() : "date unavailable"} · /articles/{article.slug}</small></div><span className={"article-status status-" + (article.status || "draft")}>{({draft:"Draft",review:"Needs review",published:"Published"})[article.status] || article.status || "Draft"}</span></div>
+          <div className="article-row-actions"><button className="secondary-button" onClick={() => router.push("/admin/editor/write?article=" + encodeURIComponent(article.id))}>Edit article</button>{article.status === "published" && article.slug ? <a className="article-view-link" href={"/articles/" + article.slug} target="_blank" rel="noreferrer">View live article</a> : null}</div>
+        </article>)}
+      </div>
+    )}
+    <style jsx>{`
+      .articles-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:18px 0;color:#81788e;font-size:12px}
+      .article-row{padding:18px 20px;margin-bottom:10px}
+      .article-row-main{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+      .article-row-title{min-width:0;display:grid;gap:7px}
+      .article-row-title strong{font-size:15px;color:#292331}
+      .article-row-title span{font-size:12px;line-height:1.6;color:#81788e}
+      .article-row-title small{font-size:10px;color:#a099a8;overflow-wrap:anywhere}
+      .article-status{flex-shrink:0;border-radius:20px;padding:6px 9px;background:#f1edf8;color:#68518f;font-size:10px}
+      .status-published{background:#e8f6ed;color:#26734a}.status-review{background:#fff4dc;color:#8b681b}
+      .article-row-actions{display:flex;align-items:center;gap:10px;margin-top:14px;padding-top:12px;border-top:1px solid #f0edf3}
+      .article-view-link{font-size:12px;color:#401e97;text-decoration:none}
+      @media(max-width:600px){.article-row-main{flex-direction:column;gap:10px}.articles-toolbar{align-items:flex-start;flex-direction:column}}
+    `}</style>
 ) : activeSection === "Inquiries" ? (
   <section className="inquiries-section">
     <div className="inquiries-heading">
