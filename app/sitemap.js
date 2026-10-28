@@ -17,7 +17,8 @@ export default function sitemap() {
     "/tools/frame-picker",
     "/tools/svg-to-png",
     
-    //articles
+    // Articles
+    "/blogs/help-my-sister-become-a-doctor",
   ];
 
   return routes.map((route) => ({
