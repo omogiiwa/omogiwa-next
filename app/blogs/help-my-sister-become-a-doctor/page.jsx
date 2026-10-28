@@ -61,7 +61,7 @@ export default function HelpMySisterArticle() {
       <p>Please give my sister a chance to become the doctor she has always dreamed of being. Thank you for reading our story . Whatever you can give—even $1—or any share or connection, we will be grateful.</p>
       <p className="fundraising-signature"><strong>Omogbolahan Giwa</strong><span>Multidisciplinary Designer &amp; Software Engineer</span><a href="mailto:hello@omogiwa.com">hello@omogiwa.com</a></p>
       <div className="fundraising-actions fundraising-actions-final"><a className="fundraising-button fundraising-button-primary" href={donationUrl}>Make a free donation</a><a className="fundraising-button fundraising-button-secondary" href="mailto:hello@omogiwa.com?subject=Professional%20services%20to%20support%20Lola">Pay and request for my services</a><Link className="fundraising-button fundraising-button-secondary" href="/portfolio">See my works</Link><a className="fundraising-button fundraising-button-secondary" href="#evidence">Verify claims</a><a className="fundraising-button fundraising-button-secondary" href={meetingUrl}>Talk to me or her in person</a></div>
-      <p className="fundraising-exchange-note">Replace donation and meeting placeholders with your preferred links when ready. The donation button will not process payments until connected to a real destination.</p>
+     
     </div>
   </article></main>;
 }
