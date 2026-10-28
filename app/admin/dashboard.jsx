@@ -281,20 +281,7 @@ export default function AdminDashboard({
         </article>)}
       </div>
     )}
-    <style jsx>{`
-      .articles-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:18px 0;color:#81788e;font-size:12px}
-      .article-row{padding:18px 20px;margin-bottom:10px}
-      .article-row-main{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
-      .article-row-title{min-width:0;display:grid;gap:7px}
-      .article-row-title strong{font-size:15px;color:#292331}
-      .article-row-title span{font-size:12px;line-height:1.6;color:#81788e}
-      .article-row-title small{font-size:10px;color:#a099a8;overflow-wrap:anywhere}
-      .article-status{flex-shrink:0;border-radius:20px;padding:6px 9px;background:#f1edf8;color:#68518f;font-size:10px}
-      .status-published{background:#e8f6ed;color:#26734a}.status-review{background:#fff4dc;color:#8b681b}
-      .article-row-actions{display:flex;align-items:center;gap:10px;margin-top:14px;padding-top:12px;border-top:1px solid #f0edf3}
-      .article-view-link{font-size:12px;color:#401e97;text-decoration:none}
-      @media(max-width:600px){.article-row-main{flex-direction:column;gap:10px}.articles-toolbar{align-items:flex-start;flex-direction:column}}
-    `}</style>
+    
   </section>
 ) : activeSection === "Inquiries" ? (
   <section className="inquiries-section">
@@ -1449,6 +1436,23 @@ export default function AdminDashboard({
   }
 }
 
+
+
+        /* Article list styles */
+
+      .articles-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:18px 0;color:#81788e;font-size:12px}
+      .article-row{padding:18px 20px;margin-bottom:10px}
+      .article-row-main{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+      .article-row-title{min-width:0;display:grid;gap:7px}
+      .article-row-title strong{font-size:15px;color:#292331}
+      .article-row-title span{font-size:12px;line-height:1.6;color:#81788e}
+      .article-row-title small{font-size:10px;color:#a099a8;overflow-wrap:anywhere}
+      .article-status{flex-shrink:0;border-radius:20px;padding:6px 9px;background:#f1edf8;color:#68518f;font-size:10px}
+      .status-published{background:#e8f6ed;color:#26734a}.status-review{background:#fff4dc;color:#8b681b}
+      .article-row-actions{display:flex;align-items:center;gap:10px;margin-top:14px;padding-top:12px;border-top:1px solid #f0edf3}
+      .article-view-link{font-size:12px;color:#401e97;text-decoration:none}
+      @media(max-width:600px){.article-row-main{flex-direction:column;gap:10px}.articles-toolbar{align-items:flex-start;flex-direction:column}}
+    
        `}
       </style>
     </main>
