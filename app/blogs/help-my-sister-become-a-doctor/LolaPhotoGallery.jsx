@@ -3,72 +3,75 @@
 import { useEffect, useState } from "react";
 
 const photos = [
-  { src: "/lola1.jpg", alt: "Lola — photograph 1", number: "01", caption: "The person behind the dream", shape: "feature" },
-  { src: "/lola2.jpg", alt: "Lola — photograph 2", number: "02", caption: "A future still worth believing in", shape: "side-top" },
-  { src: "/lola3.jpg", alt: "Lola — photograph 3", number: "03", caption: "Help her keep moving forward", shape: "side-bottom" },
+  { src: "/lola1.jpg", alt: "Lola, photograph one", note: "A little piece of Lola's story" },
+  { src: "/lola2.jpg", alt: "Lola, photograph two", note: "The person behind the dream" },
+  { src: "/lola3.jpg", alt: "Lola, photograph three", note: "A future still worth believing in" },
 ];
 
 export default function LolaPhotoGallery() {
-  const [active, setActive] = useState(null);
+  const [selected, setSelected] = useState(null);
 
   useEffect(() => {
-    if (active === null) return;
-    const previousOverflow = document.body.style.overflow;
+    if (selected === null) return;
+    const oldOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    const onKeyDown = (event) => {
-      if (event.key === "Escape") setActive(null);
-      if (event.key === "ArrowRight") setActive((current) => (current + 1) % photos.length);
-      if (event.key === "ArrowLeft") setActive((current) => (current + photos.length - 1) % photos.length);
+    const handleKey = (event) => {
+      if (event.key === "Escape") setSelected(null);
+      if (event.key === "ArrowRight") setSelected((current) => (current + 1) % photos.length);
+      if (event.key === "ArrowLeft") setSelected((current) => (current + photos.length - 1) % photos.length);
     };
-    window.addEventListener("keydown", onKeyDown);
+    window.addEventListener("keydown", handleKey);
     return () => {
-      document.body.style.overflow = previousOverflow;
-      window.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = oldOverflow;
+      window.removeEventListener("keydown", handleKey);
     };
-  }, [active]);
+  }, [selected]);
 
   return (
-    <section className="lola-gallery" aria-labelledby="lola-gallery-title">
-      <div className="lola-gallery-heading">
-        <div>
-          <p className="lola-gallery-kicker">BEYOND THE APPEAL · MEET LOLA</p>
-          <h2 id="lola-gallery-title">A dream belongs to a real person.</h2>
-        </div>
-        <p>Not just a student number or a school invoice. Lola is a sister, a daughter, and a young woman working towards a future in medicine.</p>
+    <section className="lola-album" aria-labelledby="lola-album-title">
+      <div className="lola-album-intro">
+        <span className="lola-album-overline"><span /> A FEW PAGES FROM LOLA'S LIFE</span>
+        <h2 id="lola-album-title">Meet Lola, <em>beyond the dream.</em></h2>
+        <p>Before she is a medical student, she is a daughter, a sister, and a person with a whole life ahead of her. Here are a few moments from her story.</p>
       </div>
 
-      <div className="lola-gallery-grid">
-        {photos.map((photo, index) => (
-          <button
-            className={`lola-photo-card lola-photo-${photo.shape}`}
-            type="button"
-            key={photo.src}
-            onClick={() => setActive(index)}
-            aria-label={`Open photograph ${index + 1}: ${photo.alt}`}
-          >
-            <img src={photo.src} alt={photo.alt} loading={index === 0 ? "eager" : "lazy"} />
-            <span className="lola-photo-shade" />
-            <span className="lola-photo-number">{photo.number} <span>/ 03</span></span>
-            <span className="lola-photo-caption">{photo.caption}</span>
-            <span className="lola-photo-expand" aria-hidden="true">↗</span>
+      <div className="lola-album-spread">
+        <div className="lola-album-paper">
+          <div className="lola-album-tape" aria-hidden="true" />
+          <button className="lola-album-photo lola-album-photo-one" onClick={() => setSelected(0)} type="button" aria-label="View Lola's first photo">
+            <span className="lola-album-photo-frame"><img src={photos[0].src} alt={photos[0].alt} loading="lazy" /></span>
+            <span className="lola-album-handwritten">A little piece of Lola</span>
           </button>
-        ))}
+          <div className="lola-album-stamp" aria-hidden="true"><span>WITH</span><strong>LOVE</strong><span>ALWAYS</span><i>✳</i></div>
+          <button className="lola-album-photo lola-album-photo-two" onClick={() => setSelected(1)} type="button" aria-label="View Lola's second photo">
+            <span className="lola-album-photo-frame"><img src={photos[1].src} alt={photos[1].alt} loading="lazy" /></span>
+            <span className="lola-album-photo-note">The person behind the dream</span>
+          </button>
+          <span className="lola-album-doodle lola-album-doodle-one" aria-hidden="true">♡</span>
+          <span className="lola-album-doodle lola-album-doodle-two" aria-hidden="true">✳</span>
+        </div>
+        <div className="lola-album-side">
+          <span className="lola-album-page-number">A PERSONAL PHOTO ALBUM · 03 MOMENTS</span>
+          <button className="lola-album-photo lola-album-photo-three" onClick={() => setSelected(2)} type="button" aria-label="View Lola's third photo">
+            <span className="lola-album-photo-frame"><img src={photos[2].src} alt={photos[2].alt} loading="lazy" /></span>
+            <span className="lola-album-photo-note">A future still worth believing in</span>
+          </button>
+          <p className="lola-album-side-note">Her story is still being written.</p>
+          <span className="lola-album-side-rule" />
+          <span className="lola-album-side-caption">Help her turn the page.</span>
+        </div>
       </div>
+      <div className="lola-album-bottom"><span>KEPT WITH LOVE, SHARED WITH HOPE</span><button type="button" onClick={() => setSelected(0)}>Open the album <span aria-hidden="true">↗</span></button></div>
 
-      <div className="lola-gallery-footer">
-        <span>THREE PHOTOGRAPHS · ONE FUTURE TO PROTECT</span>
-        <span>Select a photograph to view it full-screen</span>
-      </div>
-
-      {active !== null && (
-        <div className="lola-lightbox" role="dialog" aria-modal="true" aria-label="Lola photo viewer" onClick={() => setActive(null)}>
-          <button className="lola-lightbox-close" type="button" aria-label="Close photo viewer" onClick={() => setActive(null)}>×</button>
-          <button className="lola-lightbox-arrow lola-lightbox-prev" type="button" aria-label="Previous photograph" onClick={(event) => { event.stopPropagation(); setActive((active + photos.length - 1) % photos.length); }}>‹</button>
-          <figure className="lola-lightbox-figure" onClick={(event) => event.stopPropagation()}>
-            <img src={photos[active].src} alt={photos[active].alt} />
-            <figcaption><span>{photos[active].number} / 03</span>{photos[active].caption}</figcaption>
+      {selected !== null && (
+        <div className="lola-album-viewer" role="dialog" aria-modal="true" aria-label="Lola's photo album" onClick={() => setSelected(null)}>
+          <button className="lola-album-viewer-close" type="button" aria-label="Close album" onClick={() => setSelected(null)}>×</button>
+          <button className="lola-album-viewer-arrow" type="button" aria-label="Previous photo" onClick={(event) => { event.stopPropagation(); setSelected((selected + photos.length - 1) % photos.length); }}>‹</button>
+          <figure className="lola-album-viewer-photo" onClick={(event) => event.stopPropagation()}>
+            <div><img src={photos[selected].src} alt={photos[selected].alt} /></div>
+            <figcaption><span>MEMORY {String(selected + 1).padStart(2, "0")} / 03</span>{photos[selected].note}</figcaption>
           </figure>
-          <button className="lola-lightbox-arrow lola-lightbox-next" type="button" aria-label="Next photograph" onClick={(event) => { event.stopPropagation(); setActive((active + 1) % photos.length); }}>›</button>
+          <button className="lola-album-viewer-arrow" type="button" aria-label="Next photo" onClick={(event) => { event.stopPropagation(); setSelected((selected + 1) % photos.length); }}>›</button>
         </div>
       )}
     </section>
