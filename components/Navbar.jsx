@@ -49,7 +49,8 @@ export default function Navbar() {
     <a href="/about">About</a>
     <a href="/portfolio">Portfolio</a>
     <a href="/contact">Contact</a>
-    <a href="/opay.html">Tools</a>
+    <a href="/tools">Tools</a>
+    <a href="/blogs">Blogs</a>
   </div>
 </details>
       </nav>
