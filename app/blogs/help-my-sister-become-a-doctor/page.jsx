@@ -5,11 +5,11 @@ const profile = "https://agent.omogiwa.com/lola-profile.jpg";
 const invoice = "https://agent.omogiwa.com/lola-invoice.pdf";
 const university = "https://gregoryuniversityuturu.edu.ng";
 const donationUrl = "REPLACE_WITH_DONATION_LINK";
-const meetingUrl = "REPLACE_WITH_MEETING_OR_CONTACT_LINK";
+const meetingUrl = "https://contact@omogiwa.com";
 
 export const metadata = {
   title: "Help My Sister Become the Doctor She Has Always Dreamed of Being",
-  description: "A brother's urgent appeal to help a third-year medical student continue her education. Target: ₦3,000,000 (approximately US$2,000). Any amount helps.",
+  description: "A brother's urgent appeal to help a third-year medical student continue her education. Target: ₦3,600,000 (approximately US$2,680). Any amount helps.",
   alternates: { canonical: "https://omogiwa.com/blogs/help-my-sister-become-a-doctor" },
 };
 
@@ -21,7 +21,7 @@ export default function HelpMySisterArticle() {
       <h1>Help My Sister Become the Doctor She Has Always Dreamed of Being</h1>
       <p className="fundraising-deck">I am asking for help not because my family has stopped fighting, but because we have reached a point where hard work alone cannot cover the cost of keeping a dream alive.</p>
       <p className="fundraising-byline">Written by Omogbolahan Giwa · Family fundraising appeal</p>
-      <div className="fundraising-target"><div><span>FUNDRAISING TARGET</span><strong>₦3,000,000</strong><small>Approximately US$2,000*</small></div><div><span>URGENT DEADLINE</span><strong>About two weeks</strong><small>To pay outstanding fees and reduce the risk of admission cancellation.</small></div></div>
+      <div className="fundraising-target"><div><span>FUNDRAISING TARGET</span><strong>₦3,600,000</strong><small>Approximately US$2,680*</small></div><div><span>URGENT DEADLINE</span><strong>About two weeks</strong><small>To pay outstanding fees and reduce the risk of admission cancellation.</small></div></div>
       <div className="fundraising-actions"><a className="fundraising-button fundraising-button-primary" href={donationUrl}>Make a free donation</a><a className="fundraising-button fundraising-button-secondary" href="mailto:hello@omogiwa.com?subject=Professional%20services%20to%20support%20Lola">Pay and request for my services</a></div>
       <p className="fundraising-small-note">Every amount matters. If all you can give is US$1, that is still help and is deeply appreciated.</p>
       <p className="fundraising-exchange-note">*USD equivalent is an estimate and varies with the exchange rate. Donation placeholder: replace with your payment link when ready.</p>
@@ -36,8 +36,8 @@ export default function HelpMySisterArticle() {
       <p>My younger sister has lived with sickle cell disease all her life. Recently, she was diagnosed with avascular necrosis and needs a hip replacement. The cost of treatment is far beyond what our family can currently afford.</p>
       <p>Imagine being our father, trying to keep one daughter in medical school while another needs major surgery. We are trying to find a way forward without giving up on either of them.</p>
       <blockquote>I am not asking anyone to feel sorry for us. I am asking for a chance to change what is possible for my family.</blockquote>
-      <h2>Our goal: ₦3 million, or approximately US$2,000</h2>
-      <p>We are working towards raising ₦3,000,000—approximately US$2,000, depending on the exchange rate—to address the urgent financial pressure around Omolola's education. Our wider family situation also includes my younger sister's treatment, and we will be transparent about what each contribution is intended to cover.</p>
+      <h2>Our goal: ₦3.6 million, or approximately US$2,680</h2>
+      <p>We are working towards raising ₦3,600,000—approximately US$2,680, depending on the exchange rate—to address the urgent financial pressure around Omolola's education. Our wider family situation also includes my younger sister's treatment, and we will be transparent about what each contribution is intended to cover.</p>
       <p>We welcome support of any amount: US$1, US$5, US$20, or whatever you can genuinely afford. Small acts of kindness can add up. Please never put yourself in financial difficulty to help us. Sharing this appeal with someone who may be able to help also matters.</p>
       <h2>I am offering my professional services, too</h2>
       <p>I do not want to ask for support without offering value. As a designer and software engineer, I can discuss fair service arrangements for:</p>
