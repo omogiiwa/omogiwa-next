@@ -1,11 +1,13 @@
 import Link from "next/link";
 import "./fundraising-article.css";
+import "./lola-gallery.css";
+import LolaPhotoGallery from "./LolaPhotoGallery";
 
 const profile = "https://agent.omogiwa.com/lola-profile.jpg";
 const invoice = "https://agent.omogiwa.com/lola-invoice.pdf";
 const university = "https://gregoryuniversityuturu.edu.ng";
 const donationUrl = "REPLACE_WITH_DONATION_LINK";
-const meetingUrl = "https://contact@omogiwa.com";
+const meetingUrl = "mailto:hello@omogiwa.com?subject=Arrange%20a%20conversation%20about%20Lola";
 
 export const metadata = {
   title: "Help My Sister Become the Doctor She Has Always Dreamed of Being",
@@ -27,6 +29,7 @@ export default function HelpMySisterArticle() {
       <p className="fundraising-exchange-note">*USD equivalent is an estimate and varies with the exchange rate. </p>
     </header>
     <figure className="fundraising-profile"><img src={profile} alt="Lola, the medical student this appeal is supporting"/><figcaption>Omolola is a third-year medical student working towards her lifelong dream of becoming a doctor.</figcaption></figure>
+    <LolaPhotoGallery />
     <div className="fundraising-body">
       <p className="fundraising-opening">Dear kind stranger, friend, or someone who may be able to help,</p>
       <p>My name is Omogbolahan Giwa. I am a multidisciplinary designer and software engineer. Today, I am writing as a brother who desperately wants to see his sister become the woman she has always dreamed of becoming.</p>
