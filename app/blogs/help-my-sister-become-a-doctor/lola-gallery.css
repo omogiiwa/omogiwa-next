@@ -1,34 +1,58 @@
 
-/* Lola's photo story gallery */
-.lola-gallery{margin:54px 0 20px;padding:clamp(20px,4vw,38px);border:1px solid #e9e3f4;border-radius:24px;background:linear-gradient(145deg,#faf8ff 0%,#fff 65%);color:#17151c}
-.lola-gallery *{box-sizing:border-box}
-.lola-gallery-heading{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:end;margin-bottom:24px}
-.lola-gallery-kicker{margin:0 0 12px;color:#6a3fd0;font-size:.68rem;font-weight:850;letter-spacing:.15em}
-.lola-gallery-heading h2{margin:0!important;color:#17151c;font-size:clamp(1.65rem,4vw,2.6rem)!important;line-height:1.05!important;letter-spacing:-.055em!important}
-.lola-gallery-heading h2:before{display:none!important}
-.lola-gallery-heading>p{margin:0 0 2px!important;color:#696371;font-size:.9rem;line-height:1.8}
-.lola-gallery-grid{display:grid;grid-template-columns:1.12fr .88fr;grid-template-rows:repeat(2,minmax(170px,235px));gap:12px}
-.lola-photo-card{position:relative;display:block;width:100%;min-width:0;min-height:0;padding:0;overflow:hidden;border:0;border-radius:15px;background:#e9e3f4;text-align:left;cursor:zoom-in;isolation:isolate}
-.lola-photo-feature{grid-row:1 / span 2}
-.lola-photo-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .65s cubic-bezier(.2,.7,.2,1),filter .4s ease}
-.lola-photo-card:hover img,.lola-photo-card:focus-visible img{transform:scale(1.045)}
-.lola-photo-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(15,10,25,.22),transparent 28%,transparent 48%,rgba(15,10,25,.72))}
-.lola-photo-number{position:absolute;z-index:2;top:16px;left:16px;color:#fff;font-size:.77rem;font-weight:800;letter-spacing:.08em}
-.lola-photo-number span{opacity:.7;font-weight:500}
-.lola-photo-caption{position:absolute;z-index:2;left:17px;right:42px;bottom:17px;color:#fff;font-size:clamp(.94rem,2vw,1.25rem);font-weight:750;letter-spacing:-.025em;line-height:1.25}
-.lola-photo-expand{position:absolute;z-index:2;right:14px;bottom:14px;display:grid;width:30px;height:30px;place-items:center;border:1px solid rgba(255,255,255,.6);border-radius:50%;color:white;font-size:1.25rem;line-height:1;transition:background .2s ease,transform .2s ease}
-.lola-photo-card:hover .lola-photo-expand{transform:rotate(45deg);background:rgba(255,255,255,.18)}
-.lola-photo-card:focus-visible,.lola-lightbox button:focus-visible{outline:3px solid #6a3fd0;outline-offset:4px}
-.lola-gallery-footer{display:flex;justify-content:space-between;gap:12px;margin-top:15px;color:#77727f;font-size:.65rem;font-weight:750;letter-spacing:.09em;line-height:1.6}
-.lola-gallery-footer span+span{font-weight:500;letter-spacing:0;text-align:right}
-.lola-lightbox{position:fixed;z-index:9999;inset:0;display:grid;grid-template-columns:64px minmax(0,1fr) 64px;align-items:center;justify-items:center;gap:12px;padding:60px 22px 24px;background:rgba(14,10,22,.96);backdrop-filter:blur(16px);animation:lola-lightbox-in .22s ease-out}
-.lola-lightbox-close{position:absolute;top:17px;right:20px;display:grid;width:44px;height:44px;place-items:center;border:1px solid rgba(255,255,255,.25);border-radius:50%;background:transparent;color:#fff;font-size:2rem;line-height:1;cursor:pointer}
-.lola-lightbox-arrow{display:grid;width:48px;height:48px;place-items:center;border:1px solid rgba(255,255,255,.25);border-radius:50%;background:rgba(255,255,255,.06);color:#fff;font-size:2.3rem;line-height:1;cursor:pointer;transition:background .2s ease}
-.lola-lightbox-arrow:hover,.lola-lightbox-close:hover{background:rgba(255,255,255,.16)}
-.lola-lightbox-figure{display:flex;flex-direction:column;align-items:center;gap:14px;width:100%;height:100%;min-height:0;margin:0}
-.lola-lightbox-figure img{display:block;width:100%;height:calc(100% - 45px);object-fit:contain}
-.lola-lightbox-figure figcaption{display:flex;gap:14px;align-items:center;color:#fff;font-size:.9rem;text-align:center}
-.lola-lightbox-figure figcaption span{color:#bba8ed;font-size:.72rem;font-weight:800;letter-spacing:.1em}
-@keyframes lola-lightbox-in{from{opacity:0}to{opacity:1}}
-@media(max-width:620px){.lola-gallery{margin:42px 0 12px;padding:18px 14px;border-radius:18px}.lola-gallery-heading{grid-template-columns:1fr;gap:12px}.lola-gallery-heading>p{font-size:.86rem}.lola-gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:repeat(2,minmax(145px,32vw));gap:8px}.lola-photo-feature{grid-column:1 / span 2;grid-row:auto}.lola-photo-side-top,.lola-photo-side-bottom{grid-row:auto}.lola-photo-caption{left:11px;right:11px;bottom:12px;font-size:.9rem}.lola-photo-number{top:11px;left:11px}.lola-photo-expand{right:9px;bottom:9px;width:25px;height:25px;font-size:1rem}.lola-gallery-footer{flex-direction:column;gap:4px}.lola-gallery-footer span+span{text-align:left}.lola-lightbox{grid-template-columns:32px minmax(0,1fr) 32px;gap:5px;padding:60px 8px 18px}.lola-lightbox-arrow{width:32px;height:38px;font-size:1.8rem}.lola-lightbox-figure img{height:calc(100% - 60px)}.lola-lightbox-figure figcaption{flex-direction:column;gap:5px;font-size:.82rem}}
-@media(prefers-reduced-motion:reduce){.lola-gallery *,.lola-lightbox{animation:none!important;transition:none!important}}
+/* Personal keepsake album for Lola */
+.lola-album{--album-ink:#292326;--album-muted:#81767a;--album-purple:#401e97;position:relative;margin:58px 0 25px;padding:clamp(22px,5vw,54px);overflow:hidden;border:1px solid #eadfe2;border-radius:8px 8px 22px 8px;background:#fbf5ee;color:var(--album-ink);box-shadow:0 16px 50px rgba(66,37,43,.055)}
+.lola-album *{box-sizing:border-box}
+.lola-album:before{position:absolute;inset:0;pointer-events:none;content:"";opacity:.18;background-image:radial-gradient(#b79e92 .65px,transparent .65px);background-size:7px 7px;mask-image:linear-gradient(90deg,#000,transparent 85%)}
+.lola-album-intro{position:relative;z-index:1;max-width:650px;margin:0 auto 35px;text-align:center}
+.lola-album-overline{display:inline-flex;align-items:center;gap:9px;color:#8b6c6e;font-size:.65rem;font-weight:800;letter-spacing:.17em}
+.lola-album-overline>span{display:inline-block;width:19px;height:1px;background:#bd8c8d}
+.lola-album-intro h2{margin:17px 0 12px!important;color:#292326;font-family:Georgia,"Times New Roman",serif;font-size:clamp(2rem,5vw,3.4rem)!important;font-weight:500!important;letter-spacing:-.055em!important;line-height:1.04!important}
+.lola-album-intro h2:before{display:none!important}
+.lola-album-intro h2 em{color:#8c5e70;font-weight:400}
+.lola-album-intro>p{max-width:520px;margin:0 auto!important;color:#766a6d;font-size:.93rem;line-height:1.85}
+.lola-album-spread{position:relative;z-index:1;display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(20px,4vw,45px);max-width:760px;margin:0 auto;align-items:center}
+.lola-album-paper{position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:14px;min-height:450px;padding:37px 25px 30px;border:1px solid #e9d9cd;background:#f2e5d8;box-shadow:0 10px 26px rgba(68,40,42,.1),inset 0 0 30px rgba(176,130,108,.07);transform:rotate(-1deg)}
+.lola-album-paper:before{position:absolute;inset:10px;border:1px solid rgba(177,136,117,.24);content:"";pointer-events:none}
+.lola-album-tape{position:absolute;top:12px;left:50%;z-index:2;width:83px;height:22px;background:rgba(204,174,147,.57);transform:translateX(-50%) rotate(-3deg);clip-path:polygon(4% 0,100% 6%,96% 100%,0 93%)}
+.lola-album-photo{position:relative;display:flex;min-width:0;flex-direction:column;align-items:center;gap:9px;padding:0;border:0;background:transparent;color:inherit;text-align:center;cursor:zoom-in}
+.lola-album-photo-frame{position:relative;display:block;width:100%;padding:8px 8px 23px;background:#fffdf9;box-shadow:0 4px 13px rgba(62,42,39,.15);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s ease}
+.lola-album-photo-frame:after{position:absolute;inset:0;border:1px solid rgba(60,42,38,.06);content:"";pointer-events:none}
+.lola-album-photo img{display:block;width:100%;height:clamp(150px,22vw,245px);object-fit:cover;background:#e5d8d2}
+.lola-album-photo-one{transform:rotate(-4deg);margin-top:10px}
+.lola-album-photo-two{transform:rotate(3deg);margin-top:45px}
+.lola-album-photo-three{transform:rotate(3deg);margin-top:12px}
+.lola-album-photo-one:hover .lola-album-photo-frame,.lola-album-photo-one:focus-visible .lola-album-photo-frame{transform:rotate(3deg) translateY(-5px);box-shadow:0 13px 25px rgba(62,42,39,.2)}
+.lola-album-photo-two:hover .lola-album-photo-frame,.lola-album-photo-two:focus-visible .lola-album-photo-frame,.lola-album-photo-three:hover .lola-album-photo-frame,.lola-album-photo-three:focus-visible .lola-album-photo-frame{transform:rotate(-3deg) translateY(-5px);box-shadow:0 13px 25px rgba(62,42,39,.2)}
+.lola-album-handwritten{font-family:Georgia,"Times New Roman",serif;font-size:.96rem;font-style:italic;color:#815b62;line-height:1.3}
+.lola-album-photo-note{max-width:100%;font-family:Georgia,"Times New Roman",serif;font-size:.82rem;font-style:italic;line-height:1.4;color:#755d60}
+.lola-album-stamp{position:absolute;right:13px;bottom:14px;display:flex;width:68px;height:68px;flex-direction:column;align-items:center;justify-content:center;border:1px solid rgba(142,83,98,.55);border-radius:50%;color:#9b6576;transform:rotate(11deg);opacity:.8}
+.lola-album-stamp span{font-size:.42rem;font-weight:800;letter-spacing:.15em}
+.lola-album-stamp strong{font-family:Georgia,"Times New Roman",serif;font-size:.85rem;letter-spacing:.06em}
+.lola-album-stamp i{position:absolute;bottom:-8px;left:26px;font-size:1rem;font-style:normal;background:#f2e5d8}
+.lola-album-doodle{position:absolute;color:#b7818b;font-family:Georgia,serif;pointer-events:none}
+.lola-album-doodle-one{top:15px;right:23px;font-size:2rem;transform:rotate(15deg)}
+.lola-album-doodle-two{bottom:20px;left:15px;font-size:1.4rem}
+.lola-album-side{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:17px}
+.lola-album-page-number{color:#9a7c7d;font-size:.58rem;font-weight:800;letter-spacing:.13em;line-height:1.6}
+.lola-album-side .lola-album-photo-frame{padding:8px 8px 25px}
+.lola-album-side .lola-album-photo img{height:clamp(180px,25vw,270px)}
+.lola-album-side-note{margin:3px 0 0!important;color:#7e6669;font-family:Georgia,"Times New Roman",serif;font-size:1.15rem;font-style:italic;line-height:1.45}
+.lola-album-side-rule{width:42px;height:1px;background:#c49b9c}
+.lola-album-side-caption{color:#8e5d6b;font-size:.72rem;font-weight:800;letter-spacing:.04em}
+.lola-album-bottom{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:15px;max-width:760px;margin:33px auto 0;padding-top:17px;border-top:1px solid #e7d8d2}
+.lola-album-bottom>span{color:#9b8582;font-size:.58rem;font-weight:800;letter-spacing:.13em;line-height:1.6}
+.lola-album-bottom button{padding:8px 0;border:0;background:transparent;color:#6d465b;font-size:.8rem;font-weight:750;cursor:pointer}
+.lola-album-bottom button span{display:inline-block;margin-left:7px;transition:transform .2s ease}
+.lola-album-bottom button:hover span{transform:translate(2px,-2px)}
+.lola-album-photo:focus-visible,.lola-album-bottom button:focus-visible,.lola-album-viewer button:focus-visible{outline:2px solid #8c5e70;outline-offset:5px}
+.lola-album-viewer{position:fixed;z-index:9999;inset:0;display:grid;grid-template-columns:48px minmax(0,1fr) 48px;align-items:center;justify-items:center;gap:16px;padding:65px 22px 24px;background:rgba(35,24,30,.97);backdrop-filter:blur(12px);animation:lola-album-in .25s ease-out}
+.lola-album-viewer-close{position:absolute;top:17px;right:20px;display:grid;width:42px;height:42px;place-items:center;border:1px solid rgba(255,255,255,.3);border-radius:50%;background:transparent;color:#fff;font-size:1.8rem;cursor:pointer}
+.lola-album-viewer-arrow{display:grid;width:44px;height:44px;place-items:center;border:1px solid rgba(255,255,255,.3);border-radius:50%;background:transparent;color:#fff;font-size:2rem;cursor:pointer}
+.lola-album-viewer-photo{display:flex;width:100%;height:100%;min-height:0;flex-direction:column;align-items:center;gap:14px;margin:0}
+.lola-album-viewer-photo>div{display:flex;width:100%;height:calc(100% - 45px);min-height:0;align-items:center;justify-content:center}
+.lola-album-viewer-photo img{display:block;max-width:100%;max-height:100%;object-fit:contain}
+.lola-album-viewer-photo figcaption{display:flex;flex-direction:column;align-items:center;gap:6px;color:#fff;font-family:Georgia,"Times New Roman",serif;font-size:1rem;font-style:italic;text-align:center}
+.lola-album-viewer-photo figcaption span{color:#d3b0b8;font-family:inherit;font-size:.63rem;font-style:normal;font-weight:800;letter-spacing:.14em}
+@keyframes lola-album-in{from{opacity:0}to{opacity:1}}
+@media(max-width:620px){.lola-album{margin:40px 0 18px;padding:25px 15px 20px;border-radius:6px 6px 16px 6px}.lola-album-intro{margin-bottom:26px}.lola-album-overline{font-size:.57rem;letter-spacing:.11em}.lola-album-intro h2{font-size:2.05rem!important}.lola-album-intro>p{font-size:.86rem;line-height:1.75}.lola-album-spread{grid-template-columns:1fr;gap:22px}.lola-album-paper{min-height:350px;gap:10px;padding:34px 15px 26px}.lola-album-photo-frame{padding:6px 6px 18px}.lola-album-photo img{height:clamp(135px,44vw,205px)}.lola-album-photo-two{margin-top:30px}.lola-album-handwritten{font-size:.78rem}.lola-album-photo-note{font-size:.72rem}.lola-album-stamp{right:7px;bottom:9px;width:55px;height:55px}.lola-album-stamp i{left:20px}.lola-album-doodle-one{right:12px}.lola-album-side{display:grid;grid-template-columns:1fr 1fr;align-items:center;column-gap:18px;row-gap:12px}.lola-album-page-number{grid-column:1 / -1}.lola-album-side .lola-album-photo{grid-row:2 / span 3}.lola-album-side .lola-album-photo-frame{padding:6px 6px 20px}.lola-album-side .lola-album-photo img{height:clamp(165px,48vw,225px)}.lola-album-side-note{font-size:1.03rem}.lola-album-side-rule{align-self:center}.lola-album-side-caption{font-size:.67rem}.lola-album-bottom{margin-top:25px;align-items:flex-start;flex-direction:column;gap:8px}.lola-album-bottom>span{font-size:.54rem}.lola-album-viewer{grid-template-columns:30px minmax(0,1fr) 30px;gap:5px;padding:60px 7px 20px}.lola-album-viewer-arrow{width:30px;height:36px;font-size:1.5rem}.lola-album-viewer-photo img{max-width:100%;max-height:100%}.lola-album-viewer-photo figcaption{font-size:.9rem}}
+@media(prefers-reduced-motion:reduce){.lola-album *,.lola-album-viewer{animation:none!important;transition:none!important}}
