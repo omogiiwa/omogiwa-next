@@ -9,6 +9,10 @@ export default function sitemap() {
     "/hire",
     "/ai",
 
+    // Collections
+    "/tools",
+    "/blogs",
+
     // Portfolio
     "/portfolio",
     "/portfolio/brand-design",
@@ -16,9 +20,13 @@ export default function sitemap() {
     // Tools
     "/tools/frame-picker",
     "/tools/svg-to-png",
-    
-    // Articles
+
+    // Articles and journal
+    "/blogs/relationship-between-anatomy-and-design",
+    "/blogs/building-across-disciplines",
+    "/blogs/making-ideas-tangible",
     "/blogs/help-my-sister-become-a-doctor",
+    "/journal/from-ododo-to-giwa",
   ];
 
   return routes.map((route) => ({
@@ -28,7 +36,7 @@ export default function sitemap() {
     priority:
       route === ""
         ? 1
-        : ["/about", "/portfolio", "/contact"].includes(route)
+        : ["/about", "/portfolio", "/contact", "/tools", "/blogs"].includes(route)
           ? 0.8
           : 0.7,
   }));
