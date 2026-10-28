@@ -295,6 +295,7 @@ export default function AdminDashboard({
       .article-view-link{font-size:12px;color:#401e97;text-decoration:none}
       @media(max-width:600px){.article-row-main{flex-direction:column;gap:10px}.articles-toolbar{align-items:flex-start;flex-direction:column}}
     `}</style>
+  </section>
 ) : activeSection === "Inquiries" ? (
   <section className="inquiries-section">
     <div className="inquiries-heading">
