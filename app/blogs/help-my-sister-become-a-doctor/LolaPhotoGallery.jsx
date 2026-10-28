@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react";
 
 const photos = [
-  { src: "/lola1.jpg", alt: "Lola, photograph one", note: "A little piece of Lola's story" },
+  { src: "/lola1.jpge", alt: "Lola, photograph one", note: "A little piece of Lola's story" },
   { src: "/lola2.jpg", alt: "Lola, photograph two", note: "The person behind the dream" },
-  { src: "/lola3.jpg", alt: "Lola, photograph three", note: "A future still worth believing in" },
+  { src: "/lola3.jpeg", alt: "Lola, photograph three", note: "A future still worth believing in" },
 ];
 
 export default function LolaPhotoGallery() {
