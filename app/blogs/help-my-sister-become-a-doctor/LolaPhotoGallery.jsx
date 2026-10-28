@@ -42,13 +42,13 @@ export default function LolaPhotoGallery() {
             <span className="lola-album-photo-frame"><img src={photos[0].src} alt={photos[0].alt} loading="lazy" /></span>
             <span className="lola-album-handwritten">A little piece of Lola</span>
           </button>
-          <div className="lola-album-stamp" aria-hidden="true"><span>WITH</span><strong>LOVE</strong><span>ALWAYS</span><i>✳</i></div>
+          <div className="lola-album-stamp" aria-hidden="true"><span>WITH</span><strong>LOVE</strong><span>ALWAYS</span></div>
           <button className="lola-album-photo lola-album-photo-two" onClick={() => setSelected(1)} type="button" aria-label="View Lola's second photo">
             <span className="lola-album-photo-frame"><img src={photos[1].src} alt={photos[1].alt} loading="lazy" /></span>
             <span className="lola-album-photo-note">The person behind the dream</span>
           </button>
           <span className="lola-album-doodle lola-album-doodle-one" aria-hidden="true">♡</span>
-          <span className="lola-album-doodle lola-album-doodle-two" aria-hidden="true">✳</span>
+          <span className="lola-album-doodle lola-album-doodle-two" aria-hidden="true"></span>
         </div>
         <div className="lola-album-side">
           <span className="lola-album-page-number">A PERSONAL PHOTO ALBUM · 03 MOMENTS</span>
