@@ -259,107 +259,6 @@ THE DESK HERO
 
 
       {/* =========================
-          SELECTED WORK
-      ========================== */}
-  <section className="work-section" id="work">
-  <div className="section-heading">
-    <div>
-      
-      <h2>
-        Things I&apos;ve <span>created.</span>
-      </h2>
-    </div>
-    <p>
-      A selection of projects across design, branding, development and
-      visual communication.
-    </p>
-  </div>
-  <div className="work-carousel">
-    <button
-      type="button"
-      className="carousel-arrow carousel-arrow-left"
-      aria-label="Previous project"
-      onClick={() => changeProject(-1)}
-    >
-      ←
-    </button>
-    <div className="carousel-stage">
-
-  {projects.map((project, index) => {
-    const previousIndex =
-      (activeProject - 1 + projects.length) % projects.length;
-
-    const nextIndex =
-      (activeProject + 1) % projects.length;
-
-    let position = "carousel-card-hidden";
-
-    if (index === activeProject) {
-      position = "carousel-card-active";
-    } else if (index === previousIndex) {
-      position = "carousel-card-prev";
-    } else if (index === nextIndex) {
-      position = "carousel-card-next";
-    }
-
-    return (
-      <article
-        key={project.title}
-        className={`carousel-card ${position}`}
-        onClick={() => setActiveProject(index)}
-      >
-        <div
-          className="carousel-card-image"
-          style={{
-            backgroundImage: `url('${project.image}')`,
-          }}
-        />
-
-        {index === activeProject && (
-          <>
-            <div className="carousel-card-title">
-              {project.title}
-            </div>
-
-            <div className="carousel-card-overlay">
-              <div className="carousel-card-details">
-
-                <p className="carousel-card-description">
-                  {project.description}
-                </p>
-
-                <div className="carousel-card-meta">
-                  <span>{project.category}</span>
-                  <span>{project.readTime}</span>
-                </div>
-
-              </div>
-            </div>
-            
-          </>
-        )}
-      </article>
-    );
-  })}
-
-</div>
-
-    <button
-      type="button"
-      className="carousel-arrow carousel-arrow-right"
-      aria-label="Next project"
-      onClick={() => changeProject(1)}
-    >
-      →
-    </button>
-  </div>
-  <a href="/portfolio" className="text-link">
-    View all projects →
-  </a>
-</section>
-
-
-      {/* =========================
           WHAT I DO
       ========================== */}
       <section className="services-section services-mix-section" id="services">
@@ -465,6 +364,109 @@ THE DESK HERO
           </div>
         </div>
       </section>
+
+
+
+
+      {/* =========================
+          SELECTED WORK
+      ========================== */}
+  <section className="work-section" id="work">
+  <div className="section-heading">
+    <div>
+      
+      <h2>
+        Things I&apos;ve <span>created.</span>
+      </h2>
+    </div>
+    <p>
+      A selection of projects across design, branding, development and
+      visual communication.
+    </p>
+  </div>
+  <div className="work-carousel">
+    <button
+      type="button"
+      className="carousel-arrow carousel-arrow-left"
+      aria-label="Previous project"
+      onClick={() => changeProject(-1)}
+    >
+      ←
+    </button>
+    <div className="carousel-stage">
+
+  {projects.map((project, index) => {
+    const previousIndex =
+      (activeProject - 1 + projects.length) % projects.length;
+
+    const nextIndex =
+      (activeProject + 1) % projects.length;
+
+    let position = "carousel-card-hidden";
+
+    if (index === activeProject) {
+      position = "carousel-card-active";
+    } else if (index === previousIndex) {
+      position = "carousel-card-prev";
+    } else if (index === nextIndex) {
+      position = "carousel-card-next";
+    }
+
+    return (
+      <article
+        key={project.title}
+        className={`carousel-card ${position}`}
+        onClick={() => setActiveProject(index)}
+      >
+        <div
+          className="carousel-card-image"
+          style={{
+            backgroundImage: `url('${project.image}')`,
+          }}
+        />
+
+        {index === activeProject && (
+          <>
+            <div className="carousel-card-title">
+              {project.title}
+            </div>
+
+            <div className="carousel-card-overlay">
+              <div className="carousel-card-details">
+
+                <p className="carousel-card-description">
+                  {project.description}
+                </p>
+
+                <div className="carousel-card-meta">
+                  <span>{project.category}</span>
+                  <span>{project.readTime}</span>
+                </div>
+
+              </div>
+            </div>
+            
+          </>
+        )}
+      </article>
+    );
+  })}
+
+</div>
+
+    <button
+      type="button"
+      className="carousel-arrow carousel-arrow-right"
+      aria-label="Next project"
+      onClick={() => changeProject(1)}
+    >
+      →
+    </button>
+  </div>
+  <a href="/portfolio" className="text-link">
+    View all projects →
+  </a>
+</section>
 
 
       {/* =========================
