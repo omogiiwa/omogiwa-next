@@ -6,7 +6,7 @@ import LolaPhotoGallery from "./LolaPhotoGallery";
 const profile = "https://agent.omogiwa.com/lola-profile.jpg";
 const invoice = "https://agent.omogiwa.com/lola-invoice.pdf";
 const university = "https://gregoryuniversityuturu.edu.ng";
-const donationUrl = "REPLACE_WITH_DONATION_LINK";
+const donationUrl = "https://paystack.shop/pay/help-lola";
 const meetingUrl = "mailto:hello@omogiwa.com?subject=Arrange%20a%20conversation%20about%20Lola";
 
 export const metadata = {
