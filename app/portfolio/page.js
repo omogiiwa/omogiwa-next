@@ -1,4 +1,4 @@
-import Link from "next/link";
+import PortfolioExperience from "./PortfolioExperience";
 
 export const metadata = {
   title: "Portfolio — Brand, Web & Digital Design",
@@ -17,9 +17,7 @@ export const metadata = {
     "web designer",
     "multidisciplinary designer",
   ],
-  alternates: {
-    canonical: "/portfolio",
-  },
+  alternates: { canonical: "/portfolio" },
   openGraph: {
     title: "Portfolio — Omogbolahan Giwa",
     description:
@@ -48,74 +46,6 @@ export const metadata = {
   },
 };
 
-const portfolioCategories = [
-  {
-    number: "01",
-    title: "Brand & Visual Design",
-    description:
-      "Visual identities, graphic systems and creative work built to make brands recognizable, distinctive and memorable.",
-    href: "/portfolio/brand-design",
-    className: "portfolio-brand",
-  },
-  {
-    number: "02",
-    title: "Web & Digital Design",
-    description:
-      "Websites and digital experiences designed to look sharp, communicate clearly and make interaction feel natural.",
-    href: "/portfolio/web-design",
-    className: "portfolio-web",
-  },
-  {
-    number: "03",
-    title: "Digital Strategy",
-    description:
-      "Creative and digital thinking that connects your brand, audience, content and online presence with a clear purpose.",
-    href: "/portfolio/digital-strategy",
-    className: "portfolio-strategy",
-  },
-];
-
 export default function PortfolioPage() {
-  return (
-    <main className="portfolio-page">
-      <section className="portfolio-section">
-        <div className="portfolio-intro">
-          <p className="section-label purple">PORTFOLIO</p>
-
-          <h1>
-            Work that
-            <span> speaks.</span>
-          </h1>
-
-          <p className="portfolio-intro-text">
-            A selection of work across design, technology and digital
-            thinking.
-          </p>
-        </div>
-
-        <div className="portfolio-list">
-          {portfolioCategories.map((category) => (
-            <Link
-              href={category.href}
-              className={`portfolio-card ${category.className}`}
-              key={category.title}
-            >
-              <div className="portfolio-card-image" />
-
-              <div className="portfolio-card-content">
-                <span className="portfolio-number">{category.number}</span>
-
-                <div>
-                  <h2>{category.title}</h2>
-                  <p>{category.description}</p>
-                </div>
-
-                <span className="portfolio-arrow">↗</span>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-    </main>
-  );
+  return <PortfolioExperience />;
 }
