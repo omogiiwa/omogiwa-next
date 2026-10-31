@@ -92,7 +92,7 @@ export default function PortfolioExperience() {
           <span>EXPLORE THE WORK</span>
           <span className="sky-ascend-circle" aria-hidden="true">↓</span>
         </a>
-        <span className="sky-coordinates">06° 31' N &nbsp; 03° 22' E</span>
+        <span className="sky-coordinates">INDEPENDENT CREATIVE PRACTICE</span>
       </section>
 
       <section className="sky-work-section" id="sky-work">
@@ -118,7 +118,7 @@ export default function PortfolioExperience() {
                 <span className="sky-destination-detail">{item.detail}</span>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
-                <span className="sky-destination-link">ENTER THIS SPACE <span aria-hidden="true">↗</span></span>
+                <span className="sky-destination-link">ENTER THIS SPACE <span aria-hidden="true">→</span></span>
               </div>
             </Link>
           ))}
@@ -142,7 +142,7 @@ export default function PortfolioExperience() {
           <p className="sky-section-kicker">03 / THE NEXT CHAPTER</p>
           <h2>Have a good<br /><em>one in mind?</em></h2>
         </div>
-        <a href="mailto:hello@omogiwa.com" className="sky-contact-link">LET'S TALK <span aria-hidden="true">↗</span></a>
+        <a href="mailto:hello@omogiwa.com" className="sky-contact-link">LET'S TALK <span aria-hidden="true">→</span></a>
         <div className="sky-footer-line">
           <span>OmoGiwa.</span>
           <span>DESIGNED & BUILT BY GIWA / 2026</span>
