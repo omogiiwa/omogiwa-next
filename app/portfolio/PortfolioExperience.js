@@ -1,142 +1,154 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 
-const categories = [
+const destinations = [
   {
     number: "01",
     title: "Brand & Visual Design",
-    description: "Visual identities, graphic systems and creative work built to make brands recognizable, distinctive and memorable.",
-    tags: "IDENTITY · ART DIRECTION · VISUAL SYSTEMS",
+    description: "Identities, visual systems and art direction that give brands a distinct presence.",
+    detail: "IDENTITY · ART DIRECTION · VISUAL SYSTEMS",
     href: "/portfolio/brand-design",
-    className: "portfolio-brand",
-    color: "violet",
+    className: "sky-destination-brand",
   },
   {
     number: "02",
     title: "Web & Digital Design",
-    description: "Websites and digital experiences designed to look sharp, communicate clearly and make interaction feel natural.",
-    tags: "WEBSITES · INTERFACES · DIGITAL EXPERIENCES",
+    description: "Digital places shaped around clarity, character and useful interaction.",
+    detail: "WEBSITES · INTERFACES · DIGITAL EXPERIENCES",
     href: "/portfolio/web-design",
-    className: "portfolio-web",
-    color: "coral",
+    className: "sky-destination-web",
   },
   {
     number: "03",
     title: "Digital Strategy",
-    description: "Creative and digital thinking that connects your brand, audience, content and online presence with a clear purpose.",
-    tags: "POSITIONING · CONTENT · DIGITAL DIRECTION",
+    description: "The thinking that connects a brand's story to the people it needs to reach.",
+    detail: "POSITIONING · CONTENT · DIGITAL DIRECTION",
     href: "/portfolio/digital-strategy",
-    className: "portfolio-strategy",
-    color: "gold",
+    className: "sky-destination-strategy",
   },
 ];
 
-const introductions = [
-  "A collection of identities, digital experiences and ideas made to move things forward.",
-  "Different disciplines. Different ways of thinking. One point of view.",
-  "I bring design, technology and strategy together to make ideas matter.",
+const statements = [
+  "I make thoughtful things for a world that never stands still.",
+  "Design, technology and strategy — connected by curiosity.",
+  "Different perspectives. One clear point of view.",
 ];
 
 export default function PortfolioExperience() {
-  const trackRef = useRef(null);
-  const [view, setView] = useState("carousel");
-  const [introIndex, setIntroIndex] = useState(0);
-
-  const moveTrack = (direction) => {
-    if (!trackRef.current) return;
-    const amount = Math.max(300, trackRef.current.clientWidth * 0.72);
-    trackRef.current.scrollBy({ left: direction * amount, behavior: "smooth" });
-  };
+  const [statement, setStatement] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <main className="portfolio-page portfolio-manon">
-      <section className="portfolio-manon-hero">
-        <div className="portfolio-manon-top">
-          <span className="portfolio-manon-label"><i /> PORTFOLIO / SELECTED WORK</span>
-          <span className="portfolio-manon-coordinate">OMOGIWA® — 2026</span>
+    <main className="portfolio-page portfolio-sky">
+      <section className="sky-world" id="sky-top">
+        <div className="sky-atmosphere" aria-hidden="true">
+          <div className="sky-sun" />
+          <div className="sky-cloud sky-cloud-back sky-cloud-one" />
+          <div className="sky-cloud sky-cloud-back sky-cloud-two" />
+          <div className="sky-cloud sky-cloud-front sky-cloud-three" />
+          <div className="sky-cloud sky-cloud-front sky-cloud-four" />
+          <div className="sky-horizon" />
+          <div className="sky-bird sky-bird-one" />
+          <div className="sky-bird sky-bird-two" />
         </div>
 
-        <div className="portfolio-manon-intro">
-          <div className="portfolio-manon-title-wrap">
-            <p className="portfolio-manon-eyebrow">INDEPENDENT DESIGNER & CREATIVE DEVELOPER</p>
-            <h1>Work in<br /><span>many forms<span className="portfolio-manon-dot">.</span></span></h1>
-          </div>
-          <div className="portfolio-manon-intro-copy">
-            <p key={introIndex}>{introductions[introIndex]}</p>
-            <button
-              type="button"
-              className="portfolio-reload"
-              onClick={() => setIntroIndex((current) => (current + 1) % introductions.length)}
-              aria-label="Refresh portfolio introduction"
-            >
-              <span className="portfolio-reload-symbol" aria-hidden="true">⟳</span>
-              <span>ANOTHER WAY TO PUT IT</span>
-            </button>
-          </div>
+        <header className="sky-header">
+          <a className="sky-wordmark" href="#sky-top" aria-label="Omogiwa portfolio home">OmoGiwa<span>.</span></a>
+          <span className="sky-header-note">INDEPENDENT DESIGNER / 2026</span>
+          <button className="sky-menu-toggle" type="button" onClick={() => setMenuOpen((open) => !open)} aria-expanded={menuOpen}>
+            {menuOpen ? "CLOSE −" : "MENU +"}
+          </button>
+        </header>
+
+        {menuOpen && (
+          <nav className="sky-menu-panel" aria-label="Portfolio navigation">
+            <a href="#sky-work" onClick={() => setMenuOpen(false)}>Selected work <span>01</span></a>
+            <a href="#sky-practice" onClick={() => setMenuOpen(false)}>My practice <span>02</span></a>
+            <a href="#sky-contact" onClick={() => setMenuOpen(false)}>Get in touch <span>03</span></a>
+          </nav>
+        )}
+
+        <div className="sky-hero-copy">
+          <p className="sky-eyebrow"><span /> A PORTFOLIO BY OMOGBOLAHAN GIWA</p>
+          <h1>Ideas take<br /><em>shape.</em></h1>
+          <p className="sky-hero-description" key={statement}>{statements[statement]}</p>
+          <button className="sky-refresh" type="button" onClick={() => setStatement((current) => (current + 1) % statements.length)}>
+            <span aria-hidden="true">↻</span> A DIFFERENT PERSPECTIVE
+          </button>
         </div>
 
-        <div className="portfolio-manon-bottomline">
-          <span>01—03 / AREAS OF PRACTICE</span>
-          <a href="#portfolio-explore">EXPLORE THE WORK <span aria-hidden="true">↓</span></a>
+        <div className="sky-floating-label sky-label-left">
+          <span className="sky-label-line" />
+          <span>THOUGHTFUL BY DESIGN</span>
         </div>
-        <span className="portfolio-manon-orbit portfolio-manon-orbit-a" />
-        <span className="portfolio-manon-orbit portfolio-manon-orbit-b" />
+        <div className="sky-floating-label sky-label-right">
+          <span>BUILT TO MOVE IDEAS FORWARD</span>
+          <span className="sky-label-line" />
+        </div>
+
+        <a className="sky-ascend" href="#sky-work">
+          <span>EXPLORE THE WORK</span>
+          <span className="sky-ascend-circle" aria-hidden="true">↓</span>
+        </a>
+        <span className="sky-coordinates">06° 31' N &nbsp; 03° 22' E</span>
       </section>
 
-      <section className="portfolio-manon-work" id="portfolio-explore">
-        <div className="portfolio-manon-work-head">
+      <section className="sky-work-section" id="sky-work">
+        <div className="sky-section-intro">
           <div>
-            <span className="portfolio-manon-label"><i /> EXPLORE BY DISCIPLINE</span>
-            <h2>A few sides<br />of the <span>same mind.</span></h2>
+            <p className="sky-section-kicker">01 / SELECTED WORK</p>
+            <h2>Choose a<br /><em>direction.</em></h2>
           </div>
-          <div className="portfolio-manon-controls">
-            <div className="portfolio-manon-view" role="group" aria-label="Portfolio layout">
-              <button type="button" onClick={() => setView("carousel")} className={view === "carousel" ? "active" : ""} aria-pressed={view === "carousel"}>CAROUSEL</button>
-              <button type="button" onClick={() => setView("index")} className={view === "index" ? "active" : ""} aria-pressed={view === "index"}>INDEX</button>
-            </div>
-            {view === "carousel" && (
-              <div className="portfolio-manon-arrows">
-                <button type="button" onClick={() => moveTrack(-1)} aria-label="Previous disciplines">←</button>
-                <button type="button" onClick={() => moveTrack(1)} aria-label="Next disciplines">→</button>
-              </div>
-            )}
-          </div>
+          <p className="sky-section-description">Three paths through my work. Each one explores a different way to make ideas visible, useful and memorable.</p>
         </div>
 
-        <div
-          ref={trackRef}
-          className={`portfolio-manon-track ${view === "index" ? "is-index" : ""}`}
-          aria-label="Portfolio disciplines"
-        >
-          {categories.map((category) => (
-            <Link
-              href={category.href}
-              key={category.number}
-              className={`portfolio-manon-card ${category.className} portfolio-tone-${category.color}`}
-            >
-              <div className="portfolio-manon-card-art" />
-              <div className="portfolio-manon-card-top">
-                <span>{category.number} / 03</span>
-                <span className="portfolio-manon-card-mark" aria-hidden="true">✳</span>
+        <div className="sky-destinations">
+          {destinations.map((item, index) => (
+            <Link href={item.href} className={`sky-destination ${item.className}`} key={item.number}>
+              <div className="sky-destination-cloud" aria-hidden="true">
+                <span /><span /><span /><span />
               </div>
-              <div className="portfolio-manon-card-copy">
-                <span className="portfolio-manon-card-tags">{category.tags}</span>
-                <h3>{category.title}</h3>
-                <p>{category.description}</p>
-                <span className="portfolio-manon-card-link">EXPLORE <span aria-hidden="true">→</span></span>
+              <div className="sky-destination-top">
+                <span>{item.number} / 03</span>
+                <span className="sky-destination-star" aria-hidden="true">✳</span>
               </div>
-              <span className="portfolio-manon-card-index" aria-hidden="true">{category.number}</span>
+              <div className="sky-destination-copy">
+                <span className="sky-destination-detail">{item.detail}</span>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+                <span className="sky-destination-link">ENTER THIS SPACE <span aria-hidden="true">↗</span></span>
+              </div>
             </Link>
           ))}
         </div>
-
-        <div className="portfolio-manon-foot">
-          <span>DRAG / SWIPE TO EXPLORE</span>
-          <span>THREE DISCIPLINES. ONE PRACTICE.</span>
+        <div className="sky-work-foot">
+          <span>SCROLL TO DISCOVER</span>
+          <span>THREE DISCIPLINES / ONE PRACTICE</span>
         </div>
       </section>
+
+      <section className="sky-practice" id="sky-practice">
+        <div className="sky-practice-cloud" aria-hidden="true" />
+        <p className="sky-section-kicker">02 / THE THINKING BEHIND THE WORK</p>
+        <h2>Good work starts<br />with <em>seeing things</em><br />differently.</h2>
+        <p className="sky-practice-copy">I work across disciplines because the best solutions rarely live inside just one. I bring visual thinking, digital craft and strategic perspective together — then shape them around the problem at hand.</p>
+        <a href="#sky-contact" className="sky-text-link">LET'S MAKE SOMETHING MEANINGFUL <span>↓</span></a>
+      </section>
+
+      <footer className="sky-contact" id="sky-contact">
+        <div>
+          <p className="sky-section-kicker">03 / THE NEXT CHAPTER</p>
+          <h2>Have a good<br /><em>one in mind?</em></h2>
+        </div>
+        <a href="mailto:hello@omogiwa.com" className="sky-contact-link">LET'S TALK <span aria-hidden="true">↗</span></a>
+        <div className="sky-footer-line">
+          <span>OmoGiwa.</span>
+          <span>DESIGNED & BUILT BY GIWA / 2026</span>
+          <a href="#sky-top">BACK TO THE SKY ↑</a>
+        </div>
+      </footer>
     </main>
   );
 }
