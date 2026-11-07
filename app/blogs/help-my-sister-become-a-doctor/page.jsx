@@ -11,7 +11,7 @@ const meetingUrl = "mailto:hello@omogiwa.com?subject=Arrange%20a%20conversation%
 
 export const metadata = {
   title: "Help My Sister Become the Doctor She Has Always Dreamed of Being",
-  description: "A brother's urgent appeal to help a third-year medical student continue her education. Target: ₦3,600,000 (approximately US$2,680). Any amount helps.",
+  description: "A brother's urgent appeal to help a third-year medical student continue her education. Target: ₦2,160,000 (approximately US$1,610). ₦1,400,000 has been raised; approximately ₦760,000 remains. Any amount helps.",
   alternates: { canonical: "https://omogiwa.com/blogs/help-my-sister-become-a-doctor" },
 };
 
@@ -23,10 +23,10 @@ export default function HelpMySisterArticle() {
       <h1>Help My Sister Become the Doctor She Has Always Dreamed of Being</h1>
       <p className="fundraising-deck">I am asking for help not because we has stopped fighting, but because we have reached a point where hard work alone cannot cover the cost of keeping a dream alive.</p>
       <p className="fundraising-byline">Written by Omogbolahan Giwa </p>
-      <div className="fundraising-target"><div><span>FUNDRAISING TARGET</span><strong>₦3,600,000</strong><small>Approximately $2,680*</small></div><div><span>URGENT DEADLINE</span><strong>About one week</strong><small>To pay outstanding fees and reduce the risk of admission cancellation.</small></div></div>
+      <div className="fundraising-target"><div><span>FUNDRAISING TARGET</span><strong>₦2,160,000</strong><small>Approximately US$1,610*</small></div><div><span>ALREADY RAISED</span><strong>₦1,400,000</strong><small>Approximately US$1,043*</small></div><div><span>STILL NEEDED</span><strong>₦760,000</strong><small>Approximately US$566*</small></div></div>
       <div className="fundraising-actions"><a className="fundraising-button fundraising-button-primary" href={donationUrl}>Make a free donation</a><a className="fundraising-button fundraising-button-secondary" href="mailto:hello@omogiwa.com?subject=Professional%20services%20to%20support%20Lola">Pay and request for my services</a></div>
       <p className="fundraising-small-note">Every amount matters. If all you can give is $1, that is still help and is deeply appreciated.</p>
-      <p className="fundraising-exchange-note">*USD equivalent is an estimate and varies with the exchange rate. </p>
+      <p className="fundraising-exchange-note">*USD equivalents are estimates using an indicative mid-market rate of ₦1,342.29 per US$1 (7 November 2026). Actual conversion and transfer fees may vary.</p>
     </header>
     <figure className="fundraising-profile"><img src={profile} alt="Lola, the medical student this appeal is supporting"/><figcaption>Omolola is a third-year medical student working towards her lifelong dream of becoming a doctor.</figcaption></figure>
     <LolaPhotoGallery />
@@ -39,9 +39,9 @@ export default function HelpMySisterArticle() {
       <p>My younger sister, Ododo-Ola has lived with sickle cell disease all her life. Recently, she was diagnosed with avascular necrosis and needs a hip replacement. The cost of treatment is far beyond what we can currently afford, which is why its difficult to pay my Omolola's tuition fee, all funds are currently in place for Ododo-Ola's health .</p>
       <p>Imagine being our father, trying to keep one daughter in medical school while another needs major surgery. We are trying to find a way forward without giving up on either of them.</p>
       <blockquote>I am not asking anyone to feel sorry for us. I am asking for a chance to change what is possible for my family.</blockquote>
-      <h2>Our goal: ₦3.6 million, or approximately $2,680</h2>
-      <p>We are working towards raising ₦3,600,000—approximately US$2,680 to address the urgent financial pressure around Omolola's education. We will be transparent about what each contribution is intended to cover.</p>
-      <p>We welcome support of any amount: $1, $5, $20, or whatever you can genuinely afford. Small acts of kindness can add up. Sharing this appeal with someone who may be able to help also matters.</p>
+      <h2>Our goal: ₦2.16 million — and ₦760,000 left to raise</h2>
+      <p>Our revised fundraising target is ₦2,160,000 (approximately US$1,610). We have raised ₦1,400,000 (approximately US$1,043), leaving ₦760,000 (approximately US$566) to go. We are grateful to everyone who has contributed so far, and we will remain transparent about what each contribution is intended to cover.</p>
+      <p>We welcome support of any amount: $1, $5, $20, or whatever you can genuinely afford. Small acts of kindness can add up and help us close the remaining ₦760,000 gap. Sharing this appeal with someone who may be able to help also matters.</p>
       <h2>I am offering my professional services, too</h2>
       <p>I do not want to ask for support without offering value. As a designer and software engineer, I can discuss fair service arrangements for:</p>
       <ul className="fundraising-service-list"><li><strong>Website design and development</strong> — building or improving a business website or landing page.</li><li><strong>Brand identity and graphic design</strong> — logos, visual identity, marketing graphics, and presentations.</li><li><strong>Digital design and user experience</strong> — making websites and digital products clearer and easier to use.</li></ul>
