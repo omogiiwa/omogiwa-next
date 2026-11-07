@@ -3,8 +3,8 @@ import "./fundraising-article.css";
 import "./lola-gallery.css";
 import LolaPhotoGallery from "./LolaPhotoGallery";
 
-const profile = "https://agent.omogiwa.com/lola-profile.jpg";
-const invoice = "https://agent.omogiwa.com/lola-invoice.pdf";
+const profile = "https://omogiwa.com/lola-profile.jpg";
+const invoice = "https://omogiwa.com/lola-invoice.pdf";
 const university = "https://gregoryuniversityuturu.edu.ng";
 const donationUrl = "https://paystack.shop/pay/help-lola";
 const meetingUrl = "mailto:hello@omogiwa.com?subject=Arrange%20a%20conversation%20about%20Lola";
@@ -23,7 +23,7 @@ export default function HelpMySisterArticle() {
       <h1>Help My Sister Become the Doctor She Has Always Dreamed of Being</h1>
       <p className="fundraising-deck">I am asking for help not because we has stopped fighting, but because we have reached a point where hard work alone cannot cover the cost of keeping a dream alive.</p>
       <p className="fundraising-byline">Written by Omogbolahan Giwa </p>
-      <div className="fundraising-target"><div><span>FUNDRAISING TARGET</span><strong>₦3,600,000</strong><small>Approximately $2,680*</small></div><div><span>URGENT DEADLINE</span><strong>About two weeks</strong><small>To pay outstanding fees and reduce the risk of admission cancellation.</small></div></div>
+      <div className="fundraising-target"><div><span>FUNDRAISING TARGET</span><strong>₦3,600,000</strong><small>Approximately $2,680*</small></div><div><span>URGENT DEADLINE</span><strong>About one week</strong><small>To pay outstanding fees and reduce the risk of admission cancellation.</small></div></div>
       <div className="fundraising-actions"><a className="fundraising-button fundraising-button-primary" href={donationUrl}>Make a free donation</a><a className="fundraising-button fundraising-button-secondary" href="mailto:hello@omogiwa.com?subject=Professional%20services%20to%20support%20Lola">Pay and request for my services</a></div>
       <p className="fundraising-small-note">Every amount matters. If all you can give is $1, that is still help and is deeply appreciated.</p>
       <p className="fundraising-exchange-note">*USD equivalent is an estimate and varies with the exchange rate. </p>
@@ -34,7 +34,7 @@ export default function HelpMySisterArticle() {
       <p className="fundraising-opening">Dear kind stranger, friend, or someone who may be able to help,</p>
       <p>My name is Omogbolahan Giwa. I am a multidisciplinary designer and software engineer. Today, I am writing as a brother who desperately wants to see his sister become the woman she has always dreamed of becoming.</p>
       <p>My sister, Lola, is a third-year medical student at Gregory University Uturu. Becoming a doctor has been her dream for years. She has worked hard to get this far, and the thought of her education being interrupted because we cannot raise the fees in time is difficult to accept.</p>
-      <p>A few years ago, we lost our mother. Since then, our father has carried the responsibility of supporting us and keeping our future within reach. He has sacrificed and done everything he can to keep us moving forward. But even the strongest person has limits. Omolola's outstanding fees are urgent: we have approximately two weeks to make payment, or she risks having her admission cancelled.</p>
+      <p>A few years ago, we lost our mother. Since then, our father has carried the responsibility of supporting us and keeping our future within reach. He has sacrificed and done everything he can to keep us moving forward. But even the strongest person has limits. Omolola's outstanding fees are urgent: we have approximately one week to make payment, or she risks having her admission cancelled.</p>
       <h2>Our family is facing another medical crisis</h2>
       <p>My younger sister, Ododo-Ola has lived with sickle cell disease all her life. Recently, she was diagnosed with avascular necrosis and needs a hip replacement. The cost of treatment is far beyond what we can currently afford, which is why its difficult to pay my Omolola's tuition fee, all funds are currently in place for Ododo-Ola's health .</p>
       <p>Imagine being our father, trying to keep one daughter in medical school while another needs major surgery. We are trying to find a way forward without giving up on either of them.</p>
