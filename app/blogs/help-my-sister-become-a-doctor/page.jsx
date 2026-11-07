@@ -7,6 +7,9 @@ const profile = "https://omogiwa.com/lola-profile.jpg";
 const invoice = "https://omogiwa.com/lola-invoice.pdf";
 const university = "https://gregoryuniversityuturu.edu.ng";
 const donationUrl = "https://paystack.shop/pay/help-lola";
+const fundraisingTarget = 2160000;
+const amountRaised = 1400000;
+const progressPercent = Math.min(100, Math.max(0, (amountRaised / fundraisingTarget) * 100));
 const meetingUrl = "mailto:hello@omogiwa.com?subject=Arrange%20a%20conversation%20about%20Lola";
 
 export const metadata = {
@@ -23,7 +26,7 @@ export default function HelpMySisterArticle() {
       <h1>Help My Sister Become the Doctor She Has Always Dreamed of Being</h1>
       <p className="fundraising-deck">I am asking for help not because we has stopped fighting, but because we have reached a point where hard work alone cannot cover the cost of keeping a dream alive.</p>
       <p className="fundraising-byline">Written by Omogbolahan Giwa </p>
-      <div className="fundraising-target"><div><span>FUNDRAISING TARGET</span><strong>₦2,160,000</strong><small>Approximately US$1,610*</small></div><div><span>ALREADY RAISED</span><strong>₦1,400,000</strong><small>Approximately US$1,043*</small></div><div><span>STILL NEEDED</span><strong>₦760,000</strong><small>Approximately US$566*</small></div></div>
+      <section className="fundraising-progress" aria-label="Fundraising progress"><div className="fundraising-progress-heading"><span>FUNDRAISING PROGRESS</span><strong>{progressPercent.toFixed(1)}% funded</strong></div><div className="fundraising-progress-track" role="progressbar" aria-label="Amount raised toward fundraising target" aria-valuemin={0} aria-valuemax={fundraisingTarget} aria-valuenow={amountRaised} aria-valuetext={`₦${amountRaised.toLocaleString("en-NG")} raised of ₦${fundraisingTarget.toLocaleString("en-NG")}`}><span style={{ width: `${progressPercent}%` }} /></div><p>₦{amountRaised.toLocaleString("en-NG")} raised <span>·</span> ₦{(fundraisingTarget - amountRaised).toLocaleString("en-NG")} left</p></section>\n      <div className="fundraising-target"><div><span>FUNDRAISING TARGET</span><strong>₦2,160,000</strong><small>Approximately US$1,610*</small></div><div><span>ALREADY RAISED</span><strong>₦1,400,000</strong><small>Approximately US$1,043*</small></div><div><span>STILL NEEDED</span><strong>₦760,000</strong><small>Approximately US$566*</small></div></div>
       <div className="fundraising-actions"><a className="fundraising-button fundraising-button-primary" href={donationUrl}>Make a free donation</a><a className="fundraising-button fundraising-button-secondary" href="mailto:hello@omogiwa.com?subject=Professional%20services%20to%20support%20Lola">Pay and request for my services</a></div>
       <p className="fundraising-small-note">Every amount matters. If all you can give is $1, that is still help and is deeply appreciated.</p>
       <p className="fundraising-exchange-note">*USD equivalents are estimates using an indicative mid-market rate of ₦1,342.29 per US$1 (7 November 2026). Actual conversion and transfer fees may vary.</p>
